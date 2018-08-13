@@ -12,7 +12,7 @@ export default class Profile2Screen extends Component {
 
   // Properties used by this component:
   // appActions, deviceInfo
-
+//testttttt
   constructor(props) {
     super(props);
     
