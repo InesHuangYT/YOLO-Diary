@@ -7,6 +7,7 @@ import img_elLRBubble from './images/NewLoginAndRegisterScreen_elLRBubble_244075
 // UI framework component imports
 import Input from 'muicss/lib/react/input';
 import Container from 'muicss/lib/react/container';
+import axios from 'axios';
 
 
 export default class NewLoginAndRegisterScreen extends Component {
@@ -18,22 +19,43 @@ export default class NewLoginAndRegisterScreen extends Component {
     super(props);
     
     this.state = {
-      field_PlzEnterAccount: '',
-      field_PlzEnterPassword: '',
+      username: '',
+      password: '',
     };
   }
 
   textInputChanged_field_PlzEnterAccount = (event) => {
-    this.setState({field_PlzEnterAccount: event.target.value});
+    this.setState({username: event.target.value});
   }
   
   textInputChanged_field_PlzEnterPassword = (event) => {
-    this.setState({field_PlzEnterPassword: event.target.value});
+    this.setState({password: event.target.value});
   }
   
   onClick_elButton_Login = (ev) => {
     // Go to screen 'NewFirstUpProfilePic'
-    this.props.appActions.goToScreen('newfirstupprofilepic', { transitionId: 'fadeIn' });
+    const user = {
+      username:this.state.username,
+      password:this.state.password,
+    }
+
+    axios.post('http://localhost:8080/api/auth/login',user)
+    .then(res => {
+      console.log(res);
+      console.log(res.data);  
+      this.props.appActions.goToScreen('newfirstupprofilepic', { transitionId: 'fadeIn' });  
+}).catch(function(error) {
+        //if(error.res){
+          alert("Wrong account and password");
+          //console.log(error);
+        //}
+      });
+  
+
+
+
+
+   
   
   }
   

@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.0",
+    "localStorage": "^1.0.3",
     "muicss": "^0.9.31",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
@@ -12,7 +14,7 @@
     "react-scripts": "1.0.4"
   },
   "scripts": {
-    "start": "PORT=3000 react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
