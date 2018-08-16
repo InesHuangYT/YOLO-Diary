@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import './App.css';
 import img_elIconalerts from './images/NewFaceRecScreen_elIconalerts_927169.png';
 import img_elHomeBG from './images/NewEmailSentScreen_elHomeBG_1012260.jpg';
@@ -11,40 +12,66 @@ import Container from 'muicss/lib/react/container';
 
 export default class NewRegisterScreen extends Component {
 
+
+  
   // Properties used by this component:
   // appActions, deviceInfo
 
   constructor(props) {
     super(props);
+
     
     this.state = {
-      field_EnterEmail: '',
-      field_PlzEnterAccount: '',
-      field_PlzEnterPassword: '',
-      field_PlzEnterPasswordCopy: '',
+      email: '',
+      username: '',
+      password: '',
+      comfirmpassword: '',
+      key:'',
     };
   }
 
   textInputChanged_field_EnterEmail = (event) => {
-    this.setState({field_EnterEmail: event.target.value});
+    this.setState({email: event.target.value});
   }
   
   textInputChanged_field_PlzEnterAccount = (event) => {
-    this.setState({field_PlzEnterAccount: event.target.value});
+    this.setState({username: event.target.value});
   }
   
   textInputChanged_field_PlzEnterPassword = (event) => {
-    this.setState({field_PlzEnterPassword: event.target.value});
+    this.setState({password: event.target.value});
   }
   
   textInputChanged_field_PlzEnterPasswordCopy = (event) => {
-    this.setState({field_PlzEnterPasswordCopy: event.target.value});
+    this.setState({comfirmpassword: event.target.value});
   }
   
   onClick_elButton_comfirm = (ev) => {
     // Go to screen 'NewEmailSent'
-    this.props.appActions.goToScreen('newemailsent', { transitionId: 'fadeIn' });
+
+
+    const user = {
+      username:this.state.username,
+      email:this.state.email,
+      password:this.state.password,
+    }
   
+   console.log(user);
+      axios.post('http://localhost:8080/api/auth/signup',user)
+      .then(res => {
+        console.log(res);
+        console.log(res.deta);
+        this.props.appActions.goToScreen('newemailsent', { transitionId: 'fadeIn' });
+  }).catch(function(error) {
+    //if(error.s){
+      alert("Wrong account and password");
+      console.log(error);
+    //}
+  });;
+
+
+
+
   }
   
   
