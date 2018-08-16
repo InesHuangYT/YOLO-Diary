@@ -11,7 +11,7 @@ export default class HomePage2ScollScreen extends Component {
 
   // Properties used by this component:
   // appActions, deviceInfo
-
+//
   render() {
     // eslint-disable-next-line no-unused-vars
     let baseStyle = {};
