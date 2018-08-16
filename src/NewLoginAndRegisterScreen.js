@@ -38,18 +38,34 @@ export default class NewLoginAndRegisterScreen extends Component {
       username:this.state.username,
       password:this.state.password,
     }
+    if(this.state.username && this.state.password){
+      axios.post('/api/auth/login',user)
+      .then(res => {
+        console.log(res);
+        console.log(res.data);  
+        let resJSON = res;
+        if(resJSON.data){
+         sessionStorage.setItem('accesstoken', resJSON);
+        }
+        else{
+          console.log("log error");
+        }
+        if(sessionStorage.getItem("accesstoken")){
+          this.props.appActions.goToScreen('newfirstupprofilepic', { transitionId: 'fadeIn' }); 
+        }else{
+          console.log("NO ACCESSTOKEN");
+        }
+        
+        
+  }).catch(function(error) {
+          //if(error.res){
+            alert("Wrong account and password");
+            //console.log(error);
+          //}
+        });
 
-    axios.post('http://localhost:8080/api/auth/login',user)
-    .then(res => {
-      console.log(res);
-      console.log(res.data);  
-      this.props.appActions.goToScreen('newfirstupprofilepic', { transitionId: 'fadeIn' });  
-}).catch(function(error) {
-        //if(error.res){
-          alert("Wrong account and password");
-          //console.log(error);
-        //}
-      });
+    }
+    
   
 
 
@@ -69,12 +85,20 @@ export default class NewLoginAndRegisterScreen extends Component {
   
   onClick_elButton_ForgetPassword = (ev) => {
     // Go to screen 'NewForgetPassword'
+
+    //測試session用
+    if(sessionStorage.getItem("accesstoken")){
     this.props.appActions.goToScreen('newforgetpassword', { transitionId: 'fadeIn' });
-  
+    }else{
+      console.log("NO ACCESSTOKEN")
+      this.props.appActions.goToScreen('newregister', { transitionId: 'fadeIn' });
+    }
   }
   
   
   render() {
+
+    
     // eslint-disable-next-line no-unused-vars
     let baseStyle = {};
     // eslint-disable-next-line no-unused-vars

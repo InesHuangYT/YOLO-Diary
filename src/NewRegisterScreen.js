@@ -26,7 +26,7 @@ export default class NewRegisterScreen extends Component {
       username: '',
       password: '',
       comfirmpassword: '',
-      key:'',
+      
     };
   }
 
@@ -57,7 +57,7 @@ export default class NewRegisterScreen extends Component {
     }
   
    console.log(user);
-      axios.post('http://localhost:8080/api/auth/signup',user)
+      axios.post('/api/auth/signup',user)
       .then(res => {
         console.log(res);
         console.log(res.deta);
