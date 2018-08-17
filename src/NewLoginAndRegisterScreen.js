@@ -9,7 +9,7 @@ import Input from 'muicss/lib/react/input';
 import Container from 'muicss/lib/react/container';
 import axios from 'axios';
 
-
+/////
 export default class NewLoginAndRegisterScreen extends Component {
 
   // Properties used by this component:
@@ -38,6 +38,7 @@ export default class NewLoginAndRegisterScreen extends Component {
       username:this.state.username,
       password:this.state.password,
     }
+
     if(this.state.username && this.state.password){
       axios.post('/api/auth/login',user)
       .then(res => {
