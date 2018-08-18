@@ -3,7 +3,6 @@ import './App.css';
 import img_elBubbleDiaryBG from './images/NewFaceRecScreen_elBubbleDiaryBG_736526.jpg';
 import img_elFaceRecognition from './images/NewFaceRecScreen_elFaceRecognition_860360.png';
 import img_elPublishBubble from './images/NewFaceRecScreen_elPublishBubble_291432.png';
-import img_elIconalerts from './images/NewFaceRecScreen_elIconalerts_927169.png';
 
 // UI framework component imports
 import Container from 'muicss/lib/react/container';
@@ -14,6 +13,13 @@ export default class NewFaceRecScreen extends Component {
   // Properties used by this component:
   // appActions, deviceInfo
 
+  onClick_elHotspot = (ev) => {
+    // Go to screen 'NewBubbleDiary'
+    this.props.appActions.goToScreen('newbubblediary', { transitionId: 'fadeIn' });
+  
+  }
+  
+  
   render() {
     // eslint-disable-next-line no-unused-vars
     let baseStyle = {};
@@ -59,7 +65,7 @@ export default class NewFaceRecScreen extends Component {
         textTransform: 'uppercase',
      };
     const style_hotspot_outer = {
-        pointerEvents: 'none',
+        cursor: 'pointer',
      };
     const style_card_ToolBar = {
         width: '100%',
@@ -68,10 +74,6 @@ export default class NewFaceRecScreen extends Component {
     const style_card_ToolBar_outer = {
         backgroundColor: 'white',
         boxShadow: '0.0px 5.3px 37px rgba(0, 0, 0, 0.4500)',
-        pointerEvents: 'none',
-     };
-    const style_iconalerts = {
-        height: 'auto',
         pointerEvents: 'none',
      };
     const style_button_BBDiary = {
@@ -143,7 +145,7 @@ export default class NewFaceRecScreen extends Component {
           </div>
           
           <div className='actionFont elHotspot' style={style_hotspot_outer}>
-            <div style={style_hotspot}   />
+            <div style={style_hotspot}  onClick={this.onClick_elHotspot}  />
           
           </div>
           
@@ -155,7 +157,6 @@ export default class NewFaceRecScreen extends Component {
             
             </div>
             
-            <img className='elIconalerts' style={style_iconalerts} src={img_elIconalerts} alt=""  />
             <button className='elButton_BBDiary' style={style_button_BBDiary}  >
               {this.props.locStrings.newcreatebb2_button_bbdiary_716087}
             </button>

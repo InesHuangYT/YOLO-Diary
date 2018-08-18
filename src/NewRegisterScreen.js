@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
-import img_elIconalerts from './images/NewFaceRecScreen_elIconalerts_927169.png';
 import img_elHomeBG from './images/NewEmailSentScreen_elHomeBG_1012260.jpg';
 import img_elNewRegister from './images/NewRegisterScreen_elNewRegister_896517.png';
 
@@ -148,12 +147,8 @@ export default class NewRegisterScreen extends Component {
     const style_button_Profile_outer = {
         pointerEvents: 'none',
      };
-    const style_iconalerts = {
-        height: 'auto',
-     };
-    const style_iconalerts_outer = {
-        pointerEvents: 'none',
-     };
+    
+    
     const style_homeBG = {
         height: 'auto',
      };
@@ -251,10 +246,7 @@ export default class NewRegisterScreen extends Component {
           
           </div>
           
-          <div className='elIconalerts' style={style_iconalerts_outer}>
-            <img style={style_iconalerts} src={img_elIconalerts} alt=""  />
           
-          </div>
           
           <div className='elHomeBG' style={style_homeBG_outer}>
             <img style={style_homeBG} src={img_elHomeBG} alt=""  />

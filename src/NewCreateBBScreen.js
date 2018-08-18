@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 import img_elBubbleDiaryBG from './images/NewFaceRecScreen_elBubbleDiaryBG_736526.jpg';
+import img_elOriDiaryBB from './images/NewCreateBBScreen_elOriDiaryBB_1024639.png';
 import img_elAddPicBB from './images/NewCreateBBScreen_elAddPicBB_474204.png';
-import img_elOriDiaryBB from './images/NewCreateBBScreen_elOriDiaryBB_968678.png';
-import img_elButton_Complete from './images/NewCreateBBScreen_elButton_Complete_945493.png';
-import img_elIconalerts from './images/NewFaceRecScreen_elIconalerts_927169.png';
+import img_elComplete from './images/NewCreateBBScreen_elComplete_945493.png';
 
 // UI framework component imports
 import Container from 'muicss/lib/react/container';
@@ -19,18 +18,39 @@ export default class NewCreateBBScreen extends Component {
     super(props);
     
     this.state = {
+      field: '',
       textarea: '',
     };
   }
 
+  textInputChanged_field = (event) => {
+    this.setState({field: event.target.value});
+  }
+  
   textAreaChanged_textarea = (event) => {
     this.setState({textarea: event.target.value});
   }
   
-  onClick_elHotspot = (ev) => {
+  onClick_elButton_Complete = (ev) => {
+    this.sendData_button_Complete_to_listData1();
+  
     // Go to screen 'NewFaceRec'
     this.props.appActions.goToScreen('newfacerec', { transitionId: 'fadeIn' });
   
+  }
+  
+  
+  sendData_button_Complete_to_listData1 = () => {
+    const dataSheet = this.props.appActions.getDataSheet('listData1');
+  
+    let row = this.props.dataSheetRow || {
+    };
+    row = { ...row, 
+      textarea: this.state.textarea,
+      field: this.state.field,
+      image: this.state.image,
+    };
+    this.props.appActions.addToDataSheet('listData1', row);
   }
   
   
@@ -61,17 +81,23 @@ export default class NewCreateBBScreen extends Component {
     const style_bubbleDiaryBG_outer = {
         pointerEvents: 'none',
      };
+    const style_oriDiaryBB = {
+        height: 'auto',
+     };
+    const style_oriDiaryBB_outer = {
+        pointerEvents: 'none',
+     };
     const style_addPicBB = {
         height: 'auto',
      };
     const style_addPicBB_outer = {
         pointerEvents: 'none',
      };
-    const style_oriDiaryBB = {
-        height: 'auto',
-     };
-    const style_oriDiaryBB_outer = {
-        pointerEvents: 'none',
+    const style_field = {
+        display: 'block',
+        backgroundColor: 'white',
+        paddingLeft: '1rem',
+        boxSizing: 'border-box', // ensures padding won't expand element's outer size
      };
     const style_textarea = {
         display: 'block',
@@ -79,18 +105,18 @@ export default class NewCreateBBScreen extends Component {
         paddingLeft: '1rem',
         boxSizing: 'border-box', // ensures padding won't expand element's outer size
      };
-    const style_button_Complete = {
+    const style_complete = {
         height: 'auto',
      };
-    const style_button_Complete_outer = {
+    const style_complete_outer = {
         pointerEvents: 'none',
      };
-    const style_hotspot = {
+    const style_button_Complete = {
         display: 'block',
         backgroundColor: 'transparent',
         textTransform: 'uppercase',
      };
-    const style_hotspot_outer = {
+    const style_button_Complete_outer = {
         cursor: 'pointer',
      };
     const style_card_ToolBar = {
@@ -100,10 +126,6 @@ export default class NewCreateBBScreen extends Component {
     const style_card_ToolBar_outer = {
         backgroundColor: 'white',
         boxShadow: '0.0px 5.3px 37px rgba(0, 0, 0, 0.4500)',
-        pointerEvents: 'none',
-     };
-    const style_iconalerts = {
-        height: 'auto',
         pointerEvents: 'none',
      };
     const style_button_BBDiary = {
@@ -164,28 +186,33 @@ export default class NewCreateBBScreen extends Component {
           
           </div>
           
-          <div className='elAddPicBB' style={style_addPicBB_outer}>
-            <img style={style_addPicBB} src={img_elAddPicBB} alt=""  />
-          
-          </div>
-          
           <div className='elOriDiaryBB' style={style_oriDiaryBB_outer}>
             <img style={style_oriDiaryBB} src={img_elOriDiaryBB} alt=""  />
           
           </div>
           
+          <div className='elAddPicBB' style={style_addPicBB_outer}>
+            <img style={style_addPicBB} src={img_elAddPicBB} alt=""  />
+          
+          </div>
+          
+          <div className='baseFont elField'>
+            <input style={style_field} type="text" placeholder={this.props.locStrings.寫下內容吧} onChange={this.textInputChanged_field} defaultValue={this.state.field}  />
+          
+          </div>
+          
           <div className='baseFont elTextarea'>
-            <textarea style={style_textarea}  placeholder={this.props.locStrings.newcreatebb_textarea_670437} onChange={this.textAreaChanged_textarea} defaultValue={this.state.textarea}  />
+            <textarea style={style_textarea}  placeholder={this.props.locStrings.newcreatebb_textarea_581227} onChange={this.textAreaChanged_textarea} defaultValue={this.state.textarea}  />
           
           </div>
           
-          <div className='elButton_Complete' style={style_button_Complete_outer}>
-            <img style={style_button_Complete} src={img_elButton_Complete} alt=""  />
+          <div className='elComplete' style={style_complete_outer}>
+            <img style={style_complete} src={img_elComplete} alt=""  />
           
           </div>
           
-          <div className='actionFont elHotspot' style={style_hotspot_outer}>
-            <div style={style_hotspot}  onClick={this.onClick_elHotspot}  />
+          <div className='actionFont elButton_Complete' style={style_button_Complete_outer}>
+            <div style={style_button_Complete}  onClick={this.onClick_elButton_Complete}  />
           
           </div>
           
@@ -197,7 +224,6 @@ export default class NewCreateBBScreen extends Component {
             
             </div>
             
-            <img className='elIconalerts' style={style_iconalerts} src={img_elIconalerts} alt=""  />
             <button className='elButton_BBDiary' style={style_button_BBDiary}  >
               {this.props.locStrings.newtutorcreatebb2_button_bbdiary_392335}
             </button>

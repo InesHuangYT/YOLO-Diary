@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-import img_elIconalerts from './images/NewFaceRecScreen_elIconalerts_927169.png';
-import img_elHomeBG from './images/NewEmailSentScreen_elHomeBG_1012260.jpg';
+import img_elHomeBG from './images/NewHomepage01Screen_elHomeBG_666706.jpg';
 import img_elHomePageBubble from './images/NewHomepage01Screen_elHomePageBubble_520234.png';
 
 // UI framework component imports
+import Button from 'muicss/lib/react/button';
 import Container from 'muicss/lib/react/container';
 
 
@@ -13,9 +13,9 @@ export default class NewHomepage01Screen extends Component {
   // Properties used by this component:
   // appActions, deviceInfo
 
-  onClick_elHotspot = (ev) => {
-    // Go to screen 'NewBubbleDiary'
-    this.props.appActions.goToScreen('newbubblediary', { transitionId: 'fadeIn' });
+  onClick_elButtonNext = (ev) => {
+    // Go to screen 'NewFirstUpProfilePic'
+    this.props.appActions.goToScreen('newfirstupprofilepic', { transitionId: 'fadeIn' });
   
   }
   
@@ -93,12 +93,6 @@ export default class NewHomepage01Screen extends Component {
     const style_button_Profile_outer = {
         pointerEvents: 'none',
      };
-    const style_iconalerts = {
-        height: 'auto',
-     };
-    const style_iconalerts_outer = {
-        pointerEvents: 'none',
-     };
     const style_homeBG = {
         height: 'auto',
      };
@@ -111,12 +105,11 @@ export default class NewHomepage01Screen extends Component {
     const style_homePageBubble_outer = {
         pointerEvents: 'none',
      };
-    const style_hotspot = {
+    const style_buttonNext = {
         display: 'block',
-        backgroundColor: 'transparent',
-        textTransform: 'uppercase',
+        textAlign: 'center',
      };
-    const style_hotspot_outer = {
+    const style_buttonNext_outer = {
         cursor: 'pointer',
      };
     
@@ -165,11 +158,6 @@ export default class NewHomepage01Screen extends Component {
           
           </div>
           
-          <div className='elIconalerts' style={style_iconalerts_outer}>
-            <img style={style_iconalerts} src={img_elIconalerts} alt=""  />
-          
-          </div>
-          
           <div className='elHomeBG' style={style_homeBG_outer}>
             <img style={style_homeBG} src={img_elHomeBG} alt=""  />
           
@@ -180,8 +168,10 @@ export default class NewHomepage01Screen extends Component {
           
           </div>
           
-          <div className='actionFont elHotspot' style={style_hotspot_outer}>
-            <div style={style_hotspot}  onClick={this.onClick_elHotspot}  />
+          <div className='actionFont elButtonNext' style={style_buttonNext_outer}>
+            <Button style={style_buttonNext}  color="accent" onClick={this.onClick_elButtonNext} >
+              {this.props.locStrings.newhomepage01_button_55047}
+            </Button>
           
           </div>
           

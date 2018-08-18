@@ -6,15 +6,15 @@ import NewCreateBBScreen from './NewCreateBBScreen.js';
 import NewTutorCreateBBScreen from './NewTutorCreateBBScreen.js';
 import NewBubbleDiaryScreen from './NewBubbleDiaryScreen.js';
 import NewEmailSentScreen from './NewEmailSentScreen.js';
-import NewHomepage01Screen from './NewHomepage01Screen.js';
+import NewFirstUpProfilePicScreen from './NewFirstUpProfilePicScreen.js';
 import NewForgetPasswordScreen from './NewForgetPasswordScreen.js';
 import NewRegisterScreen from './NewRegisterScreen.js';
-import NewFirstUpProfilePicScreen from './NewFirstUpProfilePicScreen.js';
+import NewHomepage01Screen from './NewHomepage01Screen.js';
 import NewLoginAndRegisterScreen from './NewLoginAndRegisterScreen.js';
 import Start3Screen from './Start3Screen.js';
 import Start4Screen from './Start4Screen.js';
 import N2Screen from './N2Screen.js';
-import NeontoExport0x7faf193d9770Screen from './NeontoExport0x7faf193d9770Screen.js';
+import NeontoExport0x7fae9fd5be70Screen from './NeontoExport0x7fae9fd5be70Screen.js';
 import Start5Screen from './Start5Screen.js';
 import ProfileScreen from './ProfileScreen.js';
 import Profile2Screen from './Profile2Screen.js';
@@ -29,7 +29,9 @@ import TutorCreateBB2Screen from './TutorCreateBB2Screen.js';
 import CreateBBScreen from './CreateBBScreen.js';
 import FaceRecAndPublishScreen from './FaceRecAndPublishScreen.js';
 import NewBubbleDiary3Screen from './NewBubbleDiary3Screen.js';
+import TestScreen from './TestScreen.js';
 import DataSheet_localizationSheet from './DataSheet_localizationSheet.js';
+import DataSheet_listData1 from './DataSheet_listData1.js';
 
 
 export default class App extends Component {
@@ -38,6 +40,7 @@ export default class App extends Component {
 
     this.dataSheets = {};
     this.dataSheets['localizationSheet'] = new DataSheet_localizationSheet('localizationSheet', this.dataSheetDidUpdate);
+    this.dataSheets['listData1'] = new DataSheet_listData1('listData1', this.dataSheetDidUpdate);
 
     this.dataSlots = {};
     this.dataSlots['ds_activeLang'] = "en";
@@ -210,14 +213,14 @@ export default class App extends Component {
           return (<NewBubbleDiaryScreen {...screenProps} />)
         case 'newemailsent':
           return (<NewEmailSentScreen {...screenProps} />)
-        case 'newhomepage01':
-          return (<NewHomepage01Screen {...screenProps} />)
+        case 'newfirstupprofilepic':
+          return (<NewFirstUpProfilePicScreen {...screenProps} />)
         case 'newforgetpassword':
           return (<NewForgetPasswordScreen {...screenProps} />)
         case 'newregister':
           return (<NewRegisterScreen {...screenProps} />)
-        case 'newfirstupprofilepic':
-          return (<NewFirstUpProfilePicScreen {...screenProps} />)
+        case 'newhomepage01':
+          return (<NewHomepage01Screen {...screenProps} />)
         case 'newloginandregister':
           return (<NewLoginAndRegisterScreen {...screenProps} />)
         case 'start3':
@@ -227,7 +230,7 @@ export default class App extends Component {
         case 'n2':
           return (<N2Screen {...screenProps} />)
         case 'n':
-          return (<NeontoExport0x7faf193d9770Screen {...screenProps} />)
+          return (<NeontoExport0x7fae9fd5be70Screen {...screenProps} />)
         case 'start5':
           return (<Start5Screen {...screenProps} />)
         case 'profile':
@@ -256,6 +259,8 @@ export default class App extends Component {
           return (<FaceRecAndPublishScreen {...screenProps} />)
         case 'newbubblediary3':
           return (<NewBubbleDiary3Screen {...screenProps} />)
+        case 'test':
+          return (<TestScreen {...screenProps} />)
       }
     }
 
