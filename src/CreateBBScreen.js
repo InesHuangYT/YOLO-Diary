@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-import img_elIconalerts from './images/NewFaceRecScreen_elIconalerts_927169.png';
-import img_elBubbleDiaryBG from './images/NewFaceRecScreen_elBubbleDiaryBG_736526.jpg';
-import img_elOriDiaryBB from './images/NewCreateBBScreen_elOriDiaryBB_968678.png';
+
+import img_elBubbleDiaryBG from './images/NewBubbleDiary2Screen_elBubbleDiaryBG_562791.jpg';
+import img_elOriDiaryBB from './images/NewCreateBBScreen_elOriDiaryBB_1024639.png';
 import img_elAddPicBB from './images/NewCreateBBScreen_elAddPicBB_474204.png';
-import img_elImage_Complete from './images/NewCreateBBScreen_elButton_Complete_945493.png';
+import img_elImage_Complete from './images/NewCreateBBScreen_elComplete_945493.png';
 
 // UI framework component imports
 import Container from 'muicss/lib/react/container';
@@ -112,12 +112,7 @@ export default class CreateBBScreen extends Component {
     const style_buttonCopy3_outer = {
         pointerEvents: 'none',
      };
-    const style_iconalerts = {
-        height: 'auto',
-     };
-    const style_iconalerts_outer = {
-        pointerEvents: 'none',
-     };
+    
     const style_bubbleDiaryBG = {
         height: 'auto',
      };
@@ -220,10 +215,7 @@ export default class CreateBBScreen extends Component {
           
           </div>
           
-          <div className='elIconalerts' style={style_iconalerts_outer}>
-            <img style={style_iconalerts} src={img_elIconalerts} alt=""  />
           
-          </div>
           
           <div className='elBubbleDiaryBG' style={style_bubbleDiaryBG_outer}>
             <img style={style_bubbleDiaryBG} src={img_elBubbleDiaryBG} alt=""  />

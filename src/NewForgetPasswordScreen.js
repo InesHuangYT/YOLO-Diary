@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import img_elIconalerts from './images/NewFaceRecScreen_elIconalerts_927169.png';
 import img_elHomeBG from './images/NewForgetPasswordScreen_elHomeBG_695974.jpg';
 import img_elForgetPasswordBB from './images/NewForgetPasswordScreen_elForgetPasswordBB_28565.png';
 
@@ -106,12 +105,6 @@ export default class NewForgetPasswordScreen extends Component {
     const style_button_Profile_outer = {
         pointerEvents: 'none',
      };
-    const style_iconalerts = {
-        height: 'auto',
-     };
-    const style_iconalerts_outer = {
-        pointerEvents: 'none',
-     };
     const style_homeBG = {
         height: 'auto',
      };
@@ -182,11 +175,6 @@ export default class NewForgetPasswordScreen extends Component {
             <button style={style_button_Profile}  >
               {this.props.locStrings.newloginandregister2_button_profile_490986}
             </button>
-          
-          </div>
-          
-          <div className='elIconalerts' style={style_iconalerts_outer}>
-            <img style={style_iconalerts} src={img_elIconalerts} alt=""  />
           
           </div>
           

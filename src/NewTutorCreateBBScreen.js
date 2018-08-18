@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import './App.css';
 import img_elBubbleDiaryBG from './images/NewFaceRecScreen_elBubbleDiaryBG_736526.jpg';
 import img_elAddPicBB from './images/NewCreateBBScreen_elAddPicBB_474204.png';
-import img_elOriDiaryBB from './images/NewCreateBBScreen_elOriDiaryBB_968678.png';
+import img_elOriDiaryBB from './images/NewCreateBBScreen_elOriDiaryBB_1024639.png';
 import img_elTutorFirstAddBB from './images/NewTutorCreateBBScreen_elTutorFirstAddBB_1018764.png';
-import img_elIconalerts from './images/NewFaceRecScreen_elIconalerts_927169.png';
 
 // UI framework component imports
+import Button from 'muicss/lib/react/button';
 import Container from 'muicss/lib/react/container';
 
 
@@ -15,7 +15,7 @@ export default class NewTutorCreateBBScreen extends Component {
   // Properties used by this component:
   // appActions, deviceInfo
 
-  onClick_elHotspot = (ev) => {
+  onClick_elButton_OK = (ev) => {
     // Go to screen 'NewCreateBB'
     this.props.appActions.goToScreen('newcreatebb', { transitionId: 'fadeIn' });
   
@@ -67,12 +67,11 @@ export default class NewTutorCreateBBScreen extends Component {
     const style_tutorFirstAddBB_outer = {
         pointerEvents: 'none',
      };
-    const style_hotspot = {
+    const style_button_OK = {
         display: 'block',
-        backgroundColor: 'transparent',
-        textTransform: 'uppercase',
+        textAlign: 'center',
      };
-    const style_hotspot_outer = {
+    const style_button_OK_outer = {
         cursor: 'pointer',
      };
     const style_card_ToolBar = {
@@ -82,10 +81,6 @@ export default class NewTutorCreateBBScreen extends Component {
     const style_card_ToolBar_outer = {
         backgroundColor: 'white',
         boxShadow: '0.0px 5.3px 37px rgba(0, 0, 0, 0.4500)',
-        pointerEvents: 'none',
-     };
-    const style_iconalerts = {
-        height: 'auto',
         pointerEvents: 'none',
      };
     const style_button_BBDiary = {
@@ -161,8 +156,10 @@ export default class NewTutorCreateBBScreen extends Component {
           
           </div>
           
-          <div className='actionFont elHotspot' style={style_hotspot_outer}>
-            <div style={style_hotspot}  onClick={this.onClick_elHotspot}  />
+          <div className='actionFont elButton_OK' style={style_button_OK_outer}>
+            <Button style={style_button_OK}  color="accent" onClick={this.onClick_elButton_OK} >
+              {this.props.locStrings.newtutorcreatebb_button_138085}
+            </Button>
           
           </div>
           
@@ -174,7 +171,6 @@ export default class NewTutorCreateBBScreen extends Component {
             
             </div>
             
-            <img className='elIconalerts' style={style_iconalerts} src={img_elIconalerts} alt=""  />
             <button className='elButton_BBDiary' style={style_button_BBDiary}  >
               {this.props.locStrings.newbubblediary4_button_bbdiary_883504}
             </button>

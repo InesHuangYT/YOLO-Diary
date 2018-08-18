@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import img_elIconalerts from './images/NewFaceRecScreen_elIconalerts_927169.png';
 import img_elHomeBG from './images/NewLoginAndRegisterScreen_elHomeBG_219221.jpg';
 import img_elLRBubble from './images/NewLoginAndRegisterScreen_elLRBubble_244075.png';
 
@@ -33,7 +32,7 @@ export default class NewLoginAndRegisterScreen extends Component {
   }
   
   onClick_elButton_Login = (ev) => {
-    // Go to screen 'NewFirstUpProfilePic'
+   // Go to screen 'NewHomepage01'
     const user = {
       username:this.state.username,
       password:this.state.password,
@@ -52,7 +51,7 @@ export default class NewLoginAndRegisterScreen extends Component {
           console.log("log error");
         }
         if(sessionStorage.getItem("accesstoken")){
-          this.props.appActions.goToScreen('newfirstupprofilepic', { transitionId: 'fadeIn' }); 
+          this.props.appActions.goToScreen('newhomepage01', { transitionId: 'fadeIn' });
         }else{
           console.log("NO ACCESSTOKEN");
         }
@@ -172,12 +171,7 @@ export default class NewLoginAndRegisterScreen extends Component {
     const style_button_Profile_outer = {
         pointerEvents: 'none',
      };
-    const style_iconalerts = {
-        height: 'auto',
-     };
-    const style_iconalerts_outer = {
-        pointerEvents: 'none',
-     };
+    
     const style_homeBG = {
         height: 'auto',
      };
@@ -290,10 +284,7 @@ export default class NewLoginAndRegisterScreen extends Component {
           
           </div>
           
-          <div className='elIconalerts' style={style_iconalerts_outer}>
-            <img style={style_iconalerts} src={img_elIconalerts} alt=""  />
           
-          </div>
           
           <div className='elHomeBG' style={style_homeBG_outer}>
             <img style={style_homeBG} src={img_elHomeBG} alt=""  />
