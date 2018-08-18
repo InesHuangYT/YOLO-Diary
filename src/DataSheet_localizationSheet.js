@@ -2037,6 +2037,156 @@ export default class DataSheet_localizationSheet extends DataSheetBase {
     this.items.push(item);
     item['key'] = "newfirstupprofilepic2_button_profile_265526";
     item['en'] = "個人帳戶";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "listitem1_textarea_458720";
+    item['en'] = "盡情寫下想說的話吧～";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "newcreatebb_field_438173";
+    item['en'] = "這是什麼活動呢";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "listitem2_textarea_830530";
+    item['en'] = "盡情寫下想說的話吧～";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "listitem2_field_747228";
+    item['en'] = "這是什麼活動呢";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "newcreatebb_field_817870";
+    item['en'] = "寫下標題吧";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "寫下內容吧";
+    item['en'] = "寫下標題吧";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "newcreatebb_button_941326";
+    item['en'] = "Delete";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "newcreatebb_button_671552";
+    item['en'] = "Next";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "newbubblediary_button_285512";
+    item['en'] = "上一頁";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "newbubblediary4_title_yolo_713097";
+    item['en'] = "YOLO X 憂樂日記";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "newbubblediary4_button_homepage_314281";
+    item['en'] = "首頁";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "newbubblediary4_subtitle_981646";
+    item['en'] = "專屬您與朋友間的泡泡日記";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "newbubblediary4_button_profile_745123";
+    item['en'] = "個人帳戶";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "newbubblediary4_button_bbdiary_449571";
+    item['en'] = "泡泡日記";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "newbubblediary4_button_82936";
+    item['en'] = "上一頁";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "newfacerec2_title_yolo_726281";
+    item['en'] = "YOLO X 憂樂日記";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "newfacerec2_button_homepage_322893";
+    item['en'] = "首頁";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "newfacerec2_subtitle_961757";
+    item['en'] = "專屬您與朋友間的泡泡日記";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "newfacerec2_button_profile_677571";
+    item['en'] = "個人帳戶";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "newfacerec2_button_bbdiary_618029";
+    item['en'] = "泡泡日記";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "test2_title_yolo_991269";
+    item['en'] = "YOLO X 憂樂日記";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "test2_button_homepage_234783";
+    item['en'] = "首頁";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "test2_subtitle_538267";
+    item['en'] = "專屬您與朋友間的泡泡日記";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "test2_button_profile_889019";
+    item['en'] = "個人帳戶";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "test2_button_bbdiary_955513";
+    item['en'] = "泡泡日記";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "newbubblediary_button2_496155";
+    item['en'] = "delete";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "newtutorcreatebb_button_138085";
+    item['en'] = "ＯＫ";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "newhomepage01_button_55047";
+    item['en'] = "下一頁";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "newbubblediary_button_93732";
+    item['en'] = "delete";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "newbubblediary_button_547911";
+    item['en'] = "update";
   }
 
   getStringsByLanguage = () => {

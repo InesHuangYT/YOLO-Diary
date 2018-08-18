@@ -1,35 +1,18 @@
 import React, { Component } from 'react';
 import './App.css';
-import img_elProfileBG from './images/ProfileScreen_elProfileBG_50330.png';
-import img_elProfileInfroBB from './images/ProfileScreen_elProfileInfroBB_993277.png';
+import img_elN2018071631230 from './images/Start3Screen_elN2018071631230_351371.jpg';
+import img_elN150971380756744 from './images/Start3Screen_elN150971380756744_710500.png';
 
 // UI framework component imports
-import Input from 'muicss/lib/react/input';
+import Button from 'muicss/lib/react/button';
 import Container from 'muicss/lib/react/container';
 
 
-export default class Profile2Screen extends Component {
+export default class NeontoExport0x7fae9fd5be70Screen extends Component {
 
   // Properties used by this component:
   // appActions, deviceInfo
 
-  constructor(props) {
-    super(props);
-    
-    this.state = {
-      field: '',
-      fieldCopy: '',
-    };
-  }
-
-  textInputChanged_field = (event) => {
-    this.setState({field: event.target.value});
-  }
-  
-  textInputChanged_fieldCopy = (event) => {
-    this.setState({fieldCopy: event.target.value});
-  }
-  
   render() {
     // eslint-disable-next-line no-unused-vars
     let baseStyle = {};
@@ -49,6 +32,17 @@ export default class Profile2Screen extends Component {
      };
     const style_background_outer = {
         backgroundColor: '#fcffff',
+        pointerEvents: 'none',
+     };
+    const style_n2018071631230 = {
+        height: 'auto',
+        pointerEvents: 'none',
+     };
+    const style_n150971380756744 = {
+        backgroundImage: 'url('+img_elN150971380756744+')',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: '50% 50%',
+        backgroundSize: 'cover',
         pointerEvents: 'none',
      };
     const style_textCopy = {
@@ -103,77 +97,70 @@ export default class Profile2Screen extends Component {
         textTransform: 'uppercase',
         pointerEvents: 'none',
      };
-    const style_profileBG = {
-        height: 'auto',
-        pointerEvents: 'none',
-     };
-    const style_profileInfroBB = {
-        backgroundImage: 'url('+img_elProfileInfroBB+')',
-        backgroundRepeat: 'no-repeat',
-        backgroundPosition: '50% 50%',
-        backgroundSize: 'cover',
-        pointerEvents: 'none',
-     };
-    const style_buttonCopy4 = {
-        display: 'block',
-        fontSize: 21.1,
-        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif',
-        fontWeight: 'bold',
+    const style_text2 = {
+        fontSize: 33.5,
         color: '#feffff',
         textAlign: 'left',
-        backgroundColor: 'transparent',
-        textTransform: 'uppercase',
+        textShadow: 'rgba(0, 0, 0, 0.4500) 0.0px 5.3px 14.1px',
         pointerEvents: 'none',
      };
-    const style_field = {
-        display: 'block',
-        fontSize: 21.8,
-        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif',
-        fontWeight: 'bold',
+    const style_textCopy2 = {
+        fontSize: 33.5,
+        color: '#feffff',
+        textAlign: 'left',
+        textShadow: 'rgba(0, 0, 0, 0.4500) 0.0px 5.3px 14.1px',
+        pointerEvents: 'none',
      };
-    const style_fieldCopy = {
+    const style_button2 = {
         display: 'block',
-        fontSize: 21.8,
+        fontSize: 24.5,
         fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif',
         fontWeight: 'bold',
+        textAlign: 'center',
+        backgroundColor: 'rgba(46, 154, 199, 0.7846)',
+        pointerEvents: 'none',
      };
     
     return (
-      <Container fluid={true} className="AppScreen Profile2Screen" style={baseStyle}>
+      <Container fluid={true} className="AppScreen NeontoExport0x7fae9fd5be70Screen" style={baseStyle}>
         <div className="background">
           <div className='appBg containerMinHeight elBackground' style={style_background_outer}>
             <div style={style_background} />
           
           </div>
           
+          <img className='elN2018071631230' style={style_n2018071631230} src={img_elN2018071631230} alt=""  />
+          <div className='elN150971380756744' style={style_n150971380756744} />
         </div>
         <div className="screenFgContainer">
           <div className="foreground">
             <div className='font-arialRoundedMTBold  elTextCopy' style={style_textCopy}>
-              <div>{this.props.locStrings.profile2_textcopy_133439}</div>
+              <div>{this.props.locStrings.n3_textcopy_569315}</div>
             </div>
             <div className='font-arialRoundedMTBold  elText' style={style_text}>
-              <div>{this.props.locStrings.profile2_text_197835}</div>
+              <div>{this.props.locStrings.n3_text_711181}</div>
             </div>
             <button className='elButtonCopy' style={style_buttonCopy}  >
-              {this.props.locStrings.profile2_buttoncopy_787363}
+              {this.props.locStrings.n3_buttoncopy_859317}
             </button>
             <button className='elButton' style={style_button}  >
-              {this.props.locStrings.profile2_button_87646}
+              {this.props.locStrings.n3_button_885313}
             </button>
             <button className='elButtonCopy2' style={style_buttonCopy2}  >
-              {this.props.locStrings.profile2_buttoncopy2_677742}
+              {this.props.locStrings.n3_buttoncopy2_869420}
             </button>
             <button className='elButtonCopy3' style={style_buttonCopy3}  >
-              {this.props.locStrings.profile2_buttoncopy3_867437}
+              {this.props.locStrings.n3_buttoncopy3_1036841}
             </button>
-            <img className='elProfileBG' style={style_profileBG} src={img_elProfileBG} alt=""  />
-            <div className='elProfileInfroBB' style={style_profileInfroBB} />
-            <button className='elButtonCopy4' style={style_buttonCopy4}  >
-              {this.props.locStrings.profile2_buttoncopy4_717472}
-            </button>
-            <Input className='elField' style={style_field} type="text" hint={this.props.locStrings.profile2_field_823174} onChange={this.textInputChanged_field} defaultValue={this.state.field}  />
-            <Input className='elFieldCopy' style={style_fieldCopy} type="text" hint={this.props.locStrings.profile2_fieldcopy_518270} onChange={this.textInputChanged_fieldCopy} defaultValue={this.state.fieldCopy}  />
+            <div className='font-SFUITextBold  elText2' style={style_text2}>
+              <div>{this.props.locStrings.n3_text2_872332}</div>
+            </div>
+            <div className='font-SFUITextBold  elTextCopy2' style={style_textCopy2}>
+              <div>{this.props.locStrings.n3_text2_613214}</div>
+            </div>
+            <Button className='elButton2' style={style_button2}  >
+              {this.props.locStrings.n3_button2_400602}
+            </Button>
           </div>
         </div>
       </Container>

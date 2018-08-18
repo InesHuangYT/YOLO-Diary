@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './App.css';
-import img_elIconalerts from './images/NewFaceRecScreen_elIconalerts_927169.png';
 import img_elHomeBG from './images/NewEmailSentScreen_elHomeBG_1012260.jpg';
 import img_elUpProfilePic from './images/NewFirstUpProfilePicScreen_elUpProfilePic_850626.png';
 
@@ -14,8 +13,8 @@ export default class NewFirstUpProfilePicScreen extends Component {
   // appActions, deviceInfo
 
   onClick_elButton_comfirm = (ev) => {
-    // Go to screen 'NewHomepage01'
-    this.props.appActions.goToScreen('newhomepage01', { transitionId: 'fadeIn' });
+    // Go to screen 'NewBubbleDiary'
+    this.props.appActions.goToScreen('newbubblediary', { transitionId: 'fadeIn' });
   
   }
   
@@ -93,12 +92,6 @@ export default class NewFirstUpProfilePicScreen extends Component {
     const style_button_Profile_outer = {
         pointerEvents: 'none',
      };
-    const style_iconalerts = {
-        height: 'auto',
-     };
-    const style_iconalerts_outer = {
-        pointerEvents: 'none',
-     };
     const style_homeBG = {
         height: 'auto',
      };
@@ -173,11 +166,6 @@ export default class NewFirstUpProfilePicScreen extends Component {
             <button style={style_button_Profile}  >
               {this.props.locStrings.newloginandregister3_button_profile_427158}
             </button>
-          
-          </div>
-          
-          <div className='elIconalerts' style={style_iconalerts_outer}>
-            <img style={style_iconalerts} src={img_elIconalerts} alt=""  />
           
           </div>
           

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import img_elIconalerts from './images/NewFaceRecScreen_elIconalerts_927169.png';
+
 import img_elBubbleDiaryBG from './images/NewFaceRecScreen_elBubbleDiaryBG_736526.jpg';
 import img_elFaceRecognition from './images/NewFaceRecScreen_elFaceRecognition_860360.png';
 import img_elPublishBubble from './images/NewFaceRecScreen_elPublishBubble_291432.png';
@@ -99,12 +99,7 @@ export default class FaceRecAndPublishScreen extends Component {
     const style_buttonCopy3_outer = {
         pointerEvents: 'none',
      };
-    const style_iconalerts = {
-        height: 'auto',
-     };
-    const style_iconalerts_outer = {
-        pointerEvents: 'none',
-     };
+    
     const style_bubbleDiaryBG = {
         height: 'auto',
      };
@@ -184,10 +179,7 @@ export default class FaceRecAndPublishScreen extends Component {
           
           </div>
           
-          <div className='elIconalerts' style={style_iconalerts_outer}>
-            <img style={style_iconalerts} src={img_elIconalerts} alt=""  />
           
-          </div>
           
           <div className='elBubbleDiaryBG' style={style_bubbleDiaryBG_outer}>
             <img style={style_bubbleDiaryBG} src={img_elBubbleDiaryBG} alt=""  />
