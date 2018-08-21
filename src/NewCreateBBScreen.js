@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import axios from 'axios';
 import img_elBubbleDiaryBG from './images/NewFaceRecScreen_elBubbleDiaryBG_736526.jpg';
 import img_elOriDiaryBB from './images/NewCreateBBScreen_elOriDiaryBB_1024639.png';
 import img_elAddPicBB from './images/NewCreateBBScreen_elAddPicBB_474204.png';
@@ -35,8 +36,23 @@ export default class NewCreateBBScreen extends Component {
     this.sendData_button_Complete_to_listData1();
   
     // Go to screen 'NewFaceRec'
-    this.props.appActions.goToScreen('newfacerec', { transitionId: 'fadeIn' });
-  
+    const diary = {
+      field:this.state.field,
+    }
+    if(sessionStorage.getItem("accesstoken")){
+    console.log(diary);
+    axios.post('/api/album',diary)
+    .then(res => {
+      console.log(res);
+      this.props.appActions.goToScreen('newfacerec', { transitionId: 'fadeIn' });
+
+    }).catch(function(error) {
+
+      alert("wrong album name");
+      console.log(error);
+
+    });
+  }
   }
   
   

@@ -7,8 +7,17 @@ import img_elLRBubble from './images/NewLoginAndRegisterScreen_elLRBubble_244075
 import Input from 'muicss/lib/react/input';
 import Container from 'muicss/lib/react/container';
 import axios from 'axios';
+import setAuthorizationToken, { setCurrentUser } from './util/APIUtils';
+import { Link } from 'react-router-dom';
+import { ACCESS_TOKEN } from './constants';
+import jwt from 'jsonwebtoken';
+import { Form, Button, Icon, notification } from 'antd';
+import validateInput from './server/validations/login';
 
+const FormItem = Form.Item;
 /////
+
+
 export default class NewLoginAndRegisterScreen extends Component {
 
   // Properties used by this component:
@@ -20,6 +29,8 @@ export default class NewLoginAndRegisterScreen extends Component {
     this.state = {
       username: '',
       password: '',
+      errors: {},
+      isLoading: false
     };
   }
 
@@ -30,6 +41,15 @@ export default class NewLoginAndRegisterScreen extends Component {
   textInputChanged_field_PlzEnterPassword = (event) => {
     this.setState({password: event.target.value});
   }
+
+  isValid() {
+    const { errors, isValid } = validateInput(this.state);
+    if (!isValid) {
+      this.setState({ errors });
+    }
+    return isValid;
+  }
+  
   
   onClick_elButton_Login = (ev) => {
    // Go to screen 'NewHomepage01'
@@ -41,11 +61,13 @@ export default class NewLoginAndRegisterScreen extends Component {
     if(this.state.username && this.state.password){
       axios.post('/api/auth/login',user)
       .then(res => {
+        const token = res.data.accessToken;
         console.log(res);
         console.log(res.data);  
-        let resJSON = res;
-        if(resJSON.data){
-         sessionStorage.setItem('accesstoken', resJSON);
+        if(token){
+         sessionStorage.setItem('accesstoken', token);
+         setAuthorizationToken(token);
+         console.log(jwt.decode(token))
         }
         else{
           console.log("log error");
@@ -55,25 +77,50 @@ export default class NewLoginAndRegisterScreen extends Component {
         }else{
           console.log("NO ACCESSTOKEN");
         }
-        
-        
+       // dispatch(setCurrentUser (jwt.decode(token)));
+
   }).catch(function(error) {
           //if(error.res){
-            alert("Wrong account and password");
+             alert("Wrong account and password");
+            // this.props.appActions.goToScreen('newregister', { transitionId: 'fadeIn' });
             //console.log(error);
           //}
         });
 
-    }
     
-  
-
-
-
-
-   
+  }
   
   }
+
+
+
+
+  // onClick_elButton_Login = (ev) => {
+  //   ev.preventDefault();   
+  //   this.props.form.validateFields((err, values) => {
+  //     if (!err) {
+  //         const loginRequest = Object.assign({}, values);
+  //         login(loginRequest)
+  //         .then(response => {
+  //             localStorage.setItem(ACCESS_TOKEN, response.accessToken);
+  //             this.props.onLogin();
+  //         }).catch(error => {
+  //             if(error.status === 401) {
+  //                 notification.error({
+  //                     message: 'Diary App',
+  //                     description: 'Your Username or Password is incorrect. Please try again!'
+  //                 });                    
+  //             } else {
+  //                 notification.error({
+  //                     message: 'Diary App',
+  //                     description: error.message || 'Sorry! Something went wrong. Please try again!'
+  //                 });                                            
+  //             }
+  //         });
+  //     }
+  // });
+  
+  // }
   
   
   onClick_elButton_CreateNewAccount = (ev) => {

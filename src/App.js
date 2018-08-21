@@ -32,7 +32,16 @@ import NewBubbleDiary3Screen from './NewBubbleDiary3Screen.js';
 import TestScreen from './TestScreen.js';
 import DataSheet_localizationSheet from './DataSheet_localizationSheet.js';
 import DataSheet_listData1 from './DataSheet_listData1.js';
+import {
+  Route,
+  withRouter,
+  Switch
+} from 'react-router-dom';
+import { getCurrentUser } from './util/APIUtils';
+import { ACCESS_TOKEN } from './constants';
 
+import { Layout, notification } from 'antd';
+const { Content } = Layout;
 
 export default class App extends Component {
   constructor(props) {
@@ -52,9 +61,59 @@ export default class App extends Component {
       currentScreenProps: {},
       screenFormatId: '',
       screenTransitionForward: true,
+      currentUser: null,
+      isAuthenticated: false,
+      isLoading: false
     }
     this.screenHistory = [ {...this.state} ];
 
+  }
+
+  loadCurrentUser() {
+    this.setState({
+      isLoading: true
+    });
+    getCurrentUser()
+    .then(response => {
+      this.setState({
+        currentUser: response,
+        isAuthenticated: true,
+        isLoading: false
+      });
+    }).catch(error => {
+      this.setState({
+        isLoading: false
+      });  
+    });
+  }
+
+  componentWillMount() {
+    this.loadCurrentUser();
+  }
+
+  handleLogout(redirectTo="/", notificationType="success", description="You're successfully logged out.") {
+    localStorage.removeItem(ACCESS_TOKEN);
+
+    this.setState({
+      currentUser: null,
+      isAuthenticated: false
+    });
+
+    this.props.history.push(redirectTo);
+    
+    notification[notificationType]({
+      message: 'Diary App',
+      description: description,
+    });
+  }
+
+  handleLogin() {
+    notification.success({
+      message: 'Diary App',
+      description: "You're successfully logged in.",
+    });
+    this.loadCurrentUser();
+    this.props.history.push("/");
   }
 
   windowDidResize = () => {
