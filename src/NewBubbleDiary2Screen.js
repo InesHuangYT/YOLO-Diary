@@ -168,11 +168,9 @@ export default class NewBubbleDiary2Screen extends Component {
             <button style={style_buttonCopy3}  >
               {this.props.locStrings.newbubblediary2_buttoncopy3_546358}
             </button>
-          
           </div>
           
-          
-          
+
           <div className='elBubbleDiaryBG' style={style_bubbleDiaryBG_outer}>
             <img style={style_bubbleDiaryBG} src={img_elBubbleDiaryBG} alt=""  />
           
