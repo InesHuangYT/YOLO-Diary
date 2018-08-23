@@ -14,8 +14,6 @@ import jwt from 'jsonwebtoken';
 import { Form, Button, Icon, notification } from 'antd';
 import validateInput from './server/validations/login';
 
-const FormItem = Form.Item;
-/////
 
 
 export default class NewLoginAndRegisterScreen extends Component {

@@ -19,13 +19,13 @@ export default class NewCreateBBScreen extends Component {
     super(props);
     
     this.state = {
-      field: '',
+      name: '',
       textarea: '',
     };
   }
 
   textInputChanged_field = (event) => {
-    this.setState({field: event.target.value});
+    this.setState({name: event.target.value});
   }
   
   textAreaChanged_textarea = (event) => {
@@ -37,9 +37,9 @@ export default class NewCreateBBScreen extends Component {
   
     // Go to screen 'NewFaceRec'
     const diary = {
-      field:this.state.field,
+      name:this.state.name,
     }
-    if(sessionStorage.getItem("accesstoken")){
+    if(this.state.name){
     console.log(diary);
     axios.post('/api/album',diary)
     .then(res => {

@@ -90,6 +90,8 @@ export function setCurrentUser(user){
         user
     } ;
 }
+
+
 export function login(data) {
     return dispatch => {
       return axios.post('/api/auth/login', data).then(res => {
