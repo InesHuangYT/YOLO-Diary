@@ -61,60 +61,12 @@ export default class App extends Component {
       currentScreenProps: {},
       screenFormatId: '',
       screenTransitionForward: true,
-      currentUser: null,
-      isAuthenticated: false,
-      isLoading: false
+     
     }
     this.screenHistory = [ {...this.state} ];
 
   }
 
-  loadCurrentUser() {
-    this.setState({
-      isLoading: true
-    });
-    getCurrentUser()
-    .then(response => {
-      this.setState({
-        currentUser: response,
-        isAuthenticated: true,
-        isLoading: false
-      });
-    }).catch(error => {
-      this.setState({
-        isLoading: false
-      });  
-    });
-  }
-
-  componentWillMount() {
-    this.loadCurrentUser();
-  }
-
-  handleLogout(redirectTo="/", notificationType="success", description="You're successfully logged out.") {
-    localStorage.removeItem(ACCESS_TOKEN);
-
-    this.setState({
-      currentUser: null,
-      isAuthenticated: false
-    });
-
-    this.props.history.push(redirectTo);
-    
-    notification[notificationType]({
-      message: 'Diary App',
-      description: description,
-    });
-  }
-
-  handleLogin() {
-    notification.success({
-      message: 'Diary App',
-      description: "You're successfully logged in.",
-    });
-    this.loadCurrentUser();
-    this.props.history.push("/");
-  }
 
   windowDidResize = () => {
     let w = window.innerWidth;
