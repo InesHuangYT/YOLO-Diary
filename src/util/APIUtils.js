@@ -105,3 +105,11 @@ export function login(data) {
       });
     }
 }
+
+export function logout() {
+    return dispatch => {
+      sessionStorage.removeItem('accesstoken');
+      setAuthorizationToken(false);
+      dispatch(setCurrentUser({}));
+    }
+  }
