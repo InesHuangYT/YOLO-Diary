@@ -6,6 +6,7 @@ import img_elHomePageBubble from './images/NewHomepage01Screen_elHomePageBubble_
 // UI framework component imports
 import Button from 'muicss/lib/react/button';
 import Container from 'muicss/lib/react/container';
+import setAuthorizationToken from './util/APIUtils';
 
 
 export default class NewHomepage01Screen extends Component {
@@ -15,6 +16,10 @@ export default class NewHomepage01Screen extends Component {
 
   onClick_elButtonNext = (ev) => {
     // Go to screen 'NewFirstUpProfilePic'
+
+    /* 移除token */
+    // sessionStorage.removeItem('accesstoken');
+    //   setAuthorizationToken(false);
     this.props.appActions.goToScreen('newfirstupprofilepic', { transitionId: 'fadeIn' });
   
   }

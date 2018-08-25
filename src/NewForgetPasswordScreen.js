@@ -28,6 +28,7 @@ export default class NewForgetPasswordScreen extends Component {
   onClick_elButton_Confirm = (ev) => {
     // Go to screen 'NewLoginAndRegister'
     this.props.appActions.goToScreen('newloginandregister', { transitionId: 'fadeIn' });
+
   
   }
   
