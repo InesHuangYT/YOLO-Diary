@@ -8,6 +8,7 @@ import img_elComplete from './images/NewCreateBBScreen_elComplete_945493.png';
 
 // UI framework component imports
 import Container from 'muicss/lib/react/container';
+import Axios from '../node_modules/axios';
 
 
 export default class NewCreateBBScreen extends Component {
@@ -34,7 +35,15 @@ export default class NewCreateBBScreen extends Component {
   
   onClick_elButton_Complete = (ev) => {
     this.sendData_button_Complete_to_listData1();
-  
+  const diary = {
+    name : this.state.field
+  }
+  Axios.post('/api/album',diary)
+  .then(res => {
+    console.log(res);
+  }).catch(function(error){
+    alert("Wrong input");
+  });
     // Go to screen 'NewFaceRec'
     this.props.appActions.goToScreen('newfacerec', { transitionId: 'fadeIn' });
   
