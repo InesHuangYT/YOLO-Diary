@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
 import LocalizedStrings from 'react-localization';
 import './App.css';
+import NewFriendListScreen from './NewFriendListScreen.js';
+import NewChatRoomScreen from './NewChatRoomScreen.js';
 import NewFaceRecScreen from './NewFaceRecScreen.js';
+import NewProfileTestScreen from './NewProfileTestScreen.js';
+import NewHomeNotificationScreen from './NewHomeNotificationScreen.js';
+import NewLogoutScreen from './NewLogoutScreen.js';
 import NewCreateBBScreen from './NewCreateBBScreen.js';
+import NewUserDiaryScreen from './NewUserDiaryScreen.js';
 import NewTutorCreateBBScreen from './NewTutorCreateBBScreen.js';
+import NewReadBBScreen from './NewReadBBScreen.js';
 import NewBubbleDiaryScreen from './NewBubbleDiaryScreen.js';
 import NewEmailSentScreen from './NewEmailSentScreen.js';
 import NewFirstUpProfilePicScreen from './NewFirstUpProfilePicScreen.js';
@@ -14,7 +21,7 @@ import NewLoginAndRegisterScreen from './NewLoginAndRegisterScreen.js';
 import Start3Screen from './Start3Screen.js';
 import Start4Screen from './Start4Screen.js';
 import N2Screen from './N2Screen.js';
-import NeontoExport0x7fae9fd5be70Screen from './NeontoExport0x7fae9fd5be70Screen.js';
+import NeontoExport0x7fc75655a6a0Screen from './NeontoExport0x7fc75655a6a0Screen.js';
 import Start5Screen from './Start5Screen.js';
 import ProfileScreen from './ProfileScreen.js';
 import Profile2Screen from './Profile2Screen.js';
@@ -32,16 +39,9 @@ import NewBubbleDiary3Screen from './NewBubbleDiary3Screen.js';
 import TestScreen from './TestScreen.js';
 import DataSheet_localizationSheet from './DataSheet_localizationSheet.js';
 import DataSheet_listData1 from './DataSheet_listData1.js';
-import {
-  Route,
-  withRouter,
-  Switch
-} from 'react-router-dom';
-import { getCurrentUser } from './util/APIUtils';
-import { ACCESS_TOKEN } from './constants';
+import DataSheet_listData2 from './DataSheet_listData2.js';
+import DataSheet_listData3 from './DataSheet_listData3.js';
 
-import { Layout, notification } from 'antd';
-const { Content } = Layout;
 
 export default class App extends Component {
   constructor(props) {
@@ -50,6 +50,8 @@ export default class App extends Component {
     this.dataSheets = {};
     this.dataSheets['localizationSheet'] = new DataSheet_localizationSheet('localizationSheet', this.dataSheetDidUpdate);
     this.dataSheets['listData1'] = new DataSheet_listData1('listData1', this.dataSheetDidUpdate);
+    this.dataSheets['listData2'] = new DataSheet_listData2('listData2', this.dataSheetDidUpdate);
+    this.dataSheets['listData3'] = new DataSheet_listData3('listData3', this.dataSheetDidUpdate);
 
     this.dataSlots = {};
     this.dataSlots['ds_activeLang'] = "en";
@@ -61,12 +63,10 @@ export default class App extends Component {
       currentScreenProps: {},
       screenFormatId: '',
       screenTransitionForward: true,
-     
     }
     this.screenHistory = [ {...this.state} ];
 
   }
-
 
   windowDidResize = () => {
     let w = window.innerWidth;
@@ -214,12 +214,26 @@ export default class App extends Component {
       switch (screenId) {
         default:
           return null;
+        case 'newfriendlist':
+          return (<NewFriendListScreen {...screenProps} />)
+        case 'newchatroom':
+          return (<NewChatRoomScreen {...screenProps} />)
         case 'newfacerec':
           return (<NewFaceRecScreen {...screenProps} />)
+        case 'newprofiletest':
+          return (<NewProfileTestScreen {...screenProps} />)
+        case 'newhomenotification':
+          return (<NewHomeNotificationScreen {...screenProps} />)
+        case 'newlogout':
+          return (<NewLogoutScreen {...screenProps} />)
         case 'newcreatebb':
           return (<NewCreateBBScreen {...screenProps} />)
+        case 'newuserdiary':
+          return (<NewUserDiaryScreen {...screenProps} />)
         case 'newtutorcreatebb':
           return (<NewTutorCreateBBScreen {...screenProps} />)
+        case 'newreadbb':
+          return (<NewReadBBScreen {...screenProps} />)
         case 'newbubblediary':
           return (<NewBubbleDiaryScreen {...screenProps} />)
         case 'newemailsent':
@@ -241,7 +255,7 @@ export default class App extends Component {
         case 'n2':
           return (<N2Screen {...screenProps} />)
         case 'n':
-          return (<NeontoExport0x7fae9fd5be70Screen {...screenProps} />)
+          return (<NeontoExport0x7fc75655a6a0Screen {...screenProps} />)
         case 'start5':
           return (<Start5Screen {...screenProps} />)
         case 'profile':

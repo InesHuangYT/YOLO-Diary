@@ -2187,6 +2187,221 @@ export default class DataSheet_localizationSheet extends DataSheetBase {
     this.items.push(item);
     item['key'] = "newbubblediary_button_547911";
     item['en'] = "update";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "comp1_button_bbdiary_65744";
+    item['en'] = "泡泡日記";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "comp1_button_profile_537669";
+    item['en'] = "個人帳戶";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "comp1_subtitle_571540";
+    item['en'] = "專屬您與朋友間的泡泡日記";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "comp1_button_homepage_232670";
+    item['en'] = "首頁";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "comp1_title_yolo_1039822";
+    item['en'] = "YOLO X 憂樂日記";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "profile3_buttoncopy4_940079";
+    item['en'] = "上傳正面大頭照";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "profile3_buttoncopy3_1007738";
+    item['en'] = "個人帳戶";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "profile3_buttoncopy2_154787";
+    item['en'] = "泡泡日記";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "profile3_button_1028520";
+    item['en'] = "首頁";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "profile3_buttoncopy_843090";
+    item['en'] = "登入及註冊";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "profile3_text_351452";
+    item['en'] = "YOLO X 憂樂日記";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "profile3_textcopy_230640";
+    item['en'] = "專屬您與朋友間的泡泡日記";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "newreadbb_button_703594";
+    item['en'] = "上一頁";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "newcreatebb2_field_448413";
+    item['en'] = "寫下標題吧";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "newuserdiary_button_724281";
+    item['en'] = "OK";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "newprofiletest2_uppic_288253";
+    item['en'] = "上傳正面大頭照";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "comp1_field_276857";
+    item['en'] = "UserName";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "newfriendlist_field_708903";
+    item['en'] = "尋找朋友";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "pmenu_uppic_291006";
+    item['en'] = "更換大頭照";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "newfriendlist2_field_233257";
+    item['en'] = "尋找朋友";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "newhomeinform_field_923766";
+    item['en'] = "FriendName";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "newhomeinform_field2_502382";
+    item['en'] = "通知內容";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "listitem2_field_notification_832918";
+    item['en'] = "通知內容";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "listitem2_field_friendname_310626";
+    item['en'] = "FriendName";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "newprofiletest_button_134162";
+    item['en'] = "確定";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "newbubblediary_field_576936";
+    item['en'] = "UserName";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "newbubblediary_button_708687";
+    item['en'] = "登出";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "navbar_button_831261";
+    item['en'] = "登出";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "navbar_field_username_63158";
+    item['en'] = "UserName";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "newlogout_textcopy_289781";
+    item['en'] = "專屬您與朋友間的泡泡日記";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "newlogout_text_466357";
+    item['en'] = "YOLO X 憂樂日記";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "newloginandregister_textcopy_154351";
+    item['en'] = "專屬您與朋友間的泡泡日記";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "newloginandregister_text_174474";
+    item['en'] = "YOLO X 憂樂日記";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "newforgetpassword_textcopy_651338";
+    item['en'] = "專屬您與朋友間的泡泡日記";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "newforgetpassword_text_831062";
+    item['en'] = "YOLO X 憂樂日記";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "newregister_textcopy_300179";
+    item['en'] = "專屬您與朋友間的泡泡日記";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "newregister_text_990658";
+    item['en'] = "YOLO X 憂樂日記";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "newemailsent_textcopy_133302";
+    item['en'] = "專屬您與朋友間的泡泡日記";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "newemailsent_text_551205";
+    item['en'] = "YOLO X 憂樂日記";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "newhomepage01_textcopy_424822";
+    item['en'] = "專屬您與朋友間的泡泡日記";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "newhomepage01_text_247477";
+    item['en'] = "YOLO X 憂樂日記";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "newfirstupprofilepic_textcopy_859284";
+    item['en'] = "專屬您與朋友間的泡泡日記";
+    
+    item = {};
+    this.items.push(item);
+    item['key'] = "newfirstupprofilepic_text_296138";
+    item['en'] = "YOLO X 憂樂日記";
   }
 
   getStringsByLanguage = () => {
