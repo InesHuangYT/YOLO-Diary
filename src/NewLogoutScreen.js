@@ -1,21 +1,20 @@
 import React, { Component } from 'react';
 import './App.css';
-import img_elHomeBG from './images/NewHomepage01Screen_elHomeBG_666706.jpg';
-import img_elHomePageBubble from './images/NewHomepage01Screen_elHomePageBubble_520234.png';
+import img_elPBG from './images/NewFriendListScreen_elPBG_664556.png';
+import img_elLogoutBB from './images/NewLogoutScreen_elLogoutBB_1001938.png';
 
 // UI framework component imports
-import Button from 'muicss/lib/react/button';
 import Container from 'muicss/lib/react/container';
 
 
-export default class NewHomepage01Screen extends Component {
+export default class NewLogoutScreen extends Component {
 
   // Properties used by this component:
   // appActions, deviceInfo
 
-  onClick_elButtonNext = (ev) => {
-    // Go to screen 'NewFirstUpProfilePic'
-    this.props.appActions.goToScreen('newfirstupprofilepic', { transitionId: 'fadeIn' });
+  onClick_elButton_ReLogin = (ev) => {
+    // Go to screen 'NewLoginAndRegister'
+    this.props.appActions.goToScreen('newloginandregister', { transitionId: 'fadeIn' });
   
   }
   
@@ -38,26 +37,31 @@ export default class NewHomepage01Screen extends Component {
         height: '100%',
      };
     const style_background_outer = {
-        backgroundColor: 'white',
+        backgroundColor: '#fcffff',
         pointerEvents: 'none',
      };
-    const style_homeBG = {
-        height: 'auto',
-     };
-    const style_homeBG_outer = {
+    const style_PBG = {
+        backgroundImage: 'url('+img_elPBG+')',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: '50% 50%',
+        backgroundSize: 'cover',
         pointerEvents: 'none',
      };
-    const style_homePageBubble = {
-        height: 'auto',
+    const style_logoutBB = {
+        backgroundImage: 'url('+img_elLogoutBB+')',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: '50% 50%',
+        backgroundSize: 'cover',
      };
-    const style_homePageBubble_outer = {
+    const style_logoutBB_outer = {
         pointerEvents: 'none',
      };
-    const style_buttonNext = {
+    const style_button_ReLogin = {
         display: 'block',
-        textAlign: 'center',
+        backgroundColor: 'transparent',
+        textTransform: 'uppercase',
      };
-    const style_buttonNext_outer = {
+    const style_button_ReLogin_outer = {
         cursor: 'pointer',
      };
     const style_card = {
@@ -83,29 +87,23 @@ export default class NewHomepage01Screen extends Component {
      };
     
     return (
-      <Container fluid={true} className="AppScreen NewHomepage01Screen" style={baseStyle}>
+      <Container fluid={true} className="AppScreen NewLogoutScreen" style={baseStyle}>
         <div className="background">
-          <div className='elBackground' style={style_background_outer}>
+          <div className='appBg containerMinHeight elBackground' style={style_background_outer}>
             <div style={style_background} />
           
           </div>
           
+          <div className='elPBG' style={style_PBG} />
         </div>
         <div className="layoutFlow" style={layoutFlowStyle}>
-          <div className='elHomeBG' style={style_homeBG_outer}>
-            <img style={style_homeBG} src={img_elHomeBG} alt=""  />
+          <div className='elLogoutBB' style={style_logoutBB_outer}>
+            <div style={style_logoutBB} />
           
           </div>
           
-          <div className='elHomePageBubble' style={style_homePageBubble_outer}>
-            <img style={style_homePageBubble} src={img_elHomePageBubble} alt=""  />
-          
-          </div>
-          
-          <div className='actionFont elButtonNext' style={style_buttonNext_outer}>
-            <Button style={style_buttonNext}  color="accent" onClick={this.onClick_elButtonNext} >
-              {this.props.locStrings.newhomepage01_button_55047}
-            </Button>
+          <div className='actionFont elButton_ReLogin' style={style_button_ReLogin_outer}>
+            <div style={style_button_ReLogin}  onClick={this.onClick_elButton_ReLogin}  />
           
           </div>
           
@@ -118,10 +116,10 @@ export default class NewHomepage01Screen extends Component {
             </div>
             
             <div className='font-arialRoundedMTBold  elTextCopy' style={style_textCopy}>
-              <div>{this.props.locStrings.newhomepage01_textcopy_424822}</div>
+              <div>{this.props.locStrings.newlogout_textcopy_289781}</div>
             </div>
             <div className='font-arialRoundedMTBold  elText' style={style_text}>
-              <div>{this.props.locStrings.newhomepage01_text_247477}</div>
+              <div>{this.props.locStrings.newlogout_text_466357}</div>
             </div>
           </div>
         </div>
