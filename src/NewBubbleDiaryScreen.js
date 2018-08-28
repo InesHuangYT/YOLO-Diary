@@ -19,7 +19,7 @@ export default class NewBubbleDiaryScreen extends Component {
     this.props.appActions.goToScreen('newtutorcreatebb', { transitionId: 'fadeIn' });
   
   }
-  
+  //
   
   render() {
     // eslint-disable-next-line no-unused-vars
