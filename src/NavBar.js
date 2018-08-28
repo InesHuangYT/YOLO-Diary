@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
+import setAuthorizationToken from './util/APIUtils';
+
 
 // UI framework component imports
 import Input from 'muicss/lib/react/input';
@@ -19,6 +21,8 @@ export default class NavBar extends Component {
 
   onClick_elButton = (ev) => {
     // Go to screen 'NewLogout'
+    sessionStorage.removeItem('accesstoken');
+    setAuthorizationToken(false);
     this.props.appActions.goToScreen('newlogout', { transitionId: 'fadeIn' });
   
   }
