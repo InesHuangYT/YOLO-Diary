@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import setAuthorizationToken from './util/APIUtils';
 
-
+import axios from 'axios';
 // UI framework component imports
 import Input from 'muicss/lib/react/input';
 
@@ -13,10 +13,18 @@ export default class NavBar extends Component {
 
   constructor(props) {
     super(props);
-    
     this.state = {
-      field_UserName: '',
-    };
+       field_UserName: '',
+     };
+    let _this = this;
+    axios.get('/api/user/me').then(res => {
+      // console.log(res);
+      // console.log(res.data);
+      console.log(res.data.username);
+      //console.log(res.data.field_UserName);
+      _this.setState({field_UserName :res.data.username});
+    });
+
   }
 
   onClick_elButton = (ev) => {
@@ -26,10 +34,12 @@ export default class NavBar extends Component {
     this.props.appActions.goToScreen('newlogout', { transitionId: 'fadeIn' });
   
   }
-  
+    componentDidMount(){
+    
+  }
   
   textInputChanged_field_UserName = (event) => {
-    this.setState({field_UserName: event.target.value});
+    // this.setState({field_UserName: event.target.value});
   }
   
   onClick_elButton_profile = (ev) => {
@@ -128,7 +138,7 @@ export default class NavBar extends Component {
           <button className='headlineFont elButton' style={style_button}  onClick={this.onClick_elButton} >
             {this.props.locStrings.navbar_button_831261}
           </button>
-          <Input className='headlineFont elField_UserName' style={style_field_UserName} type="text" hint={this.props.locStrings.navbar_field_username_63158} onChange={this.textInputChanged_field_UserName} defaultValue={this.state.field_UserName}  />
+          <Input className='headlineFont elField_UserName' style={style_field_UserName} type='text' hint={this.props.locStrings.navbar_field_username_63158} onChange={this.textInputChanged_field_UserName} value = {this.state.field_UserName}  />
           <button className='headlineFont elButton_profile' style={style_button_profile}  onClick={this.onClick_elButton_profile} >
             {this.props.locStrings.comp1_button_profile_537669}
           </button>
