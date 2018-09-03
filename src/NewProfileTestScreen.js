@@ -9,6 +9,7 @@ import PMenu from './PMenu';
 import Input from 'muicss/lib/react/input';
 import Button from 'muicss/lib/react/button';
 import Container from 'muicss/lib/react/container';
+import axios from 'axios';
 
 
 export default class NewProfileTestScreen extends Component {
@@ -23,14 +24,21 @@ export default class NewProfileTestScreen extends Component {
       field_email: '',
       field_username: '',
     };
+    let _this = this;
+    axios.get('/api/user/usernameEmail').then(res => {
+      console.log(res.data.username);
+      console.log(res.data.email);
+      _this.setState({field_email:res.data.email});
+      _this.setState({field_username:res.data.username});
+    });
   }
 
   textInputChanged_field_email = (event) => {
-    this.setState({field_email: event.target.value});
+    //this.setState({field_email: event.target.value});
   }
   
   textInputChanged_field_username = (event) => {
-    this.setState({field_username: event.target.value});
+    //this.setState({field_username: event.target.value});
   }
   
   render() {
@@ -122,12 +130,12 @@ export default class NewProfileTestScreen extends Component {
           </div>
           
           <div className='elField_email'>
-            <Input style={style_field_email} type="text" hint={this.props.locStrings.profile3_field_929500} onChange={this.textInputChanged_field_email} defaultValue={this.state.field_email}  />
+            <Input style={style_field_email} type="text" hint={this.props.locStrings.profile3_field_929500} onChange={this.textInputChanged_field_email} value={this.state.field_email}  />
           
           </div>
           
           <div className='elField_username'>
-            <Input style={style_field_username} type="text" hint={this.props.locStrings.profile3_fieldcopy_687629} onChange={this.textInputChanged_field_username} defaultValue={this.state.field_username}  />
+            <Input style={style_field_username} type="text" hint={this.props.locStrings.profile3_fieldcopy_687629} onChange={this.textInputChanged_field_username} value={this.state.field_username}  />
           
           </div>
           
