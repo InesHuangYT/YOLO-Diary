@@ -47,9 +47,9 @@ export default class NewCreateBBScreen extends Component {
   });
 
 
-  const diary = {
-    text : this.state.textarea
-  }
+  // const diary = {
+  //   text : this.state.textarea
+  // }
   Axios.post('/api/diary/1' ,diary)
   .then(res => {
     console.log(res);
