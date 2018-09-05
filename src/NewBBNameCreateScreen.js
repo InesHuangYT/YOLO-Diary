@@ -9,6 +9,7 @@ import img_elDGCreateName from './images/NewBBNameCreateScreen_elDGCreateName_10
 import Input from 'muicss/lib/react/input';
 import Button from 'muicss/lib/react/button';
 import Container from 'muicss/lib/react/container';
+import axios from 'axios';
 
 
 export default class NewBBNameCreateScreen extends Component {
@@ -30,7 +31,16 @@ export default class NewBBNameCreateScreen extends Component {
   
   onClick_elButton_Next = (ev) => {
     this.sendData_button_Next_to_listData1();
-  
+    const album = {
+      name : this.state.field
+    }
+ 
+    axios.post('/api/album',album)
+    .then(res => {
+      console.log(res);
+    }).catch(function(error){
+      alert("Wrong albumName");
+    });
     // Go to screen 'NewTutorCreateBB'
     this.props.appActions.goToScreen('newtutorcreatebb', { transitionId: 'fadeIn' });
   
