@@ -60,7 +60,7 @@ export default class App extends Component {
     this.updateLocalizationFromDataSheet(this.dataSheets['localizationSheet']);
 
     this.state = {
-      currentScreen: 'newbubblediary',
+      currentScreen: 'newloginandregister',
       currentScreenProps: {},
       screenFormatId: '',
       screenTransitionForward: true,
