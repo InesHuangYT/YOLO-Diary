@@ -107,7 +107,7 @@ export default class NewCreateBBScreen extends Component {
 //     }
 //   }
   
-  
+  }
   render() {
     // eslint-disable-next-line no-unused-vars
     let baseStyle = {};
