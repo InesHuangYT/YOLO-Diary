@@ -5,10 +5,66 @@ import img_elUpProfilePic from './images/NewFirstUpProfilePicScreen_elUpProfileP
 
 // UI framework component imports
 import Container from 'muicss/lib/react/container';
+import './UploadPic.css';
 
 
 export default class NewFirstUpProfilePicScreen extends Component {
 
+  state = {
+        
+    path: '',
+    preview: null,
+    data: null
+}
+changePath = (e) => {
+  const file = e.target.files[0];
+  if (!file) {
+      console.log('未選擇圖片');
+      return;
+  // Properties used by this component:
+  // appActions, deviceInfo
+  }
+  let src,preview,type=file.type;
+  if (/^image\/\S+$/.test(type)) {
+    src = URL.createObjectURL(file)
+    preview = <img src={src} style={{width:'275px',height:'168px'}} alt='' />
+
+}
+else if (/^text\/\S+$/.test(type)) {
+  const self = this;
+  const reader = new FileReader();
+  reader.readAsText(file);
+  reader.onload = function (e) {
+      preview = <textarea value={this.result} readOnly></textarea>
+      self.setState({ data: file, preview: preview })
+  }
+  return;
+} 
+
+this.setState({ data: file, preview: preview })
+}
+upload = () => {
+        
+  const data = this.state.data;
+  if (!data) {
+      console.log('未選擇文件');
+      return;
+  }
+
+ 
+  const url = 'http://localhost:3000/api/upload';
+  const form = new FormData();
+
+  
+  form.append('file', data);
+
+  fetch(url, {
+      method: 'POST',
+      body: form
+  }).then(res => {
+      console.log(res)
+  })
+}
   // Properties used by this component:
   // appActions, deviceInfo
 
@@ -25,6 +81,7 @@ export default class NewFirstUpProfilePicScreen extends Component {
   
   
   render() {
+    const { preview } = this.state;
     // eslint-disable-next-line no-unused-vars
     let baseStyle = {};
     // eslint-disable-next-line no-unused-vars
@@ -122,20 +179,42 @@ export default class NewFirstUpProfilePicScreen extends Component {
             <div style={style_button_comfirm}  onClick={this.onClick_elButton_comfirm}  />
           
           </div>
-          
+        
           <div className='actionFont elButton_UploadPic' style={style_button_UploadPic_outer}>
-            <div style={style_button_UploadPic}  onClick={this.onClick_elButton_UploadPic}  />
+         
           
+          <div className='box-upload-icon'>
+          <div className = "box-upload-image">
+                {preview}
+                </div>
+          <i className="upload-icon" >
+          
+              <input className='input-img' type='file' accept='image/*' onChange={this.changePath} />
+             
+            </i>
+            
+            </div>
+           
+           
+            
+          
+          
+              
+            
           </div>
           
         </div>
+       
         <div className="screenFgContainer">
           <div className="foreground">
+
+
             <div className='cardBg elCard' style={style_card_outer}>
-              <div style={style_card} />
-            
+           
+      
             </div>
-            
+           
+                
             <div className='font-arialRoundedMTBold  elTextCopy' style={style_textCopy}>
               <div>{this.props.locStrings.newfirstupprofilepic_textcopy_859284}</div>
             </div>
@@ -144,6 +223,7 @@ export default class NewFirstUpProfilePicScreen extends Component {
             </div>
           </div>
         </div>
+     
       </Container>
     )
   }
