@@ -34,10 +34,7 @@ export default class NavBar extends Component {
     this.props.appActions.goToScreen('newlogout', { transitionId: 'fadeIn' });
   
   }
-    componentDidMount(){
     
-  }
-  
   textInputChanged_field_UserName = (event) => {
     // this.setState({field_UserName: event.target.value});
   }

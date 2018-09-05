@@ -52,12 +52,22 @@ export default class NewCreateBBScreen extends Component {
   }
   
   textAreaChanged_textarea = (event) => {
-    this.setState({textarea: event.target.value});
+     this.setState({textarea: event.target.value});
   }
   
   onClick_elButton_Complete = (ev) => {
     this.sendData_button_Complete_to_listData1();
-  
+    
+  const diary = {
+    text : this.state.textarea
+  }
+  Axios.post('/api/diary/1' ,diary)
+  .then(res => {
+    console.log(res);
+  }).catch(function(error){
+    alert("Wrong diary");
+  });
+
     // Go to screen 'NewFaceRec'
     this.props.appActions.goToScreen('newfacerec', { transitionId: 'fadeIn' });
   
