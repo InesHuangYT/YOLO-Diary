@@ -24,7 +24,7 @@ export default class NewProfileTestScreen extends Component {
       field_email: '',
       field_username: '',
     };
-    let _this = this;
+    let _this = this; //要另外建立一個this
     axios.get('/api/user/usernameEmail').then(res => {
       console.log(res.data.username);
       console.log(res.data.email);
