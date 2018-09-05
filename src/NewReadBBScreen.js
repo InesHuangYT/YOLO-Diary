@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 import NavBar from './NavBar';
-import img_elBubbleDiaryBG from './images/NewHomeNotificationScreen_elBubbleDiaryBG_199962.jpg';
-import img_elMainBubble from './images/NewReadBBScreen_elMainBubble_223100.png';
-import img_elUserBubble from './images/NewReadBBScreen_elMainBubble_223100.png';
+import img_elBubbleDiaryBG from './images/NewUserDiaryScreen_elBubbleDiaryBG_737342.jpg';
+import img_elMainBubble from './images/ListItem2_elUserBubble_312326.png';
+import ListItem2 from './ListItem2';
 
 // UI framework component imports
 import Input from 'muicss/lib/react/input';
@@ -28,13 +28,6 @@ export default class NewReadBBScreen extends Component {
     this.setState({field: event.target.value});
   }
   
-  onClick_elUserBubble = (ev) => {
-    // Go to screen 'NewUserDiary'
-    this.props.appActions.goToScreen('newuserdiary', { transitionId: 'fadeIn' });
-  
-  }
-  
-  
   onClick_elButton_back = (ev) => {
     // Go back in screen navigation history
     this.props.appActions.goBack();
@@ -55,6 +48,7 @@ export default class NewReadBBScreen extends Component {
       layoutFlowStyle.overflow = 'hidden';
     }
     
+    const dataSheet_listUserBubble = this.props.dataSheets['listUserBubble'];
     const style_background = {
         width: '100%',
         height: '100%',
@@ -83,12 +77,6 @@ export default class NewReadBBScreen extends Component {
      };
     const value_field = this.props.dataSheetRow ? this.props.dataSheetRow.field : '';
     
-    const style_userBubble = {
-        height: 'auto',
-     };
-    const style_userBubble_outer = {
-        cursor: 'pointer',
-     };
     const style_button_back = {
         display: 'block',
         textAlign: 'center',
@@ -96,6 +84,19 @@ export default class NewReadBBScreen extends Component {
     const style_button_back_outer = {
         cursor: 'pointer',
      };
+    const style_diaryPhoto_outer = {
+        backgroundColor: 'white',
+        boxShadow: '0.0px 1.8px 14px rgba(0, 0, 0, 0.1600)',
+        pointerEvents: 'none',
+     };
+    const style_list = {
+        height: 'auto',  // This element is in scroll flow
+     };
+    // Source items and any special components used for list/grid element 'list'.
+    let items_list = [];
+    let listComps_list = {};
+    items_list = items_list.concat(this.props.appActions.getDataSheet('listUserBubble').items);
+    
     
     return (
       <Container fluid={true} className="AppScreen NewReadBBScreen" style={baseStyle}>
@@ -129,15 +130,30 @@ export default class NewReadBBScreen extends Component {
           
           </div>
           
-          <div className='elUserBubble' style={style_userBubble_outer}>
-            <img style={style_userBubble} src={img_elUserBubble} alt="" onClick={this.onClick_elUserBubble}  />
-          
-          </div>
-          
           <div className='actionFont elButton_back' style={style_button_back_outer}>
             <Button style={style_button_back}  color="accent" onClick={this.onClick_elButton_back} >
               {this.props.locStrings.newreadbb_button_703594}
             </Button>
+          
+          </div>
+          
+          <div className='cardBg elDiaryPhoto' style={style_diaryPhoto_outer}>
+            <div />
+          
+          </div>
+          
+          <div className='hasNestedComps elList'>
+            <div style={style_list}>
+              {items_list.map((row, index) => {
+                let itemClasses = `gridItem cols5_${index % 5}`;
+                let itemComp = (row._componentId) ? listComps_list[row._componentId] : <ListItem2 dataSheetId={'listUserBubble'} dataSheetRow={row} appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} />;
+                return (
+                  <div className={itemClasses} key={row.key}>
+                    {itemComp}
+                  </div>
+                )
+              })}
+            </div>
           
           </div>
           

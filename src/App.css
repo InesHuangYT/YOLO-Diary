@@ -1089,7 +1089,7 @@
     border-radius: 10px;
     width: 464px;
     height: 400px;
-    opacity: 0.75;
+    opacity: 0.85;
   }
   
 
@@ -1350,7 +1350,7 @@
   
 
 
-  .NewCreateBBScreen > .layoutFlow > .elField {
+  /* .NewCreateBBScreen > .layoutFlow > .elField {
     position: relative;
     margin-top: -300px;
     width: 462px;
@@ -1363,7 +1363,7 @@
   width: 462px;
   height: 30px;
   
-  }
+  } */
   
 
 
@@ -1382,7 +1382,7 @@
   border-radius: 10px;
   width: 464px;
   height: 400px;
-  opacity: 0.75;
+  opacity: 0.85;
   
   }
   
@@ -2016,6 +2016,110 @@
   height: 215px;
   }
   
+  .NewBBNameCreateScreen {
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  
+  
+    .NewBBNameCreateScreen > .background > .elBackground {
+      position: absolute;
+      left: 0px;
+      right: 0px;
+      top: 0px;
+      width: 100%;
+      height: 899px;
+    }
+  
+  
+    .NewBBNameCreateScreen > .layoutFlow > .elNavBar2 {
+      position: relative;
+      margin-top: -2px;
+      width: 1607px;
+      margin-left: 0px;
+    }
+    .NewBBNameCreateScreen > .layoutFlow > .elNavBar2 > * { 
+    width: 1607px;
+    height: 90px;
+    }
+    
+    .NewBBNameCreateScreen > .layoutFlow > .elNavBar2 > .background > .containerMinHeight {
+      min-height: 90px;
+    }
+  
+  
+  
+    .NewBBNameCreateScreen > .layoutFlow > .elBubbleDiaryBG {
+      position: relative;
+      margin-top: 16px;
+      width: 1602px;
+      margin-left: 0px;
+    }
+    .NewBBNameCreateScreen > .layoutFlow > .elBubbleDiaryBG > * { 
+    width: 1602px;
+    height: 709px;
+    }
+    
+  
+  
+    .NewBBNameCreateScreen > .layoutFlow > .elBubble2 {
+      position: relative;
+      margin-top: -494px;
+      width: 354px;
+      margin-left: 325px;
+    }
+    .NewBBNameCreateScreen > .layoutFlow > .elBubble2 > * { 
+    width: 354px;
+    height: 354px;
+    }
+    
+  
+  
+    .NewBBNameCreateScreen > .layoutFlow > .elDGCreateName {
+      position: relative;
+      margin-top: -568px;
+      width: 457px;
+      margin-left: 617px;
+    }
+    .NewBBNameCreateScreen > .layoutFlow > .elDGCreateName > * { 
+    width: 457px;
+    height: 319px;
+    }
+    
+  
+  
+    .NewBBNameCreateScreen > .layoutFlow > .elField {
+      position: relative;
+      margin-top: 70px;
+      width: 256px;
+      margin-left: 376px;
+    }
+    .NewBBNameCreateScreen > .layoutFlow > .elField > * { 
+    width: 256px;
+    height: 41px;
+    }
+    
+  
+  .NewBBNameCreateScreen .elButton_Next button {
+    border: 0.0px solid transparent;
+  }
+  
+  
+  
+    .NewBBNameCreateScreen > .layoutFlow > .elButton_Next {
+      line-height: 27px;
+      position: relative;
+      margin-top: 164px;
+      width: 113px;
+      margin-left: 975px;
+    }
+    .NewBBNameCreateScreen > .layoutFlow > .elButton_Next > * { 
+    width: 113px;
+    height: 27px;
+    }
+    
 
 /* This component has a fixed-size layout */
   .ListItem1 {
