@@ -13,8 +13,8 @@ export default class NewFirstUpProfilePicScreen extends Component {
   // appActions, deviceInfo
 
   onClick_elButton_comfirm = (ev) => {
-    // Go to screen 'NewBubbleDiary'
-    this.props.appActions.goToScreen('newbubblediary', { transitionId: 'fadeIn' });
+    // Go to screen 'NewEmailsent'
+    this.props.appActions.goToScreen('newemailsent', { transitionId: 'fadeIn' });
   
   }
   
