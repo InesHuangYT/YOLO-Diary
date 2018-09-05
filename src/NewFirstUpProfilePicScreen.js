@@ -1,20 +1,81 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import './App.css';
 import img_elHomeBG from './images/NewEmailSentScreen_elHomeBG_1012260.jpg';
 import img_elUpProfilePic from './images/NewFirstUpProfilePicScreen_elUpProfilePic_850626.png';
 
 // UI framework component imports
 import Container from 'muicss/lib/react/container';
+import './UploadPic.css';
 
 
 export default class NewFirstUpProfilePicScreen extends Component {
 
+  state = {
+        
+    path: '',
+    preview: null,
+    data: null,
+    form: null,
+    config: null
+}
+changePath = (e) => {
+  const file = e.target.files[0];
+  console.log(file.name)
+  console.log(file)
+  console.log("**********************")
+
+  if (!file) {
+      console.log('未選擇圖片');
+      return;
+  // Properties used by this component:
+  // appActions, deviceInfo
+  }
+  let src,preview,type=file.type;
+  if (/^image\/\S+$/.test(type)) {
+    src = URL.createObjectURL(file)
+    preview = <img src={src} style={{width:'275px',height:'168px'}} alt='' />
+
+
+    this.form = new FormData();
+    this.form.append('file', file);
+
+    this.config = {
+      headers: { 'content-type': 'multipart/form-data;boundary=gc0p4Jq0M2Yt08jU534c0p' }
+    }
+    
+    
+
+}
+else if (/^text\/\S+$/.test(type)) {
+  alert("Wrong File Type")
+  }
+
+this.setState({ data: file, preview: preview })
+}
+upload = () => {
+        
+  const data = this.state.data;
+  if (!data) {
+      console.log('未選擇文件');
+      return;
+  }
+
+}
   // Properties used by this component:
   // appActions, deviceInfo
 
   onClick_elButton_comfirm = (ev) => {
+    
+
+    axios.post('/api/selfie/uploadmany', this.form, this.config).then(res => {
+      console.log(res);
+      console.log(res.data);
+    })
     // Go to screen 'NewEmailsent'
     this.props.appActions.goToScreen('newemailsent', { transitionId: 'fadeIn' });
+
+
   
   }
   
@@ -25,6 +86,7 @@ export default class NewFirstUpProfilePicScreen extends Component {
   
   
   render() {
+    const { preview } = this.state;
     // eslint-disable-next-line no-unused-vars
     let baseStyle = {};
     // eslint-disable-next-line no-unused-vars
@@ -122,20 +184,42 @@ export default class NewFirstUpProfilePicScreen extends Component {
             <div style={style_button_comfirm}  onClick={this.onClick_elButton_comfirm}  />
           
           </div>
-          
+        
           <div className='actionFont elButton_UploadPic' style={style_button_UploadPic_outer}>
-            <div style={style_button_UploadPic}  onClick={this.onClick_elButton_UploadPic}  />
+         
           
+          <div className='box-upload-icon'>
+          <div className = "box-upload-image">
+                {preview}
+                </div>
+          <i className="upload-icon" >
+          
+              <input className='input-img' type='file' accept='image/*' onChange={this.changePath} />
+             
+            </i>
+            
+            </div>
+           
+           
+            
+          
+          
+              
+            
           </div>
           
         </div>
+       
         <div className="screenFgContainer">
           <div className="foreground">
+
+
             <div className='cardBg elCard' style={style_card_outer}>
-              <div style={style_card} />
-            
+           
+      
             </div>
-            
+           
+                
             <div className='font-arialRoundedMTBold  elTextCopy' style={style_textCopy}>
               <div>{this.props.locStrings.newfirstupprofilepic_textcopy_859284}</div>
             </div>
@@ -144,6 +228,7 @@ export default class NewFirstUpProfilePicScreen extends Component {
             </div>
           </div>
         </div>
+     
       </Container>
     )
   }
