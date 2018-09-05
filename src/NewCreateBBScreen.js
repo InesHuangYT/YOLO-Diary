@@ -6,10 +6,12 @@ import img_elOriDiaryBB from './images/NewCreateBBScreen_elOriDiaryBB_1024639.pn
 import img_elAddPicBB from './images/NewCreateBBScreen_elAddPicBB_474204.png';
 import img_elComplete from './images/NewCreateBBScreen_elComplete_945493.png';
 import UploadPic from './UploadPic.js';
+import Axios from 'axios';
 // UI framework component imports
 import Container from 'muicss/lib/react/container';
 import { Modal} from 'antd';
 import 'antd/dist/antd.css';
+
 //import './UploadPic.css';
 
 export default class NewCreateBBScreen extends Component {

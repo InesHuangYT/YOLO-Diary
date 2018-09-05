@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import './App.css';
 import img_elHomeBG from './images/NewEmailSentScreen_elHomeBG_1012260.jpg';
 import img_elUpProfilePic from './images/NewFirstUpProfilePicScreen_elUpProfilePic_850626.png';
@@ -14,10 +15,16 @@ export default class NewFirstUpProfilePicScreen extends Component {
         
     path: '',
     preview: null,
-    data: null
+    data: null,
+    form: null,
+    config: null
 }
 changePath = (e) => {
   const file = e.target.files[0];
+  console.log(file.name)
+  console.log(file)
+  console.log("**********************")
+
   if (!file) {
       console.log('未選擇圖片');
       return;
@@ -29,17 +36,20 @@ changePath = (e) => {
     src = URL.createObjectURL(file)
     preview = <img src={src} style={{width:'275px',height:'168px'}} alt='' />
 
+
+    this.form = new FormData();
+    this.form.append('file', file);
+
+    this.config = {
+      headers: { 'content-type': 'multipart/form-data;boundary=gc0p4Jq0M2Yt08jU534c0p' }
+    }
+    
+    
+
 }
 else if (/^text\/\S+$/.test(type)) {
-  const self = this;
-  const reader = new FileReader();
-  reader.readAsText(file);
-  reader.onload = function (e) {
-      preview = <textarea value={this.result} readOnly></textarea>
-      self.setState({ data: file, preview: preview })
+  alert("Wrong File Type")
   }
-  return;
-} 
 
 this.setState({ data: file, preview: preview })
 }
@@ -51,24 +61,17 @@ upload = () => {
       return;
   }
 
- 
-  const url = 'http://localhost:3000/api/upload';
-  const form = new FormData();
-
-  
-  form.append('file', data);
-
-  fetch(url, {
-      method: 'POST',
-      body: form
-  }).then(res => {
-      console.log(res)
-  })
 }
   // Properties used by this component:
   // appActions, deviceInfo
 
   onClick_elButton_comfirm = (ev) => {
+
+    axios.post('/api/selfie/uploadmany', this.form, this.config).then(res => {
+      console.log(res);
+      console.log(res.data);
+    })
+
     // Go to screen 'NewBubbleDiary'
     this.props.appActions.goToScreen('newbubblediary', { transitionId: 'fadeIn' });
   
