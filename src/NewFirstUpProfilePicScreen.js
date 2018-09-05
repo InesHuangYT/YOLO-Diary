@@ -66,14 +66,16 @@ upload = () => {
   // appActions, deviceInfo
 
   onClick_elButton_comfirm = (ev) => {
+    
 
     axios.post('/api/selfie/uploadmany', this.form, this.config).then(res => {
       console.log(res);
       console.log(res.data);
     })
+    // Go to screen 'NewEmailsent'
+    this.props.appActions.goToScreen('newemailsent', { transitionId: 'fadeIn' });
 
-    // Go to screen 'NewBubbleDiary'
-    this.props.appActions.goToScreen('newbubblediary', { transitionId: 'fadeIn' });
+
   
   }
   

@@ -11,6 +11,7 @@ import NewCreateBBScreen from './NewCreateBBScreen.js';
 import NewUserDiaryScreen from './NewUserDiaryScreen.js';
 import NewTutorCreateBBScreen from './NewTutorCreateBBScreen.js';
 import NewReadBBScreen from './NewReadBBScreen.js';
+import NewBBNameCreateScreen from './NewBBNameCreateScreen.js';
 import NewBubbleDiaryScreen from './NewBubbleDiaryScreen.js';
 import NewEmailSentScreen from './NewEmailSentScreen.js';
 import NewFirstUpProfilePicScreen from './NewFirstUpProfilePicScreen.js';
@@ -234,6 +235,8 @@ export default class App extends Component {
           return (<NewTutorCreateBBScreen {...screenProps} />)
         case 'newreadbb':
           return (<NewReadBBScreen {...screenProps} />)
+        case 'newbbnamecreate':
+          return (<NewBBNameCreateScreen {...screenProps} />)
         case 'newbubblediary':
           return (<NewBubbleDiaryScreen {...screenProps} />)
         case 'newemailsent':

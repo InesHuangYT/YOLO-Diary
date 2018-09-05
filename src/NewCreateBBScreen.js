@@ -8,6 +8,7 @@ import img_elComplete from './images/NewCreateBBScreen_elComplete_945493.png';
 import UploadPic from './UploadPic.js';
 import Axios from 'axios';
 // UI framework component imports
+import Textarea from 'muicss/lib/react/textarea';
 import Container from 'muicss/lib/react/container';
 import { Modal} from 'antd';
 import 'antd/dist/antd.css';
@@ -15,6 +16,8 @@ import 'antd/dist/antd.css';
 //import './UploadPic.css';
 import axios from 'axios';
 
+import { Input } from 'antd';
+import 'antd/dist/antd.css';
 
 export default class NewCreateBBScreen extends Component {
 
@@ -25,7 +28,7 @@ export default class NewCreateBBScreen extends Component {
     super(props);
     
     this.state = {
-      field: '',
+      //field: '',
       textarea: '',
     };
   }
@@ -51,19 +54,19 @@ export default class NewCreateBBScreen extends Component {
     });
   }
 
-  textInputChanged_field = (event) => {
-    this.setState({field: event.target.value});
-  }
+//  textInputChanged_field = (event) => {
+//    this.setState({field: event.target.value});
+//  }
   
   textAreaChanged_textarea = (event) => {
      this.setState({textarea: event.target.value});
   }
   
   onClick_elButton_Complete = (ev) => {
+
     this.sendData_button_Complete_to_listData1();
 
-
-  const diary = {
+    const diary = {
     text : this.state.textarea
   }
 
@@ -80,6 +83,8 @@ export default class NewCreateBBScreen extends Component {
   }
   
   
+//  sendData_button_Complete_to_listData1 = () => {
+//    const dataSheet = this.props.appActions.getDataSheet('listData1');
   onClick_elAddPic = (ev) => {
   
   }
@@ -88,19 +93,19 @@ export default class NewCreateBBScreen extends Component {
   sendData_button_Complete_to_listData1 = () => {
     const dataSheet = this.props.appActions.getDataSheet('listData1');
   
-    let row = this.props.dataSheetRow || {
-    };
-    row = { ...row, 
-      textarea: this.state.textarea,
-      field: this.state.field,
-      image: this.state.image,
-    };
-    if (this.props.dataSheetId === dataSheet.id) {
-      this.props.appActions.updateInDataSheet('listData1', row);
-    } else {
-      this.props.appActions.addToDataSheet('listData1', row);
-    }
-  }
+//    let row = this.props.dataSheetRow || {
+//    };
+//    row = { ...row, 
+//      textarea: this.state.textarea,
+//      field: this.state.field,
+//      image: this.state.image,
+//     };
+//     if (this.props.dataSheetId === dataSheet.id) {
+//       this.props.appActions.updateInDataSheet('listData1', row);
+//     } else {
+//       this.props.appActions.addToDataSheet('listData1', row);
+//     }
+//   }
   
   
   render() {
@@ -145,18 +150,18 @@ export default class NewCreateBBScreen extends Component {
     const style_addPicBB_outer = {
         pointerEvents: 'none',
      };
-    const style_field = {
-        display: 'block',
-        backgroundColor: 'white',
-        paddingLeft: '1rem',
-        boxSizing: 'border-box', // ensures padding won't expand element's outer size
-     };
-    const style_textarea = {
-        display: 'block',
-        backgroundColor: 'white',
-        paddingLeft: '1rem',
-        boxSizing: 'border-box', // ensures padding won't expand element's outer size
-     };
+     const style_field = {
+      display: 'block',
+      //boxSizing: 'border-box'
+   };
+  const style_textarea = {
+      display: 'block',
+    
+      //boxSizing: 'border-box'
+   };
+  const { TextArea } = Input;
+   
+  
     const style_complete = {
         height: 'auto',
      };
@@ -182,6 +187,16 @@ export default class NewCreateBBScreen extends Component {
         cursor: 'pointer',
      };
     
+    const style_text = {
+      fontSize: 16.8,
+      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif',
+      color: 'rgba(0, 0, 0, 0.8500)',
+      textAlign: 'left',
+     };
+    const style_text_outer = {
+      pointerEvents: 'none',
+     };
+  
     return (
       <Container fluid={true} className="AppScreen NewCreateBBScreen" style={baseStyle}>
         <div className="background">
@@ -214,13 +229,14 @@ export default class NewCreateBBScreen extends Component {
           
           </div>
           
-          <div className='baseFont elField'>
-            <input style={style_field} type="text" placeholder={this.props.locStrings.寫下內容吧} onChange={this.textInputChanged_field} defaultValue={this.state.field}  />
+          {/* <div className='baseFont elField'>
+            <Input style={style_field} type="text" hint={this.props.locStrings.寫下內容吧} onChange={this.textInputChanged_field} defaultValue={this.state.field}  />
           
-          </div>
+          </div> */}
           
           <div className='baseFont elTextarea'>
-            <textarea style={style_textarea}  placeholder={this.props.locStrings.newcreatebb_textarea_581227} onChange={this.textAreaChanged_textarea} defaultValue={this.state.textarea}  />
+      
+            <TextArea  placeholder={this.props.locStrings.newcreatebb_textarea_581227} onChange={this.textAreaChanged_textarea} defaultValue={this.state.textarea } />
           
           </div>
           
@@ -231,6 +247,13 @@ export default class NewCreateBBScreen extends Component {
           
           <div className='actionFont elButton_Complete' style={style_button_Complete_outer}>
             <div style={style_button_Complete}  onClick={this.onClick_elButton_Complete}  />
+          
+          </div>
+          
+          <div className='elText' style={style_text_outer}>
+            <div style={style_text}>
+              <div>{this.props.locStrings.newcreatebb_text_16559}</div>
+            </div>
           
           </div>
           

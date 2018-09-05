@@ -8,8 +8,8 @@ export default class Addbubble extends Component {
   // This component doesn't use any properties
 
   onClick_elButton_AddBubble = (ev) => {
-    // Go to screen 'NewTutorCreateBB'
-    this.props.appActions.goToScreen('newtutorcreatebb', { transitionId: 'fadeIn' });
+    // Go to screen 'NewBBNameCreate'
+    this.props.appActions.goToScreen('newbbnamecreate', { transitionId: 'fadeIn' });
   
   }
   

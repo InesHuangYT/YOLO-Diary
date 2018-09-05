@@ -8,7 +8,8 @@ import img_elAddPicBB from './images/NewCreateBBScreen_elAddPicBB_474204.png';
 // UI framework component imports
 import Button from 'muicss/lib/react/button';
 import Container from 'muicss/lib/react/container';
-
+import { Input } from 'antd';
+import 'antd/dist/antd.css';
 
 export default class NewUserDiaryScreen extends Component {
 
@@ -81,20 +82,21 @@ export default class NewUserDiaryScreen extends Component {
     const style_addPicBB_outer = {
         pointerEvents: 'none',
      };
-    const style_field = {
-        display: 'block',
-        backgroundColor: 'white',
-        paddingLeft: '1rem',
-        boxSizing: 'border-box', // ensures padding won't expand element's outer size
-     };
-    const value_field = this.props.field;
-    
-    const style_textarea = {
-        display: 'block',
-        backgroundColor: 'white',
-        paddingLeft: '1rem',
-        boxSizing: 'border-box', // ensures padding won't expand element's outer size
-     };
+     const style_field = {
+      display: 'block',
+     // backgroundColor: 'white',
+     // paddingLeft: '1rem',
+     // boxSizing: 'border-box', // ensures padding won't expand element's outer size
+   };
+  const value_field = this.props.field;
+  
+  const style_textarea = {
+      display: 'block',
+    //  backgroundColor: 'white',
+    //  paddingLeft: '1rem',
+    //  boxSizing: 'border-box', // ensures padding won't expand element's outer size
+   };
+  const { TextArea } = Input;
     const value_textarea = this.props.textarea;
     
     const style_button_OK = {
@@ -138,12 +140,12 @@ export default class NewUserDiaryScreen extends Component {
           </div>
           
           <div className='baseFont elField'>
-            <input style={style_field} type="text" placeholder={this.props.locStrings.newcreatebb2_field_448413} onChange={this.textInputChanged_field} defaultValue={value_field !== undefined ? value_field : ''}  />
+            <Input style={style_field} type="text" placeholder={this.props.locStrings.newcreatebb2_field_448413} onChange={this.textInputChanged_field} defaultValue={value_field !== undefined ? value_field : ''}  />
           
           </div>
           
           <div className='baseFont elTextarea'>
-            <textarea style={style_textarea}  placeholder={this.props.locStrings.newcreatebb2_textarea_331665} onChange={this.textAreaChanged_textarea} defaultValue={value_textarea !== undefined ? value_textarea : ''}  />
+            <TextArea  placeholder={this.props.locStrings.newcreatebb2_textarea_331665} onChange={this.textAreaChanged_textarea} defaultValue={value_textarea !== undefined ? value_textarea : ''}  />
           
           </div>
           
