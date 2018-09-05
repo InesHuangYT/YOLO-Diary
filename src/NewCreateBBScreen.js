@@ -5,17 +5,20 @@ import img_elBubbleDiaryBG from './images/NewFaceRecScreen_elBubbleDiaryBG_53437
 import img_elOriDiaryBB from './images/NewCreateBBScreen_elOriDiaryBB_1024639.png';
 import img_elAddPicBB from './images/NewCreateBBScreen_elAddPicBB_474204.png';
 import img_elComplete from './images/NewCreateBBScreen_elComplete_945493.png';
-
+import UploadPic from './UploadPic.js';
 // UI framework component imports
 import Container from 'muicss/lib/react/container';
-import Axios from '../node_modules/axios';
+import { Modal} from 'antd';
+import 'antd/dist/antd.css';
+//import './UploadPic.css';
+import axios from 'axios';
 
 
 export default class NewCreateBBScreen extends Component {
 
   // Properties used by this component:
   // appActions, deviceInfo
-
+  state = { visible: false }
   constructor(props) {
     super(props);
     
@@ -23,6 +26,27 @@ export default class NewCreateBBScreen extends Component {
       field: '',
       textarea: '',
     };
+  }
+    
+  showModal = () => {
+    this.setState({
+      visible: true,
+    });
+  }
+  
+  
+  handleOk = (e) => {
+    console.log(e);
+    this.setState({
+      visible: false,
+    });
+  }
+
+  handleCancel = (e) => {
+    console.log(e);
+    this.setState({
+      visible: false,
+    });
   }
 
   textInputChanged_field = (event) => {
@@ -35,29 +59,26 @@ export default class NewCreateBBScreen extends Component {
   
   onClick_elButton_Complete = (ev) => {
     this.sendData_button_Complete_to_listData1();
+
+
   const diary = {
-    name : this.state.field
+    text : this.state.textarea
   }
 
-  Axios.post('/api/album',diary)
-  .then(res => {
-    console.log(res);
-  }).catch(function(error){
-    alert("Wrong input");
-  });
-
-
-  // const diary = {
-  //   text : this.state.textarea
-  // }
-  Axios.post('/api/diary/1' ,diary)
+  axios.post('/api/diary/1' ,diary)
   .then(res => {
     console.log(res);
   }).catch(function(error){
     alert("Wrong diary");
   });
+
     // Go to screen 'NewFaceRec'
     this.props.appActions.goToScreen('newfacerec', { transitionId: 'fadeIn' });
+  
+  }
+  
+  
+  onClick_elAddPic = (ev) => {
   
   }
   
@@ -148,6 +169,16 @@ export default class NewCreateBBScreen extends Component {
     const style_button_Complete_outer = {
         cursor: 'pointer',
      };
+    const style_addPic = {
+        display: 'block',
+        color: '#feffff',
+        textAlign: 'left',
+        backgroundColor: 'transparent',
+        textTransform: 'uppercase',
+     };
+    const style_addPic_outer = {
+        cursor: 'pointer',
+     };
     
     return (
       <Container fluid={true} className="AppScreen NewCreateBBScreen" style={baseStyle}>
@@ -201,6 +232,25 @@ export default class NewCreateBBScreen extends Component {
           
           </div>
           
+          <div className='actionFont elAddPic' style={style_addPic_outer}>
+            <button style={style_addPic}  onClick={this.showModal} >
+              {this.props.locStrings.newcreatebb_button_239952}
+       
+            </button>
+          
+            
+            <Modal
+          title="請選擇照片"
+          visible={this.state.visible}
+          onOk={this.handleOk}
+          onCancel={this.handleCancel}
+          width='1100px'
+          
+        >
+         <UploadPic/>
+        </Modal>
+         
+          </div>
         </div>
       </Container>
     )
