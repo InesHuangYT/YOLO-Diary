@@ -30,7 +30,7 @@ export default class NewCreateBBScreen extends Component {
   }
   
   textAreaChanged_textarea = (event) => {
-    this.setState({textarea: event.target.value});
+     this.setState({textarea: event.target.value});
   }
   
   onClick_elButton_Complete = (ev) => {
@@ -38,11 +38,23 @@ export default class NewCreateBBScreen extends Component {
   const diary = {
     name : this.state.field
   }
+
   Axios.post('/api/album',diary)
   .then(res => {
     console.log(res);
   }).catch(function(error){
     alert("Wrong input");
+  });
+
+
+  const diary = {
+    text : this.state.textarea
+  }
+  Axios.post('/api/diary/1' ,diary)
+  .then(res => {
+    console.log(res);
+  }).catch(function(error){
+    alert("Wrong diary");
   });
     // Go to screen 'NewFaceRec'
     this.props.appActions.goToScreen('newfacerec', { transitionId: 'fadeIn' });
