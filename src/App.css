@@ -1282,7 +1282,29 @@
   width: 119px;
   height: 36px;
   }
+  .NewCreateBBScreen .elAddPic button {
+    cursor: pointer;
+    border: 0.0px solid transparent;
+  }
   
+  .NewCreateBBScreen .elAddPic button:focus {
+    box-shadow: 0 0 6px rgba(254, 255, 255, 0.2500);
+    outline: none;
+  }
+  
+  
+  
+    .NewCreateBBScreen > .layoutFlow > .elAddPic {
+      line-height: 184px;
+      position: relative;
+      margin-top: -405px;
+      width: 191px;
+      margin-left: 275px;
+    }
+    .NewCreateBBScreen > .layoutFlow > .elAddPic > * { 
+    width: 191px;
+    height: 184px;
+    }
 
 /* This component has a fixed-size layout */
   .NavBar {
