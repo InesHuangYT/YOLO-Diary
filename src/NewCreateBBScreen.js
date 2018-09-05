@@ -13,6 +13,8 @@ import { Modal} from 'antd';
 import 'antd/dist/antd.css';
 
 //import './UploadPic.css';
+import axios from 'axios';
+
 
 export default class NewCreateBBScreen extends Component {
 
@@ -59,11 +61,13 @@ export default class NewCreateBBScreen extends Component {
   
   onClick_elButton_Complete = (ev) => {
     this.sendData_button_Complete_to_listData1();
-    
+
+
   const diary = {
     text : this.state.textarea
   }
-  Axios.post('/api/diary/1' ,diary)
+
+  axios.post('/api/diary/1' ,diary)
   .then(res => {
     console.log(res);
   }).catch(function(error){
