@@ -22,6 +22,7 @@ export default class NewBBNameCreateScreen extends Component {
     
     this.state = {
       field: '',
+      albumId:''
     };
   }
 
@@ -32,18 +33,19 @@ export default class NewBBNameCreateScreen extends Component {
   onClick_elButton_Next = (ev) => {
     this.sendData_button_Next_to_listData1();
     const album = {
-      name : this.state.field
-    }
- 
+      name : this.state.field,
+    } 
     axios.post('/api/album',album)
     .then(res => {
       console.log(res);
+      console.log(res.data.id);
+      this.albumId = res.data.id;
+      console.log(this.albumId);
     }).catch(function(error){
       alert("Wrong albumName");
     });
     // Go to screen 'NewTutorCreateBB'
     this.props.appActions.goToScreen('newtutorcreatebb', { transitionId: 'fadeIn' });
-  
   }
   
   
