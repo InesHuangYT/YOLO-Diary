@@ -18,7 +18,7 @@ import axios from 'axios';
 
 import { Input } from 'antd';
 import 'antd/dist/antd.css';
-
+import {newBBNameCreateScreen} from './NewBBNameCreateScreen.js';
 export default class NewCreateBBScreen extends Component {
 
   // Properties used by this component:
@@ -30,16 +30,17 @@ export default class NewCreateBBScreen extends Component {
     this.state = {
       //field: '',
       textarea: '',
+      albumid:'2'
     };
   }
-    
+  
   showModal = () => {
     this.setState({
       visible: true,
     });
   }
   
-  
+ 
   handleOk = (e) => {
     console.log(e);
     this.setState({
@@ -53,6 +54,7 @@ export default class NewCreateBBScreen extends Component {
       visible: false,
     });
   }
+  
 
 //  textInputChanged_field = (event) => {
 //    this.setState({field: event.target.value});
@@ -65,18 +67,15 @@ export default class NewCreateBBScreen extends Component {
   onClick_elButton_Complete = (ev) => {
 
     this.sendData_button_Complete_to_listData1();
-
     const diary = {
     text : this.state.textarea
   }
-
-  axios.post('/api/diary/1' ,diary)
+  axios.post('/api/diary/'+ this.state.albumid ,diary)
   .then(res => {
     console.log(res);
   }).catch(function(error){
     alert("Wrong diary");
   });
-
     // Go to screen 'NewFaceRec'
     this.props.appActions.goToScreen('newfacerec', { transitionId: 'fadeIn' });
   
