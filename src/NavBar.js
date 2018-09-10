@@ -16,6 +16,10 @@ export default class NavBar extends Component {
     this.state = {
        field_UserName: '',
      };
+   
+
+  }
+  componentWillMount(){
     let _this = this;
     axios.get('/api/user/me').then(res => {
       // console.log(res);
@@ -24,7 +28,6 @@ export default class NavBar extends Component {
       //console.log(res.data.field_UserName);
       _this.setState({field_UserName :res.data.username});
     });
-
   }
 
   onClick_elButton = (ev) => {

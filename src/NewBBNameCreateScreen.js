@@ -47,6 +47,7 @@ export default class NewBBNameCreateScreen extends Component {
     // Go to screen 'NewTutorCreateBB'
     this.props.appActions.goToScreen('newtutorcreatebb', { transitionId: 'fadeIn' });
   }
+
   
   
   sendData_button_Next_to_listData1 = () => {
