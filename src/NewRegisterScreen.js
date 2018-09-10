@@ -46,7 +46,7 @@ export default class NewRegisterScreen extends Component {
   }
   
   onClick_elButton_comfirm = (ev) => {
-    // Go to screen 'NewFirstUpProfilePic'
+    // Go to screen 'NewEmailSent'
 
 
     const user = {
@@ -60,7 +60,7 @@ export default class NewRegisterScreen extends Component {
       .then(res => {
         console.log(res);
         console.log(res.deta);
-        this.props.appActions.goToScreen('newfirstupprofilepic', { transitionId: 'fadeIn' });
+        this.props.appActions.goToScreen('newemailsent', { transitionId: 'fadeIn' });
   }).catch(function(error) {
     //if(error.s){
       alert("Wrong account and password");
