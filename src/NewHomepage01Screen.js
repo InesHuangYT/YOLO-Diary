@@ -14,8 +14,8 @@ export default class NewHomepage01Screen extends Component {
   // appActions, deviceInfo
 
   onClick_elButtonNext = (ev) => {
-    // Go to screen 'NewBubbleDiary'
-    this.props.appActions.goToScreen('newbubblediary', { transitionId: 'fadeIn' });
+    // Go to screen 'NewFirstUpProfilePic'
+    this.props.appActions.goToScreen('newfirstupprofilepic', { transitionId: 'fadeIn' });
   
   }
   
