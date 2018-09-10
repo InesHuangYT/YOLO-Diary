@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import img_elUserBubble from './images/ListItem2_elUserBubble_312326.png';
+import img_elUserPic from './images/ListItem2_elUserPic_268846.png';
 
 
 export default class ListItem2 extends Component {
@@ -26,9 +27,10 @@ export default class ListItem2 extends Component {
     const style_userBubble_outer = {
         cursor: 'pointer',
      };
-    const style_userPhoto_outer = {
-        backgroundColor: 'white',
-        boxShadow: '0.0px 2.3px 18px rgba(0, 0, 0, 0.1600)',
+    const style_userPic = {
+        height: 'auto',
+     };
+    const style_userPic_outer = {
         pointerEvents: 'none',
      };
     
@@ -40,8 +42,8 @@ export default class ListItem2 extends Component {
           
           </div>
           
-          <div className='cardBg elUserPhoto' style={style_userPhoto_outer}>
-            <div />
+          <div className='elUserPic' style={style_userPic_outer}>
+            <img style={style_userPic} src={img_elUserPic} alt=""  />
           
           </div>
           

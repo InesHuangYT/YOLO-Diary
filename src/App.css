@@ -1613,39 +1613,39 @@
   }
 
 /* This component has a fixed-size layout */
-  .ListItem2 {
-    min-height: 276px;
-    width: 100%; /* This component was designed using a width of 271px */
-  }
-  .ListItem2 > .background > .containerMinHeight {
-    min-height: 276px;
-  }
+.ListItem2 {
+  min-height: 250px;
+  width: 100%; /* This component was designed using a width of 247px */
+}
+.ListItem2 > .background > .containerMinHeight {
+  min-height: 250px;
+}
 
 
-  .ListItem2 .elUserBubble {
-    position: relative;
-    margin-top: 25px;
-    width: 226px;
-    margin-left: 18px;
-  }
-  .ListItem2 .elUserBubble > * { 
-  width: 226px;
-  height: 226px;
-  }
-  
+.ListItem2 .elUserBubble {
+  position: relative;
+  margin-top: 16px;
+  width: 215px;
+  margin-left: 13px;
+}
+.ListItem2 .elUserBubble > * { 
+width: 215px;
+height: 215px;
+}
 
 
-  .ListItem2 .elUserPhoto {
-    position: relative;
-    margin-top: -185px;
-    width: 138px;
-    margin-left: 62px;
-  }
-  .ListItem2 .elUserPhoto > * { 
-  width: 138px;
-  height: 148px;
-  }
-  
+
+.ListItem2 .elUserPic {
+  position: relative;
+  margin-top: -193px;
+  width: 166px;
+  margin-left: 36px;
+}
+.ListItem2 .elUserPic > * { 
+width: 166px;
+height: 166px;
+}
+
 
 .NewTutorCreateBBScreen {
   max-width: 1600px;
@@ -1752,292 +1752,294 @@
   }
   
 
-.NewReadBBScreen {
-  max-width: 1600px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
-
-  .NewReadBBScreen > .background > .elBackground {
-    position: absolute;
-    left: 0px;
-    right: 0px;
-    top: 0px;
-    width: 100%;
-    height: 899px;
+  .NewReadBBScreen {
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
   }
-
-
-  .NewReadBBScreen > .layoutFlow > .elNavBar2 {
-    position: relative;
-    margin-top: -2px;
+  
+  
+  
+    .NewReadBBScreen > .background > .elBackground {
+      position: absolute;
+      left: 0px;
+      right: 0px;
+      top: 0px;
+      width: 100%;
+      height: 899px;
+    }
+  
+  
+    .NewReadBBScreen > .layoutFlow > .elNavBar2 {
+      position: relative;
+      margin-top: -2px;
+      width: 1607px;
+      margin-left: 0px;
+    }
+    .NewReadBBScreen > .layoutFlow > .elNavBar2 > * { 
     width: 1607px;
-    margin-left: 0px;
-  }
-  .NewReadBBScreen > .layoutFlow > .elNavBar2 > * { 
-  width: 1607px;
-  height: 90px;
-  }
+    height: 90px;
+    }
+    
+    .NewReadBBScreen > .layoutFlow > .elNavBar2 > .background > .containerMinHeight {
+      min-height: 90px;
+    }
   
-  .NewReadBBScreen > .layoutFlow > .elNavBar2 > .background > .containerMinHeight {
-    min-height: 90px;
-  }
-
-
-
-  .NewReadBBScreen > .layoutFlow > .elBubbleDiaryBG {
-    position: relative;
-    margin-top: 16px;
+  
+  
+    .NewReadBBScreen > .layoutFlow > .elBubbleDiaryBG {
+      position: relative;
+      margin-top: 16px;
+      width: 1602px;
+      margin-left: 0px;
+    }
+    .NewReadBBScreen > .layoutFlow > .elBubbleDiaryBG > * { 
     width: 1602px;
-    margin-left: 0px;
-  }
-  .NewReadBBScreen > .layoutFlow > .elBubbleDiaryBG > * { 
-  width: 1602px;
-  height: 709px;
-  }
+    height: 709px;
+    }
+    
   
-
-
-  .NewReadBBScreen > .layoutFlow > .elMainBubble {
-    position: relative;
-    margin-top: -453px;
+  
+    .NewReadBBScreen > .layoutFlow > .elMainBubble {
+      position: relative;
+      margin-top: -482px;
+      width: 421px;
+      margin-left: 581px;
+    }
+    .NewReadBBScreen > .layoutFlow > .elMainBubble > * { 
     width: 421px;
-    margin-left: 583px;
-  }
-  .NewReadBBScreen > .layoutFlow > .elMainBubble > * { 
-  width: 421px;
-  height: 421px;
-  }
+    height: 421px;
+    }
+    
   
-
-
-  .NewReadBBScreen > .layoutFlow > .elField {
-    position: relative;
-    margin-top: -90px;
+  
+    .NewReadBBScreen > .layoutFlow > .elCard {
+      position: relative;
+      margin-top: -335px;
+      width: 250px;
+      margin-left: 670px;
+    }
+    .NewReadBBScreen > .layoutFlow > .elCard > * { 
+    width: 250px;
+    height: 198px;
+    }
+    
+  
+  
+    .NewReadBBScreen > .layoutFlow > .elField {
+      position: relative;
+      margin-top: 48px;
+      width: 176px;
+      margin-left: 703px;
+    }
+    .NewReadBBScreen > .layoutFlow > .elField > * { 
     width: 176px;
-    margin-left: 698px;
-  }
-  .NewReadBBScreen > .layoutFlow > .elField > * { 
-  width: 176px;
-  height: 26px;
+    height: 26px;
+    }
+    
+  
+  .NewReadBBScreen .elButton_back button {
+    border: 0.0px solid transparent;
   }
   
-
-.NewReadBBScreen .elButton_back button {
-  border: 0.0px solid transparent;
-}
-
-
-
-  .NewReadBBScreen > .layoutFlow > .elButton_back {
-    line-height: 27px;
-    position: relative;
-    margin-top: 31px;
+  
+  
+    .NewReadBBScreen > .layoutFlow > .elButton_back {
+      line-height: 27px;
+      position: relative;
+      margin-top: 31px;
+      width: 113px;
+      margin-left: 101px;
+    }
+    .NewReadBBScreen > .layoutFlow > .elButton_back > * { 
     width: 113px;
-    margin-left: 101px;
-  }
-  .NewReadBBScreen > .layoutFlow > .elButton_back > * { 
-  width: 113px;
-  height: 27px;
+    height: 27px;
+    }
+    
+  
+    .NewReadBBScreen .elList:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  
+    .NewReadBBScreen .elList .gridItem {
+      float: left;
+      position: relative;
+    }
+  
+  @media (min-width: 1024px) {
+    .NewReadBBScreen .elList .gridItem {
+      width: calc(100% / 5 - 9.0px*(4/5));
+      overflow: hidden;
+    }
+  
+    .NewReadBBScreen .elList .cols5_0 {
+      margin-right: 9.0px;
+      margin-bottom: 9.0px;
+      clear: left;
+    }
+    .NewReadBBScreen .elList .cols5_1 {
+      margin-right: 9.0px;
+      margin-bottom: 9.0px;
+    }
+    .NewReadBBScreen .elList .cols5_2 {
+      margin-right: 9.0px;
+      margin-bottom: 9.0px;
+    }
+    .NewReadBBScreen .elList .cols5_3 {
+      margin-right: 9.0px;
+      margin-bottom: 9.0px;
+    }
+    .NewReadBBScreen .elList .cols5_4 {
+      margin-bottom: 9.0px;
+    }
+    .NewReadBBScreen .elList .cols5_4:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  
   }
   
-
-
-  .NewReadBBScreen > .layoutFlow > .elDiaryPhoto {
-    position: relative;
-    margin-top: -320px;
-    width: 280px;
-    margin-left: 652px;
-  }
-  .NewReadBBScreen > .layoutFlow > .elDiaryPhoto > * { 
-  width: 280px;
-  height: 210px;
+  @media (max-width: 1023px) {
+    .NewReadBBScreen .elList .gridItem {
+      width: calc(100% / 5 - 9.0px*(4/5));
+      overflow: hidden;
+    }
+  
+    .NewReadBBScreen .elList .cols5_0 {
+      margin-right: 9.0px;
+      margin-bottom: 9.0px;
+      clear: left;
+    }
+    .NewReadBBScreen .elList .cols5_1 {
+      margin-right: 9.0px;
+      margin-bottom: 9.0px;
+    }
+    .NewReadBBScreen .elList .cols5_2 {
+      margin-right: 9.0px;
+      margin-bottom: 9.0px;
+    }
+    .NewReadBBScreen .elList .cols5_3 {
+      margin-right: 9.0px;
+      margin-bottom: 9.0px;
+    }
+    .NewReadBBScreen .elList .cols5_4 {
+      margin-bottom: 9.0px;
+    }
+    .NewReadBBScreen .elList .cols5_4:after { }
+    .NewReadBBScreen .elList .cols5_4:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  
   }
   
-
-  .NewReadBBScreen .elList:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-
-  .NewReadBBScreen .elList .gridItem {
-    float: left;
-    position: relative;
-  }
-
-@media (min-width: 1024px) {
-  .NewReadBBScreen .elList .gridItem {
-    width: calc(100% / 5 - 9.0px*(4/5));
-    overflow: hidden;
-  }
-
-  .NewReadBBScreen .elList .cols5_0 {
-    margin-right: 9.0px;
-    margin-bottom: 9.0px;
-    clear: left;
-  }
-  .NewReadBBScreen .elList .cols5_1 {
-    margin-right: 9.0px;
-    margin-bottom: 9.0px;
-  }
-  .NewReadBBScreen .elList .cols5_2 {
-    margin-right: 9.0px;
-    margin-bottom: 9.0px;
-  }
-  .NewReadBBScreen .elList .cols5_3 {
-    margin-right: 9.0px;
-    margin-bottom: 9.0px;
-  }
-  .NewReadBBScreen .elList .cols5_4 {
-    margin-bottom: 9.0px;
-  }
-  .NewReadBBScreen .elList .cols5_4:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-
-}
-
-@media (max-width: 1023px) {
-  .NewReadBBScreen .elList .gridItem {
-    width: calc(100% / 5 - 9.0px*(4/5));
-    overflow: hidden;
-  }
-
-  .NewReadBBScreen .elList .cols5_0 {
-    margin-right: 9.0px;
-    margin-bottom: 9.0px;
-    clear: left;
-  }
-  .NewReadBBScreen .elList .cols5_1 {
-    margin-right: 9.0px;
-    margin-bottom: 9.0px;
-  }
-  .NewReadBBScreen .elList .cols5_2 {
-    margin-right: 9.0px;
-    margin-bottom: 9.0px;
-  }
-  .NewReadBBScreen .elList .cols5_3 {
-    margin-right: 9.0px;
-    margin-bottom: 9.0px;
-  }
-  .NewReadBBScreen .elList .cols5_4 {
-    margin-bottom: 9.0px;
-  }
-  .NewReadBBScreen .elList .cols5_4:after { }
-  .NewReadBBScreen .elList .cols5_4:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-
-}
-
-@media (max-width: 767px) {
-  .NewReadBBScreen .elList .gridItem {
-    width: calc(100% / 5 - 9.1px*(4/5));
-    overflow: hidden;
-  }
-
-  .NewReadBBScreen .elList .cols5_0 { margin-right: 0; margin-bottom: 0; }
-  .NewReadBBScreen .elList .cols5_1 { margin-right: 0; margin-bottom: 0; }
-  .NewReadBBScreen .elList .cols5_2 { margin-right: 0; margin-bottom: 0; }
-  .NewReadBBScreen .elList .cols5_3 { margin-right: 0; margin-bottom: 0; }
-  .NewReadBBScreen .elList .cols5_4 { margin-right: 0; margin-bottom: 0; }
-  .NewReadBBScreen .elList .cols5_0 {
-    margin-right: 9.1px;
-    margin-bottom: 9.1px;
-    clear: left;
-  }
-  .NewReadBBScreen .elList .cols5_1 {
-    margin-right: 9.1px;
-    margin-bottom: 9.1px;
-  }
-  .NewReadBBScreen .elList .cols5_2 {
-    margin-right: 9.1px;
-    margin-bottom: 9.1px;
-  }
-  .NewReadBBScreen .elList .cols5_3 {
-    margin-right: 9.1px;
-    margin-bottom: 9.1px;
-  }
-  .NewReadBBScreen .elList .cols5_4 {
-    margin-bottom: 9.1px;
-  }
-  .NewReadBBScreen .elList .cols5_4:after { }
-  .NewReadBBScreen .elList .cols5_4:after { }
-  .NewReadBBScreen .elList .cols5_4:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-
-}
-
-@media (max-width: 567px) {
-  .NewReadBBScreen .elList .gridItem {
-    width: calc(100% / 5 - 9.1px*(4/5));
-    overflow: hidden;
-  }
-
-  .NewReadBBScreen .elList .cols5_0 { margin-right: 0; margin-bottom: 0; }
-  .NewReadBBScreen .elList .cols5_1 { margin-right: 0; margin-bottom: 0; }
-  .NewReadBBScreen .elList .cols5_2 { margin-right: 0; margin-bottom: 0; }
-  .NewReadBBScreen .elList .cols5_3 { margin-right: 0; margin-bottom: 0; }
-  .NewReadBBScreen .elList .cols5_4 { margin-right: 0; margin-bottom: 0; }
-  .NewReadBBScreen .elList .cols5_0 { margin-right: 0; margin-bottom: 0; }
-  .NewReadBBScreen .elList .cols5_1 { margin-right: 0; margin-bottom: 0; }
-  .NewReadBBScreen .elList .cols5_2 { margin-right: 0; margin-bottom: 0; }
-  .NewReadBBScreen .elList .cols5_3 { margin-right: 0; margin-bottom: 0; }
-  .NewReadBBScreen .elList .cols5_4 { margin-right: 0; margin-bottom: 0; }
-  .NewReadBBScreen .elList .cols5_0 {
-    margin-right: 9.1px;
-    margin-bottom: 9.1px;
-    clear: left;
-  }
-  .NewReadBBScreen .elList .cols5_1 {
-    margin-right: 9.1px;
-    margin-bottom: 9.1px;
-  }
-  .NewReadBBScreen .elList .cols5_2 {
-    margin-right: 9.1px;
-    margin-bottom: 9.1px;
-  }
-  .NewReadBBScreen .elList .cols5_3 {
-    margin-right: 9.1px;
-    margin-bottom: 9.1px;
-  }
-  .NewReadBBScreen .elList .cols5_4 {
-    margin-bottom: 9.1px;
-  }
-  .NewReadBBScreen .elList .cols5_4:after { }
-  .NewReadBBScreen .elList .cols5_4:after { }
-  .NewReadBBScreen .elList .cols5_4:after { }
-  .NewReadBBScreen .elList .cols5_4:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-
-}
-
-
-
-  .NewReadBBScreen > .layoutFlow > .elList {
-    position: relative;
-    margin-top: -538px;
-    width: 1363px;
-    margin-left: 125px;
-  }
-  .NewReadBBScreen > .layoutFlow > .elList > * { 
-  width: 1363px;
-  height: 215px;
+  @media (max-width: 767px) {
+    .NewReadBBScreen .elList .gridItem {
+      width: calc(100% / 5 - 9.1px*(4/5));
+      overflow: hidden;
+    }
+  
+    .NewReadBBScreen .elList .cols5_0 { margin-right: 0; margin-bottom: 0; }
+    .NewReadBBScreen .elList .cols5_1 { margin-right: 0; margin-bottom: 0; }
+    .NewReadBBScreen .elList .cols5_2 { margin-right: 0; margin-bottom: 0; }
+    .NewReadBBScreen .elList .cols5_3 { margin-right: 0; margin-bottom: 0; }
+    .NewReadBBScreen .elList .cols5_4 { margin-right: 0; margin-bottom: 0; }
+    .NewReadBBScreen .elList .cols5_0 {
+      margin-right: 9.1px;
+      margin-bottom: 9.1px;
+      clear: left;
+    }
+    .NewReadBBScreen .elList .cols5_1 {
+      margin-right: 9.1px;
+      margin-bottom: 9.1px;
+    }
+    .NewReadBBScreen .elList .cols5_2 {
+      margin-right: 9.1px;
+      margin-bottom: 9.1px;
+    }
+    .NewReadBBScreen .elList .cols5_3 {
+      margin-right: 9.1px;
+      margin-bottom: 9.1px;
+    }
+    .NewReadBBScreen .elList .cols5_4 {
+      margin-bottom: 9.1px;
+    }
+    .NewReadBBScreen .elList .cols5_4:after { }
+    .NewReadBBScreen .elList .cols5_4:after { }
+    .NewReadBBScreen .elList .cols5_4:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  
   }
   
+  @media (max-width: 567px) {
+    .NewReadBBScreen .elList .gridItem {
+      width: calc(100% / 5 - 9.1px*(4/5));
+      overflow: hidden;
+    }
+  
+    .NewReadBBScreen .elList .cols5_0 { margin-right: 0; margin-bottom: 0; }
+    .NewReadBBScreen .elList .cols5_1 { margin-right: 0; margin-bottom: 0; }
+    .NewReadBBScreen .elList .cols5_2 { margin-right: 0; margin-bottom: 0; }
+    .NewReadBBScreen .elList .cols5_3 { margin-right: 0; margin-bottom: 0; }
+    .NewReadBBScreen .elList .cols5_4 { margin-right: 0; margin-bottom: 0; }
+    .NewReadBBScreen .elList .cols5_0 { margin-right: 0; margin-bottom: 0; }
+    .NewReadBBScreen .elList .cols5_1 { margin-right: 0; margin-bottom: 0; }
+    .NewReadBBScreen .elList .cols5_2 { margin-right: 0; margin-bottom: 0; }
+    .NewReadBBScreen .elList .cols5_3 { margin-right: 0; margin-bottom: 0; }
+    .NewReadBBScreen .elList .cols5_4 { margin-right: 0; margin-bottom: 0; }
+    .NewReadBBScreen .elList .cols5_0 {
+      margin-right: 9.1px;
+      margin-bottom: 9.1px;
+      clear: left;
+    }
+    .NewReadBBScreen .elList .cols5_1 {
+      margin-right: 9.1px;
+      margin-bottom: 9.1px;
+    }
+    .NewReadBBScreen .elList .cols5_2 {
+      margin-right: 9.1px;
+      margin-bottom: 9.1px;
+    }
+    .NewReadBBScreen .elList .cols5_3 {
+      margin-right: 9.1px;
+      margin-bottom: 9.1px;
+    }
+    .NewReadBBScreen .elList .cols5_4 {
+      margin-bottom: 9.1px;
+    }
+    .NewReadBBScreen .elList .cols5_4:after { }
+    .NewReadBBScreen .elList .cols5_4:after { }
+    .NewReadBBScreen .elList .cols5_4:after { }
+    .NewReadBBScreen .elList .cols5_4:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  
+  }
+  
+  
+  
+    .NewReadBBScreen > .layoutFlow > .elList {
+      position: relative;
+      margin-top: -622px;
+      width: 1442px;
+      margin-left: 72px;
+    }
+    .NewReadBBScreen > .layoutFlow > .elList > * { 
+    width: 1442px;
+    height: 195px;
+    }
+    
+  
+
   .NewBBNameCreateScreen {
     max-width: 1600px;
     margin-left: auto;

@@ -72,6 +72,11 @@ export default class NewReadBBScreen extends Component {
     const style_mainBubble_outer = {
         pointerEvents: 'none',
      };
+    const style_card_outer = {
+        backgroundColor: 'white',
+        boxShadow: '0.0px 1.8px 14px rgba(0, 0, 0, 0.1600)',
+        pointerEvents: 'none',
+     };
     const style_field = {
         display: 'block',
      };
@@ -83,11 +88,6 @@ export default class NewReadBBScreen extends Component {
      };
     const style_button_back_outer = {
         cursor: 'pointer',
-     };
-    const style_diaryPhoto_outer = {
-        backgroundColor: 'white',
-        boxShadow: '0.0px 1.8px 14px rgba(0, 0, 0, 0.1600)',
-        pointerEvents: 'none',
      };
     const style_list = {
         height: 'auto',  // This element is in scroll flow
@@ -125,6 +125,11 @@ export default class NewReadBBScreen extends Component {
           
           </div>
           
+          <div className='cardBg elCard' style={style_card_outer}>
+            <div />
+          
+          </div>
+          
           <div className='baseFont elField'>
             <Input style={style_field} type="text" hint={this.props.locStrings.newreadbb_field_120491} onChange={this.textInputChanged_field} defaultValue={value_field !== undefined ? value_field : ''}  />
           
@@ -134,11 +139,6 @@ export default class NewReadBBScreen extends Component {
             <Button style={style_button_back}  color="accent" onClick={this.onClick_elButton_back} >
               {this.props.locStrings.newreadbb_button_703594}
             </Button>
-          
-          </div>
-          
-          <div className='cardBg elDiaryPhoto' style={style_diaryPhoto_outer}>
-            <div />
           
           </div>
           
