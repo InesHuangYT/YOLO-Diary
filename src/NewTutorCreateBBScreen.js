@@ -9,13 +9,13 @@ import img_elTutorFirstAddBB from './images/NewTutorCreateBBScreen_elTutorFirstA
 // UI framework component imports
 import Button from 'muicss/lib/react/button';
 import Container from 'muicss/lib/react/container';
-
+import store from './store'
 
 export default class NewTutorCreateBBScreen extends Component {
 
   // Properties used by this component:
   // appActions, deviceInfo
-
+ 
   onClick_elButton_OK = (ev) => {
     // Go to screen 'NewCreateBB'
     this.props.appActions.goToScreen('newcreatebb', { transitionId: 'fadeIn' });
@@ -23,6 +23,12 @@ export default class NewTutorCreateBBScreen extends Component {
   }
   
   
+
+  componentDidMount() {
+    console.log(store.getValue())
+    
+  }
+
   render() {
     // eslint-disable-next-line no-unused-vars
     let baseStyle = {};

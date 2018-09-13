@@ -11,6 +11,8 @@ import Button from 'muicss/lib/react/button';
 import Container from 'muicss/lib/react/container';
 import axios from 'axios';
 
+import NewCreateBBScreen from './NewCreateBBScreen';
+import store from './store'
 
 export default class NewBBNameCreateScreen extends Component {
 
@@ -22,7 +24,7 @@ export default class NewBBNameCreateScreen extends Component {
     
     this.state = {
       field: '',
-      albumId:''
+      albumId: ''
     };
   }
 
@@ -30,12 +32,12 @@ export default class NewBBNameCreateScreen extends Component {
     this.setState({field: event.target.value});
   }
   
-  onClick_elButton_Next = (ev) => {
+  onClick_elButton_Next = async (ev) => {
     this.sendData_button_Next_to_listData1();
     const album = {
       name : this.state.field,
     } 
-    axios.post('/api/album',album)
+    await axios.post('/api/album',album)
     .then(res => {
       console.log(res);
       console.log(res.data.id);
@@ -44,9 +46,17 @@ export default class NewBBNameCreateScreen extends Component {
     }).catch(function(error){
       alert("Wrong albumName");
     });
-    // Go to screen 'NewTutorCreateBB'
-    this.props.appActions.goToScreen('newtutorcreatebb', { transitionId: 'fadeIn' });
+    // store albumId
+    store.setValue({
+      albumId: this.albumId
+    })
+    store.setValue({
+      testId: 'test'
+    })
+    // Go to screen 'NewCreateBB'
+    this.props.appActions.goToScreen('newcreatebb', { transitionId: 'fadeIn' });
   }
+  
 
   
   
@@ -121,8 +131,12 @@ export default class NewBBNameCreateScreen extends Component {
     const style_button_Next_outer = {
         cursor: 'pointer',
      };
+     
     
     return (
+      
+     
+
       <Container fluid={true} className="AppScreen NewBBNameCreateScreen" style={baseStyle}>
         <div className="background">
           <div className='elBackground' style={style_background_outer}>
@@ -131,6 +145,7 @@ export default class NewBBNameCreateScreen extends Component {
           </div>
           
         </div>
+        
         <div className="layoutFlow" style={layoutFlowStyle}>
           <div className='hasNestedComps elNavBar2'>
             <div>
@@ -167,8 +182,12 @@ export default class NewBBNameCreateScreen extends Component {
           </div>
           
         </div>
+        
       </Container>
+      
+      
     )
+    
   }
   
 
