@@ -11,6 +11,10 @@ import Container from 'muicss/lib/react/container';
 import { Input } from 'antd';
 import 'antd/dist/antd.css';
 
+import axios from 'axios';
+
+import store from './store'
+
 export default class NewUserDiaryScreen extends Component {
 
   // Properties used by this component:
@@ -20,13 +24,25 @@ export default class NewUserDiaryScreen extends Component {
     super(props);
     
     this.state = {
-      field: this.props.field,
+      field: '',
       textarea: this.props.textarea,
+ 
     };
   }
 
+  componentWillMount(){
+    let _this = this;
+    axios.get(`/api/album?albumId=${store.getValue().albumId}`).then(res => {
+      // console.log(res);
+      // console.log(res.data);
+      console.log(res.data.name);
+      //console.log(res.data.field_UserName);
+      _this.setState({field :res.data.name});
+    });
+  }
+
   textInputChanged_field = (event) => {
-    this.setState({field: event.target.value});
+    //this.setState({field: event.target.value});
   }
   
   textAreaChanged_textarea = (event) => {
