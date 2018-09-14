@@ -8,12 +8,17 @@ import ListItem1 from './ListItem1';
 // UI framework component imports
 import Button from 'muicss/lib/react/button';
 import Container from 'muicss/lib/react/container';
-
+import store from './store';
 
 export default class NewBubbleDiaryScreen extends Component {
 
   // Properties used by this component:
   // appActions, deviceInfo, fieldtitle, textcontent
+
+  componentDidMount() {
+    console.log(store.getValue())
+    
+  }
 
   render() {
     // eslint-disable-next-line no-unused-vars
