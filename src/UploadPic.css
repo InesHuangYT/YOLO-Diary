@@ -90,8 +90,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 230px;
+    width: 250px;
     height: 170px;
+    left: 750px;
     transform-origin: 50% 50%;
     transform: scale(1);
     transition: all .2s ease-in-out;
@@ -135,6 +136,7 @@
   
 
 .group-upload input.row-input{
+    display: inline-block;
     position: absolute;
     top: 0;
     left: 0;
@@ -145,29 +147,20 @@
     cursor: pointer;
   }
 
-.box-image {
-    
-    display: inline-block;
-    
-    width: 220px;
-    height: 160px;
-    margin: 0 16px 15px 3px;
-    vertical-align: top;
-    position: relative;
-    
-  }
 .box-image img {
+    display: inline-block;
     border: 2px solid rgb(136, 183, 223);
     border-radius: 4px;
     padding: 6px;
     width: 100px;
 }
-  .box-image img {
+ .box-image img {
+  
     border-radius: 13px; 
     width: 105%;
     height: 107%;
     vertical-align: top;
     transition: 0.3s;
   }
- 
+  img:hover {opacity: 0.7;}
   .box-icon {opacity: 0.7;}
