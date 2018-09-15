@@ -7,14 +7,27 @@ import img_elPublishBubble from './images/NewFaceRecScreen_elPublishBubble_29143
 
 // UI framework component imports
 import Container from 'muicss/lib/react/container';
-
+import store from './store';
 
 export default class NewFaceRecScreen extends Component {
 
   // Properties used by this component:
   // appActions, deviceInfo
-
+  componentDidMount() {
+    console.log(store.getValue())
+    
+  }
   onClick_elButton_PublishBubble = (ev) => {
+    //this.sendData_button_PublishBubble_to_listData1(store.getValue());
+    console.log(store.getValue())
+
+    // store diaryId
+  // store.setValue({
+  //   diaryId: this.diaryId
+  // })
+  store.setValue({
+    testId: 'test3'
+  })
     // Go to screen 'NewBubbleDiary'
     this.props.appActions.goToScreen('newbubblediary', { transitionId: 'fadeIn' });
   

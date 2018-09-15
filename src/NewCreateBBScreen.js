@@ -18,7 +18,7 @@ import axios from 'axios';
 
 import { Input } from 'antd';
 import 'antd/dist/antd.css';
-import store from './store'
+import store from './store';
 
 export default class NewCreateBBScreen extends Component {
 
@@ -31,7 +31,9 @@ export default class NewCreateBBScreen extends Component {
     this.state = {
       //field: '',
       textarea: '',
-      albumid: ''
+      albumId: '',
+      diaryId: ''
+
     };
   }
   
@@ -71,21 +73,28 @@ export default class NewCreateBBScreen extends Component {
      this.setState({textarea: event.target.value});
   }
   
-  onClick_elButton_Complete = (ev) => {
+  onClick_elButton_Complete = async (ev) => {
 
-    this.sendData_button_Complete_to_listData1();
+    this.sendData_button_Complete_to_listData1(store.getValue());
     const diary = {
     text : this.state.textarea
   }
 
-  axios.post('/api/diary/'+ store.getValue().albumId ,diary)
+ await axios.post('/api/diary/'+ store.getValue().albumId ,diary)
   .then(res => {
     console.log(res);
+    this.diaryId = res.data.id;
     console.log(store.getValue())
   }).catch(function(error){
     alert("Wrong diary");
   });
-
+  // store diaryId
+  store.setValue({
+    diaryId: this.diaryId
+  })
+  store.setValue({
+    testId: 'test2'
+  })
     // Go to screen 'NewFaceRec'
     this.props.appActions.goToScreen('newfacerec', { transitionId: 'fadeIn' });
   
@@ -278,7 +287,7 @@ export default class NewCreateBBScreen extends Component {
           visible={this.state.visible}
           onOk={this.handleOk}
           onCancel={this.handleCancel}
-          width='1100px'
+          width='1050px'
           
         >
          <UploadPic/>
