@@ -4,7 +4,7 @@ import img_elBubble2 from './images/NewReadBBScreen_elMainBubble_223100.png';
 
 // UI framework component imports
 import Input from 'muicss/lib/react/input';
-
+import store from './store';
 
 export default class ListItem1 extends Component {
 
@@ -20,10 +20,9 @@ export default class ListItem1 extends Component {
   }
 
   onClick_elBubble2 = (ev) => {
+    console.log(store.getValue())
     // Go to screen 'NewReadBB'
     this.props.appActions.goToScreen('newreadbb', { ...this.props, transitionId: 'fadeIn' });
-  
-  
   }
   
   

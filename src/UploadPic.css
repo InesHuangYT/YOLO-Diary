@@ -162,5 +162,5 @@
     vertical-align: top;
     transition: 0.3s;
   }
-  img:hover {opacity: 0.7;}
+  .box-image img:hover {opacity: 0.7;}
   .box-icon {opacity: 0.7;}

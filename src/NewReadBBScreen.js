@@ -9,12 +9,17 @@ import ListItem2 from './ListItem2';
 import Input from 'muicss/lib/react/input';
 import Button from 'muicss/lib/react/button';
 import Container from 'muicss/lib/react/container';
-
+import store from './store';
 
 export default class NewReadBBScreen extends Component {
 
   // Properties used by this component:
   // appActions, deviceInfo, dataSheetRow
+
+  componentDidMount() {
+    console.log(store.getValue())
+    
+  }
 
   constructor(props) {
     super(props);
