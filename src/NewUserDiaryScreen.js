@@ -16,28 +16,41 @@ import axios from 'axios';
 import store from './store'
 
 export default class NewUserDiaryScreen extends Component {
-
+//`/api/album?albumId=${store.getValue().albumId}`
   // Properties used by this component:
   // appActions, deviceInfo, field, textarea
-
+  // componentDidMount() {
+  //   console.log(store.getValue())
+    
+  // }
   constructor(props) {
     super(props);
     
     this.state = {
       field: '',
-      textarea: this.props.textarea,
+      textarea: '',
  
     };
   }
 
   componentWillMount(){
     let _this = this;
-    axios.get(`/api/album?albumId=${store.getValue().albumId}`).then(res => {
-      // console.log(res);
-      // console.log(res.data);
+    axios.get('/api/album/'+store.getValue().albumId).then(res => {
+      //`/api/album?albumId=${store.getValue().albumId}`
+      console.log(store.getValue())
+      console.log(res);
       console.log(res.data.name);
       //console.log(res.data.field_UserName);
       _this.setState({field :res.data.name});
+    });
+
+    axios.get('/api/diary/diaryId/'+store.getValue().diaryId).then(res => {
+      //`/api/album?albumId=${store.getValue().albumId}`
+      console.log(store.getValue())
+      console.log(res);
+      console.log(res.data.text);
+      //console.log(res.data.field_UserName);
+      _this.setState({textarea :res.data.text});
     });
   }
 
@@ -46,7 +59,7 @@ export default class NewUserDiaryScreen extends Component {
   }
   
   textAreaChanged_textarea = (event) => {
-    this.setState({textarea: event.target.value});
+    //this.setState({textarea: event.target.value});
   }
   
   onClick_elButton_OK = (ev) => {
@@ -156,12 +169,14 @@ export default class NewUserDiaryScreen extends Component {
           </div>
           
           <div className='baseFont elField'>
-            <Input style={style_field} type="text" placeholder={this.props.locStrings.newcreatebb2_field_448413} onChange={this.textInputChanged_field} defaultValue={value_field !== undefined ? value_field : ''}  />
+            {/* <Input style={style_field} type="text" placeholder={this.props.locStrings.newcreatebb2_field_448413} onChange={this.textInputChanged_field} defaultValue={value_field !== undefined ? value_field : ''}  /> */}
+            <Input style={style_field} type="text" placeholder={this.props.locStrings.newcreatebb2_field_448413} onChange={this.textInputChanged_field} value =  {this.state.field} />
+
           
           </div>
           
           <div className='baseFont elTextarea'>
-            <TextArea  placeholder={this.props.locStrings.newcreatebb2_textarea_331665} onChange={this.textAreaChanged_textarea} defaultValue={value_textarea !== undefined ? value_textarea : ''}  />
+            <TextArea  placeholder={this.props.locStrings.newcreatebb2_textarea_331665} onChange={this.textAreaChanged_textarea} value =  {this.state.textarea}  />
           
           </div>
           
