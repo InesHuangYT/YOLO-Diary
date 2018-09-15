@@ -287,7 +287,7 @@ export default class NewCreateBBScreen extends Component {
           visible={this.state.visible}
           onOk={this.handleOk}
           onCancel={this.handleCancel}
-          width='1100px'
+          width='1050px'
           
         >
          <UploadPic/>

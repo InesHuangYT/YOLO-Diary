@@ -13,8 +13,12 @@ class UploadPic extends Component {
     
     changePath = (e) => {
         
-        const file = e.target.files[0];
-        let src,preview,type=file.type;
+        var filenumber = e.target.files.length
+        let photopv = [];
+        let photodata = [];
+        for(var i = 0; i < filenumber; i++){
+        const file = e.target.files[i];
+        let src,previews,type=file.type;
         
       
         
@@ -26,26 +30,19 @@ class UploadPic extends Component {
          
       
         if (/^image\/\S+$/.test(type)) {
+           
             src = URL.createObjectURL(file)
-            preview = <img src={src} alt=''  />
+            previews = <img src={src} style={{width:'250px',height:'168px'}} alt='' key = {i}/>
+           
+            photopv.push(previews)
+            photodata.push(file)
         }
        
-   
-        else if (/^text\/\S+$/.test(type)) {
-            const self = this;
-            const reader = new FileReader();
-             reader.onload = function (e) {
-               
-                preview = <textarea value={this.result} readOnly></textarea>
-                self.setState({ data: file, preview: preview })
-                }
-            
-            return;
-            
-        }
-        this.setState({ data: file, preview: preview  })
     }
-
+        
+        this.setState({ data: photodata, preview: photopv})
+    }
+    
 
     upload = () => {
         
@@ -79,29 +76,31 @@ class UploadPic extends Component {
         return (
             <div>
                 
-                <div className = "group-upload"> 
-             
-                  <div className='box-icon'>
-               
-                    <i className="icon" >
-                  
-                        <input className='row-input' type='file' accept='image/*' onChange={this.changePath} multiple={true}/>
-
-                          </i>
-                          </div>
-                          </div>
-                          <div className = "group-upload"> 
-                          <div className = "box-image">
-                         {preview} 
-                        </div>
-                     </div>
-                    
-                  </div>
-                 
-               
-                
-              
+            <div className = "group-upload"> 
+            <div className = 'box-image'>
+                     {preview}
+                      </div>
+              <div className='box-icon'>
             
+                <i className="icon" >
+                
+                    <input className='row-input' type='file' accept='image/*' onChange={this.changePath} multiple={true}/>
+                    
+                      </i>
+                     
+                      </div>
+                      </div>
+                      
+                   
+                      </div>
+                      
+                 
+                   
+          
+             
+           
+            
+          
         )
     }
 }export default UploadPic;

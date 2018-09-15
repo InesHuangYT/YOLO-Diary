@@ -1431,15 +1431,18 @@
   
   
     .NewCreateBBScreen > .layoutFlow > .elAddPic {
+      
       line-height: 184px;
       position: relative;
       margin-top: -405px;
-      width: 191px;
+      width: 150px;
+      top:140px;
+      left: -180px;
       margin-left: 275px;
     }
     .NewCreateBBScreen > .layoutFlow > .elAddPic > * { 
-    width: 191px;
-    height: 184px;
+    width: 120px;
+    height: 140px;
     }
 
 .NewCreateBBScreen .elButton_addpic button {
