@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import img_elIconalerts from './images/NewFaceRecScreen_elIconalerts_927169.png';
-import img_elBubbleDiaryBG from './images/NewFaceRecScreen_elBubbleDiaryBG_736526.jpg';
+import img_elBubbleDiaryBG from './images/NewBubbleDiary2Screen_elBubbleDiaryBG_562791.jpg';
 import img_elAddBubble from './images/NewBubbleDiaryScreen_elAddBubble_49436.png';
 
 // UI framework component imports
@@ -98,12 +97,7 @@ export default class NewBubbleDiary2Screen extends Component {
     const style_buttonCopy3_outer = {
         pointerEvents: 'none',
      };
-    const style_iconalerts = {
-        height: 'auto',
-     };
-    const style_iconalerts_outer = {
-        pointerEvents: 'none',
-     };
+    
     const style_bubbleDiaryBG = {
         height: 'auto',
      };
@@ -174,14 +168,9 @@ export default class NewBubbleDiary2Screen extends Component {
             <button style={style_buttonCopy3}  >
               {this.props.locStrings.newbubblediary2_buttoncopy3_546358}
             </button>
-          
           </div>
           
-          <div className='elIconalerts' style={style_iconalerts_outer}>
-            <img style={style_iconalerts} src={img_elIconalerts} alt=""  />
-          
-          </div>
-          
+
           <div className='elBubbleDiaryBG' style={style_bubbleDiaryBG_outer}>
             <img style={style_bubbleDiaryBG} src={img_elBubbleDiaryBG} alt=""  />
           

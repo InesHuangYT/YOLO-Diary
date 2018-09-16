@@ -1,26 +1,92 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import './App.css';
-import img_elIconalerts from './images/NewFaceRecScreen_elIconalerts_927169.png';
 import img_elHomeBG from './images/NewEmailSentScreen_elHomeBG_1012260.jpg';
 import img_elUpProfilePic from './images/NewFirstUpProfilePicScreen_elUpProfilePic_850626.png';
 
 // UI framework component imports
 import Container from 'muicss/lib/react/container';
+import './UploadPic.css';
 
 
 export default class NewFirstUpProfilePicScreen extends Component {
 
+  state = {
+        
+    path: '',
+    preview: null,
+    data: null,
+    form: null,
+    config: null
+}
+changePath = (e) => {
+  const file = e.target.files[0];
+  console.log(file.name)
+  console.log(file)
+  console.log("**********************")
+
+  if (!file) {
+      console.log('未選擇圖片');
+      return;
+  // Properties used by this component:
+  // appActions, deviceInfo
+  }
+  let src,preview,type=file.type;
+  if (/^image\/\S+$/.test(type)) {
+    src = URL.createObjectURL(file)
+    preview = <img src={src} style={{width:'275px',height:'168px'}} alt='' />
+
+
+    this.form = new FormData();
+    this.form.append('file', file);
+
+    this.config = {
+      headers: { 'content-type': 'multipart/form-data;boundary=gc0p4Jq0M2Yt08jU534c0p' }
+    }
+    
+    
+
+}
+else if (/^text\/\S+$/.test(type)) {
+  alert("Wrong File Type")
+  }
+
+this.setState({ data: file, preview: preview })
+}
+upload = () => {
+        
+  const data = this.state.data;
+  if (!data) {
+      console.log('未選擇文件');
+      return;
+  }
+
+}
   // Properties used by this component:
   // appActions, deviceInfo
 
   onClick_elButton_comfirm = (ev) => {
-    // Go to screen 'NewHomepage01'
-    this.props.appActions.goToScreen('newhomepage01', { transitionId: 'fadeIn' });
+    
+
+    axios.post('/api/selfie/uploadmany', this.form, this.config).then(res => {
+      console.log(res);
+      console.log(res.data);
+    })
+    // Go to screen 'NewBubbleDiary'
+    this.props.appActions.goToScreen('newbubblediary', { transitionId: 'fadeIn' });
+
+
+  
+  }
+  
+  
+  onClick_elButton_UploadPic = (ev) => {
   
   }
   
   
   render() {
+    const { preview } = this.state;
     // eslint-disable-next-line no-unused-vars
     let baseStyle = {};
     // eslint-disable-next-line no-unused-vars
@@ -39,64 +105,6 @@ export default class NewFirstUpProfilePicScreen extends Component {
      };
     const style_background_outer = {
         backgroundColor: 'white',
-        pointerEvents: 'none',
-     };
-    const style_text_Yolo = {
-        fontSize: 28.5,
-        color: 'rgba(0, 0, 0, 0.8500)',
-        textAlign: 'left',
-     };
-    const style_text_Yolo_outer = {
-        pointerEvents: 'none',
-     };
-    const style_text_Slogan = {
-        fontSize: 18.4,
-        color: 'rgba(0, 0, 0, 0.5000)',
-        textAlign: 'left',
-     };
-    const style_text_Slogan_outer = {
-        pointerEvents: 'none',
-     };
-    const style_button_HomePage = {
-        display: 'block',
-        fontSize: 21.1,
-        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif',
-        color: '#00bdc1',
-        textAlign: 'left',
-        backgroundColor: 'transparent',
-        textTransform: 'uppercase',
-     };
-    const style_button_HomePage_outer = {
-        pointerEvents: 'none',
-     };
-    const style_button_BubbleDiary = {
-        display: 'block',
-        fontSize: 21.1,
-        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif',
-        color: '#00bdc1',
-        textAlign: 'left',
-        backgroundColor: 'transparent',
-        textTransform: 'uppercase',
-     };
-    const style_button_BubbleDiary_outer = {
-        pointerEvents: 'none',
-     };
-    const style_button_Profile = {
-        display: 'block',
-        fontSize: 21.1,
-        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif',
-        color: '#00bdc1',
-        textAlign: 'left',
-        backgroundColor: 'transparent',
-        textTransform: 'uppercase',
-     };
-    const style_button_Profile_outer = {
-        pointerEvents: 'none',
-     };
-    const style_iconalerts = {
-        height: 'auto',
-     };
-    const style_iconalerts_outer = {
         pointerEvents: 'none',
      };
     const style_homeBG = {
@@ -128,6 +136,27 @@ export default class NewFirstUpProfilePicScreen extends Component {
         textTransform: 'uppercase',
      };
     const style_button_UploadPic_outer = {
+        cursor: 'pointer',
+     };
+    const style_card = {
+        width: '100%',
+        height: '100%',
+     };
+    const style_card_outer = {
+        backgroundColor: 'white',
+        boxShadow: '0.0px 5.3px 37px rgba(0, 0, 0, 0.4500)',
+        pointerEvents: 'none',
+     };
+    const style_textCopy = {
+        fontSize: 18.4,
+        color: 'rgba(0, 0, 0, 0.5000)',
+        textAlign: 'left',
+        pointerEvents: 'none',
+     };
+    const style_text = {
+        fontSize: 28.5,
+        color: 'rgba(0, 0, 0, 0.8500)',
+        textAlign: 'left',
         pointerEvents: 'none',
      };
     
@@ -141,46 +170,6 @@ export default class NewFirstUpProfilePicScreen extends Component {
           
         </div>
         <div className="layoutFlow" style={layoutFlowStyle}>
-          <div className='font-arialRoundedMTBold  elText_Yolo' style={style_text_Yolo_outer}>
-            <div style={style_text_Yolo}>
-              <div>{this.props.locStrings.newloginandregister3_text_yolo_429874}</div>
-            </div>
-          
-          </div>
-          
-          <div className='font-arialRoundedMTBold  elText_Slogan' style={style_text_Slogan_outer}>
-            <div style={style_text_Slogan}>
-              <div>{this.props.locStrings.newloginandregister3_text_slogan_836378}</div>
-            </div>
-          
-          </div>
-          
-          <div className='elButton_HomePage' style={style_button_HomePage_outer}>
-            <button style={style_button_HomePage}  >
-              {this.props.locStrings.newloginandregister3_button_homepage_408112}
-            </button>
-          
-          </div>
-          
-          <div className='elButton_BubbleDiary' style={style_button_BubbleDiary_outer}>
-            <button style={style_button_BubbleDiary}  >
-              {this.props.locStrings.newloginandregister3_button_bubblediary_56612}
-            </button>
-          
-          </div>
-          
-          <div className='elButton_Profile' style={style_button_Profile_outer}>
-            <button style={style_button_Profile}  >
-              {this.props.locStrings.newloginandregister3_button_profile_427158}
-            </button>
-          
-          </div>
-          
-          <div className='elIconalerts' style={style_iconalerts_outer}>
-            <img style={style_iconalerts} src={img_elIconalerts} alt=""  />
-          
-          </div>
-          
           <div className='elHomeBG' style={style_homeBG_outer}>
             <img style={style_homeBG} src={img_elHomeBG} alt=""  />
           
@@ -195,13 +184,51 @@ export default class NewFirstUpProfilePicScreen extends Component {
             <div style={style_button_comfirm}  onClick={this.onClick_elButton_comfirm}  />
           
           </div>
-          
+        
           <div className='actionFont elButton_UploadPic' style={style_button_UploadPic_outer}>
-            <div style={style_button_UploadPic}   />
+         
           
+          <div className='box-upload-icon'>
+          <div className = "box-upload-image">
+                {preview}
+                </div>
+          <i className="upload-icon" >
+          
+              <input className='input-img' type='file' accept='image/*' onChange={this.changePath} />
+             
+            </i>
+            
+            </div>
+           
+           
+            
+          
+          
+              
+            
           </div>
           
         </div>
+       
+        <div className="screenFgContainer">
+          <div className="foreground">
+
+
+            <div className='cardBg elCard' style={style_card_outer}>
+           
+      
+            </div>
+           
+                
+            <div className='font-arialRoundedMTBold  elTextCopy' style={style_textCopy}>
+              <div>{this.props.locStrings.newfirstupprofilepic_textcopy_859284}</div>
+            </div>
+            <div className='font-arialRoundedMTBold  elText' style={style_text}>
+              <div>{this.props.locStrings.newfirstupprofilepic_text_296138}</div>
+            </div>
+          </div>
+        </div>
+     
       </Container>
     )
   }

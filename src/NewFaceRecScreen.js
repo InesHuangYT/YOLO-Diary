@@ -1,19 +1,39 @@
 import React, { Component } from 'react';
 import './App.css';
-import img_elBubbleDiaryBG from './images/NewFaceRecScreen_elBubbleDiaryBG_736526.jpg';
+import NavBar from './NavBar';
+import img_elBubbleDiaryBG from './images/NewFaceRecScreen_elBubbleDiaryBG_53437.jpg';
 import img_elFaceRecognition from './images/NewFaceRecScreen_elFaceRecognition_860360.png';
 import img_elPublishBubble from './images/NewFaceRecScreen_elPublishBubble_291432.png';
-import img_elIconalerts from './images/NewFaceRecScreen_elIconalerts_927169.png';
 
 // UI framework component imports
 import Container from 'muicss/lib/react/container';
-
+import store from './store';
 
 export default class NewFaceRecScreen extends Component {
 
   // Properties used by this component:
   // appActions, deviceInfo
+  componentDidMount() {
+    console.log(store.getValue())
+    
+  }
+  onClick_elButton_PublishBubble = (ev) => {
+    //this.sendData_button_PublishBubble_to_listData1(store.getValue());
+    console.log(store.getValue())
 
+    // store diaryId
+  // store.setValue({
+  //   diaryId: this.diaryId
+  // })
+  store.setValue({
+    testId: 'test3'
+  })
+    // Go to screen 'NewBubbleDiary'
+    this.props.appActions.goToScreen('newbubblediary', { transitionId: 'fadeIn' });
+  
+  }
+  
+  
   render() {
     // eslint-disable-next-line no-unused-vars
     let baseStyle = {};
@@ -36,7 +56,10 @@ export default class NewFaceRecScreen extends Component {
         pointerEvents: 'none',
      };
     const style_bubbleDiaryBG = {
-        height: 'auto',
+        backgroundImage: 'url('+img_elBubbleDiaryBG+')',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: '50% 50%',
+        backgroundSize: 'cover',
      };
     const style_bubbleDiaryBG_outer = {
         pointerEvents: 'none',
@@ -53,68 +76,13 @@ export default class NewFaceRecScreen extends Component {
     const style_publishBubble_outer = {
         pointerEvents: 'none',
      };
-    const style_hotspot = {
+    const style_button_PublishBubble = {
         display: 'block',
         backgroundColor: 'transparent',
         textTransform: 'uppercase',
      };
-    const style_hotspot_outer = {
-        pointerEvents: 'none',
-     };
-    const style_card_ToolBar = {
-        width: '100%',
-        height: '100%',
-     };
-    const style_card_ToolBar_outer = {
-        backgroundColor: 'white',
-        boxShadow: '0.0px 5.3px 37px rgba(0, 0, 0, 0.4500)',
-        pointerEvents: 'none',
-     };
-    const style_iconalerts = {
-        height: 'auto',
-        pointerEvents: 'none',
-     };
-    const style_button_BBDiary = {
-        display: 'block',
-        fontSize: 21.1,
-        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif',
-        color: '#00bdc1',
-        textAlign: 'left',
-        backgroundColor: 'transparent',
-        textTransform: 'uppercase',
-        pointerEvents: 'none',
-     };
-    const style_button_profile = {
-        display: 'block',
-        fontSize: 21.1,
-        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif',
-        color: '#00bdc1',
-        textAlign: 'left',
-        backgroundColor: 'transparent',
-        textTransform: 'uppercase',
-        pointerEvents: 'none',
-     };
-    const style_subtitle = {
-        fontSize: 18.4,
-        color: 'rgba(0, 0, 0, 0.5000)',
-        textAlign: 'left',
-        pointerEvents: 'none',
-     };
-    const style_button_HomePage = {
-        display: 'block',
-        fontSize: 21.1,
-        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif',
-        color: '#00bdc1',
-        textAlign: 'left',
-        backgroundColor: 'transparent',
-        textTransform: 'uppercase',
-        pointerEvents: 'none',
-     };
-    const style_title_yolo = {
-        fontSize: 28.5,
-        color: 'rgba(0, 0, 0, 0.8500)',
-        textAlign: 'left',
-        pointerEvents: 'none',
+    const style_button_PublishBubble_outer = {
+        cursor: 'pointer',
      };
     
     return (
@@ -127,8 +95,15 @@ export default class NewFaceRecScreen extends Component {
           
         </div>
         <div className="layoutFlow" style={layoutFlowStyle}>
+          <div className='hasNestedComps elNavBar2'>
+            <div>
+              <NavBar appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} />
+            </div>
+          
+          </div>
+          
           <div className='elBubbleDiaryBG' style={style_bubbleDiaryBG_outer}>
-            <img style={style_bubbleDiaryBG} src={img_elBubbleDiaryBG} alt=""  />
+            <div style={style_bubbleDiaryBG} />
           
           </div>
           
@@ -142,36 +117,11 @@ export default class NewFaceRecScreen extends Component {
           
           </div>
           
-          <div className='actionFont elHotspot' style={style_hotspot_outer}>
-            <div style={style_hotspot}   />
+          <div className='actionFont elButton_PublishBubble' style={style_button_PublishBubble_outer}>
+            <div style={style_button_PublishBubble}  onClick={this.onClick_elButton_PublishBubble}  />
           
           </div>
           
-        </div>
-        <div className="screenFgContainer">
-          <div className="foreground">
-            <div className='cardBg elCard_ToolBar' style={style_card_ToolBar_outer}>
-              <div style={style_card_ToolBar} />
-            
-            </div>
-            
-            <img className='elIconalerts' style={style_iconalerts} src={img_elIconalerts} alt=""  />
-            <button className='elButton_BBDiary' style={style_button_BBDiary}  >
-              {this.props.locStrings.newcreatebb2_button_bbdiary_716087}
-            </button>
-            <button className='elButton_profile' style={style_button_profile}  >
-              {this.props.locStrings.newcreatebb2_button_profile_1009299}
-            </button>
-            <div className='font-arialRoundedMTBold  elSubtitle' style={style_subtitle}>
-              <div>{this.props.locStrings.newcreatebb2_subtitle_457278}</div>
-            </div>
-            <button className='elButton_HomePage' style={style_button_HomePage}  >
-              {this.props.locStrings.newcreatebb2_button_homepage_9935}
-            </button>
-            <div className='font-arialRoundedMTBold  elTitle_yolo' style={style_title_yolo}>
-              <div>{this.props.locStrings.newcreatebb2_title_yolo_94783}</div>
-            </div>
-          </div>
         </div>
       </Container>
     )

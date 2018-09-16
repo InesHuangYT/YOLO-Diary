@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-import img_elIconalerts from './images/NewFaceRecScreen_elIconalerts_927169.png';
-import img_elHomeBG from './images/NewEmailSentScreen_elHomeBG_1012260.jpg';
+import img_elHomeBG from './images/NewHomepage01Screen_elHomeBG_666706.jpg';
 import img_elHomePageBubble from './images/NewHomepage01Screen_elHomePageBubble_520234.png';
 
 // UI framework component imports
+import Button from 'muicss/lib/react/button';
 import Container from 'muicss/lib/react/container';
 
 
@@ -13,9 +13,9 @@ export default class NewHomepage01Screen extends Component {
   // Properties used by this component:
   // appActions, deviceInfo
 
-  onClick_elHotspot = (ev) => {
-    // Go to screen 'NewBubbleDiary'
-    this.props.appActions.goToScreen('newbubblediary', { transitionId: 'fadeIn' });
+  onClick_elButtonNext = (ev) => {
+    // Go to screen 'NewFirstUpProfilePic'
+    this.props.appActions.goToScreen('newfirstupprofilepic', { transitionId: 'fadeIn' });
   
   }
   
@@ -41,64 +41,6 @@ export default class NewHomepage01Screen extends Component {
         backgroundColor: 'white',
         pointerEvents: 'none',
      };
-    const style_text_Yolo = {
-        fontSize: 28.5,
-        color: 'rgba(0, 0, 0, 0.8500)',
-        textAlign: 'left',
-     };
-    const style_text_Yolo_outer = {
-        pointerEvents: 'none',
-     };
-    const style_text_Slogan = {
-        fontSize: 18.4,
-        color: 'rgba(0, 0, 0, 0.5000)',
-        textAlign: 'left',
-     };
-    const style_text_Slogan_outer = {
-        pointerEvents: 'none',
-     };
-    const style_button_HomePage = {
-        display: 'block',
-        fontSize: 21.1,
-        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif',
-        color: '#00bdc1',
-        textAlign: 'left',
-        backgroundColor: 'transparent',
-        textTransform: 'uppercase',
-     };
-    const style_button_HomePage_outer = {
-        pointerEvents: 'none',
-     };
-    const style_button_BubbleDiary = {
-        display: 'block',
-        fontSize: 21.1,
-        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif',
-        color: '#00bdc1',
-        textAlign: 'left',
-        backgroundColor: 'transparent',
-        textTransform: 'uppercase',
-     };
-    const style_button_BubbleDiary_outer = {
-        pointerEvents: 'none',
-     };
-    const style_button_Profile = {
-        display: 'block',
-        fontSize: 21.1,
-        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif',
-        color: '#00bdc1',
-        textAlign: 'left',
-        backgroundColor: 'transparent',
-        textTransform: 'uppercase',
-     };
-    const style_button_Profile_outer = {
-        pointerEvents: 'none',
-     };
-    const style_iconalerts = {
-        height: 'auto',
-     };
-    const style_iconalerts_outer = {
-        pointerEvents: 'none',
-     };
     const style_homeBG = {
         height: 'auto',
      };
@@ -111,13 +53,33 @@ export default class NewHomepage01Screen extends Component {
     const style_homePageBubble_outer = {
         pointerEvents: 'none',
      };
-    const style_hotspot = {
+    const style_buttonNext = {
         display: 'block',
-        backgroundColor: 'transparent',
-        textTransform: 'uppercase',
+        textAlign: 'center',
      };
-    const style_hotspot_outer = {
+    const style_buttonNext_outer = {
         cursor: 'pointer',
+     };
+    const style_card = {
+        width: '100%',
+        height: '100%',
+     };
+    const style_card_outer = {
+        backgroundColor: 'white',
+        boxShadow: '0.0px 5.3px 37px rgba(0, 0, 0, 0.4500)',
+        pointerEvents: 'none',
+     };
+    const style_textCopy = {
+        fontSize: 18.4,
+        color: 'rgba(0, 0, 0, 0.5000)',
+        textAlign: 'left',
+        pointerEvents: 'none',
+     };
+    const style_text = {
+        fontSize: 28.5,
+        color: 'rgba(0, 0, 0, 0.8500)',
+        textAlign: 'left',
+        pointerEvents: 'none',
      };
     
     return (
@@ -130,46 +92,6 @@ export default class NewHomepage01Screen extends Component {
           
         </div>
         <div className="layoutFlow" style={layoutFlowStyle}>
-          <div className='font-arialRoundedMTBold  elText_Yolo' style={style_text_Yolo_outer}>
-            <div style={style_text_Yolo}>
-              <div>{this.props.locStrings.newfirstupprofilepic2_text_yolo_606521}</div>
-            </div>
-          
-          </div>
-          
-          <div className='font-arialRoundedMTBold  elText_Slogan' style={style_text_Slogan_outer}>
-            <div style={style_text_Slogan}>
-              <div>{this.props.locStrings.newfirstupprofilepic2_text_slogan_608390}</div>
-            </div>
-          
-          </div>
-          
-          <div className='elButton_HomePage' style={style_button_HomePage_outer}>
-            <button style={style_button_HomePage}  >
-              {this.props.locStrings.newfirstupprofilepic2_button_homepage_782392}
-            </button>
-          
-          </div>
-          
-          <div className='elButton_BubbleDiary' style={style_button_BubbleDiary_outer}>
-            <button style={style_button_BubbleDiary}  >
-              {this.props.locStrings.newfirstupprofilepic2_button_bubblediary_789575}
-            </button>
-          
-          </div>
-          
-          <div className='elButton_Profile' style={style_button_Profile_outer}>
-            <button style={style_button_Profile}  >
-              {this.props.locStrings.newfirstupprofilepic2_button_profile_265526}
-            </button>
-          
-          </div>
-          
-          <div className='elIconalerts' style={style_iconalerts_outer}>
-            <img style={style_iconalerts} src={img_elIconalerts} alt=""  />
-          
-          </div>
-          
           <div className='elHomeBG' style={style_homeBG_outer}>
             <img style={style_homeBG} src={img_elHomeBG} alt=""  />
           
@@ -180,11 +102,28 @@ export default class NewHomepage01Screen extends Component {
           
           </div>
           
-          <div className='actionFont elHotspot' style={style_hotspot_outer}>
-            <div style={style_hotspot}  onClick={this.onClick_elHotspot}  />
+          <div className='actionFont elButtonNext' style={style_buttonNext_outer}>
+            <Button style={style_buttonNext}  color="accent" onClick={this.onClick_elButtonNext} >
+              {this.props.locStrings.newhomepage01_button_55047}
+            </Button>
           
           </div>
           
+        </div>
+        <div className="screenFgContainer">
+          <div className="foreground">
+            <div className='cardBg elCard' style={style_card_outer}>
+              <div style={style_card} />
+            
+            </div>
+            
+            <div className='font-arialRoundedMTBold  elTextCopy' style={style_textCopy}>
+              <div>{this.props.locStrings.newhomepage01_textcopy_424822}</div>
+            </div>
+            <div className='font-arialRoundedMTBold  elText' style={style_text}>
+              <div>{this.props.locStrings.newhomepage01_text_247477}</div>
+            </div>
+          </div>
         </div>
       </Container>
     )

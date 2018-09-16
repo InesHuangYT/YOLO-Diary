@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import img_elBubbleDiaryBG from './images/NewFaceRecScreen_elBubbleDiaryBG_736526.jpg';
 import img_elAddBubble from './images/NewBubbleDiaryScreen_elAddBubble_49436.png';
-import img_elIconalerts from './images/NewFaceRecScreen_elIconalerts_927169.png';
 
 // UI framework component imports
 import Container from 'muicss/lib/react/container';
@@ -61,10 +60,6 @@ export default class NewBubbleDiary3Screen extends Component {
     const style_card_outer = {
         backgroundColor: 'white',
         boxShadow: '0.0px 5.3px 37px rgba(0, 0, 0, 0.4500)',
-        pointerEvents: 'none',
-     };
-    const style_iconalerts = {
-        height: 'auto',
         pointerEvents: 'none',
      };
     const style_buttonCopy2 = {
@@ -153,7 +148,6 @@ export default class NewBubbleDiary3Screen extends Component {
             
             </div>
             
-            <img className='elIconalerts' style={style_iconalerts} src={img_elIconalerts} alt=""  />
             <button className='elButtonCopy2' style={style_buttonCopy2}  >
               {this.props.locStrings.newbubblediary3_buttoncopy2_899768}
             </button>

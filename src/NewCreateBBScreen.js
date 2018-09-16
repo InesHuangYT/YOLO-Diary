@@ -1,39 +1,131 @@
 import React, { Component } from 'react';
 import './App.css';
-import img_elBubbleDiaryBG from './images/NewFaceRecScreen_elBubbleDiaryBG_736526.jpg';
+import NavBar from './NavBar';
+import img_elBubbleDiaryBG from './images/NewFaceRecScreen_elBubbleDiaryBG_53437.jpg';
+import img_elOriDiaryBB from './images/NewCreateBBScreen_elOriDiaryBB_1024639.png';
 import img_elAddPicBB from './images/NewCreateBBScreen_elAddPicBB_474204.png';
-import img_elOriDiaryBB from './images/NewCreateBBScreen_elOriDiaryBB_968678.png';
-import img_elButton_Complete from './images/NewCreateBBScreen_elButton_Complete_945493.png';
-import img_elIconalerts from './images/NewFaceRecScreen_elIconalerts_927169.png';
-
+import img_elComplete from './images/NewCreateBBScreen_elComplete_945493.png';
+import UploadPic from './UploadPic.js';
+import Axios from 'axios';
 // UI framework component imports
+import Textarea from 'muicss/lib/react/textarea';
 import Container from 'muicss/lib/react/container';
+import { Modal} from 'antd';
+import 'antd/dist/antd.css';
 
+//import './UploadPic.css';
+import axios from 'axios';
+
+import { Input } from 'antd';
+import 'antd/dist/antd.css';
+import store from './store';
 
 export default class NewCreateBBScreen extends Component {
 
   // Properties used by this component:
   // appActions, deviceInfo
-
+  state = { visible: false }
   constructor(props) {
     super(props);
     
     this.state = {
+      //field: '',
       textarea: '',
+      albumId: '',
+      diaryId: ''
+
     };
   }
-
-  textAreaChanged_textarea = (event) => {
-    this.setState({textarea: event.target.value});
+  
+  componentDidMount() {
+    console.log(store.getValue())
+    
   }
   
-  onClick_elHotspot = (ev) => {
+
+  showModal = () => {
+    this.setState({
+      visible: true,
+    });
+  }
+  
+ 
+  handleOk = (e) => {
+    console.log(e);
+    this.setState({
+      visible: false,
+    });
+  }
+
+  handleCancel = (e) => {
+    console.log(e);
+    this.setState({
+      visible: false,
+    });
+  }
+  
+
+//  textInputChanged_field = (event) => {
+//    this.setState({field: event.target.value});
+//  }
+  
+  textAreaChanged_textarea = (event) => {
+     this.setState({textarea: event.target.value});
+  }
+  
+  onClick_elButton_Complete = async (ev) => {
+
+    this.sendData_button_Complete_to_listData1(store.getValue());
+    const diary = {
+    text : this.state.textarea
+  }
+
+ await axios.post('/api/diary/'+ store.getValue().albumId ,diary)
+  .then(res => {
+    console.log(res);
+    this.diaryId = res.data.id;
+    console.log(store.getValue())
+  }).catch(function(error){
+    alert("Wrong diary");
+  });
+  // store diaryId
+  store.setValue({
+    diaryId: this.diaryId
+  })
+  store.setValue({
+    testId: 'test2'
+  })
     // Go to screen 'NewFaceRec'
     this.props.appActions.goToScreen('newfacerec', { transitionId: 'fadeIn' });
   
   }
   
   
+//  sendData_button_Complete_to_listData1 = () => {
+//    const dataSheet = this.props.appActions.getDataSheet('listData1');
+  onClick_elAddPic = (ev) => {
+  
+  }
+  
+  
+  sendData_button_Complete_to_listData1 = () => {
+    const dataSheet = this.props.appActions.getDataSheet('listData1');
+  
+//    let row = this.props.dataSheetRow || {
+//    };
+//    row = { ...row, 
+//      textarea: this.state.textarea,
+//      field: this.state.field,
+//      image: this.state.image,
+//     };
+//     if (this.props.dataSheetId === dataSheet.id) {
+//       this.props.appActions.updateInDataSheet('listData1', row);
+//     } else {
+//       this.props.appActions.addToDataSheet('listData1', row);
+//     }
+//   }
+  
+  }
   render() {
     // eslint-disable-next-line no-unused-vars
     let baseStyle = {};
@@ -56,15 +148,12 @@ export default class NewCreateBBScreen extends Component {
         pointerEvents: 'none',
      };
     const style_bubbleDiaryBG = {
-        height: 'auto',
+        backgroundImage: 'url('+img_elBubbleDiaryBG+')',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: '50% 50%',
+        backgroundSize: 'cover',
      };
     const style_bubbleDiaryBG_outer = {
-        pointerEvents: 'none',
-     };
-    const style_addPicBB = {
-        height: 'auto',
-     };
-    const style_addPicBB_outer = {
         pointerEvents: 'none',
      };
     const style_oriDiaryBB = {
@@ -73,82 +162,59 @@ export default class NewCreateBBScreen extends Component {
     const style_oriDiaryBB_outer = {
         pointerEvents: 'none',
      };
-    const style_textarea = {
-        display: 'block',
-        backgroundColor: 'white',
-        paddingLeft: '1rem',
-        boxSizing: 'border-box', // ensures padding won't expand element's outer size
+    const style_addPicBB = {
+        height: 'auto',
+     };
+    const style_addPicBB_outer = {
+        pointerEvents: 'none',
+     };
+     const style_field = {
+      display: 'block',
+      //boxSizing: 'border-box'
+   };
+  const style_textarea = {
+      display: 'block',
+    
+      //boxSizing: 'border-box'
+   };
+  const { TextArea } = Input;
+   
+  
+    const style_complete = {
+        height: 'auto',
+     };
+    const style_complete_outer = {
+        pointerEvents: 'none',
      };
     const style_button_Complete = {
-        height: 'auto',
+        display: 'block',
+        backgroundColor: 'transparent',
+        textTransform: 'uppercase',
      };
     const style_button_Complete_outer = {
-        pointerEvents: 'none',
-     };
-    const style_hotspot = {
-        display: 'block',
-        backgroundColor: 'transparent',
-        textTransform: 'uppercase',
-     };
-    const style_hotspot_outer = {
         cursor: 'pointer',
      };
-    const style_card_ToolBar = {
-        width: '100%',
-        height: '100%',
-     };
-    const style_card_ToolBar_outer = {
-        backgroundColor: 'white',
-        boxShadow: '0.0px 5.3px 37px rgba(0, 0, 0, 0.4500)',
-        pointerEvents: 'none',
-     };
-    const style_iconalerts = {
-        height: 'auto',
-        pointerEvents: 'none',
-     };
-    const style_button_BBDiary = {
+    const style_addPic = {
         display: 'block',
-        fontSize: 21.1,
-        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif',
-        color: '#00bdc1',
+        color: '#feffff',
         textAlign: 'left',
         backgroundColor: 'transparent',
         textTransform: 'uppercase',
-        pointerEvents: 'none',
      };
-    const style_button_profile = {
-        display: 'block',
-        fontSize: 21.1,
-        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif',
-        color: '#00bdc1',
-        textAlign: 'left',
-        backgroundColor: 'transparent',
-        textTransform: 'uppercase',
-        pointerEvents: 'none',
-     };
-    const style_subtitle = {
-        fontSize: 18.4,
-        color: 'rgba(0, 0, 0, 0.5000)',
-        textAlign: 'left',
-        pointerEvents: 'none',
-     };
-    const style_button_HomePage = {
-        display: 'block',
-        fontSize: 21.1,
-        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif',
-        color: '#00bdc1',
-        textAlign: 'left',
-        backgroundColor: 'transparent',
-        textTransform: 'uppercase',
-        pointerEvents: 'none',
-     };
-    const style_title_yolo = {
-        fontSize: 28.5,
-        color: 'rgba(0, 0, 0, 0.8500)',
-        textAlign: 'left',
-        pointerEvents: 'none',
+    const style_addPic_outer = {
+        cursor: 'pointer',
      };
     
+    const style_text = {
+      fontSize: 16.8,
+      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif',
+      color: 'rgba(0, 0, 0, 0.8500)',
+      textAlign: 'left',
+     };
+    const style_text_outer = {
+      pointerEvents: 'none',
+     };
+  
     return (
       <Container fluid={true} className="AppScreen NewCreateBBScreen" style={baseStyle}>
         <div className="background">
@@ -159,13 +225,15 @@ export default class NewCreateBBScreen extends Component {
           
         </div>
         <div className="layoutFlow" style={layoutFlowStyle}>
-          <div className='elBubbleDiaryBG' style={style_bubbleDiaryBG_outer}>
-            <img style={style_bubbleDiaryBG} src={img_elBubbleDiaryBG} alt=""  />
+          <div className='hasNestedComps elNavBar2'>
+            <div>
+              <NavBar appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} />
+            </div>
           
           </div>
           
-          <div className='elAddPicBB' style={style_addPicBB_outer}>
-            <img style={style_addPicBB} src={img_elAddPicBB} alt=""  />
+          <div className='elBubbleDiaryBG' style={style_bubbleDiaryBG_outer}>
+            <div style={style_bubbleDiaryBG} />
           
           </div>
           
@@ -174,45 +242,57 @@ export default class NewCreateBBScreen extends Component {
           
           </div>
           
+          <div className='elAddPicBB' style={style_addPicBB_outer}>
+            <img style={style_addPicBB} src={img_elAddPicBB} alt=""  />
+          
+          </div>
+          
+          {/* <div className='baseFont elField'>
+            <Input style={style_field} type="text" hint={this.props.locStrings.寫下內容吧} onChange={this.textInputChanged_field} defaultValue={this.state.field}  />
+          
+          </div> */}
+          
           <div className='baseFont elTextarea'>
-            <textarea style={style_textarea}  placeholder={this.props.locStrings.newcreatebb_textarea_670437} onChange={this.textAreaChanged_textarea} defaultValue={this.state.textarea}  />
+      
+            <TextArea  placeholder={this.props.locStrings.newcreatebb_textarea_581227} onChange={this.textAreaChanged_textarea} defaultValue={this.state.textarea } />
           
           </div>
           
-          <div className='elButton_Complete' style={style_button_Complete_outer}>
-            <img style={style_button_Complete} src={img_elButton_Complete} alt=""  />
+          <div className='elComplete' style={style_complete_outer}>
+            <img style={style_complete} src={img_elComplete} alt=""  />
           
           </div>
           
-          <div className='actionFont elHotspot' style={style_hotspot_outer}>
-            <div style={style_hotspot}  onClick={this.onClick_elHotspot}  />
+          <div className='actionFont elButton_Complete' style={style_button_Complete_outer}>
+            <div style={style_button_Complete}  onClick={this.onClick_elButton_Complete}  />
           
           </div>
           
-        </div>
-        <div className="screenFgContainer">
-          <div className="foreground">
-            <div className='cardBg elCard_ToolBar' style={style_card_ToolBar_outer}>
-              <div style={style_card_ToolBar} />
+          <div className='elText' style={style_text_outer}>
+            <div style={style_text}>
+              <div>{this.props.locStrings.newcreatebb_text_16559}</div>
+            </div>
+          
+          </div>
+          
+          <div className='actionFont elAddPic' style={style_addPic_outer}>
+            <button style={style_addPic}  onClick={this.showModal} >
+              {this.props.locStrings.newcreatebb_button_239952}
+       
+            </button>
+          
             
-            </div>
-            
-            <img className='elIconalerts' style={style_iconalerts} src={img_elIconalerts} alt=""  />
-            <button className='elButton_BBDiary' style={style_button_BBDiary}  >
-              {this.props.locStrings.newtutorcreatebb2_button_bbdiary_392335}
-            </button>
-            <button className='elButton_profile' style={style_button_profile}  >
-              {this.props.locStrings.newtutorcreatebb2_button_profile_1002526}
-            </button>
-            <div className='font-arialRoundedMTBold  elSubtitle' style={style_subtitle}>
-              <div>{this.props.locStrings.newtutorcreatebb2_subtitle_478439}</div>
-            </div>
-            <button className='elButton_HomePage' style={style_button_HomePage}  >
-              {this.props.locStrings.newtutorcreatebb2_button_homepage_487917}
-            </button>
-            <div className='font-arialRoundedMTBold  elTitle_yolo' style={style_title_yolo}>
-              <div>{this.props.locStrings.newtutorcreatebb2_title_yolo_767224}</div>
-            </div>
+            <Modal
+          title="請選擇照片"
+          visible={this.state.visible}
+          onOk={this.handleOk}
+          onCancel={this.handleCancel}
+          width='1050px'
+          
+        >
+         <UploadPic/>
+        </Modal>
+         
           </div>
         </div>
       </Container>
