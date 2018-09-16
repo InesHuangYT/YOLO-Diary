@@ -1,4 +1,5 @@
 import DataSheetBase from './DataSheetBase.js';
+import Axios from 'axios';
 
 export default class DataSheet_listData1 extends DataSheetBase {
 
@@ -8,17 +9,24 @@ export default class DataSheet_listData1 extends DataSheetBase {
   }
 
   makeDefaultItems() {
-    // eslint-disable-next-line no-unused-vars
     let key = 1;
-    // eslint-disable-next-line no-unused-vars
     let item;
+    Axios.get("/api/album/albums").then(res => {
+      var elements = res.data.content.length;
+      
+      
+      for(var i = 0; i < elements; i++){
+        item = {};
+        this.items.push(item);
+        //相簿名稱
+        item['field'] = res.data.content[i].name;
+        //日記內容
+        item['textarea'] = "";
+        item.key = key++;
+      }
     
-    //多餘的泡泡
-    // item = {};
-    // this.items.push(item);
-    // item['field'] = "";
-    // item['textarea'] = "";
-    // item.key = key++;
-  }
+    })
+    
+}
 
 }

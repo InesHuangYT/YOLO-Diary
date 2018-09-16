@@ -9,7 +9,7 @@ export default class DataSheetBase {
   }
 
   makeDefaultItems() {
-    // subclasses can override
+   
   }
 
 

@@ -4,6 +4,8 @@ import img_elBubbleDiaryBG from './images/NewFaceRecScreen_elBubbleDiaryBG_53437
 import NavBar from './NavBar';
 import Addbubble from './Addbubble';
 import ListItem1 from './ListItem1';
+import Axios from 'axios';
+
 
 // UI framework component imports
 import Button from 'muicss/lib/react/button';
@@ -17,7 +19,12 @@ export default class NewBubbleDiaryScreen extends Component {
 
   componentDidMount() {
     console.log(store.getValue())
-    
+    // Axios.get("/api/album/albums").then(res =>{
+    //   console.log("response",res);
+    //   console.log("response data",res.data);
+    //   console.log("data total", res.data.content.length)
+    //   console.log("data", res.data.content[1].name)
+    // })
   }
 
   render() {
