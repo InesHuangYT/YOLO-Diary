@@ -1,0 +1,7130 @@
+/* Font copied in place by React Studio. Please check that your license for this font file permits embedding on a website. */
+@font-face {
+  font-family: 'SFUIText-Bold';
+  src: url('fonts/BF396DF7D0C0-Bold.otf');
+}
+
+.font-SFUITextBold {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+}
+@media (min-resolution: 120dpi) {
+  .font-SFUITextBold {
+    font-family: 'SFUIText-Bold', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+  }
+}
+
+/* Font copied in place by React Studio. Please check that your license for this font file permits embedding on a website. */
+@font-face {
+  font-family: 'ArialRoundedMTBold';
+  src: url('fonts/Arial Rounded Bold.ttf');
+}
+
+.font-arialRoundedMTBold {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+}
+@media (min-resolution: 120dpi) {
+  .font-arialRoundedMTBold {
+    font-family: 'ArialRoundedMTBold', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+  }
+}
+
+/* Font copied in place by React Studio. Please check that your license for this font file permits embedding on a website. */
+@font-face {
+  font-family: 'SFUIText-Regular';
+  src: url('fonts/BF396DF7D0C0-Regular.otf');
+}
+
+.font-SFUITextRegular {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+}
+@media (min-resolution: 120dpi) {
+  .font-SFUITextRegular {
+    font-family: 'SFUIText-Regular', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+  }
+}
+
+.App { /* Base font style */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+  font-size: 15.1px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: rgba(0, 0, 0, 0.8500);
+  background-color: #fcffff;
+}
+
+.App .baseFont * { /* Base font style override for UI framework components */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+  font-size: 15.1px;
+}
+
+.App .appBg {
+  background-color: #fcffff;
+}
+
+.App .cardBg {
+  background-color: white;
+}
+
+.App .baseTextBg { /* Base text color as background */
+  background-color: rgba(0, 0, 0, 0.8500);
+}
+
+.App .secondaryTextColor {
+  color: rgba(0, 0, 0, 0.5000);
+}
+
+.App .secondaryTextBg {
+  background-color: rgba(0, 0, 0, 0.5000);
+}
+
+.App .primaryTextColor {
+  color: #feffff;
+}
+
+.App .primaryBg {
+  background-color: #feffff;
+}
+
+.App .highlightTextColor {
+  color: #00bdc1;
+}
+
+.App .highlightBg {
+  background-color: #00bdc1;
+}
+
+/* Styles to customize the UI framework plugin (MUI, https://muicss.com) */
+.mui-btn {
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.mui-btn--primary {
+    background-color: #feffff;
+}
+.mui-btn--primary:active, .mui-btn--primary:focus, .mui-btn--primary:hover {
+    background-color: #feffff;
+}
+.mui-btn--accent {
+    background-color: #00bdc1;
+}
+.mui-btn--accent:active, .mui-btn--accent:focus, .mui-btn--accent:hover {
+    background-color: #00c2c7;
+}
+.mui-textfield {  /* Reset UI framework styling that affects layout */
+    padding-top: 0;
+    margin-bottom: 0;
+}
+.mui-checkbox, .mui-radio {  /* Reset UI framework styling that affects layout */
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.mui-select {  /* Reset UI framework styling that affects layout */
+    padding-top: 0;
+    margin-bottom: 0;
+}
+.mui-btn+.mui-btn {  /* Reset UI framework styling that affects layout */
+    margin-left: 0;
+}
+.mui-btn--fab {  /* Reset UI framework styling that breaks compositing */
+    z-index: auto;
+}
+
+@keyframes fadeIn {
+    0%   { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+@keyframes slideIn_right {
+    0%   { transform: translateX(100%); }
+    100% { transform: translateX(0); }
+}
+@keyframes slideIn_bottom {
+    0%   { transform: translateY(100%); }
+    100% { transform: translateY(0); }
+}
+
+/* App-wide text styles specified in React Studio */
+.App .actionFont {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+  font-size: 14.2px;
+  font-weight: 400;
+}
+.App .actionFont * {
+  font-size: 14.2px;
+}
+.App .headlineFont {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+  font-size: 19.4px;
+  font-weight: 400;
+}
+.App .headlineFont * {
+  font-size: 19.4px;
+}
+.App .navBar {
+  background-color: #feffff;
+  color: black;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif;
+  font-size: 18px;
+}
+
+.App .navBar a {
+  color: black;
+}
+
+.App .navBar .title {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  padding: 4px;
+  margin-top: 14px;
+}
+
+.App .navBar .backBtn {
+  position: absolute;
+  padding: 4px;
+  margin-left: 14px;
+  margin-top: 14px;
+  cursor: pointer;
+}
+
+@media (min-width: 320px) {
+  .mui-container {
+    max-width: 320px;
+  }
+}
+@media (min-width: 568px) {
+  .mui-container {
+    max-width: 568px;
+  }
+}
+@media (min-width: 768px) {
+  .mui-container {
+    max-width: 768px;
+  }
+}
+@media (min-width: 1024px) {
+  .mui-container {
+    max-width: 1024px;
+  }
+}
+
+.AppScreen {
+  padding-left: 0;
+  padding-right: 0;
+  position: absolute;
+  width: 100%;
+}
+
+.App .background {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.App .layoutFlow {
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 100%;
+  float: left;
+}
+.App .layoutFlow:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.App .layoutFlow .flowRow {
+  position: relative;
+  width: 100%;
+}
+
+.App .screenFgContainer {
+  /* Items in the foreground group within a screen are placed with fixed positioning */
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+.App .foreground {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+.App .compContent {
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 100%;
+}
+
+.App ul {
+  margin: 0;
+  padding: 0;
+}
+.App li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  position: relative;
+}
+.App .hasNestedComps {
+  position: relative;
+}
+.App .hasNestedComps:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.App .hasNestedComps .background {
+  position: absolute;
+}
+.App .hasNestedComps .layoutFlow {
+  position: relative;
+}
+.App .hasNestedComps .foreground {
+  position: absolute;
+}
+.App .bottomAlignedContent {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+/* This component has a fixed-size layout */
+  .ListFriend {
+    min-height: 125px;
+    width: 100%; /* This component was designed using a width of 1133px */
+  }
+  .ListFriend > .background > .containerMinHeight {
+    min-height: 125px;
+  }
+
+
+  .ListFriend .elLine {
+    position: relative;
+    margin-top: 106px;
+    width: 1109px;
+    margin-left: 0px;
+  }
+  .ListFriend .elLine > * { 
+  width: 1109px;
+  height: 2px;
+  }
+  
+
+
+  .ListFriend .elUserphoto {
+    position: relative;
+    margin-top: -84px;
+    width: 63px;
+    margin-left: 79px;
+  }
+  .ListFriend .elUserphoto > * { 
+  width: 63px;
+  height: 60px;
+  }
+  
+
+
+  .ListFriend .elUsername {
+    position: relative;
+    margin-top: -35px;
+    width: 178px;
+    margin-left: 244px;
+  }
+  .ListFriend .elUsername > * { 
+  width: 178px;
+  height: 34px;
+  }
+  
+
+
+  .ListFriend .elButton_message {
+    position: relative;
+    margin-top: -40px;
+    width: 54px;
+    margin-left: 580px;
+  }
+  .ListFriend .elButton_message > * { 
+  width: 54px;
+  height: 44px;
+  }
+  
+
+
+  .ListFriend .elButton_delete {
+    position: relative;
+    margin-top: -45px;
+    width: 42px;
+    margin-left: 908px;
+  }
+  .ListFriend .elButton_delete > * { 
+  width: 42px;
+  height: 42px;
+  }
+  
+
+.NewFriendListScreen {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+  .NewFriendListScreen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+
+
+  .NewFriendListScreen > .background > .elPBG {
+    position: absolute;
+    left: 0px;
+    top: 2px;
+    width: 1607px;
+    height: 904px;
+  }
+
+
+  .NewFriendListScreen > .layoutFlow > .elNavBar2 {
+    position: relative;
+    margin-top: -1px;
+    width: 1607px;
+    margin-left: 0px;
+  }
+  .NewFriendListScreen > .layoutFlow > .elNavBar2 > * { 
+  width: 1607px;
+  height: 90px;
+  }
+  
+  .NewFriendListScreen > .layoutFlow > .elNavBar2 > .background > .containerMinHeight {
+    min-height: 90px;
+  }
+
+
+
+  .NewFriendListScreen > .layoutFlow > .elTitle_Flist {
+    position: relative;
+    margin-top: 43px;
+    width: 166px;
+    margin-left: 563px;
+  }
+  .NewFriendListScreen > .layoutFlow > .elTitle_Flist > * { 
+  width: 166px;
+  height: 68px;
+  }
+  
+
+  .NewFriendListScreen .elList li {
+    margin-bottom: 4px;
+  }
+
+
+
+  .NewFriendListScreen > .layoutFlow > .elList {
+    position: relative;
+    margin-top: -9px;
+    width: 879px;
+    margin-left: 104px;
+  }
+  .NewFriendListScreen > .layoutFlow > .elList > * { 
+  width: 879px;
+  height: 98px;
+  }
+  
+
+
+  .NewFriendListScreen > .layoutFlow > .elComp {
+    position: relative;
+    margin-top: -211px;
+    width: 339px;
+    margin-left: 1259px;
+  }
+  .NewFriendListScreen > .layoutFlow > .elComp > * { 
+  width: 339px;
+  height: 716px;
+  }
+  
+  .NewFriendListScreen > .layoutFlow > .elComp > .background > .containerMinHeight {
+    min-height: 557px;
+  }
+
+
+
+  .NewFriendListScreen > .layoutFlow > .elIconAddfriend {
+    position: relative;
+    margin-top: -90px;
+    width: 74px;
+    margin-left: 67px;
+  }
+  .NewFriendListScreen > .layoutFlow > .elIconAddfriend > * { 
+  width: 74px;
+  height: 74px;
+  }
+  
+
+
+  .NewFriendListScreen > .layoutFlow > .elField_FindFriend {
+    position: relative;
+    margin-top: -41px;
+    width: 185px;
+    margin-left: 160px;
+  }
+  .NewFriendListScreen > .layoutFlow > .elField_FindFriend > * { 
+  width: 185px;
+  height: 26px;
+  }
+  
+
+
+  .NewFriendListScreen > .layoutFlow > .elButton_addfriend {
+    position: relative;
+    margin-top: -26px;
+    width: 81px;
+    margin-left: 364px;
+  }
+  .NewFriendListScreen > .layoutFlow > .elButton_addfriend > * { 
+  width: 81px;
+  height: 33px;
+  }
+  
+
+
+  .NewFriendListScreen > .layoutFlow > .elMo {
+    position: relative;
+    margin-top: -61px;
+    width: 67px;
+    margin-left: 491px;
+  }
+  .NewFriendListScreen > .layoutFlow > .elMo > * { 
+  width: 67px;
+  height: 59px;
+  }
+  
+
+.NewChatRoomScreen {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+  .NewChatRoomScreen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+
+
+  .NewChatRoomScreen > .layoutFlow > .elNavBar2 {
+    position: relative;
+    margin-top: -1px;
+    width: 1607px;
+    margin-left: 0px;
+  }
+  .NewChatRoomScreen > .layoutFlow > .elNavBar2 > * { 
+  width: 1607px;
+  height: 90px;
+  }
+  
+  .NewChatRoomScreen > .layoutFlow > .elNavBar2 > .background > .containerMinHeight {
+    min-height: 90px;
+  }
+
+
+
+  .NewChatRoomScreen > .layoutFlow > .elPBG {
+    position: relative;
+    margin-top: 18px;
+    width: 1607px;
+    margin-left: 0px;
+  }
+  .NewChatRoomScreen > .layoutFlow > .elPBG > * { 
+  width: 1607px;
+  height: 716px;
+  }
+  
+
+
+  .NewChatRoomScreen > .layoutFlow > .elComp {
+    position: relative;
+    margin-top: -714px;
+    width: 339px;
+    margin-left: 1260px;
+  }
+  .NewChatRoomScreen > .layoutFlow > .elComp > * { 
+  width: 339px;
+  height: 716px;
+  }
+  
+  .NewChatRoomScreen > .layoutFlow > .elComp > .background > .containerMinHeight {
+    min-height: 557px;
+  }
+
+
+
+  .NewChatRoomScreen > .layoutFlow > .elTitle_chat {
+    position: relative;
+    margin-top: -695px;
+    width: 135px;
+    margin-left: 601px;
+  }
+  .NewChatRoomScreen > .layoutFlow > .elTitle_chat > * { 
+  width: 135px;
+  height: 46px;
+  }
+  
+
+/* This component has a fixed-size layout */
+  .PMenu {
+    min-height: 715px;
+    width: 100%; /* This component was designed using a width of 348px */
+  }
+  .PMenu > .background > .containerMinHeight {
+    min-height: 715px;
+  }
+
+
+  .PMenu .elPmenu {
+    position: relative;
+    margin-top: 0px;
+    width: 348px;
+    margin-left: 0px;
+  }
+  .PMenu .elPmenu > * { 
+  width: 348px;
+  height: 714px;
+  }
+  
+
+.PMenu .elButton_FList button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+
+
+  .PMenu .elButton_FList {
+    line-height: 90px;
+    position: relative;
+    margin-top: -353px;
+    width: 310px;
+    margin-left: -4px;
+  }
+  .PMenu .elButton_FList > * { 
+  width: 310px;
+  height: 90px;
+  }
+  
+
+.PMenu .elButton_Chat button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+
+
+  .PMenu .elButton_Chat {
+    line-height: 95px;
+    position: relative;
+    margin-top: 30px;
+    width: 341px;
+    margin-left: 0px;
+  }
+  .PMenu .elButton_Chat > * { 
+  width: 341px;
+  height: 95px;
+  }
+  
+
+.PMenu .elButton_profile button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+
+
+  .PMenu .elButton_profile {
+    line-height: 93px;
+    position: relative;
+    margin-top: 36px;
+    width: 307px;
+    margin-left: 0px;
+  }
+  .PMenu .elButton_profile > * { 
+  width: 307px;
+  height: 93px;
+  }
+  
+
+
+  .PMenu .elField_username {
+    position: relative;
+    margin-top: -692px;
+    width: 226px;
+    margin-left: 63px;
+  }
+  .PMenu .elField_username > * { 
+  width: 226px;
+  height: 34px;
+  }
+  
+
+.PMenu .elUppic button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.PMenu .elUppic button:focus {
+  box-shadow: 0 0 6px rgba(254, 255, 255, 0.2500);
+  outline: none;
+}
+
+
+
+  .PMenu .elUppic {
+    line-height: 57px;
+    position: relative;
+    margin-top: 170px;
+    width: 154px;
+    margin-left: 117px;
+  }
+  .PMenu .elUppic > * { 
+  width: 154px;
+  height: 57px;
+  }
+  
+
+/* This component has a fixed-size layout */
+  .ListNotification {
+    min-height: 197px;
+    width: 100%; /* This component was designed using a width of 1133px */
+  }
+  .ListNotification > .background > .containerMinHeight {
+    min-height: 197px;
+  }
+
+
+  .ListNotification .elFriendPic {
+    position: relative;
+    margin-top: 31px;
+    width: 120px;
+    margin-left: 72px;
+  }
+  .ListNotification .elFriendPic > * { 
+  width: 120px;
+  height: 96px;
+  }
+  
+
+
+  .ListNotification .elField_notification {
+    position: relative;
+    margin-top: -56px;
+    width: 393px;
+    margin-left: 477px;
+  }
+  .ListNotification .elField_notification > * { 
+  width: 393px;
+  height: 65px;
+  }
+  
+
+
+  .ListNotification .elField_FriendName {
+    position: relative;
+    margin-top: -62px;
+    width: 172px;
+    margin-left: 268px;
+  }
+  .ListNotification .elField_FriendName > * { 
+  width: 172px;
+  height: 64px;
+  }
+  
+
+
+  .ListNotification .elLine {
+    position: relative;
+    margin-top: 26px;
+    width: 1328px;
+    margin-left: 0px;
+  }
+  .ListNotification .elLine > * { 
+  width: 1328px;
+  height: 3px;
+  }
+  
+
+.NewFaceRecScreen {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+  .NewFaceRecScreen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 899px;
+  }
+
+
+  .NewFaceRecScreen > .layoutFlow > .elNavBar2 {
+    position: relative;
+    margin-top: -2px;
+    width: 1607px;
+    margin-left: 0px;
+  }
+  .NewFaceRecScreen > .layoutFlow > .elNavBar2 > * { 
+  width: 1607px;
+  height: 90px;
+  }
+  
+  .NewFaceRecScreen > .layoutFlow > .elNavBar2 > .background > .containerMinHeight {
+    min-height: 90px;
+  }
+
+
+
+  .NewFaceRecScreen > .layoutFlow > .elBubbleDiaryBG {
+    position: relative;
+    margin-top: 16px;
+    width: 1602px;
+    margin-left: 0px;
+  }
+  .NewFaceRecScreen > .layoutFlow > .elBubbleDiaryBG > * { 
+  width: 1602px;
+  height: 709px;
+  }
+  
+
+
+  .NewFaceRecScreen > .layoutFlow > .elFaceRecognition {
+    position: relative;
+    margin-top: -710px;
+    width: 609px;
+    margin-left: 0px;
+  }
+  .NewFaceRecScreen > .layoutFlow > .elFaceRecognition > * { 
+  width: 609px;
+  height: 710px;
+  }
+  
+
+
+  .NewFaceRecScreen > .layoutFlow > .elPublishBubble {
+    position: relative;
+    margin-top: -68px;
+    width: 146px;
+    margin-left: 1101px;
+  }
+  .NewFaceRecScreen > .layoutFlow > .elPublishBubble > * { 
+  width: 146px;
+  height: 51px;
+  }
+  
+
+.NewFaceRecScreen .elButton_PublishBubble button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+
+
+  .NewFaceRecScreen > .layoutFlow > .elButton_PublishBubble {
+    line-height: 50px;
+    position: relative;
+    margin-top: -52px;
+    width: 143px;
+    margin-left: 1102px;
+  }
+  .NewFaceRecScreen > .layoutFlow > .elButton_PublishBubble > * { 
+  width: 143px;
+  height: 50px;
+  }
+  
+
+.NewProfileTestScreen {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+  .NewProfileTestScreen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+
+
+  .NewProfileTestScreen > .layoutFlow > .elNavBar2 {
+    position: relative;
+    margin-top: -1px;
+    width: 1607px;
+    margin-left: 0px;
+  }
+  .NewProfileTestScreen > .layoutFlow > .elNavBar2 > * { 
+  width: 1607px;
+  height: 90px;
+  }
+  
+  .NewProfileTestScreen > .layoutFlow > .elNavBar2 > .background > .containerMinHeight {
+    min-height: 90px;
+  }
+
+
+
+  .NewProfileTestScreen > .layoutFlow > .elPBG {
+    position: relative;
+    margin-top: 18px;
+    width: 1607px;
+    margin-left: 0px;
+  }
+  .NewProfileTestScreen > .layoutFlow > .elPBG > * { 
+  width: 1607px;
+  height: 716px;
+  }
+  
+
+
+  .NewProfileTestScreen > .layoutFlow > .elProfileInfroBB {
+    position: relative;
+    margin-top: -750px;
+    width: 1166px;
+    margin-left: 31px;
+  }
+  .NewProfileTestScreen > .layoutFlow > .elProfileInfroBB > * { 
+  width: 1166px;
+  height: 845px;
+  }
+  
+
+
+  .NewProfileTestScreen > .layoutFlow > .elField_email {
+    position: relative;
+    margin-top: -389px;
+    width: 136px;
+    margin-left: 568px;
+  }
+  .NewProfileTestScreen > .layoutFlow > .elField_email > * { 
+  width: 136px;
+  height: 49px;
+  }
+  
+
+
+  .NewProfileTestScreen > .layoutFlow > .elField_username {
+    position: relative;
+    margin-top: -176px;
+    width: 136px;
+    margin-left: 625px;
+  }
+  .NewProfileTestScreen > .layoutFlow > .elField_username > * { 
+  width: 136px;
+  height: 49px;
+  }
+  
+
+
+  .NewProfileTestScreen > .layoutFlow > .elComp {
+    position: relative;
+    margin-top: -343px;
+    width: 350px;
+    margin-left: 1260px;
+  }
+  .NewProfileTestScreen > .layoutFlow > .elComp > * { 
+  width: 350px;
+  height: 706px;
+  }
+  
+  .NewProfileTestScreen > .layoutFlow > .elComp > .background > .containerMinHeight {
+    min-height: 557px;
+  }
+
+
+.NewProfileTestScreen .elButton_confirm button {
+  border: 0.0px solid transparent;
+}
+
+
+
+  .NewProfileTestScreen > .layoutFlow > .elButton_confirm {
+    line-height: 42px;
+    position: relative;
+    margin-top: -181px;
+    width: 120px;
+    margin-left: 577px;
+  }
+  .NewProfileTestScreen > .layoutFlow > .elButton_confirm > * { 
+  width: 120px;
+  height: 42px;
+  }
+  
+
+.NewUserDiaryScreen {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+  .NewUserDiaryScreen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 899px;
+  }
+
+
+  .NewUserDiaryScreen > .layoutFlow > .elNavBar2 {
+    position: relative;
+    margin-top: 0px;
+    width: 1607px;
+    margin-left: -2px;
+  }
+  .NewUserDiaryScreen > .layoutFlow > .elNavBar2 > * { 
+  width: 1607px;
+  height: 90px;
+  }
+  
+  .NewUserDiaryScreen > .layoutFlow > .elNavBar2 > .background > .containerMinHeight {
+    min-height: 90px;
+  }
+
+
+
+  .NewUserDiaryScreen > .layoutFlow > .elBubbleDiaryBG {
+    position: relative;
+    margin-top: 16px;
+    width: 1602px;
+    margin-left: 0px;
+  }
+  .NewUserDiaryScreen > .layoutFlow > .elBubbleDiaryBG > * { 
+  width: 1602px;
+  height: 709px;
+  }
+  
+
+
+  .NewUserDiaryScreen > .layoutFlow > .elOriDiaryBB {
+    position: relative;
+    margin-top: -1134px;
+    width: 1492px;
+    margin-left: 97px;
+  }
+  .NewUserDiaryScreen > .layoutFlow > .elOriDiaryBB > * { 
+    width: 1492px;
+    height: 1492px;
+  }
+  
+
+
+  .NewUserDiaryScreen > .layoutFlow > .elAddPicBB {
+    position: relative;
+    margin-top: -790px;
+    width: 154px;
+    margin-left: 90px;
+  }
+  .NewUserDiaryScreen > .layoutFlow > .elAddPicBB > * { 
+    width: 154px;
+    height: 154px;
+  }
+  
+
+
+  .NewUserDiaryScreen > .layoutFlow > .elField {
+    position: relative;
+    margin-top: -300px;
+    width: 462px;
+    margin-left: 576px;
+  }
+  .NewUserDiaryScreen > .layoutFlow > .elField > * { 
+    background-color: #fcffffaf;
+    border-radius: 10px;
+    width: 462px;
+    height: 30px;
+  }
+  
+
+
+  .NewUserDiaryScreen > .layoutFlow > .elTextarea {
+    position: relative;
+    margin-top: 20px;
+    width: 464px;
+    height: 300px;
+    margin-left: 575px;
+  }
+  .NewUserDiaryScreen > .layoutFlow > .elTextarea > * { 
+    background-color: #fcffffaf;
+    border-radius: 10px;
+    width: 464px;
+    height: 400px;
+    opacity: 0.85;
+  }
+  
+
+.NewUserDiaryScreen .elButton_OK button {
+  border: 0.0px solid transparent;
+}
+
+
+
+  .NewUserDiaryScreen > .layoutFlow > .elButton_OK {
+    line-height: 27px;
+    position: relative;
+    margin-top: 69px;
+    width: 113px;
+    margin-left: 1355px;
+  }
+  .NewUserDiaryScreen > .layoutFlow > .elButton_OK > * { 
+  width: 113px;
+  height: 27px;
+  }
+  
+
+.NewHomeNotificationScreen {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+  .NewHomeNotificationScreen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 899px;
+  }
+
+
+  .NewHomeNotificationScreen > .background > .elBubbleDiaryBG {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1600px;
+    height: 900px;
+  }
+
+
+  .NewHomeNotificationScreen > .layoutFlow > .elNavBar2 {
+    position: relative;
+    margin-top: -2px;
+    width: 1600px;
+    margin-left: 0px;
+  }
+  .NewHomeNotificationScreen > .layoutFlow > .elNavBar2 > * { 
+  width: 1600px;
+  height: 90px;
+  }
+  
+  .NewHomeNotificationScreen > .layoutFlow > .elNavBar2 > .background > .containerMinHeight {
+    min-height: 90px;
+  }
+
+
+
+  .NewHomeNotificationScreen > .layoutFlow > .elN {
+    position: relative;
+    margin-top: 24px;
+    width: 178px;
+    margin-left: 727px;
+  }
+  .NewHomeNotificationScreen > .layoutFlow > .elN > * { 
+  width: 178px;
+  height: 73px;
+  }
+  
+
+  .NewHomeNotificationScreen .elList li {
+    margin-bottom: 4px;
+  }
+
+
+
+  .NewHomeNotificationScreen > .layoutFlow > .elList {
+    position: relative;
+    margin-top: -31px;
+    width: 922px;
+    margin-left: 94px;
+  }
+  .NewHomeNotificationScreen > .layoutFlow > .elList > * { 
+  width: 922px;
+  height: 469px;
+  }
+  
+
+.NewLogoutScreen {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+  .NewLogoutScreen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+
+
+  .NewLogoutScreen > .background > .elPBG {
+    position: absolute;
+    left: -4px;
+    top: 0px;
+    width: 1607px;
+    height: 906px;
+  }
+
+
+  .NewLogoutScreen > .layoutFlow > .elLogoutBB {
+    position: relative;
+    margin-top: 112px;
+    width: 1040px;
+    margin-left: 231px;
+  }
+  .NewLogoutScreen > .layoutFlow > .elLogoutBB > * { 
+  width: 1040px;
+  height: 718px;
+  }
+  
+
+.NewLogoutScreen .elButton_ReLogin button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+
+
+  .NewLogoutScreen > .layoutFlow > .elButton_ReLogin {
+    line-height: 53px;
+    position: relative;
+    margin-top: -315px;
+    width: 143px;
+    margin-left: 657px;
+  }
+  .NewLogoutScreen > .layoutFlow > .elButton_ReLogin > * { 
+  width: 143px;
+  height: 53px;
+  }
+  
+
+
+  .NewLogoutScreen > .screenFgContainer > .foreground > .elCard {
+    position: absolute;
+    left: -2px;
+    top: 0px;
+    width: 1605px;
+    height: 90px;
+  }
+
+
+  .NewLogoutScreen > .screenFgContainer > .foreground > .elTextCopy {
+    overflow: hidden;
+    position: absolute;
+    left: 194px;
+    right: 1024px;
+    top: 51px;
+    width: calc(100% - 194px + 1024px);
+    height: 37px;
+  }
+
+
+  .NewLogoutScreen > .screenFgContainer > .foreground > .elText {
+    overflow: hidden;
+    position: absolute;
+    left: 51px;
+    right: 969px;
+    top: 13px;
+    width: calc(100% - 51px + 969px);
+    height: 52px;
+  }
+
+.NewCreateBBScreen {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+  .NewCreateBBScreen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 899px;
+  }
+
+
+  .NewCreateBBScreen > .layoutFlow > .elNavBar2 {
+    position: relative;
+    margin-top: 0px;
+    width: 1607px;
+    margin-left: -2px;
+  }
+  .NewCreateBBScreen > .layoutFlow > .elNavBar2 > * { 
+  width: 1607px;
+  height: 90px;
+  }
+  
+  .NewCreateBBScreen > .layoutFlow > .elNavBar2 > .background > .containerMinHeight {
+    min-height: 90px;
+  }
+
+
+
+  .NewCreateBBScreen > .layoutFlow > .elBubbleDiaryBG {
+    position: relative;
+    margin-top: 12px;
+    width: 1602px;
+    margin-left: 0px;
+  }
+  .NewCreateBBScreen > .layoutFlow > .elBubbleDiaryBG > * { 
+  width: 1602px;
+  height: 709px;
+  }
+  
+
+
+  .NewCreateBBScreen > .layoutFlow > .elOriDiaryBB {
+    position: relative;
+    margin-top: -1134px;
+    width: 1492px;
+    margin-left: 97px;
+  }
+  .NewCreateBBScreen > .layoutFlow > .elOriDiaryBB > * { 
+  width: 1492px;
+  height: 1492px;
+  }
+  
+
+
+  .NewCreateBBScreen > .layoutFlow > .elAddPicBB {
+    position: relative;
+    margin-top: -790px;
+    width: 154px;
+    margin-left: 90px;
+  }
+  .NewCreateBBScreen > .layoutFlow > .elAddPicBB > * { 
+  width: 154px;
+  height: 154px;
+  }
+  
+
+
+  /* .NewCreateBBScreen > .layoutFlow > .elField {
+    position: relative;
+    margin-top: -300px;
+    width: 462px;
+    margin-left: 576px;
+  }
+  .NewCreateBBScreen > .layoutFlow > .elField > * { 
+
+  background-color: #fcffffaf;
+  border-radius: 10px;
+  width: 462px;
+  height: 30px;
+  
+  } */
+  
+
+
+  .NewCreateBBScreen > .layoutFlow > .elTextarea {
+   
+    position: relative;
+    margin-top: -290px;
+    width: 464px;
+    height: 300px;
+    margin-left: 575px;
+
+  }
+  .NewCreateBBScreen > .layoutFlow > .elTextarea > * { 
+
+  background-color: #fcffffaf;
+  border-radius: 10px;
+  width: 464px;
+  height: 450px;
+  opacity: 0.85;
+  
+  }
+  
+
+
+  .NewCreateBBScreen > .layoutFlow > .elComplete {
+    position: relative;
+    margin-top: 71px;
+    width: 133px;
+    margin-left: 1253px;
+  }
+  .NewCreateBBScreen > .layoutFlow > .elComplete > * { 
+  width: 133px;
+  height: 47px;
+  }
+  
+
+.NewCreateBBScreen .elButton_Complete button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+
+
+  .NewCreateBBScreen > .layoutFlow > .elButton_Complete {
+    line-height: 36px;
+    position: relative;
+    margin-top: -45px;
+    width: 119px;
+    margin-left: 1259px;
+  }
+  .NewCreateBBScreen > .layoutFlow > .elButton_Complete > * { 
+  width: 119px;
+  height: 36px;
+  }
+  .NewCreateBBScreen .elAddPic button {
+    cursor: pointer;
+    border: 0.0px solid transparent;
+  }
+  
+  .NewCreateBBScreen .elAddPic button:focus {
+    box-shadow: 0 0 6px rgba(254, 255, 255, 0.2500);
+    outline: none;
+  }
+  
+  
+  
+    .NewCreateBBScreen > .layoutFlow > .elAddPic {
+      
+      line-height: 184px;
+      position: relative;
+      margin-top: -405px;
+      width: 150px;
+      top:140px;
+      left: -180px;
+      margin-left: 275px;
+    }
+    .NewCreateBBScreen > .layoutFlow > .elAddPic > * { 
+    width: 120px;
+    height: 140px;
+    }
+
+.NewCreateBBScreen .elButton_addpic button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+
+
+  .NewCreateBBScreen > .layoutFlow > .elButton_addpic {
+    line-height: 106px;
+    position: relative;
+    margin-top: -427px;
+    width: 106px;
+    margin-left: 114px;
+  }
+  .NewCreateBBScreen > .layoutFlow > .elButton_addpic > * { 
+  width: 106px;
+  height: 106px;
+  }
+  
+
+/* This component has a fixed-size layout */
+  .NavBar {
+    min-height: 116px;
+    overflow: hidden;
+    width: 100%; /* This component was designed using a width of 1133px */
+  }
+  .NavBar > .background > .containerMinHeight {
+    min-height: 116px;
+  }
+
+
+  .NavBar .elCard_ToolBar {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 2061px;
+    height: 115px;
+  }
+
+.NavBar .elButton {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.NavBar .elButton:focus {
+  box-shadow: 0 0 6px rgba(80, 137, 208, 0.2500);
+  outline: none;
+}
+
+
+
+  .NavBar .elButton {
+    line-height: 43px;
+    position: absolute;
+    left: 1312px;
+    top: 40px;
+    width: 66px;
+    height: 43px;
+  }
+
+
+.NavBar .elField_UserName input {
+  color: #5288d0;
+}
+
+.NavBar .elField_UserName input {
+  border-bottom-color: #5288d0;
+}
+
+.NavBar .elField_UserName input::input-placeholder {
+  color: rgba(80, 138, 209, 0.5000);
+}
+
+.NavBar .elField_UserName input::placeholder {
+  color: rgba(80, 138, 209, 0.5000);
+}
+
+  .NavBar .elField_UserName {
+    position: absolute;
+    left: 1146px;
+    top: 42px;
+    width: 153px;
+    height: 48px;
+  }
+
+.NavBar .elButton_profile {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.NavBar .elButton_profile:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .NavBar .elButton_profile {
+    line-height: 49px;
+    position: absolute;
+    left: 950px;
+    top: 38px;
+    width: 110px;
+    height: 49px;
+  }
+
+.NavBar .elButton_BBDiary {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.NavBar .elButton_BBDiary:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .NavBar .elButton_BBDiary {
+    line-height: 60px;
+    position: absolute;
+    left: 766px;
+    top: 32px;
+    width: 116px;
+    height: 60px;
+  }
+
+
+  .NavBar .elSubtitle {
+    overflow: hidden;
+    position: absolute;
+    left: 148px;
+    right: 1420px;
+    top: 62px;
+    width: calc(100% - 148px + 1420px);
+    height: 42px;
+  }
+
+.NavBar .elButton_HomePage {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.NavBar .elButton_HomePage:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .NavBar .elButton_HomePage {
+    line-height: 48px;
+    position: absolute;
+    left: 623px;
+    top: 38px;
+    width: 59px;
+    height: 48px;
+  }
+
+
+  .NavBar .elTitle_yolo {
+    overflow: hidden;
+    position: absolute;
+    left: 68px;
+    right: 1674px;
+    top: 16px;
+    width: calc(100% - 68px + 1674px);
+    height: 50px;
+  }
+
+/* This component has a fixed-size layout */
+.ListItem2 {
+  min-height: 250px;
+  width: 100%; /* This component was designed using a width of 247px */
+}
+.ListItem2 > .background > .containerMinHeight {
+  min-height: 250px;
+}
+
+
+.ListItem2 .elUserBubble {
+  position: relative;
+  margin-top: 16px;
+  width: 215px;
+  margin-left: 13px;
+}
+.ListItem2 .elUserBubble > * { 
+width: 215px;
+height: 215px;
+}
+
+
+
+.ListItem2 .elUserPic {
+  position: relative;
+  margin-top: -193px;
+  width: 166px;
+  margin-left: 36px;
+}
+.ListItem2 .elUserPic > * { 
+width: 166px;
+height: 166px;
+}
+
+
+.NewTutorCreateBBScreen {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+  .NewTutorCreateBBScreen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 899px;
+  }
+
+
+  .NewTutorCreateBBScreen > .layoutFlow > .elNavBar2 {
+    position: relative;
+    margin-top: 0px;
+    width: 1607px;
+    margin-left: -8px;
+  }
+  .NewTutorCreateBBScreen > .layoutFlow > .elNavBar2 > * { 
+  width: 1607px;
+  height: 90px;
+  }
+  
+  .NewTutorCreateBBScreen > .layoutFlow > .elNavBar2 > .background > .containerMinHeight {
+    min-height: 90px;
+  }
+
+
+
+  .NewTutorCreateBBScreen > .layoutFlow > .elBubbleDiaryBG {
+    position: relative;
+    margin-top: 16px;
+    width: 1602px;
+    margin-left: -2px;
+  }
+  .NewTutorCreateBBScreen > .layoutFlow > .elBubbleDiaryBG > * { 
+  width: 1602px;
+  height: 705px;
+  }
+  
+
+
+  .NewTutorCreateBBScreen > .layoutFlow > .elAddPicBB {
+    position: relative;
+    margin-top: -609px;
+    width: 228px;
+    margin-left: 313px;
+  }
+  .NewTutorCreateBBScreen > .layoutFlow > .elAddPicBB > * { 
+  width: 228px;
+  height: 228px;
+  }
+  
+
+
+  .NewTutorCreateBBScreen > .layoutFlow > .elOriDiaryBB {
+    position: relative;
+    margin-top: -540px;
+    width: 1065px;
+    margin-left: 523px;
+  }
+  .NewTutorCreateBBScreen > .layoutFlow > .elOriDiaryBB > * { 
+  width: 1065px;
+  height: 1065px;
+  }
+  
+
+
+  .NewTutorCreateBBScreen > .layoutFlow > .elTutorFirstAddBB {
+    position: relative;
+    margin-top: -860px;
+    width: 651px;
+    margin-left: 0px;
+  }
+  .NewTutorCreateBBScreen > .layoutFlow > .elTutorFirstAddBB > * { 
+  width: 651px;
+  height: 707px;
+  }
+  
+
+.NewTutorCreateBBScreen .elButton_OK button {
+  border: 0.0px solid transparent;
+}
+
+
+
+  .NewTutorCreateBBScreen > .layoutFlow > .elButton_OK {
+    line-height: 47px;
+    position: relative;
+    margin-top: -80px;
+    width: 103px;
+    margin-left: 427px;
+  }
+  .NewTutorCreateBBScreen > .layoutFlow > .elButton_OK > * { 
+  width: 103px;
+  height: 47px;
+  }
+  
+
+  .NewReadBBScreen {
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  
+  
+    .NewReadBBScreen > .background > .elBackground {
+      position: absolute;
+      left: 0px;
+      right: 0px;
+      top: 0px;
+      width: 100%;
+      height: 899px;
+    }
+  
+  
+    .NewReadBBScreen > .layoutFlow > .elNavBar2 {
+      position: relative;
+      margin-top: -2px;
+      width: 1607px;
+      margin-left: 0px;
+    }
+    .NewReadBBScreen > .layoutFlow > .elNavBar2 > * { 
+    width: 1607px;
+    height: 90px;
+    }
+    
+    .NewReadBBScreen > .layoutFlow > .elNavBar2 > .background > .containerMinHeight {
+      min-height: 90px;
+    }
+  
+  
+  
+    .NewReadBBScreen > .layoutFlow > .elBubbleDiaryBG {
+      position: relative;
+      margin-top: 16px;
+      width: 1602px;
+      margin-left: 0px;
+    }
+    .NewReadBBScreen > .layoutFlow > .elBubbleDiaryBG > * { 
+    width: 1602px;
+    height: 709px;
+    }
+    
+  
+  
+    .NewReadBBScreen > .layoutFlow > .elMainBubble {
+      position: relative;
+      margin-top: -482px;
+      width: 421px;
+      margin-left: 581px;
+    }
+    .NewReadBBScreen > .layoutFlow > .elMainBubble > * { 
+    width: 421px;
+    height: 421px;
+    }
+    
+  
+  
+    .NewReadBBScreen > .layoutFlow > .elCard {
+      position: relative;
+      margin-top: -335px;
+      width: 250px;
+      margin-left: 670px;
+    }
+    .NewReadBBScreen > .layoutFlow > .elCard > * { 
+    width: 250px;
+    height: 198px;
+    }
+    
+  
+  
+    .NewReadBBScreen > .layoutFlow > .elField {
+      position: relative;
+      margin-top: 48px;
+      width: 176px;
+      margin-left: 703px;
+    }
+    .NewReadBBScreen > .layoutFlow > .elField > * { 
+    width: 176px;
+    height: 26px;
+    }
+    
+  
+  .NewReadBBScreen .elButton_back button {
+    border: 0.0px solid transparent;
+  }
+  
+  
+  
+    .NewReadBBScreen > .layoutFlow > .elButton_back {
+      line-height: 27px;
+      position: relative;
+      margin-top: 31px;
+      width: 113px;
+      margin-left: 101px;
+    }
+    .NewReadBBScreen > .layoutFlow > .elButton_back > * { 
+    width: 113px;
+    height: 27px;
+    }
+    
+  
+    .NewReadBBScreen .elList:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  
+    .NewReadBBScreen .elList .gridItem {
+      float: left;
+      position: relative;
+    }
+  
+  @media (min-width: 1024px) {
+    .NewReadBBScreen .elList .gridItem {
+      width: calc(100% / 5 - 9.0px*(4/5));
+      overflow: hidden;
+    }
+  
+    .NewReadBBScreen .elList .cols5_0 {
+      margin-right: 9.0px;
+      margin-bottom: 9.0px;
+      clear: left;
+    }
+    .NewReadBBScreen .elList .cols5_1 {
+      margin-right: 9.0px;
+      margin-bottom: 9.0px;
+    }
+    .NewReadBBScreen .elList .cols5_2 {
+      margin-right: 9.0px;
+      margin-bottom: 9.0px;
+    }
+    .NewReadBBScreen .elList .cols5_3 {
+      margin-right: 9.0px;
+      margin-bottom: 9.0px;
+    }
+    .NewReadBBScreen .elList .cols5_4 {
+      margin-bottom: 9.0px;
+    }
+    .NewReadBBScreen .elList .cols5_4:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  
+  }
+  
+  @media (max-width: 1023px) {
+    .NewReadBBScreen .elList .gridItem {
+      width: calc(100% / 5 - 9.0px*(4/5));
+      overflow: hidden;
+    }
+  
+    .NewReadBBScreen .elList .cols5_0 {
+      margin-right: 9.0px;
+      margin-bottom: 9.0px;
+      clear: left;
+    }
+    .NewReadBBScreen .elList .cols5_1 {
+      margin-right: 9.0px;
+      margin-bottom: 9.0px;
+    }
+    .NewReadBBScreen .elList .cols5_2 {
+      margin-right: 9.0px;
+      margin-bottom: 9.0px;
+    }
+    .NewReadBBScreen .elList .cols5_3 {
+      margin-right: 9.0px;
+      margin-bottom: 9.0px;
+    }
+    .NewReadBBScreen .elList .cols5_4 {
+      margin-bottom: 9.0px;
+    }
+    .NewReadBBScreen .elList .cols5_4:after { }
+    .NewReadBBScreen .elList .cols5_4:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  
+  }
+  
+  @media (max-width: 767px) {
+    .NewReadBBScreen .elList .gridItem {
+      width: calc(100% / 5 - 9.1px*(4/5));
+      overflow: hidden;
+    }
+  
+    .NewReadBBScreen .elList .cols5_0 { margin-right: 0; margin-bottom: 0; }
+    .NewReadBBScreen .elList .cols5_1 { margin-right: 0; margin-bottom: 0; }
+    .NewReadBBScreen .elList .cols5_2 { margin-right: 0; margin-bottom: 0; }
+    .NewReadBBScreen .elList .cols5_3 { margin-right: 0; margin-bottom: 0; }
+    .NewReadBBScreen .elList .cols5_4 { margin-right: 0; margin-bottom: 0; }
+    .NewReadBBScreen .elList .cols5_0 {
+      margin-right: 9.1px;
+      margin-bottom: 9.1px;
+      clear: left;
+    }
+    .NewReadBBScreen .elList .cols5_1 {
+      margin-right: 9.1px;
+      margin-bottom: 9.1px;
+    }
+    .NewReadBBScreen .elList .cols5_2 {
+      margin-right: 9.1px;
+      margin-bottom: 9.1px;
+    }
+    .NewReadBBScreen .elList .cols5_3 {
+      margin-right: 9.1px;
+      margin-bottom: 9.1px;
+    }
+    .NewReadBBScreen .elList .cols5_4 {
+      margin-bottom: 9.1px;
+    }
+    .NewReadBBScreen .elList .cols5_4:after { }
+    .NewReadBBScreen .elList .cols5_4:after { }
+    .NewReadBBScreen .elList .cols5_4:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  
+  }
+  
+  @media (max-width: 567px) {
+    .NewReadBBScreen .elList .gridItem {
+      width: calc(100% / 5 - 9.1px*(4/5));
+      overflow: hidden;
+    }
+  
+    .NewReadBBScreen .elList .cols5_0 { margin-right: 0; margin-bottom: 0; }
+    .NewReadBBScreen .elList .cols5_1 { margin-right: 0; margin-bottom: 0; }
+    .NewReadBBScreen .elList .cols5_2 { margin-right: 0; margin-bottom: 0; }
+    .NewReadBBScreen .elList .cols5_3 { margin-right: 0; margin-bottom: 0; }
+    .NewReadBBScreen .elList .cols5_4 { margin-right: 0; margin-bottom: 0; }
+    .NewReadBBScreen .elList .cols5_0 { margin-right: 0; margin-bottom: 0; }
+    .NewReadBBScreen .elList .cols5_1 { margin-right: 0; margin-bottom: 0; }
+    .NewReadBBScreen .elList .cols5_2 { margin-right: 0; margin-bottom: 0; }
+    .NewReadBBScreen .elList .cols5_3 { margin-right: 0; margin-bottom: 0; }
+    .NewReadBBScreen .elList .cols5_4 { margin-right: 0; margin-bottom: 0; }
+    .NewReadBBScreen .elList .cols5_0 {
+      margin-right: 9.1px;
+      margin-bottom: 9.1px;
+      clear: left;
+    }
+    .NewReadBBScreen .elList .cols5_1 {
+      margin-right: 9.1px;
+      margin-bottom: 9.1px;
+    }
+    .NewReadBBScreen .elList .cols5_2 {
+      margin-right: 9.1px;
+      margin-bottom: 9.1px;
+    }
+    .NewReadBBScreen .elList .cols5_3 {
+      margin-right: 9.1px;
+      margin-bottom: 9.1px;
+    }
+    .NewReadBBScreen .elList .cols5_4 {
+      margin-bottom: 9.1px;
+    }
+    .NewReadBBScreen .elList .cols5_4:after { }
+    .NewReadBBScreen .elList .cols5_4:after { }
+    .NewReadBBScreen .elList .cols5_4:after { }
+    .NewReadBBScreen .elList .cols5_4:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  
+  }
+  
+  
+  
+    .NewReadBBScreen > .layoutFlow > .elList {
+      position: relative;
+      margin-top: -622px;
+      width: 1442px;
+      margin-left: 72px;
+    }
+    .NewReadBBScreen > .layoutFlow > .elList > * { 
+    width: 1442px;
+    height: 195px;
+    }
+    
+  
+
+  .NewBBNameCreateScreen {
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  
+  
+    .NewBBNameCreateScreen > .background > .elBackground {
+      position: absolute;
+      left: 0px;
+      right: 0px;
+      top: 0px;
+      width: 100%;
+      height: 899px;
+    }
+  
+  
+    .NewBBNameCreateScreen > .layoutFlow > .elNavBar2 {
+      position: relative;
+      margin-top: -2px;
+      width: 1607px;
+      margin-left: 0px;
+    }
+    .NewBBNameCreateScreen > .layoutFlow > .elNavBar2 > * { 
+    width: 1607px;
+    height: 90px;
+    }
+    
+    .NewBBNameCreateScreen > .layoutFlow > .elNavBar2 > .background > .containerMinHeight {
+      min-height: 90px;
+    }
+  
+  
+  
+    .NewBBNameCreateScreen > .layoutFlow > .elBubbleDiaryBG {
+      position: relative;
+      margin-top: 16px;
+      width: 1602px;
+      margin-left: 0px;
+    }
+    .NewBBNameCreateScreen > .layoutFlow > .elBubbleDiaryBG > * { 
+    width: 1602px;
+    height: 709px;
+    }
+    
+  
+  
+    .NewBBNameCreateScreen > .layoutFlow > .elBubble2 {
+      position: relative;
+      margin-top: -494px;
+      width: 354px;
+      margin-left: 325px;
+    }
+    .NewBBNameCreateScreen > .layoutFlow > .elBubble2 > * { 
+    width: 354px;
+    height: 354px;
+    }
+    
+  
+  
+    .NewBBNameCreateScreen > .layoutFlow > .elDGCreateName {
+      position: relative;
+      margin-top: -568px;
+      width: 457px;
+      margin-left: 617px;
+    }
+    .NewBBNameCreateScreen > .layoutFlow > .elDGCreateName > * { 
+    width: 457px;
+    height: 319px;
+    }
+    
+  
+  
+    .NewBBNameCreateScreen > .layoutFlow > .elField {
+      position: relative;
+      margin-top: 70px;
+      width: 256px;
+      margin-left: 376px;
+    }
+    .NewBBNameCreateScreen > .layoutFlow > .elField > * { 
+    width: 256px;
+    height: 41px;
+    }
+    
+  
+  .NewBBNameCreateScreen .elButton_Next button {
+    border: 0.0px solid transparent;
+  }
+  
+  
+  
+    .NewBBNameCreateScreen > .layoutFlow > .elButton_Next {
+      line-height: 27px;
+      position: relative;
+      margin-top: 164px;
+      width: 113px;
+      margin-left: 975px;
+    }
+    .NewBBNameCreateScreen > .layoutFlow > .elButton_Next > * { 
+    width: 113px;
+    height: 27px;
+    }
+    
+
+/* This component has a fixed-size layout */
+  .ListItem1 {
+    min-height: 389px;
+    width: 100%; /* This component was designed using a width of 416px */
+  }
+  .ListItem1 > .background > .containerMinHeight {
+    min-height: 389px;
+  }
+
+
+  .ListItem1 .elBubble2 {
+    position: relative;
+    margin-top: 35px;
+    width: 278px;
+    margin-left: 66px;
+  }
+  .ListItem1 .elBubble2 > * { 
+  width: 278px;
+  height: 278px;
+  }
+  
+
+
+  .ListItem1 .elField {
+    position: relative;
+    margin-top: -106px;
+    width: 186px;
+    margin-left: 112px;
+  }
+  .ListItem1 .elField > * { 
+  width: 186px;
+  height: 34px;
+  }
+  
+
+/* This component has a fixed-size layout */
+  .Addbubble {
+    min-height: 378px;
+    min-width: 385px;
+     /* This component has a fixed size */
+  }
+  .Addbubble > .background > .containerMinHeight {
+    min-height: 378px;
+  }
+
+
+  .Addbubble .elAddBubble {
+    position: relative;
+    margin-top: 36px;
+    width: 274px;
+    margin-left: 60px;
+  }
+  .Addbubble .elAddBubble > * { 
+  width: 274px;
+  height: 274px;
+  }
+  
+
+.Addbubble .elButton_AddBubble button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+
+
+  .Addbubble .elButton_AddBubble {
+    line-height: 143px;
+    position: relative;
+    margin-top: -201px;
+    width: 113px;
+    margin-left: 130px;
+  }
+  .Addbubble .elButton_AddBubble > * { 
+  width: 113px;
+  height: 143px;
+  }
+  
+
+.NewBubbleDiaryScreen {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+  .NewBubbleDiaryScreen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 899px;
+  }
+
+
+  .NewBubbleDiaryScreen > .background > .elBubbleDiaryBG {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1602px;
+    height: 916px;
+  }
+
+
+  .NewBubbleDiaryScreen > .layoutFlow > .elNavBar2 {
+    position: relative;
+    margin-top: 0px;
+    width: 1605px;
+    margin-left: -2px;
+  }
+  .NewBubbleDiaryScreen > .layoutFlow > .elNavBar2 > * { 
+  width: 1605px;
+  height: 90px;
+  }
+  
+  .NewBubbleDiaryScreen > .layoutFlow > .elNavBar2 > .background > .containerMinHeight {
+    min-height: 90px;
+  }
+
+
+  .NewBubbleDiaryScreen .elList:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .NewBubbleDiaryScreen .elList .gridItem {
+    float: left;
+    position: relative;
+  }
+
+@media (min-width: 1024px) {
+  .NewBubbleDiaryScreen .elList .gridItem {
+    width: calc(100% / 3 - 9.0px*(2/3));
+    overflow: hidden;
+  }
+
+  .NewBubbleDiaryScreen .elList .cols3_0 {
+    margin-right: 9.0px;
+    margin-bottom: 9.0px;
+    clear: left;
+  }
+  .NewBubbleDiaryScreen .elList .cols3_1 {
+    margin-right: 9.0px;
+    margin-bottom: 9.0px;
+  }
+  .NewBubbleDiaryScreen .elList .cols3_2 {
+    margin-bottom: 9.0px;
+  }
+  .NewBubbleDiaryScreen .elList .cols3_2:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+}
+
+@media (max-width: 1023px) {
+  .NewBubbleDiaryScreen .elList .gridItem {
+    width: calc(100% / 3 - 9.0px*(2/3));
+    overflow: hidden;
+  }
+
+  .NewBubbleDiaryScreen .elList .cols3_0 {
+    margin-right: 9.0px;
+    margin-bottom: 9.0px;
+    clear: left;
+  }
+  .NewBubbleDiaryScreen .elList .cols3_1 {
+    margin-right: 9.0px;
+    margin-bottom: 9.0px;
+  }
+  .NewBubbleDiaryScreen .elList .cols3_2 {
+    margin-bottom: 9.0px;
+  }
+  .NewBubbleDiaryScreen .elList .cols3_2:after { }
+  .NewBubbleDiaryScreen .elList .cols3_2:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+}
+
+@media (max-width: 767px) {
+  .NewBubbleDiaryScreen .elList .gridItem {
+    width: calc(100% / 3 - 9.1px*(2/3));
+    overflow: hidden;
+  }
+
+  .NewBubbleDiaryScreen .elList .cols3_0 { margin-right: 0; margin-bottom: 0; }
+  .NewBubbleDiaryScreen .elList .cols3_1 { margin-right: 0; margin-bottom: 0; }
+  .NewBubbleDiaryScreen .elList .cols3_2 { margin-right: 0; margin-bottom: 0; }
+  .NewBubbleDiaryScreen .elList .cols3_0 {
+    margin-right: 9.1px;
+    margin-bottom: 9.1px;
+    clear: left;
+  }
+  .NewBubbleDiaryScreen .elList .cols3_1 {
+    margin-right: 9.1px;
+    margin-bottom: 9.1px;
+  }
+  .NewBubbleDiaryScreen .elList .cols3_2 {
+    margin-bottom: 9.1px;
+  }
+  .NewBubbleDiaryScreen .elList .cols3_2:after { }
+  .NewBubbleDiaryScreen .elList .cols3_2:after { }
+  .NewBubbleDiaryScreen .elList .cols3_2:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+}
+
+@media (max-width: 567px) {
+  .NewBubbleDiaryScreen .elList .gridItem {
+    width: calc(100% / 3 - 9.1px*(2/3));
+    overflow: hidden;
+  }
+
+  .NewBubbleDiaryScreen .elList .cols3_0 { margin-right: 0; margin-bottom: 0; }
+  .NewBubbleDiaryScreen .elList .cols3_1 { margin-right: 0; margin-bottom: 0; }
+  .NewBubbleDiaryScreen .elList .cols3_2 { margin-right: 0; margin-bottom: 0; }
+  .NewBubbleDiaryScreen .elList .cols3_0 { margin-right: 0; margin-bottom: 0; }
+  .NewBubbleDiaryScreen .elList .cols3_1 { margin-right: 0; margin-bottom: 0; }
+  .NewBubbleDiaryScreen .elList .cols3_2 { margin-right: 0; margin-bottom: 0; }
+  .NewBubbleDiaryScreen .elList .cols3_0 {
+    margin-right: 9.1px;
+    margin-bottom: 9.1px;
+    clear: left;
+  }
+  .NewBubbleDiaryScreen .elList .cols3_1 {
+    margin-right: 9.1px;
+    margin-bottom: 9.1px;
+  }
+  .NewBubbleDiaryScreen .elList .cols3_2 {
+    margin-bottom: 9.1px;
+  }
+  .NewBubbleDiaryScreen .elList .cols3_2:after { }
+  .NewBubbleDiaryScreen .elList .cols3_2:after { }
+  .NewBubbleDiaryScreen .elList .cols3_2:after { }
+  .NewBubbleDiaryScreen .elList .cols3_2:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+}
+
+
+
+  .NewBubbleDiaryScreen > .layoutFlow > .elList {
+    position: relative;
+    margin-top: 70px;
+    width: 1415px;
+    margin-left: 95px;
+  }
+  .NewBubbleDiaryScreen > .layoutFlow > .elList > * { 
+  width: 1415px;
+  height: 303px;
+  }
+  
+
+.NewBubbleDiaryScreen .elButton_delete button {
+  border: 0.0px solid transparent;
+}
+
+
+
+  .NewBubbleDiaryScreen > .layoutFlow > .elButton_delete {
+    line-height: 27px;
+    position: relative;
+    margin-top: 25px;
+    width: 113px;
+    margin-left: 1419px;
+  }
+  .NewBubbleDiaryScreen > .layoutFlow > .elButton_delete > * { 
+  width: 113px;
+  height: 27px;
+  }
+  
+
+.NewBubbleDiaryScreen .elButton_update button {
+  border: 0.0px solid transparent;
+}
+
+
+
+  .NewBubbleDiaryScreen > .layoutFlow > .elButton_update {
+    line-height: 27px;
+    position: relative;
+    margin-top: 41px;
+    width: 113px;
+    margin-left: 1420px;
+  }
+  .NewBubbleDiaryScreen > .layoutFlow > .elButton_update > * { 
+  width: 113px;
+  height: 27px;
+  }
+  
+
+.NewEmailSentScreen {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+  .NewEmailSentScreen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 898px;
+  }
+
+
+  .NewEmailSentScreen > .layoutFlow > .elHomeBG {
+    position: relative;
+    margin-top: 167px;
+    width: 1603px;
+    margin-left: 0px;
+  }
+  .NewEmailSentScreen > .layoutFlow > .elHomeBG > * { 
+  width: 1603px;
+  height: 545px;
+  }
+  
+
+
+  .NewEmailSentScreen > .layoutFlow > .elEmailSentBB {
+    position: relative;
+    margin-top: -892px;
+    width: 1224px;
+    margin-left: 173px;
+  }
+  .NewEmailSentScreen > .layoutFlow > .elEmailSentBB > * { 
+  width: 1224px;
+  height: 1224px;
+  }
+  
+
+.NewEmailSentScreen .elButton_GoToLinkInEmail button {
+  border: 0.0px solid transparent;
+}
+
+
+
+  .NewEmailSentScreen > .layoutFlow > .elButton_GoToLinkInEmail {
+    line-height: 65px;
+    position: relative;
+    margin-top: -462px;
+    width: 293px;
+    margin-left: 619px;
+  }
+  .NewEmailSentScreen > .layoutFlow > .elButton_GoToLinkInEmail > * { 
+  width: 293px;
+  height: 65px;
+  }
+  
+
+
+  .NewEmailSentScreen > .screenFgContainer > .foreground > .elCard {
+    position: absolute;
+    left: -2px;
+    top: 0px;
+    width: 1605px;
+    height: 90px;
+  }
+
+
+  .NewEmailSentScreen > .screenFgContainer > .foreground > .elTextCopy {
+    overflow: hidden;
+    position: absolute;
+    left: 194px;
+    right: 1024px;
+    top: 51px;
+    width: calc(100% - 194px + 1024px);
+    height: 37px;
+  }
+
+
+  .NewEmailSentScreen > .screenFgContainer > .foreground > .elText {
+    overflow: hidden;
+    position: absolute;
+    left: 51px;
+    right: 969px;
+    top: 13px;
+    width: calc(100% - 51px + 969px);
+    height: 52px;
+  }
+
+.NewFirstUpProfilePicScreen {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+  .NewFirstUpProfilePicScreen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 898px;
+  }
+
+
+  .NewFirstUpProfilePicScreen > .layoutFlow > .elHomeBG {
+    position: relative;
+    margin-top: 168px;
+    width: 1606px;
+    margin-left: 0px;
+  }
+  .NewFirstUpProfilePicScreen > .layoutFlow > .elHomeBG > * { 
+  width: 1606px;
+  height: 546px;
+  }
+  
+
+
+  .NewFirstUpProfilePicScreen > .layoutFlow > .elUpProfilePic {
+    position: relative;
+    margin-top: -668px;
+    width: 1026px;
+    margin-left: 283px;
+  }
+  .NewFirstUpProfilePicScreen > .layoutFlow > .elUpProfilePic > * { 
+  width: 1026px;
+  height: 708px;
+  }
+  
+
+.NewFirstUpProfilePicScreen .elButton_comfirm button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+
+
+  .NewFirstUpProfilePicScreen > .layoutFlow > .elButton_comfirm {
+    line-height: 53px;
+    position: relative;
+    margin-top: -196px;
+    width: 142px;
+    margin-left: 696px;
+  }
+  .NewFirstUpProfilePicScreen > .layoutFlow > .elButton_comfirm > * { 
+  width: 142px;
+  height: 53px;
+  }
+  
+
+.NewFirstUpProfilePicScreen .elButton_UploadPic button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+
+
+  .NewFirstUpProfilePicScreen > .layoutFlow > .elButton_UploadPic {
+    line-height: 131px;
+    position: relative;
+    margin-top: -226px;
+    width: 242px;
+    margin-left: 650px;
+  }
+  .NewFirstUpProfilePicScreen > .layoutFlow > .elButton_UploadPic > * { 
+  width: 242px;
+  height: 131px;
+  }
+  
+
+
+  .NewFirstUpProfilePicScreen > .screenFgContainer > .foreground > .elCard {
+    position: absolute;
+    left: -2px;
+    top: 0px;
+    width: 1605px;
+    height: 90px;
+  }
+
+
+  .NewFirstUpProfilePicScreen > .screenFgContainer > .foreground > .elTextCopy {
+    overflow: hidden;
+    position: absolute;
+    left: 194px;
+    right: 1024px;
+    top: 51px;
+    width: calc(100% - 194px + 1024px);
+    height: 37px;
+  }
+
+
+  .NewFirstUpProfilePicScreen > .screenFgContainer > .foreground > .elText {
+    overflow: hidden;
+    position: absolute;
+    left: 51px;
+    right: 969px;
+    top: 13px;
+    width: calc(100% - 51px + 969px);
+    height: 52px;
+  }
+
+.NewForgetPasswordScreen {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+  .NewForgetPasswordScreen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 898px;
+  }
+
+
+  .NewForgetPasswordScreen > .layoutFlow > .elHomeBG {
+    position: relative;
+    margin-top: 168px;
+    width: 1602px;
+    margin-left: 0px;
+  }
+  .NewForgetPasswordScreen > .layoutFlow > .elHomeBG > * { 
+  width: 1602px;
+  height: 545px;
+  }
+  
+
+
+  .NewForgetPasswordScreen > .layoutFlow > .elForgetPasswordBB {
+    position: relative;
+    margin-top: -879px;
+    width: 1186px;
+    margin-left: 160px;
+  }
+  .NewForgetPasswordScreen > .layoutFlow > .elForgetPasswordBB > * { 
+  width: 1186px;
+  height: 1186px;
+  }
+  
+
+
+.NewForgetPasswordScreen > .layoutFlow > .elField_PlzEnterEmail input {
+  color: #feffff;
+}
+
+.NewForgetPasswordScreen > .layoutFlow > .elField_PlzEnterEmail input {
+  border-bottom-color: #feffff;
+}
+
+.NewForgetPasswordScreen > .layoutFlow > .elField_PlzEnterEmail input::input-placeholder {
+  color: rgba(254, 255, 255, 0.5000);
+}
+
+.NewForgetPasswordScreen > .layoutFlow > .elField_PlzEnterEmail input::placeholder {
+  color: rgba(254, 255, 255, 0.5000);
+}
+
+  .NewForgetPasswordScreen > .layoutFlow > .elField_PlzEnterEmail {
+    position: relative;
+    margin-top: -568px;
+    width: 243px;
+    margin-left: 652px;
+  }
+  .NewForgetPasswordScreen > .layoutFlow > .elField_PlzEnterEmail > * { 
+  width: 243px;
+  height: 47px;
+  }
+  
+
+.NewForgetPasswordScreen .elButton_Confirm button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+
+
+  .NewForgetPasswordScreen > .layoutFlow > .elButton_Confirm {
+    line-height: 53px;
+    position: relative;
+    margin-top: 63px;
+    width: 144px;
+    margin-left: 657px;
+  }
+  .NewForgetPasswordScreen > .layoutFlow > .elButton_Confirm > * { 
+  width: 144px;
+  height: 53px;
+  }
+  
+
+
+  .NewForgetPasswordScreen > .screenFgContainer > .foreground > .elCard {
+    position: absolute;
+    left: -2px;
+    top: 0px;
+    width: 1605px;
+    height: 90px;
+  }
+
+
+  .NewForgetPasswordScreen > .screenFgContainer > .foreground > .elTextCopy {
+    overflow: hidden;
+    position: absolute;
+    left: 194px;
+    right: 1024px;
+    top: 51px;
+    width: calc(100% - 194px + 1024px);
+    height: 37px;
+  }
+
+
+  .NewForgetPasswordScreen > .screenFgContainer > .foreground > .elText {
+    overflow: hidden;
+    position: absolute;
+    left: 51px;
+    right: 969px;
+    top: 13px;
+    width: calc(100% - 51px + 969px);
+    height: 52px;
+  }
+
+.NewRegisterScreen {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+  .NewRegisterScreen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 898px;
+  }
+
+
+  .NewRegisterScreen > .layoutFlow > .elHomeBG {
+    position: relative;
+    margin-top: 167px;
+    width: 1604px;
+    margin-left: 0px;
+  }
+  .NewRegisterScreen > .layoutFlow > .elHomeBG > * { 
+  width: 1604px;
+  height: 546px;
+  }
+  
+
+
+  .NewRegisterScreen > .layoutFlow > .elNewRegister {
+    position: relative;
+    margin-top: -707px;
+    width: 1214px;
+    margin-left: 170px;
+  }
+  .NewRegisterScreen > .layoutFlow > .elNewRegister > * { 
+  width: 1214px;
+  height: 838px;
+  }
+  
+
+
+.NewRegisterScreen > .layoutFlow > .elField_EnterEmail input {
+  color: #feffff;
+}
+
+.NewRegisterScreen > .layoutFlow > .elField_EnterEmail input {
+  border-bottom-color: #feffff;
+}
+
+.NewRegisterScreen > .layoutFlow > .elField_EnterEmail input::input-placeholder {
+  color: rgba(254, 255, 255, 0.5000);
+}
+
+.NewRegisterScreen > .layoutFlow > .elField_EnterEmail input::placeholder {
+  color: rgba(254, 255, 255, 0.5000);
+}
+
+  .NewRegisterScreen > .layoutFlow > .elField_EnterEmail {
+    position: relative;
+    margin-top: -510px;
+    width: 266px;
+    margin-left: 671px;
+  }
+  .NewRegisterScreen > .layoutFlow > .elField_EnterEmail > * { 
+  width: 266px;
+  height: 38px;
+  }
+  
+
+
+.NewRegisterScreen > .layoutFlow > .elField_PlzEnterAccount input {
+  color: #feffff;
+}
+
+.NewRegisterScreen > .layoutFlow > .elField_PlzEnterAccount input {
+  border-bottom-color: #feffff;
+}
+
+.NewRegisterScreen > .layoutFlow > .elField_PlzEnterAccount input::input-placeholder {
+  color: rgba(254, 255, 255, 0.5000);
+}
+
+.NewRegisterScreen > .layoutFlow > .elField_PlzEnterAccount input::placeholder {
+  color: rgba(254, 255, 255, 0.5000);
+}
+
+  .NewRegisterScreen > .layoutFlow > .elField_PlzEnterAccount {
+    position: relative;
+    margin-top: 18px;
+    width: 267px;
+    margin-left: 672px;
+  }
+  .NewRegisterScreen > .layoutFlow > .elField_PlzEnterAccount > * { 
+  width: 267px;
+  height: 37px;
+  }
+  
+
+
+.NewRegisterScreen > .layoutFlow > .elField_PlzEnterPassword input {
+  color: #feffff;
+}
+
+.NewRegisterScreen > .layoutFlow > .elField_PlzEnterPassword input {
+  border-bottom-color: #feffff;
+}
+
+.NewRegisterScreen > .layoutFlow > .elField_PlzEnterPassword input::input-placeholder {
+  color: rgba(254, 255, 255, 0.5000);
+}
+
+.NewRegisterScreen > .layoutFlow > .elField_PlzEnterPassword input::placeholder {
+  color: rgba(254, 255, 255, 0.5000);
+}
+
+  .NewRegisterScreen > .layoutFlow > .elField_PlzEnterPassword {
+    position: relative;
+    margin-top: 22px;
+    width: 261px;
+    margin-left: 674px;
+  }
+  .NewRegisterScreen > .layoutFlow > .elField_PlzEnterPassword > * { 
+  width: 261px;
+  height: 38px;
+  }
+  
+
+
+.NewRegisterScreen > .layoutFlow > .elField_PlzEnterPasswordCopy input {
+  color: #feffff;
+}
+
+.NewRegisterScreen > .layoutFlow > .elField_PlzEnterPasswordCopy input {
+  border-bottom-color: #feffff;
+}
+
+.NewRegisterScreen > .layoutFlow > .elField_PlzEnterPasswordCopy input::input-placeholder {
+  color: rgba(254, 255, 255, 0.5000);
+}
+
+.NewRegisterScreen > .layoutFlow > .elField_PlzEnterPasswordCopy input::placeholder {
+  color: rgba(254, 255, 255, 0.5000);
+}
+
+  .NewRegisterScreen > .layoutFlow > .elField_PlzEnterPasswordCopy {
+    position: relative;
+    margin-top: 23px;
+    width: 261px;
+    margin-left: 675px;
+  }
+  .NewRegisterScreen > .layoutFlow > .elField_PlzEnterPasswordCopy > * { 
+  width: 261px;
+  height: 38px;
+  }
+  
+
+.NewRegisterScreen .elButton_comfirm button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+
+
+  .NewRegisterScreen > .layoutFlow > .elButton_comfirm {
+    line-height: 53px;
+    position: relative;
+    margin-top: 48px;
+    width: 136px;
+    margin-left: 676px;
+  }
+  .NewRegisterScreen > .layoutFlow > .elButton_comfirm > * { 
+  width: 136px;
+  height: 53px;
+  }
+  
+
+
+  .NewRegisterScreen > .screenFgContainer > .foreground > .elCard {
+    position: absolute;
+    left: -2px;
+    top: 0px;
+    width: 1605px;
+    height: 90px;
+  }
+
+
+  .NewRegisterScreen > .screenFgContainer > .foreground > .elTextCopy {
+    overflow: hidden;
+    position: absolute;
+    left: 194px;
+    right: 1024px;
+    top: 51px;
+    width: calc(100% - 194px + 1024px);
+    height: 37px;
+  }
+
+
+  .NewRegisterScreen > .screenFgContainer > .foreground > .elText {
+    overflow: hidden;
+    position: absolute;
+    left: 51px;
+    right: 969px;
+    top: 13px;
+    width: calc(100% - 51px + 969px);
+    height: 52px;
+  }
+
+.NewHomepage01Screen {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+  .NewHomepage01Screen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 898px;
+  }
+
+
+  .NewHomepage01Screen > .layoutFlow > .elHomeBG {
+    position: relative;
+    margin-top: 167px;
+    width: 1606px;
+    margin-left: 0px;
+  }
+  .NewHomepage01Screen > .layoutFlow > .elHomeBG > * { 
+  width: 1606px;
+  height: 546px;
+  }
+  
+
+
+  .NewHomepage01Screen > .layoutFlow > .elHomePageBubble {
+    position: relative;
+    margin-top: -724px;
+    width: 847px;
+    margin-left: 347px;
+  }
+  .NewHomepage01Screen > .layoutFlow > .elHomePageBubble > * { 
+  width: 847px;
+  height: 847px;
+  }
+  
+
+.NewHomepage01Screen .elButtonNext button {
+  border: 0.0px solid transparent;
+}
+
+
+
+  .NewHomepage01Screen > .layoutFlow > .elButtonNext {
+    line-height: 27px;
+    position: relative;
+    margin-top: -160px;
+    width: 113px;
+    margin-left: 1049px;
+  }
+  .NewHomepage01Screen > .layoutFlow > .elButtonNext > * { 
+  width: 113px;
+  height: 27px;
+  }
+  
+
+
+  .NewHomepage01Screen > .screenFgContainer > .foreground > .elCard {
+    position: absolute;
+    left: -2px;
+    top: 0px;
+    width: 1605px;
+    height: 90px;
+  }
+
+
+  .NewHomepage01Screen > .screenFgContainer > .foreground > .elTextCopy {
+    overflow: hidden;
+    position: absolute;
+    left: 194px;
+    right: 1024px;
+    top: 51px;
+    width: calc(100% - 194px + 1024px);
+    height: 37px;
+  }
+
+
+  .NewHomepage01Screen > .screenFgContainer > .foreground > .elText {
+    overflow: hidden;
+    position: absolute;
+    left: 51px;
+    right: 969px;
+    top: 13px;
+    width: calc(100% - 51px + 969px);
+    height: 52px;
+  }
+
+.NewLoginAndRegisterScreen {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+  .NewLoginAndRegisterScreen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 898px;
+  }
+
+
+  .NewLoginAndRegisterScreen > .layoutFlow > .elHomeBG {
+    position: relative;
+    margin-top: 167px;
+    width: 1601px;
+    margin-left: 0px;
+  }
+  .NewLoginAndRegisterScreen > .layoutFlow > .elHomeBG > * { 
+  width: 1601px;
+  height: 545px;
+  }
+  
+
+
+  .NewLoginAndRegisterScreen > .layoutFlow > .elLRBubble {
+    position: relative;
+    margin-top: -887px;
+    width: 1187px;
+    margin-left: 182px;
+  }
+  .NewLoginAndRegisterScreen > .layoutFlow > .elLRBubble > * { 
+  width: 1187px;
+  height: 1187px;
+  }
+  
+
+
+.NewLoginAndRegisterScreen > .layoutFlow > .elField_PlzEnterAccount input {
+  color: #feffff;
+}
+
+.NewLoginAndRegisterScreen > .layoutFlow > .elField_PlzEnterAccount input {
+  border-bottom-color: #feffff;
+}
+
+.NewLoginAndRegisterScreen > .layoutFlow > .elField_PlzEnterAccount input::input-placeholder {
+  color: rgba(254, 255, 255, 0.5000);
+}
+
+.NewLoginAndRegisterScreen > .layoutFlow > .elField_PlzEnterAccount input::placeholder {
+  color: rgba(254, 255, 255, 0.5000);
+}
+
+  .NewLoginAndRegisterScreen > .layoutFlow > .elField_PlzEnterAccount {
+    position: relative;
+    margin-top: -626px;
+    width: 267px;
+    margin-left: 647px;
+  }
+  .NewLoginAndRegisterScreen > .layoutFlow > .elField_PlzEnterAccount > * { 
+  width: 267px;
+  height: 45px;
+  }
+  
+
+
+.NewLoginAndRegisterScreen > .layoutFlow > .elField_PlzEnterPassword input {
+  color: #feffff;
+}
+
+.NewLoginAndRegisterScreen > .layoutFlow > .elField_PlzEnterPassword input {
+  border-bottom-color: #feffff;
+}
+
+.NewLoginAndRegisterScreen > .layoutFlow > .elField_PlzEnterPassword input::input-placeholder {
+  color: rgba(254, 255, 255, 0.5000);
+}
+
+.NewLoginAndRegisterScreen > .layoutFlow > .elField_PlzEnterPassword input::placeholder {
+  color: rgba(254, 255, 255, 0.5000);
+}
+
+  .NewLoginAndRegisterScreen > .layoutFlow > .elField_PlzEnterPassword {
+    position: relative;
+    margin-top: 15px;
+    width: 261px;
+    margin-left: 648px;
+  }
+  .NewLoginAndRegisterScreen > .layoutFlow > .elField_PlzEnterPassword > * { 
+  width: 261px;
+  height: 45px;
+  }
+  
+
+.NewLoginAndRegisterScreen .elButton_FB button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+
+
+  .NewLoginAndRegisterScreen > .layoutFlow > .elButton_FB {
+    line-height: 24px;
+    position: relative;
+    margin-top: -169px;
+    width: 192px;
+    margin-left: 546px;
+  }
+  .NewLoginAndRegisterScreen > .layoutFlow > .elButton_FB > * { 
+  width: 192px;
+  height: 24px;
+  }
+  
+
+.NewLoginAndRegisterScreen .elButton_Google button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+
+
+  .NewLoginAndRegisterScreen > .layoutFlow > .elButton_Google {
+    line-height: 28px;
+    position: relative;
+    margin-top: -27px;
+    width: 186px;
+    margin-left: 776px;
+  }
+  .NewLoginAndRegisterScreen > .layoutFlow > .elButton_Google > * { 
+  width: 186px;
+  height: 28px;
+  }
+  
+
+.NewLoginAndRegisterScreen .elButton_Login button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+
+
+  .NewLoginAndRegisterScreen > .layoutFlow > .elButton_Login {
+    line-height: 53px;
+    position: relative;
+    margin-top: 166px;
+    width: 147px;
+    margin-left: 691px;
+  }
+  .NewLoginAndRegisterScreen > .layoutFlow > .elButton_Login > * { 
+  width: 147px;
+  height: 53px;
+  }
+  
+
+.NewLoginAndRegisterScreen .elButton_CreateNewAccount button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+
+
+  .NewLoginAndRegisterScreen > .layoutFlow > .elButton_CreateNewAccount {
+    line-height: 34px;
+    position: relative;
+    margin-top: 25px;
+    width: 140px;
+    margin-left: 565px;
+  }
+  .NewLoginAndRegisterScreen > .layoutFlow > .elButton_CreateNewAccount > * { 
+  width: 140px;
+  height: 34px;
+  }
+  
+
+.NewLoginAndRegisterScreen .elButton_ForgetPassword button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+
+
+  .NewLoginAndRegisterScreen > .layoutFlow > .elButton_ForgetPassword {
+    line-height: 35px;
+    position: relative;
+    margin-top: -31px;
+    width: 112px;
+    margin-left: 819px;
+  }
+  .NewLoginAndRegisterScreen > .layoutFlow > .elButton_ForgetPassword > * { 
+  width: 112px;
+  height: 35px;
+  }
+  
+
+
+  .NewLoginAndRegisterScreen > .screenFgContainer > .foreground > .elCard {
+    position: absolute;
+    left: -2px;
+    top: 0px;
+    width: 1605px;
+    height: 90px;
+  }
+
+
+  .NewLoginAndRegisterScreen > .screenFgContainer > .foreground > .elTextCopy {
+    overflow: hidden;
+    position: absolute;
+    left: 194px;
+    right: 1024px;
+    top: 51px;
+    width: calc(100% - 194px + 1024px);
+    height: 37px;
+  }
+
+
+  .NewLoginAndRegisterScreen > .screenFgContainer > .foreground > .elText {
+    overflow: hidden;
+    position: absolute;
+    left: 51px;
+    right: 969px;
+    top: 13px;
+    width: calc(100% - 51px + 969px);
+    height: 52px;
+  }
+
+.Start3Screen {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+  .Start3Screen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+
+
+  .Start3Screen > .background > .elN2018071631230 {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 198px;
+    width: 100%;
+    height: 436px;
+  }
+
+
+  .Start3Screen > .background > .elN150971380756744 {
+    position: absolute;
+    left: 319px;
+    top: 38px;
+    width: 778px;
+    height: 726px;
+  }
+
+
+  .Start3Screen > .screenFgContainer > .foreground > .elTextCopy {
+    overflow: hidden;
+    position: absolute;
+    left: 124px;
+    right: 887px;
+    top: 114px;
+    width: calc(100% - 124px + 887px);
+    height: 37px;
+  }
+
+
+  .Start3Screen > .screenFgContainer > .foreground > .elText {
+    overflow: hidden;
+    position: absolute;
+    left: 123px;
+    right: 898px;
+    top: 56px;
+    width: calc(100% - 123px + 898px);
+    height: 52px;
+  }
+
+.Start3Screen .elButtonCopy {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.Start3Screen .elButtonCopy:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .Start3Screen > .screenFgContainer > .foreground > .elButtonCopy {
+    line-height: 27px;
+    position: absolute;
+    left: 762px;
+    right: 400px;
+    top: 68px;
+    width: calc(100% - 762px + 400px);
+    height: 27px;
+  }
+
+.Start3Screen .elButton {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.Start3Screen .elButton:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .Start3Screen > .screenFgContainer > .foreground > .elButton {
+    line-height: 27px;
+    position: absolute;
+    left: 642px;
+    right: 586px;
+    top: 68px;
+    width: calc(100% - 642px + 586px);
+    height: 27px;
+  }
+
+.Start3Screen .elButtonCopy2 {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.Start3Screen .elButtonCopy2:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .Start3Screen > .screenFgContainer > .foreground > .elButtonCopy2 {
+    line-height: 27px;
+    position: absolute;
+    left: 949px;
+    right: 242px;
+    top: 67px;
+    width: calc(100% - 949px + 242px);
+    height: 27px;
+  }
+
+.Start3Screen .elButtonCopy3 {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.Start3Screen .elButtonCopy3:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .Start3Screen > .screenFgContainer > .foreground > .elButtonCopy3 {
+    line-height: 27px;
+    position: absolute;
+    left: 1099px;
+    right: 80px;
+    top: 67px;
+    width: calc(100% - 1099px + 80px);
+    height: 27px;
+  }
+
+.Start4Screen {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+  .Start4Screen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 720px;
+  }
+
+
+  .Start4Screen > .background > .elN2018071631230 {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 198px;
+    width: 100%;
+    height: 436px;
+  }
+
+
+  .Start4Screen > .background > .elN150971380756744 {
+    position: absolute;
+    left: 319px;
+    top: 38px;
+    width: 778px;
+    height: 726px;
+  }
+
+
+  .Start4Screen > .screenFgContainer > .foreground > .elTextCopy2 {
+    overflow: hidden;
+    position: absolute;
+    left: 527px;
+    top: 398px;
+    width: 77px;
+    height: 57px;
+  }
+
+
+  .Start4Screen > .screenFgContainer > .foreground > .elTextCopy {
+    overflow: hidden;
+    position: absolute;
+    left: 130px;
+    right: 881px;
+    top: 109px;
+    width: calc(100% - 130px + 881px);
+    height: 37px;
+  }
+
+
+  .Start4Screen > .screenFgContainer > .foreground > .elText {
+    overflow: hidden;
+    position: absolute;
+    left: 131px;
+    right: 889px;
+    top: 56px;
+    width: calc(100% - 131px + 889px);
+    height: 52px;
+  }
+
+.Start4Screen .elButtonCopy {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.Start4Screen .elButtonCopy:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .Start4Screen > .screenFgContainer > .foreground > .elButtonCopy {
+    line-height: 27px;
+    position: absolute;
+    left: 769px;
+    right: 394px;
+    top: 74px;
+    width: calc(100% - 769px + 394px);
+    height: 27px;
+  }
+
+.Start4Screen .elButton {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.Start4Screen .elButton:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .Start4Screen > .screenFgContainer > .foreground > .elButton {
+    line-height: 27px;
+    position: absolute;
+    left: 648px;
+    right: 579px;
+    top: 74px;
+    width: calc(100% - 649px + 579px);
+    height: 27px;
+  }
+
+.Start4Screen .elButtonCopy2 {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.Start4Screen .elButtonCopy2:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .Start4Screen > .screenFgContainer > .foreground > .elButtonCopy2 {
+    line-height: 27px;
+    position: absolute;
+    left: 956px;
+    right: 235px;
+    top: 74px;
+    width: calc(100% - 956px + 235px);
+    height: 27px;
+  }
+
+.Start4Screen .elButtonCopy3 {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.Start4Screen .elButtonCopy3:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .Start4Screen > .screenFgContainer > .foreground > .elButtonCopy3 {
+    line-height: 27px;
+    position: absolute;
+    left: 1106px;
+    right: 73px;
+    top: 74px;
+    width: calc(100% - 1106px + 73px);
+    height: 27px;
+  }
+
+
+  .Start4Screen > .screenFgContainer > .foreground > .elText2 {
+    overflow: hidden;
+    position: absolute;
+    left: 526px;
+    top: 325px;
+    width: 77px;
+    height: 57px;
+  }
+
+
+.Start4Screen > .screenFgContainer > .foreground > .elField input {
+  color: #feffff;
+}
+
+.Start4Screen > .screenFgContainer > .foreground > .elField input {
+  border-bottom-color: #feffff;
+}
+
+.Start4Screen > .screenFgContainer > .foreground > .elField input::input-placeholder {
+  color: rgba(254, 255, 255, 0.5000);
+}
+
+.Start4Screen > .screenFgContainer > .foreground > .elField input::placeholder {
+  color: rgba(254, 255, 255, 0.5000);
+}
+
+  .Start4Screen > .screenFgContainer > .foreground > .elField {
+    position: absolute;
+    left: 620px;
+    top: 333px;
+    width: 254px;
+    height: 49px;
+  }
+
+
+.Start4Screen > .screenFgContainer > .foreground > .elFieldCopy input {
+  color: #feffff;
+}
+
+.Start4Screen > .screenFgContainer > .foreground > .elFieldCopy input {
+  border-bottom-color: #feffff;
+}
+
+.Start4Screen > .screenFgContainer > .foreground > .elFieldCopy input::input-placeholder {
+  color: rgba(254, 255, 255, 0.5000);
+}
+
+.Start4Screen > .screenFgContainer > .foreground > .elFieldCopy input::placeholder {
+  color: rgba(254, 255, 255, 0.5000);
+}
+
+  .Start4Screen > .screenFgContainer > .foreground > .elFieldCopy {
+    position: absolute;
+    left: 620px;
+    top: 403px;
+    width: 254px;
+    height: 49px;
+  }
+
+.Start4Screen .elButton2 {
+  border: 0.0px solid transparent;
+}
+
+
+
+  .Start4Screen > .screenFgContainer > .foreground > .elButton2 {
+    line-height: 47px;
+    position: absolute;
+    left: 650px;
+    top: 486px;
+    width: 129px;
+    height: 47px;
+  }
+
+.Start4Screen .elButtonCopy4 {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.Start4Screen .elButtonCopy4:focus {
+  box-shadow: 0 0 6px rgba(254, 255, 255, 0.2500);
+  outline: none;
+}
+
+
+
+  .Start4Screen > .screenFgContainer > .foreground > .elButtonCopy4 {
+    line-height: 41px;
+    position: absolute;
+    left: 743px;
+    top: 562px;
+    width: 153px;
+    height: 41px;
+  }
+
+.Start4Screen .elButton3 {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.Start4Screen .elButton3:focus {
+  box-shadow: 0 0 6px rgba(254, 255, 255, 0.2500);
+  outline: none;
+}
+
+
+
+  .Start4Screen > .screenFgContainer > .foreground > .elButton3 {
+    line-height: 41px;
+    position: absolute;
+    left: 522px;
+    top: 563px;
+    width: 180px;
+    height: 41px;
+  }
+
+.N2Screen {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+  .N2Screen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+
+
+  .N2Screen > .background > .elN2018071631230 {
+    position: absolute;
+    left: 0px;
+    right: 4px;
+    top: 198px;
+    width: calc(100% - 0px + 4px);
+    height: 434px;
+  }
+
+
+  .N2Screen > .background > .elN150971380756744 {
+    position: absolute;
+    left: 319px;
+    top: 38px;
+    width: 778px;
+    height: 726px;
+  }
+
+
+  .N2Screen > .screenFgContainer > .foreground > .elTextCopy2 {
+    overflow: hidden;
+    position: absolute;
+    left: 515px;
+    top: 389px;
+    width: 111px;
+    height: 57px;
+  }
+
+
+  .N2Screen > .screenFgContainer > .foreground > .elTextCopy {
+    overflow: hidden;
+    position: absolute;
+    left: 130px;
+    right: 881px;
+    top: 109px;
+    width: calc(100% - 130px + 881px);
+    height: 37px;
+  }
+
+
+  .N2Screen > .screenFgContainer > .foreground > .elText {
+    overflow: hidden;
+    position: absolute;
+    left: 131px;
+    right: 889px;
+    top: 56px;
+    width: calc(100% - 131px + 889px);
+    height: 52px;
+  }
+
+.N2Screen .elButtonCopy {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.N2Screen .elButtonCopy:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .N2Screen > .screenFgContainer > .foreground > .elButtonCopy {
+    line-height: 27px;
+    position: absolute;
+    left: 769px;
+    right: 394px;
+    top: 74px;
+    width: calc(100% - 769px + 394px);
+    height: 27px;
+  }
+
+.N2Screen .elButton {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.N2Screen .elButton:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .N2Screen > .screenFgContainer > .foreground > .elButton {
+    line-height: 27px;
+    position: absolute;
+    left: 648px;
+    right: 579px;
+    top: 74px;
+    width: calc(100% - 649px + 579px);
+    height: 27px;
+  }
+
+.N2Screen .elButtonCopy2 {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.N2Screen .elButtonCopy2:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .N2Screen > .screenFgContainer > .foreground > .elButtonCopy2 {
+    line-height: 27px;
+    position: absolute;
+    left: 956px;
+    right: 235px;
+    top: 74px;
+    width: calc(100% - 956px + 235px);
+    height: 27px;
+  }
+
+.N2Screen .elButtonCopy3 {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.N2Screen .elButtonCopy3:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .N2Screen > .screenFgContainer > .foreground > .elButtonCopy3 {
+    line-height: 27px;
+    position: absolute;
+    left: 1106px;
+    right: 73px;
+    top: 74px;
+    width: calc(100% - 1106px + 73px);
+    height: 27px;
+  }
+
+
+  .N2Screen > .screenFgContainer > .foreground > .elText2 {
+    overflow: hidden;
+    position: absolute;
+    left: 568px;
+    top: 269px;
+    width: 288px;
+    height: 57px;
+  }
+
+
+.N2Screen > .screenFgContainer > .foreground > .elFieldCopy input {
+  color: #feffff;
+}
+
+.N2Screen > .screenFgContainer > .foreground > .elFieldCopy input {
+  border-bottom-color: #feffff;
+}
+
+.N2Screen > .screenFgContainer > .foreground > .elFieldCopy input::input-placeholder {
+  color: rgba(254, 255, 255, 0.5000);
+}
+
+.N2Screen > .screenFgContainer > .foreground > .elFieldCopy input::placeholder {
+  color: rgba(254, 255, 255, 0.5000);
+}
+
+  .N2Screen > .screenFgContainer > .foreground > .elFieldCopy {
+    position: absolute;
+    left: 619px;
+    top: 393px;
+    width: 254px;
+    height: 49px;
+  }
+
+.N2Screen .elButton2 {
+  border: 0.0px solid transparent;
+}
+
+
+
+  .N2Screen > .screenFgContainer > .foreground > .elButton2 {
+    line-height: 47px;
+    position: absolute;
+    left: 638px;
+    top: 486px;
+    width: 129px;
+    height: 47px;
+  }
+
+.N2Screen .elButton3 {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.N2Screen .elButton3:focus {
+  box-shadow: 0 0 6px rgba(254, 255, 255, 0.2500);
+  outline: none;
+}
+
+
+
+  .N2Screen > .screenFgContainer > .foreground > .elButton3 {
+    line-height: 41px;
+    position: absolute;
+    left: 624px;
+    top: 584px;
+    width: 180px;
+    height: 41px;
+  }
+
+.NeontoExport0x7fc4a0ea4fe0Screen {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+  .NeontoExport0x7fc4a0ea4fe0Screen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+
+
+  .NeontoExport0x7fc4a0ea4fe0Screen > .background > .elN2018071631230 {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 198px;
+    width: 100%;
+    height: 436px;
+  }
+
+
+  .NeontoExport0x7fc4a0ea4fe0Screen > .background > .elN150971380756744 {
+    position: absolute;
+    left: 319px;
+    top: 38px;
+    width: 778px;
+    height: 726px;
+  }
+
+
+  .NeontoExport0x7fc4a0ea4fe0Screen > .screenFgContainer > .foreground > .elTextCopy {
+    overflow: hidden;
+    position: absolute;
+    left: 130px;
+    right: 881px;
+    top: 109px;
+    width: calc(100% - 130px + 881px);
+    height: 37px;
+  }
+
+
+  .NeontoExport0x7fc4a0ea4fe0Screen > .screenFgContainer > .foreground > .elText {
+    overflow: hidden;
+    position: absolute;
+    left: 131px;
+    right: 889px;
+    top: 56px;
+    width: calc(100% - 131px + 889px);
+    height: 52px;
+  }
+
+.NeontoExport0x7fc4a0ea4fe0Screen .elButtonCopy {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.NeontoExport0x7fc4a0ea4fe0Screen .elButtonCopy:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .NeontoExport0x7fc4a0ea4fe0Screen > .screenFgContainer > .foreground > .elButtonCopy {
+    line-height: 27px;
+    position: absolute;
+    left: 769px;
+    right: 394px;
+    top: 74px;
+    width: calc(100% - 769px + 394px);
+    height: 27px;
+  }
+
+.NeontoExport0x7fc4a0ea4fe0Screen .elButton {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.NeontoExport0x7fc4a0ea4fe0Screen .elButton:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .NeontoExport0x7fc4a0ea4fe0Screen > .screenFgContainer > .foreground > .elButton {
+    line-height: 27px;
+    position: absolute;
+    left: 648px;
+    right: 579px;
+    top: 74px;
+    width: calc(100% - 649px + 579px);
+    height: 27px;
+  }
+
+.NeontoExport0x7fc4a0ea4fe0Screen .elButtonCopy2 {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.NeontoExport0x7fc4a0ea4fe0Screen .elButtonCopy2:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .NeontoExport0x7fc4a0ea4fe0Screen > .screenFgContainer > .foreground > .elButtonCopy2 {
+    line-height: 27px;
+    position: absolute;
+    left: 956px;
+    right: 235px;
+    top: 74px;
+    width: calc(100% - 956px + 235px);
+    height: 27px;
+  }
+
+.NeontoExport0x7fc4a0ea4fe0Screen .elButtonCopy3 {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.NeontoExport0x7fc4a0ea4fe0Screen .elButtonCopy3:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .NeontoExport0x7fc4a0ea4fe0Screen > .screenFgContainer > .foreground > .elButtonCopy3 {
+    line-height: 27px;
+    position: absolute;
+    left: 1106px;
+    right: 73px;
+    top: 74px;
+    width: calc(100% - 1106px + 73px);
+    height: 27px;
+  }
+
+
+  .NeontoExport0x7fc4a0ea4fe0Screen > .screenFgContainer > .foreground > .elText2 {
+    overflow: hidden;
+    position: absolute;
+    left: 603px;
+    top: 359px;
+    width: 227px;
+    height: 57px;
+  }
+
+
+  .NeontoExport0x7fc4a0ea4fe0Screen > .screenFgContainer > .foreground > .elTextCopy2 {
+    overflow: hidden;
+    position: absolute;
+    left: 604px;
+    top: 435px;
+    width: 227px;
+    height: 57px;
+  }
+
+.NeontoExport0x7fc4a0ea4fe0Screen .elButton2 {
+  border: 0.0px solid transparent;
+}
+
+
+
+  .NeontoExport0x7fc4a0ea4fe0Screen > .screenFgContainer > .foreground > .elButton2 {
+    line-height: 65px;
+    position: absolute;
+    left: 564px;
+    top: 535px;
+    width: 293px;
+    height: 65px;
+  }
+
+.Start5Screen {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+  .Start5Screen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+
+
+  .Start5Screen > .background > .elN2018071631230 {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 198px;
+    width: 100%;
+    height: 436px;
+  }
+
+
+  .Start5Screen > .screenFgContainer > .foreground > .elTextCopy {
+    overflow: hidden;
+    position: absolute;
+    left: 124px;
+    right: 887px;
+    top: 114px;
+    width: calc(100% - 124px + 887px);
+    height: 37px;
+  }
+
+
+  .Start5Screen > .screenFgContainer > .foreground > .elText {
+    overflow: hidden;
+    position: absolute;
+    left: 123px;
+    right: 898px;
+    top: 56px;
+    width: calc(100% - 123px + 898px);
+    height: 52px;
+  }
+
+.Start5Screen .elButtonCopy {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.Start5Screen .elButtonCopy:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .Start5Screen > .screenFgContainer > .foreground > .elButtonCopy {
+    line-height: 27px;
+    position: absolute;
+    left: 768px;
+    right: 399px;
+    top: 83px;
+    width: calc(100% - 768px + 399px);
+    height: 27px;
+  }
+
+.Start5Screen .elButton {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.Start5Screen .elButton:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .Start5Screen > .screenFgContainer > .foreground > .elButton {
+    line-height: 27px;
+    position: absolute;
+    left: 641px;
+    right: 586px;
+    top: 83px;
+    width: calc(100% - 641px + 586px);
+    height: 27px;
+  }
+
+.Start5Screen .elButtonCopy2 {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.Start5Screen .elButtonCopy2:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .Start5Screen > .screenFgContainer > .foreground > .elButtonCopy2 {
+    line-height: 27px;
+    position: absolute;
+    left: 944px;
+    right: 242px;
+    top: 81px;
+    width: calc(100% - 944px + 242px);
+    height: 27px;
+  }
+
+.Start5Screen .elButtonCopy3 {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.Start5Screen .elButtonCopy3:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .Start5Screen > .screenFgContainer > .foreground > .elButtonCopy3 {
+    line-height: 27px;
+    position: absolute;
+    left: 1102px;
+    right: 79px;
+    top: 82px;
+    width: calc(100% - 1102px + 79px);
+    height: 27px;
+  }
+
+.ProfileScreen {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+  .ProfileScreen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+
+
+  .ProfileScreen > .screenFgContainer > .foreground > .elTextCopy {
+    overflow: hidden;
+    position: absolute;
+    left: 124px;
+    right: 887px;
+    top: 114px;
+    width: calc(100% - 124px + 887px);
+    height: 37px;
+  }
+
+
+  .ProfileScreen > .screenFgContainer > .foreground > .elText {
+    overflow: hidden;
+    position: absolute;
+    left: 123px;
+    right: 898px;
+    top: 56px;
+    width: calc(100% - 123px + 898px);
+    height: 52px;
+  }
+
+.ProfileScreen .elButtonCopy {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.ProfileScreen .elButtonCopy:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .ProfileScreen > .screenFgContainer > .foreground > .elButtonCopy {
+    line-height: 27px;
+    position: absolute;
+    left: 768px;
+    right: 399px;
+    top: 83px;
+    width: calc(100% - 768px + 399px);
+    height: 27px;
+  }
+
+.ProfileScreen .elButton {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.ProfileScreen .elButton:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .ProfileScreen > .screenFgContainer > .foreground > .elButton {
+    line-height: 27px;
+    position: absolute;
+    left: 641px;
+    right: 586px;
+    top: 83px;
+    width: calc(100% - 641px + 586px);
+    height: 27px;
+  }
+
+.ProfileScreen .elButtonCopy2 {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.ProfileScreen .elButtonCopy2:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .ProfileScreen > .screenFgContainer > .foreground > .elButtonCopy2 {
+    line-height: 27px;
+    position: absolute;
+    left: 944px;
+    right: 242px;
+    top: 81px;
+    width: calc(100% - 944px + 242px);
+    height: 27px;
+  }
+
+.ProfileScreen .elButtonCopy3 {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.ProfileScreen .elButtonCopy3:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .ProfileScreen > .screenFgContainer > .foreground > .elButtonCopy3 {
+    line-height: 27px;
+    position: absolute;
+    left: 1102px;
+    right: 79px;
+    top: 82px;
+    width: calc(100% - 1102px + 79px);
+    height: 27px;
+  }
+
+
+  .ProfileScreen > .screenFgContainer > .foreground > .elProfileBG {
+    position: absolute;
+    left: -3px;
+    right: 0px;
+    top: 181px;
+    width: calc(100% - -3px + 0px);
+    height: 489px;
+  }
+
+
+  .ProfileScreen > .screenFgContainer > .foreground > .elProfileInfroBB {
+    position: absolute;
+    left: -34px;
+    top: 50px;
+    width: 1166px;
+    height: 845px;
+  }
+
+.ProfileScreen .elButtonCopy4 {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.ProfileScreen .elButtonCopy4:focus {
+  box-shadow: 0 0 6px rgba(254, 255, 255, 0.2500);
+  outline: none;
+}
+
+
+
+  .ProfileScreen > .screenFgContainer > .foreground > .elButtonCopy4 {
+    line-height: 45px;
+    position: absolute;
+    left: 1034px;
+    right: 65px;
+    top: 292px;
+    width: calc(100% - 1034px + 65px);
+    height: 45px;
+  }
+
+
+  .ProfileScreen > .screenFgContainer > .foreground > .elField {
+    position: absolute;
+    left: 567px;
+    top: 368px;
+    width: 136px;
+    height: 49px;
+  }
+
+
+  .ProfileScreen > .screenFgContainer > .foreground > .elFieldCopy {
+    position: absolute;
+    left: 504px;
+    top: 497px;
+    width: 136px;
+    height: 49px;
+  }
+
+.Profile2Screen {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+  .Profile2Screen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+  }
+
+
+  .Profile2Screen > .screenFgContainer > .foreground > .elTextCopy {
+    overflow: hidden;
+    position: absolute;
+    left: 124px;
+    right: 887px;
+    top: 114px;
+    width: calc(100% - 124px + 887px);
+    height: 37px;
+  }
+
+
+  .Profile2Screen > .screenFgContainer > .foreground > .elText {
+    overflow: hidden;
+    position: absolute;
+    left: 123px;
+    right: 898px;
+    top: 56px;
+    width: calc(100% - 123px + 898px);
+    height: 52px;
+  }
+
+.Profile2Screen .elButtonCopy {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.Profile2Screen .elButtonCopy:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .Profile2Screen > .screenFgContainer > .foreground > .elButtonCopy {
+    line-height: 27px;
+    position: absolute;
+    left: 768px;
+    right: 399px;
+    top: 83px;
+    width: calc(100% - 768px + 399px);
+    height: 27px;
+  }
+
+.Profile2Screen .elButton {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.Profile2Screen .elButton:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .Profile2Screen > .screenFgContainer > .foreground > .elButton {
+    line-height: 27px;
+    position: absolute;
+    left: 641px;
+    right: 586px;
+    top: 83px;
+    width: calc(100% - 641px + 586px);
+    height: 27px;
+  }
+
+.Profile2Screen .elButtonCopy2 {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.Profile2Screen .elButtonCopy2:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .Profile2Screen > .screenFgContainer > .foreground > .elButtonCopy2 {
+    line-height: 27px;
+    position: absolute;
+    left: 944px;
+    right: 242px;
+    top: 81px;
+    width: calc(100% - 944px + 242px);
+    height: 27px;
+  }
+
+.Profile2Screen .elButtonCopy3 {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.Profile2Screen .elButtonCopy3:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .Profile2Screen > .screenFgContainer > .foreground > .elButtonCopy3 {
+    line-height: 27px;
+    position: absolute;
+    left: 1102px;
+    right: 79px;
+    top: 82px;
+    width: calc(100% - 1102px + 79px);
+    height: 27px;
+  }
+
+
+  .Profile2Screen > .screenFgContainer > .foreground > .elProfileBG {
+    position: absolute;
+    left: -3px;
+    right: 0px;
+    top: 181px;
+    width: calc(100% - -3px + 0px);
+    height: 489px;
+  }
+
+
+  .Profile2Screen > .screenFgContainer > .foreground > .elProfileInfroBB {
+    position: absolute;
+    left: -34px;
+    top: 50px;
+    width: 1166px;
+    height: 845px;
+  }
+
+.Profile2Screen .elButtonCopy4 {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.Profile2Screen .elButtonCopy4:focus {
+  box-shadow: 0 0 6px rgba(254, 255, 255, 0.2500);
+  outline: none;
+}
+
+
+
+  .Profile2Screen > .screenFgContainer > .foreground > .elButtonCopy4 {
+    line-height: 45px;
+    position: absolute;
+    left: 1034px;
+    right: 65px;
+    top: 292px;
+    width: calc(100% - 1034px + 65px);
+    height: 45px;
+  }
+
+
+  .Profile2Screen > .screenFgContainer > .foreground > .elField {
+    position: absolute;
+    left: 567px;
+    top: 368px;
+    width: 136px;
+    height: 49px;
+  }
+
+
+  .Profile2Screen > .screenFgContainer > .foreground > .elFieldCopy {
+    position: absolute;
+    left: 504px;
+    top: 497px;
+    width: 136px;
+    height: 49px;
+  }
+
+.HomePage2ScollScreen {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+  .HomePage2ScollScreen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 718px;
+  }
+
+
+  .HomePage2ScollScreen > .layoutFlow > .elText {
+    overflow: hidden;
+    position: relative;
+    margin-top: 73px;
+    margin-left: 115px;
+    margin-right: 905px;
+    width: calc(100.0% - 1020px);
+  }
+  .HomePage2ScollScreen > .layoutFlow > .elText > * { 
+    width: 100%;
+  height: 52px;
+  }
+  
+
+
+  .HomePage2ScollScreen > .layoutFlow > .elTextCopy {
+    overflow: hidden;
+    position: relative;
+    margin-top: 0px;
+    margin-left: 116px;
+    margin-right: 916px;
+    width: calc(100.0% - 1032px);
+  }
+  .HomePage2ScollScreen > .layoutFlow > .elTextCopy > * { 
+    width: 100%;
+  height: 37px;
+  }
+  
+
+.HomePage2ScollScreen .elButton button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.HomePage2ScollScreen .elButton button:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .HomePage2ScollScreen > .layoutFlow > .elButton {
+    line-height: 27px;
+    position: relative;
+    margin-top: -62px;
+    margin-left: 641px;
+    margin-right: 576px;
+    width: calc(100.0% - 1217px);
+  }
+  .HomePage2ScollScreen > .layoutFlow > .elButton > * { 
+    width: 100%;
+  height: 27px;
+  }
+  
+
+.HomePage2ScollScreen .elButtonCopy button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.HomePage2ScollScreen .elButtonCopy button:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .HomePage2ScollScreen > .layoutFlow > .elButtonCopy {
+    line-height: 27px;
+    position: relative;
+    margin-top: -28px;
+    width: 131px;
+    margin-left: 757px;
+  }
+  .HomePage2ScollScreen > .layoutFlow > .elButtonCopy > * { 
+  width: 131px;
+  height: 27px;
+  }
+  
+
+.HomePage2ScollScreen .elButtonCopy2 button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.HomePage2ScollScreen .elButtonCopy2 button:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .HomePage2ScollScreen > .layoutFlow > .elButtonCopy2 {
+    line-height: 27px;
+    position: relative;
+    margin-top: -29px;
+    width: 120px;
+    margin-left: 940px;
+  }
+  .HomePage2ScollScreen > .layoutFlow > .elButtonCopy2 > * { 
+  width: 120px;
+  height: 27px;
+  }
+  
+
+.HomePage2ScollScreen .elButtonCopy3 button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.HomePage2ScollScreen .elButtonCopy3 button:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .HomePage2ScollScreen > .layoutFlow > .elButtonCopy3 {
+    line-height: 27px;
+    position: relative;
+    margin-top: -27px;
+    margin-left: 1096px;
+    margin-right: 84px;
+    width: calc(100.0% - 1180px);
+  }
+  .HomePage2ScollScreen > .layoutFlow > .elButtonCopy3 > * { 
+    width: 100%;
+  height: 27px;
+  }
+  
+
+
+  .HomePage2ScollScreen > .layoutFlow > .elHomeBG {
+    position: relative;
+    margin-top: 88px;
+    margin-left: 0px;
+    margin-right: -230px;
+    width: calc(100.0% - -230px);
+  }
+  .HomePage2ScollScreen > .layoutFlow > .elHomeBG > * { 
+    width: 100%;
+  height: 514px;
+  }
+  
+
+
+  .HomePage2ScollScreen > .layoutFlow > .elHomePageBubble {
+    position: relative;
+    margin-top: -667px;
+    width: 761px;
+    margin-left: 385px;
+  }
+  .HomePage2ScollScreen > .layoutFlow > .elHomePageBubble > * { 
+  width: 761px;
+  height: 747px;
+  }
+  
+
+.ScrollModelFirstUpProfilePicScreen {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+  .ScrollModelFirstUpProfilePicScreen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 718px;
+  }
+
+
+  .ScrollModelFirstUpProfilePicScreen > .layoutFlow > .elText {
+    overflow: hidden;
+    position: relative;
+    margin-top: 73px;
+    width: 255px;
+    margin-left: 115px;
+  }
+  .ScrollModelFirstUpProfilePicScreen > .layoutFlow > .elText > * { 
+  width: 255px;
+  height: 52px;
+  }
+  
+
+
+  .ScrollModelFirstUpProfilePicScreen > .layoutFlow > .elTextCopy {
+    overflow: hidden;
+    position: relative;
+    margin-top: 0px;
+    width: 248px;
+    margin-left: 116px;
+  }
+  .ScrollModelFirstUpProfilePicScreen > .layoutFlow > .elTextCopy > * { 
+  width: 248px;
+  height: 37px;
+  }
+  
+
+.ScrollModelFirstUpProfilePicScreen .elButton button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.ScrollModelFirstUpProfilePicScreen .elButton button:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .ScrollModelFirstUpProfilePicScreen > .layoutFlow > .elButton {
+    line-height: 27px;
+    position: relative;
+    margin-top: -62px;
+    width: 63px;
+    margin-left: 641px;
+  }
+  .ScrollModelFirstUpProfilePicScreen > .layoutFlow > .elButton > * { 
+  width: 63px;
+  height: 27px;
+  }
+  
+
+.ScrollModelFirstUpProfilePicScreen .elButtonCopy button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.ScrollModelFirstUpProfilePicScreen .elButtonCopy button:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .ScrollModelFirstUpProfilePicScreen > .layoutFlow > .elButtonCopy {
+    line-height: 27px;
+    position: relative;
+    margin-top: -28px;
+    width: 131px;
+    margin-left: 757px;
+  }
+  .ScrollModelFirstUpProfilePicScreen > .layoutFlow > .elButtonCopy > * { 
+  width: 131px;
+  height: 27px;
+  }
+  
+
+.ScrollModelFirstUpProfilePicScreen .elButtonCopy2 button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.ScrollModelFirstUpProfilePicScreen .elButtonCopy2 button:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .ScrollModelFirstUpProfilePicScreen > .layoutFlow > .elButtonCopy2 {
+    line-height: 27px;
+    position: relative;
+    margin-top: -29px;
+    width: 120px;
+    margin-left: 940px;
+  }
+  .ScrollModelFirstUpProfilePicScreen > .layoutFlow > .elButtonCopy2 > * { 
+  width: 120px;
+  height: 27px;
+  }
+  
+
+.ScrollModelFirstUpProfilePicScreen .elButtonCopy3 button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.ScrollModelFirstUpProfilePicScreen .elButtonCopy3 button:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .ScrollModelFirstUpProfilePicScreen > .layoutFlow > .elButtonCopy3 {
+    line-height: 27px;
+    position: relative;
+    margin-top: -27px;
+    width: 100px;
+    margin-left: 1096px;
+  }
+  .ScrollModelFirstUpProfilePicScreen > .layoutFlow > .elButtonCopy3 > * { 
+  width: 100px;
+  height: 27px;
+  }
+  
+
+
+  .ScrollModelFirstUpProfilePicScreen > .layoutFlow > .elHomeBG {
+    position: relative;
+    margin-top: 88px;
+    width: 1531px;
+    margin-left: 0px;
+  }
+  .ScrollModelFirstUpProfilePicScreen > .layoutFlow > .elHomeBG > * { 
+  width: 1531px;
+  height: 521px;
+  }
+  
+
+
+  .ScrollModelFirstUpProfilePicScreen > .layoutFlow > .elUpProfilePic {
+    position: relative;
+    margin-top: -773px;
+    width: 959px;
+    margin-left: 323px;
+  }
+  .ScrollModelFirstUpProfilePicScreen > .layoutFlow > .elUpProfilePic > * { 
+  width: 959px;
+  height: 959px;
+  }
+  
+
+.ScrollModelFirstUpProfilePicScreen .elButtonUploadPic button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+
+
+  .ScrollModelFirstUpProfilePicScreen > .layoutFlow > .elButtonUploadPic {
+    line-height: 134px;
+    position: relative;
+    margin-top: -502px;
+    width: 218px;
+    margin-left: 670px;
+  }
+  .ScrollModelFirstUpProfilePicScreen > .layoutFlow > .elButtonUploadPic > * { 
+  width: 218px;
+  height: 134px;
+  }
+  
+
+.ScrollModelFirstUpProfilePicScreen .elButtonComfirm button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+
+
+  .ScrollModelFirstUpProfilePicScreen > .layoutFlow > .elButtonComfirm {
+    line-height: 43px;
+    position: relative;
+    margin-top: 40px;
+    width: 116px;
+    margin-left: 723px;
+  }
+  .ScrollModelFirstUpProfilePicScreen > .layoutFlow > .elButtonComfirm > * { 
+  width: 116px;
+  height: 43px;
+  }
+  
+
+.ScrollTestScreen {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+  .ScrollTestScreen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 718px;
+  }
+
+
+  .ScrollTestScreen > .layoutFlow > .elText {
+    overflow: hidden;
+    position: relative;
+    margin-top: 73px;
+    width: 255px;
+    margin-left: 115px;
+  }
+  .ScrollTestScreen > .layoutFlow > .elText > * { 
+  width: 255px;
+  height: 52px;
+  }
+  
+
+
+  .ScrollTestScreen > .layoutFlow > .elTextCopy {
+    overflow: hidden;
+    position: relative;
+    margin-top: 0px;
+    width: 248px;
+    margin-left: 116px;
+  }
+  .ScrollTestScreen > .layoutFlow > .elTextCopy > * { 
+  width: 248px;
+  height: 37px;
+  }
+  
+
+.ScrollTestScreen .elButton button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.ScrollTestScreen .elButton button:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .ScrollTestScreen > .layoutFlow > .elButton {
+    line-height: 27px;
+    position: relative;
+    margin-top: -62px;
+    width: 63px;
+    margin-left: 641px;
+  }
+  .ScrollTestScreen > .layoutFlow > .elButton > * { 
+  width: 63px;
+  height: 27px;
+  }
+  
+
+.ScrollTestScreen .elButtonCopy button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.ScrollTestScreen .elButtonCopy button:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .ScrollTestScreen > .layoutFlow > .elButtonCopy {
+    line-height: 27px;
+    position: relative;
+    margin-top: -28px;
+    width: 131px;
+    margin-left: 757px;
+  }
+  .ScrollTestScreen > .layoutFlow > .elButtonCopy > * { 
+  width: 131px;
+  height: 27px;
+  }
+  
+
+.ScrollTestScreen .elButtonCopy2 button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.ScrollTestScreen .elButtonCopy2 button:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .ScrollTestScreen > .layoutFlow > .elButtonCopy2 {
+    line-height: 27px;
+    position: relative;
+    margin-top: -29px;
+    width: 120px;
+    margin-left: 940px;
+  }
+  .ScrollTestScreen > .layoutFlow > .elButtonCopy2 > * { 
+  width: 120px;
+  height: 27px;
+  }
+  
+
+.ScrollTestScreen .elButtonCopy3 button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.ScrollTestScreen .elButtonCopy3 button:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .ScrollTestScreen > .layoutFlow > .elButtonCopy3 {
+    line-height: 27px;
+    position: relative;
+    margin-top: -27px;
+    width: 100px;
+    margin-left: 1096px;
+  }
+  .ScrollTestScreen > .layoutFlow > .elButtonCopy3 > * { 
+  width: 100px;
+  height: 27px;
+  }
+  
+
+
+  .ScrollTestScreen > .layoutFlow > .elHomeBG {
+    position: relative;
+    margin-top: 88px;
+    width: 1529px;
+    margin-left: 0px;
+  }
+  .ScrollTestScreen > .layoutFlow > .elHomeBG > * { 
+  width: 1529px;
+  height: 520px;
+  }
+  
+
+.NewScrollModelFirstUpProfilePicScreen {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+  .NewScrollModelFirstUpProfilePicScreen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 718px;
+  }
+
+
+  .NewScrollModelFirstUpProfilePicScreen > .layoutFlow > .elText_Yolo {
+    overflow: hidden;
+    position: relative;
+    margin-top: 73px;
+    width: 255px;
+    margin-left: 115px;
+  }
+  .NewScrollModelFirstUpProfilePicScreen > .layoutFlow > .elText_Yolo > * { 
+  width: 255px;
+  height: 52px;
+  }
+  
+
+
+  .NewScrollModelFirstUpProfilePicScreen > .layoutFlow > .elText_Slogan {
+    overflow: hidden;
+    position: relative;
+    margin-top: 0px;
+    width: 248px;
+    margin-left: 116px;
+  }
+  .NewScrollModelFirstUpProfilePicScreen > .layoutFlow > .elText_Slogan > * { 
+  width: 248px;
+  height: 37px;
+  }
+  
+
+.NewScrollModelFirstUpProfilePicScreen .elButton_HomePage button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.NewScrollModelFirstUpProfilePicScreen .elButton_HomePage button:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .NewScrollModelFirstUpProfilePicScreen > .layoutFlow > .elButton_HomePage {
+    line-height: 27px;
+    position: relative;
+    margin-top: -62px;
+    width: 63px;
+    margin-left: 641px;
+  }
+  .NewScrollModelFirstUpProfilePicScreen > .layoutFlow > .elButton_HomePage > * { 
+  width: 63px;
+  height: 27px;
+  }
+  
+
+.NewScrollModelFirstUpProfilePicScreen .elButton_LoginAndRegister button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.NewScrollModelFirstUpProfilePicScreen .elButton_LoginAndRegister button:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .NewScrollModelFirstUpProfilePicScreen > .layoutFlow > .elButton_LoginAndRegister {
+    line-height: 27px;
+    position: relative;
+    margin-top: -28px;
+    width: 131px;
+    margin-left: 757px;
+  }
+  .NewScrollModelFirstUpProfilePicScreen > .layoutFlow > .elButton_LoginAndRegister > * { 
+  width: 131px;
+  height: 27px;
+  }
+  
+
+.NewScrollModelFirstUpProfilePicScreen .elButton_BubbleDiary button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.NewScrollModelFirstUpProfilePicScreen .elButton_BubbleDiary button:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .NewScrollModelFirstUpProfilePicScreen > .layoutFlow > .elButton_BubbleDiary {
+    line-height: 27px;
+    position: relative;
+    margin-top: -29px;
+    width: 120px;
+    margin-left: 940px;
+  }
+  .NewScrollModelFirstUpProfilePicScreen > .layoutFlow > .elButton_BubbleDiary > * { 
+  width: 120px;
+  height: 27px;
+  }
+  
+
+.NewScrollModelFirstUpProfilePicScreen .elButton_Profile button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.NewScrollModelFirstUpProfilePicScreen .elButton_Profile button:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .NewScrollModelFirstUpProfilePicScreen > .layoutFlow > .elButton_Profile {
+    line-height: 27px;
+    position: relative;
+    margin-top: -27px;
+    width: 100px;
+    margin-left: 1096px;
+  }
+  .NewScrollModelFirstUpProfilePicScreen > .layoutFlow > .elButton_Profile > * { 
+  width: 100px;
+  height: 27px;
+  }
+  
+
+
+  .NewScrollModelFirstUpProfilePicScreen > .layoutFlow > .elHomeBG {
+    position: relative;
+    margin-top: 88px;
+    width: 1531px;
+    margin-left: 0px;
+  }
+  .NewScrollModelFirstUpProfilePicScreen > .layoutFlow > .elHomeBG > * { 
+  width: 1531px;
+  height: 521px;
+  }
+  
+
+
+  .NewScrollModelFirstUpProfilePicScreen > .layoutFlow > .elUpProfilePic {
+    position: relative;
+    margin-top: -773px;
+    width: 959px;
+    margin-left: 323px;
+  }
+  .NewScrollModelFirstUpProfilePicScreen > .layoutFlow > .elUpProfilePic > * { 
+  width: 959px;
+  height: 959px;
+  }
+  
+
+.NewScrollModelFirstUpProfilePicScreen .elButton_UploadPic button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+
+
+  .NewScrollModelFirstUpProfilePicScreen > .layoutFlow > .elButton_UploadPic {
+    line-height: 134px;
+    position: relative;
+    margin-top: -502px;
+    width: 218px;
+    margin-left: 670px;
+  }
+  .NewScrollModelFirstUpProfilePicScreen > .layoutFlow > .elButton_UploadPic > * { 
+  width: 218px;
+  height: 134px;
+  }
+  
+
+.NewScrollModelFirstUpProfilePicScreen .elButton_confirm button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+
+
+  .NewScrollModelFirstUpProfilePicScreen > .layoutFlow > .elButton_confirm {
+    line-height: 43px;
+    position: relative;
+    margin-top: 40px;
+    width: 116px;
+    margin-left: 723px;
+  }
+  .NewScrollModelFirstUpProfilePicScreen > .layoutFlow > .elButton_confirm > * { 
+  width: 116px;
+  height: 43px;
+  }
+  
+
+.NewLoginAndRegister2Screen {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+  .NewLoginAndRegister2Screen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 718px;
+  }
+
+
+  .NewLoginAndRegister2Screen > .layoutFlow > .elText_Yolo {
+    overflow: hidden;
+    position: relative;
+    margin-top: 73px;
+    width: 255px;
+    margin-left: 115px;
+  }
+  .NewLoginAndRegister2Screen > .layoutFlow > .elText_Yolo > * { 
+  width: 255px;
+  height: 52px;
+  }
+  
+
+
+  .NewLoginAndRegister2Screen > .layoutFlow > .elText_Slogan {
+    overflow: hidden;
+    position: relative;
+    margin-top: 0px;
+    width: 248px;
+    margin-left: 116px;
+  }
+  .NewLoginAndRegister2Screen > .layoutFlow > .elText_Slogan > * { 
+  width: 248px;
+  height: 37px;
+  }
+  
+
+.NewLoginAndRegister2Screen .elButton_HomePage button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.NewLoginAndRegister2Screen .elButton_HomePage button:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .NewLoginAndRegister2Screen > .layoutFlow > .elButton_HomePage {
+    line-height: 27px;
+    position: relative;
+    margin-top: -62px;
+    width: 63px;
+    margin-left: 641px;
+  }
+  .NewLoginAndRegister2Screen > .layoutFlow > .elButton_HomePage > * { 
+  width: 63px;
+  height: 27px;
+  }
+  
+
+.NewLoginAndRegister2Screen .elButton_LoginAndRegister button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.NewLoginAndRegister2Screen .elButton_LoginAndRegister button:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .NewLoginAndRegister2Screen > .layoutFlow > .elButton_LoginAndRegister {
+    line-height: 27px;
+    position: relative;
+    margin-top: -28px;
+    width: 131px;
+    margin-left: 757px;
+  }
+  .NewLoginAndRegister2Screen > .layoutFlow > .elButton_LoginAndRegister > * { 
+  width: 131px;
+  height: 27px;
+  }
+  
+
+.NewLoginAndRegister2Screen .elButton_BubbleDiary button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.NewLoginAndRegister2Screen .elButton_BubbleDiary button:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .NewLoginAndRegister2Screen > .layoutFlow > .elButton_BubbleDiary {
+    line-height: 27px;
+    position: relative;
+    margin-top: -29px;
+    width: 120px;
+    margin-left: 940px;
+  }
+  .NewLoginAndRegister2Screen > .layoutFlow > .elButton_BubbleDiary > * { 
+  width: 120px;
+  height: 27px;
+  }
+  
+
+.NewLoginAndRegister2Screen .elButton_Profile button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.NewLoginAndRegister2Screen .elButton_Profile button:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .NewLoginAndRegister2Screen > .layoutFlow > .elButton_Profile {
+    line-height: 27px;
+    position: relative;
+    margin-top: -27px;
+    width: 100px;
+    margin-left: 1096px;
+  }
+  .NewLoginAndRegister2Screen > .layoutFlow > .elButton_Profile > * { 
+  width: 100px;
+  height: 27px;
+  }
+  
+
+
+  .NewLoginAndRegister2Screen > .layoutFlow > .elHomeBG {
+    position: relative;
+    margin-top: 88px;
+    width: 1531px;
+    margin-left: 0px;
+  }
+  .NewLoginAndRegister2Screen > .layoutFlow > .elHomeBG > * { 
+  width: 1531px;
+  height: 521px;
+  }
+  
+
+
+  .NewLoginAndRegister2Screen > .layoutFlow > .elLRBubble {
+    position: relative;
+    margin-top: -887px;
+    width: 1187px;
+    margin-left: 182px;
+  }
+  .NewLoginAndRegister2Screen > .layoutFlow > .elLRBubble > * { 
+  width: 1187px;
+  height: 1187px;
+  }
+  
+
+
+.NewLoginAndRegister2Screen > .layoutFlow > .elField_PlzEnterAccount input {
+  color: #feffff;
+}
+
+.NewLoginAndRegister2Screen > .layoutFlow > .elField_PlzEnterAccount input {
+  border-bottom-color: #feffff;
+}
+
+.NewLoginAndRegister2Screen > .layoutFlow > .elField_PlzEnterAccount input::input-placeholder {
+  color: rgba(254, 255, 255, 0.5000);
+}
+
+.NewLoginAndRegister2Screen > .layoutFlow > .elField_PlzEnterAccount input::placeholder {
+  color: rgba(254, 255, 255, 0.5000);
+}
+
+  .NewLoginAndRegister2Screen > .layoutFlow > .elField_PlzEnterAccount {
+    position: relative;
+    margin-top: -624px;
+    width: 267px;
+    margin-left: 647px;
+  }
+  .NewLoginAndRegister2Screen > .layoutFlow > .elField_PlzEnterAccount > * { 
+  width: 267px;
+  height: 37px;
+  }
+  
+
+
+.NewLoginAndRegister2Screen > .layoutFlow > .elField_PlzEnterPassword input {
+  color: #feffff;
+}
+
+.NewLoginAndRegister2Screen > .layoutFlow > .elField_PlzEnterPassword input {
+  border-bottom-color: #feffff;
+}
+
+.NewLoginAndRegister2Screen > .layoutFlow > .elField_PlzEnterPassword input::input-placeholder {
+  color: rgba(254, 255, 255, 0.5000);
+}
+
+.NewLoginAndRegister2Screen > .layoutFlow > .elField_PlzEnterPassword input::placeholder {
+  color: rgba(254, 255, 255, 0.5000);
+}
+
+  .NewLoginAndRegister2Screen > .layoutFlow > .elField_PlzEnterPassword {
+    position: relative;
+    margin-top: 22px;
+    width: 261px;
+    margin-left: 648px;
+  }
+  .NewLoginAndRegister2Screen > .layoutFlow > .elField_PlzEnterPassword > * { 
+  width: 261px;
+  height: 38px;
+  }
+  
+
+.NewLoginAndRegister2Screen .elButton_FB button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+
+
+  .NewLoginAndRegister2Screen > .layoutFlow > .elButton_FB {
+    line-height: 24px;
+    position: relative;
+    margin-top: -169px;
+    width: 192px;
+    margin-left: 546px;
+  }
+  .NewLoginAndRegister2Screen > .layoutFlow > .elButton_FB > * { 
+  width: 192px;
+  height: 24px;
+  }
+  
+
+.NewLoginAndRegister2Screen .elButton_Google button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+
+
+  .NewLoginAndRegister2Screen > .layoutFlow > .elButton_Google {
+    line-height: 28px;
+    position: relative;
+    margin-top: -27px;
+    width: 186px;
+    margin-left: 776px;
+  }
+  .NewLoginAndRegister2Screen > .layoutFlow > .elButton_Google > * { 
+  width: 186px;
+  height: 28px;
+  }
+  
+
+.NewLoginAndRegister2Screen .elButton_Login button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+
+
+  .NewLoginAndRegister2Screen > .layoutFlow > .elButton_Login {
+    line-height: 53px;
+    position: relative;
+    margin-top: 171px;
+    width: 147px;
+    margin-left: 691px;
+  }
+  .NewLoginAndRegister2Screen > .layoutFlow > .elButton_Login > * { 
+  width: 147px;
+  height: 53px;
+  }
+  
+
+.NewLoginAndRegister2Screen .elButton_CreateNewAccount button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+
+
+  .NewLoginAndRegister2Screen > .layoutFlow > .elButton_CreateNewAccount {
+    line-height: 34px;
+    position: relative;
+    margin-top: 30px;
+    width: 140px;
+    margin-left: 565px;
+  }
+  .NewLoginAndRegister2Screen > .layoutFlow > .elButton_CreateNewAccount > * { 
+  width: 140px;
+  height: 34px;
+  }
+  
+
+.NewLoginAndRegister2Screen .elButton_ForgetPassword button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+
+
+  .NewLoginAndRegister2Screen > .layoutFlow > .elButton_ForgetPassword {
+    line-height: 35px;
+    position: relative;
+    margin-top: -33px;
+    width: 112px;
+    margin-left: 819px;
+  }
+  .NewLoginAndRegister2Screen > .layoutFlow > .elButton_ForgetPassword > * { 
+  width: 112px;
+  height: 35px;
+  }
+  
+
+.NewBubbleDiary2Screen {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+  .NewBubbleDiary2Screen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 719px;
+  }
+
+
+  .NewBubbleDiary2Screen > .layoutFlow > .elText {
+    overflow: hidden;
+    position: relative;
+    margin-top: 85px;
+    margin-left: 127px;
+    margin-right: 893px;
+    width: calc(100.0% - 1020px);
+  }
+  .NewBubbleDiary2Screen > .layoutFlow > .elText > * { 
+    width: 100%;
+  height: 52px;
+  }
+  
+
+
+  .NewBubbleDiary2Screen > .layoutFlow > .elTextCopy {
+    overflow: hidden;
+    position: relative;
+    margin-top: 0px;
+    margin-left: 124px;
+    margin-right: 887px;
+    width: calc(100.0% - 1011px);
+  }
+  .NewBubbleDiary2Screen > .layoutFlow > .elTextCopy > * { 
+    width: 100%;
+  height: 37px;
+  }
+  
+
+.NewBubbleDiary2Screen .elButton button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.NewBubbleDiary2Screen .elButton button:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .NewBubbleDiary2Screen > .layoutFlow > .elButton {
+    line-height: 36px;
+    position: relative;
+    margin-top: -69px;
+    margin-left: 639px;
+    margin-right: 575px;
+    width: calc(100.0% - 1214px);
+  }
+  .NewBubbleDiary2Screen > .layoutFlow > .elButton > * { 
+    width: 100%;
+  height: 36px;
+  }
+  
+
+.NewBubbleDiary2Screen .elButtonCopy button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.NewBubbleDiary2Screen .elButtonCopy button:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .NewBubbleDiary2Screen > .layoutFlow > .elButtonCopy {
+    line-height: 27px;
+    position: relative;
+    margin-top: -31px;
+    margin-left: 769px;
+    margin-right: 348px;
+    width: calc(100.0% - 1117px);
+  }
+  .NewBubbleDiary2Screen > .layoutFlow > .elButtonCopy > * { 
+    width: 100%;
+  height: 27px;
+  }
+  
+
+.NewBubbleDiary2Screen .elButtonCopy2 button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.NewBubbleDiary2Screen .elButtonCopy2 button:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .NewBubbleDiary2Screen > .layoutFlow > .elButtonCopy2 {
+    line-height: 27px;
+    position: relative;
+    margin-top: -27px;
+    margin-left: 944px;
+    margin-right: 204px;
+    width: calc(100.0% - 1148px);
+  }
+  .NewBubbleDiary2Screen > .layoutFlow > .elButtonCopy2 > * { 
+    width: 100%;
+  height: 27px;
+  }
+  
+
+.NewBubbleDiary2Screen .elButtonCopy3 button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.NewBubbleDiary2Screen .elButtonCopy3 button:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .NewBubbleDiary2Screen > .layoutFlow > .elButtonCopy3 {
+    line-height: 27px;
+    position: relative;
+    margin-top: -27px;
+    margin-left: 1085px;
+    margin-right: 85px;
+    width: calc(100.0% - 1170px);
+  }
+  .NewBubbleDiary2Screen > .layoutFlow > .elButtonCopy3 > * { 
+    width: 100%;
+  height: 27px;
+  }
+  
+
+
+  .NewBubbleDiary2Screen > .layoutFlow > .elIconalerts {
+    position: relative;
+    margin-top: -43px;
+    width: 52px;
+    margin-left: 1188px;
+  }
+  .NewBubbleDiary2Screen > .layoutFlow > .elIconalerts > * { 
+  width: 52px;
+  height: 52px;
+  }
+  
+
+
+  .NewBubbleDiary2Screen > .layoutFlow > .elBubbleDiaryBG {
+    position: relative;
+    margin-top: 86px;
+    margin-left: 0px;
+    margin-right: -372px;
+    width: calc(100.0% - -372px);
+  }
+  .NewBubbleDiary2Screen > .layoutFlow > .elBubbleDiaryBG > * { 
+    width: 100%;
+  height: 626px;
+  }
+  
+
+
+  .NewBubbleDiary2Screen > .layoutFlow > .elAddBubble {
+    position: relative;
+    margin-top: -581px;
+    width: 385px;
+    margin-left: 78px;
+  }
+  .NewBubbleDiary2Screen > .layoutFlow > .elAddBubble > * { 
+  width: 385px;
+  height: 385px;
+  }
+  
+
+.NewBubbleDiary2Screen .elButton_AddBubble button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+
+
+  .NewBubbleDiary2Screen > .layoutFlow > .elButton_AddBubble {
+    line-height: 191px;
+    position: relative;
+    margin-top: -293px;
+    width: 137px;
+    margin-left: 200px;
+  }
+  .NewBubbleDiary2Screen > .layoutFlow > .elButton_AddBubble > * { 
+  width: 137px;
+  height: 191px;
+  }
+  
+
+.TutorCreateBBScreen {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+  .TutorCreateBBScreen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 719px;
+  }
+
+
+  .TutorCreateBBScreen > .layoutFlow > .elText {
+    overflow: hidden;
+    position: relative;
+    margin-top: 85px;
+    margin-left: 127px;
+    margin-right: 893px;
+    width: calc(100.0% - 1020px);
+  }
+  .TutorCreateBBScreen > .layoutFlow > .elText > * { 
+    width: 100%;
+  height: 52px;
+  }
+  
+
+
+  .TutorCreateBBScreen > .layoutFlow > .elTextCopy {
+    overflow: hidden;
+    position: relative;
+    margin-top: 0px;
+    margin-left: 124px;
+    margin-right: 887px;
+    width: calc(100.0% - 1011px);
+  }
+  .TutorCreateBBScreen > .layoutFlow > .elTextCopy > * { 
+    width: 100%;
+  height: 37px;
+  }
+  
+
+.TutorCreateBBScreen .elButton button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.TutorCreateBBScreen .elButton button:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .TutorCreateBBScreen > .layoutFlow > .elButton {
+    line-height: 36px;
+    position: relative;
+    margin-top: -69px;
+    margin-left: 639px;
+    margin-right: 575px;
+    width: calc(100.0% - 1214px);
+  }
+  .TutorCreateBBScreen > .layoutFlow > .elButton > * { 
+    width: 100%;
+  height: 36px;
+  }
+  
+
+.TutorCreateBBScreen .elButtonCopy button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.TutorCreateBBScreen .elButtonCopy button:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .TutorCreateBBScreen > .layoutFlow > .elButtonCopy {
+    line-height: 27px;
+    position: relative;
+    margin-top: -31px;
+    margin-left: 769px;
+    margin-right: 348px;
+    width: calc(100.0% - 1117px);
+  }
+  .TutorCreateBBScreen > .layoutFlow > .elButtonCopy > * { 
+    width: 100%;
+  height: 27px;
+  }
+  
+
+.TutorCreateBBScreen .elButtonCopy2 button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.TutorCreateBBScreen .elButtonCopy2 button:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .TutorCreateBBScreen > .layoutFlow > .elButtonCopy2 {
+    line-height: 27px;
+    position: relative;
+    margin-top: -27px;
+    margin-left: 944px;
+    margin-right: 204px;
+    width: calc(100.0% - 1148px);
+  }
+  .TutorCreateBBScreen > .layoutFlow > .elButtonCopy2 > * { 
+    width: 100%;
+  height: 27px;
+  }
+  
+
+.TutorCreateBBScreen .elButtonCopy3 button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.TutorCreateBBScreen .elButtonCopy3 button:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .TutorCreateBBScreen > .layoutFlow > .elButtonCopy3 {
+    line-height: 27px;
+    position: relative;
+    margin-top: -27px;
+    margin-left: 1085px;
+    margin-right: 85px;
+    width: calc(100.0% - 1170px);
+  }
+  .TutorCreateBBScreen > .layoutFlow > .elButtonCopy3 > * { 
+    width: 100%;
+  height: 27px;
+  }
+  
+
+
+  .TutorCreateBBScreen > .layoutFlow > .elIconalerts {
+    position: relative;
+    margin-top: -43px;
+    width: 52px;
+    margin-left: 1188px;
+  }
+  .TutorCreateBBScreen > .layoutFlow > .elIconalerts > * { 
+  width: 52px;
+  height: 52px;
+  }
+  
+
+
+  .TutorCreateBBScreen > .layoutFlow > .elBubbleDiaryBG {
+    position: relative;
+    margin-top: 86px;
+    margin-left: 0px;
+    margin-right: -372px;
+    width: calc(100.0% - -372px);
+  }
+  .TutorCreateBBScreen > .layoutFlow > .elBubbleDiaryBG > * { 
+    width: 100%;
+  height: 626px;
+  }
+  
+
+
+  .TutorCreateBBScreen > .layoutFlow > .elOriDiaryBB {
+    position: relative;
+    margin-top: -703px;
+    width: 1178px;
+    margin-left: 328px;
+  }
+  .TutorCreateBBScreen > .layoutFlow > .elOriDiaryBB > * { 
+  width: 1178px;
+  height: 723px;
+  }
+  
+
+
+  .TutorCreateBBScreen > .layoutFlow > .elAddPicBB {
+    position: relative;
+    margin-top: -434px;
+    width: 187px;
+    margin-left: 197px;
+  }
+  .TutorCreateBBScreen > .layoutFlow > .elAddPicBB > * { 
+  width: 187px;
+  height: 187px;
+  }
+  
+
+.TutorCreateBBScreen .elButton_AddPic button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+
+
+  .TutorCreateBBScreen > .layoutFlow > .elButton_AddPic {
+    line-height: 106px;
+    position: relative;
+    margin-top: -142px;
+    width: 106px;
+    margin-left: 233px;
+  }
+  .TutorCreateBBScreen > .layoutFlow > .elButton_AddPic > * { 
+  width: 106px;
+  height: 106px;
+  }
+  
+
+
+  .TutorCreateBBScreen > .layoutFlow > .elTutorFirstAddBB {
+    position: relative;
+    margin-top: -373px;
+    width: 577px;
+    margin-left: 0px;
+  }
+  .TutorCreateBBScreen > .layoutFlow > .elTutorFirstAddBB > * { 
+  width: 577px;
+  height: 626px;
+  }
+  
+
+.TutorCreateBBScreen .elHotspot button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+
+
+  .TutorCreateBBScreen > .layoutFlow > .elHotspot {
+    line-height: 623px;
+    position: relative;
+    margin-top: -618px;
+    width: 1059px;
+    margin-left: 578px;
+  }
+  .TutorCreateBBScreen > .layoutFlow > .elHotspot > * { 
+  width: 1059px;
+  height: 623px;
+  }
+  
+
+.TutorCreateBB2Screen {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+  .TutorCreateBB2Screen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 719px;
+  }
+
+
+  .TutorCreateBB2Screen > .layoutFlow > .elText {
+    overflow: hidden;
+    position: relative;
+    margin-top: 85px;
+    margin-left: 127px;
+    margin-right: 893px;
+    width: calc(100.0% - 1020px);
+  }
+  .TutorCreateBB2Screen > .layoutFlow > .elText > * { 
+    width: 100%;
+  height: 52px;
+  }
+  
+
+
+  .TutorCreateBB2Screen > .layoutFlow > .elTextCopy {
+    overflow: hidden;
+    position: relative;
+    margin-top: 0px;
+    margin-left: 124px;
+    margin-right: 887px;
+    width: calc(100.0% - 1011px);
+  }
+  .TutorCreateBB2Screen > .layoutFlow > .elTextCopy > * { 
+    width: 100%;
+  height: 37px;
+  }
+  
+
+.TutorCreateBB2Screen .elButton button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.TutorCreateBB2Screen .elButton button:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .TutorCreateBB2Screen > .layoutFlow > .elButton {
+    line-height: 36px;
+    position: relative;
+    margin-top: -69px;
+    margin-left: 639px;
+    margin-right: 575px;
+    width: calc(100.0% - 1214px);
+  }
+  .TutorCreateBB2Screen > .layoutFlow > .elButton > * { 
+    width: 100%;
+  height: 36px;
+  }
+  
+
+.TutorCreateBB2Screen .elButtonCopy button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.TutorCreateBB2Screen .elButtonCopy button:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .TutorCreateBB2Screen > .layoutFlow > .elButtonCopy {
+    line-height: 27px;
+    position: relative;
+    margin-top: -31px;
+    margin-left: 769px;
+    margin-right: 348px;
+    width: calc(100.0% - 1117px);
+  }
+  .TutorCreateBB2Screen > .layoutFlow > .elButtonCopy > * { 
+    width: 100%;
+  height: 27px;
+  }
+  
+
+.TutorCreateBB2Screen .elButtonCopy2 button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.TutorCreateBB2Screen .elButtonCopy2 button:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .TutorCreateBB2Screen > .layoutFlow > .elButtonCopy2 {
+    line-height: 27px;
+    position: relative;
+    margin-top: -27px;
+    margin-left: 944px;
+    margin-right: 204px;
+    width: calc(100.0% - 1148px);
+  }
+  .TutorCreateBB2Screen > .layoutFlow > .elButtonCopy2 > * { 
+    width: 100%;
+  height: 27px;
+  }
+  
+
+.TutorCreateBB2Screen .elButtonCopy3 button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.TutorCreateBB2Screen .elButtonCopy3 button:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .TutorCreateBB2Screen > .layoutFlow > .elButtonCopy3 {
+    line-height: 27px;
+    position: relative;
+    margin-top: -27px;
+    margin-left: 1085px;
+    margin-right: 85px;
+    width: calc(100.0% - 1170px);
+  }
+  .TutorCreateBB2Screen > .layoutFlow > .elButtonCopy3 > * { 
+    width: 100%;
+  height: 27px;
+  }
+  
+
+
+  .TutorCreateBB2Screen > .layoutFlow > .elIconalerts {
+    position: relative;
+    margin-top: -43px;
+    width: 52px;
+    margin-left: 1188px;
+  }
+  .TutorCreateBB2Screen > .layoutFlow > .elIconalerts > * { 
+  width: 52px;
+  height: 52px;
+  }
+  
+
+
+  .TutorCreateBB2Screen > .layoutFlow > .elBubbleDiaryBG {
+    position: relative;
+    margin-top: 86px;
+    margin-left: 0px;
+    margin-right: -372px;
+    width: calc(100.0% - -372px);
+  }
+  .TutorCreateBB2Screen > .layoutFlow > .elBubbleDiaryBG > * { 
+    width: 100%;
+  height: 626px;
+  }
+  
+
+
+  .TutorCreateBB2Screen > .layoutFlow > .elOriDiaryBB {
+    position: relative;
+    margin-top: -703px;
+    width: 1178px;
+    margin-left: 328px;
+  }
+  .TutorCreateBB2Screen > .layoutFlow > .elOriDiaryBB > * { 
+  width: 1178px;
+  height: 723px;
+  }
+  
+
+
+  .TutorCreateBB2Screen > .layoutFlow > .elAddPicBB {
+    position: relative;
+    margin-top: -434px;
+    width: 187px;
+    margin-left: 197px;
+  }
+  .TutorCreateBB2Screen > .layoutFlow > .elAddPicBB > * { 
+  width: 187px;
+  height: 187px;
+  }
+  
+
+.TutorCreateBB2Screen .elButton_AddPic button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+
+
+  .TutorCreateBB2Screen > .layoutFlow > .elButton_AddPic {
+    line-height: 106px;
+    position: relative;
+    margin-top: -142px;
+    width: 106px;
+    margin-left: 233px;
+  }
+  .TutorCreateBB2Screen > .layoutFlow > .elButton_AddPic > * { 
+  width: 106px;
+  height: 106px;
+  }
+  
+
+.CreateBBScreen {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+  .CreateBBScreen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 719px;
+  }
+
+
+  .CreateBBScreen > .layoutFlow > .elText {
+    overflow: hidden;
+    position: relative;
+    margin-top: 85px;
+    margin-left: 127px;
+    margin-right: 893px;
+    width: calc(100.0% - 1020px);
+  }
+  .CreateBBScreen > .layoutFlow > .elText > * { 
+    width: 100%;
+  height: 52px;
+  }
+  
+
+
+  .CreateBBScreen > .layoutFlow > .elTextCopy {
+    overflow: hidden;
+    position: relative;
+    margin-top: 0px;
+    margin-left: 124px;
+    margin-right: 887px;
+    width: calc(100.0% - 1011px);
+  }
+  .CreateBBScreen > .layoutFlow > .elTextCopy > * { 
+    width: 100%;
+  height: 37px;
+  }
+  
+
+.CreateBBScreen .elButton button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.CreateBBScreen .elButton button:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .CreateBBScreen > .layoutFlow > .elButton {
+    line-height: 36px;
+    position: relative;
+    margin-top: -69px;
+    margin-left: 639px;
+    margin-right: 575px;
+    width: calc(100.0% - 1214px);
+  }
+  .CreateBBScreen > .layoutFlow > .elButton > * { 
+    width: 100%;
+  height: 36px;
+  }
+  
+
+.CreateBBScreen .elButtonCopy button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.CreateBBScreen .elButtonCopy button:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .CreateBBScreen > .layoutFlow > .elButtonCopy {
+    line-height: 27px;
+    position: relative;
+    margin-top: -31px;
+    margin-left: 769px;
+    margin-right: 348px;
+    width: calc(100.0% - 1117px);
+  }
+  .CreateBBScreen > .layoutFlow > .elButtonCopy > * { 
+    width: 100%;
+  height: 27px;
+  }
+  
+
+.CreateBBScreen .elButtonCopy2 button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.CreateBBScreen .elButtonCopy2 button:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .CreateBBScreen > .layoutFlow > .elButtonCopy2 {
+    line-height: 27px;
+    position: relative;
+    margin-top: -27px;
+    margin-left: 944px;
+    margin-right: 204px;
+    width: calc(100.0% - 1148px);
+  }
+  .CreateBBScreen > .layoutFlow > .elButtonCopy2 > * { 
+    width: 100%;
+  height: 27px;
+  }
+  
+
+.CreateBBScreen .elButtonCopy3 button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.CreateBBScreen .elButtonCopy3 button:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .CreateBBScreen > .layoutFlow > .elButtonCopy3 {
+    line-height: 27px;
+    position: relative;
+    margin-top: -27px;
+    margin-left: 1085px;
+    margin-right: 85px;
+    width: calc(100.0% - 1170px);
+  }
+  .CreateBBScreen > .layoutFlow > .elButtonCopy3 > * { 
+    width: 100%;
+  height: 27px;
+  }
+  
+
+
+  .CreateBBScreen > .layoutFlow > .elIconalerts {
+    position: relative;
+    margin-top: -43px;
+    width: 52px;
+    margin-left: 1188px;
+  }
+  .CreateBBScreen > .layoutFlow > .elIconalerts > * { 
+  width: 52px;
+  height: 52px;
+  }
+  
+
+
+  .CreateBBScreen > .layoutFlow > .elBubbleDiaryBG {
+    position: relative;
+    margin-top: 86px;
+    margin-left: 0px;
+    margin-right: -372px;
+    width: calc(100.0% - -372px);
+  }
+  .CreateBBScreen > .layoutFlow > .elBubbleDiaryBG > * { 
+    width: 100%;
+  height: 626px;
+  }
+  
+
+
+  .CreateBBScreen > .layoutFlow > .elOriDiaryBB {
+    position: relative;
+    margin-top: -703px;
+    width: 1178px;
+    margin-left: 328px;
+  }
+  .CreateBBScreen > .layoutFlow > .elOriDiaryBB > * { 
+  width: 1178px;
+  height: 723px;
+  }
+  
+
+
+  .CreateBBScreen > .layoutFlow > .elAddPicBB {
+    position: relative;
+    margin-top: -434px;
+    width: 187px;
+    margin-left: 197px;
+  }
+  .CreateBBScreen > .layoutFlow > .elAddPicBB > * { 
+  width: 187px;
+  height: 187px;
+  }
+  
+
+.CreateBBScreen .elButton_AddPic button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+
+
+  .CreateBBScreen > .layoutFlow > .elButton_AddPic {
+    line-height: 106px;
+    position: relative;
+    margin-top: -142px;
+    width: 106px;
+    margin-left: 233px;
+  }
+  .CreateBBScreen > .layoutFlow > .elButton_AddPic > * { 
+  width: 106px;
+  height: 106px;
+  }
+  
+
+
+  .CreateBBScreen > .layoutFlow > .elTextarea {
+    position: relative;
+    margin-top: -217px;
+    width: 329px;
+    margin-left: 718px;
+  }
+  .CreateBBScreen > .layoutFlow > .elTextarea > * { 
+  width: 329px;
+  height: 353px;
+  }
+  
+
+
+  .CreateBBScreen > .layoutFlow > .elImage_Complete {
+    position: relative;
+    margin-top: 31px;
+    width: 198px;
+    margin-left: 1100px;
+  }
+  .CreateBBScreen > .layoutFlow > .elImage_Complete > * { 
+  width: 198px;
+  height: 70px;
+  }
+  
+
+.CreateBBScreen .elButton_Complete button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+
+
+  .CreateBBScreen > .layoutFlow > .elButton_Complete {
+    line-height: 56px;
+    position: relative;
+    margin-top: -65px;
+    width: 194px;
+    margin-left: 1106px;
+  }
+  .CreateBBScreen > .layoutFlow > .elButton_Complete > * { 
+  width: 194px;
+  height: 56px;
+  }
+  
+
+.FaceRecAndPublishScreen {
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+  .FaceRecAndPublishScreen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 719px;
+  }
+
+
+  .FaceRecAndPublishScreen > .layoutFlow > .elBubbleDiaryBG {
+    position: relative;
+    margin-top: 86px;
+    margin-left: 0px;
+    margin-right: -372px;
+    width: calc(100.0% - -372px);
+  }
+  .FaceRecAndPublishScreen > .layoutFlow > .elBubbleDiaryBG > * { 
+    width: 100%;
+  height: 626px;
+  }
+  
+
+
+  .FaceRecAndPublishScreen > .layoutFlow > .elFaceRecognition {
+    position: relative;
+    margin-top: -632px;
+    width: 538px;
+    margin-left: 0px;
+  }
+  .FaceRecAndPublishScreen > .layoutFlow > .elFaceRecognition > * { 
+  width: 538px;
+  height: 627px;
+  }
+  
+
+
+  .FaceRecAndPublishScreen > .layoutFlow > .elPublishBubble {
+    position: relative;
+    margin-top: -72px;
+    width: 201px;
+    margin-left: 1133px;
+  }
+  .FaceRecAndPublishScreen > .layoutFlow > .elPublishBubble > * { 
+  width: 201px;
+  height: 70px;
+  }
+  
+
+.FaceRecAndPublishScreen .elButton_PublishBubble button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+
+
+  .FaceRecAndPublishScreen > .layoutFlow > .elButton_PublishBubble {
+    line-height: 71px;
+    position: relative;
+    margin-top: -72px;
+    width: 192px;
+    margin-left: 1136px;
+  }
+  .FaceRecAndPublishScreen > .layoutFlow > .elButton_PublishBubble > * { 
+  width: 192px;
+  height: 71px;
+  }
+  
+
+.NewBubbleDiary3Screen {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+  .NewBubbleDiary3Screen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 899px;
+  }
+
+
+  .NewBubbleDiary3Screen > .layoutFlow > .elBubbleDiaryBG {
+    position: relative;
+    margin-top: 90px;
+    width: 2148px;
+    margin-left: -5px;
+  }
+  .NewBubbleDiary3Screen > .layoutFlow > .elBubbleDiaryBG > * { 
+  width: 2148px;
+  height: 813px;
+  }
+  
+
+
+  .NewBubbleDiary3Screen > .layoutFlow > .elAddBubble {
+    position: relative;
+    margin-top: -704px;
+    width: 385px;
+    margin-left: 106px;
+  }
+  .NewBubbleDiary3Screen > .layoutFlow > .elAddBubble > * { 
+  width: 385px;
+  height: 385px;
+  }
+  
+
+.NewBubbleDiary3Screen .elButton_AddBubble button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+
+
+  .NewBubbleDiary3Screen > .layoutFlow > .elButton_AddBubble {
+    line-height: 191px;
+    position: relative;
+    margin-top: -288px;
+    width: 137px;
+    margin-left: 230px;
+  }
+  .NewBubbleDiary3Screen > .layoutFlow > .elButton_AddBubble > * { 
+  width: 137px;
+  height: 191px;
+  }
+  
+
+
+  .NewBubbleDiary3Screen > .screenFgContainer > .foreground > .elCard {
+    position: absolute;
+    left: -2px;
+    top: 0px;
+    width: 1605px;
+    height: 90px;
+  }
+
+.NewBubbleDiary3Screen .elButtonCopy2 {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.NewBubbleDiary3Screen .elButtonCopy2:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .NewBubbleDiary3Screen > .screenFgContainer > .foreground > .elButtonCopy2 {
+    line-height: 27px;
+    position: absolute;
+    left: 1048px;
+    right: 410px;
+    top: 37px;
+    width: calc(100% - 1048px + 410px);
+    height: 27px;
+  }
+
+.NewBubbleDiary3Screen .elButtonCopy3 {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.NewBubbleDiary3Screen .elButtonCopy3:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .NewBubbleDiary3Screen > .screenFgContainer > .foreground > .elButtonCopy3 {
+    line-height: 35px;
+    position: absolute;
+    left: 1190px;
+    right: 294px;
+    top: 33px;
+    width: calc(100% - 1190px + 294px);
+    height: 35px;
+  }
+
+.NewBubbleDiary3Screen .elButtonCopy {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.NewBubbleDiary3Screen .elButtonCopy:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .NewBubbleDiary3Screen > .screenFgContainer > .foreground > .elButtonCopy {
+    line-height: 56px;
+    position: absolute;
+    left: 863px;
+    right: 593px;
+    top: 20px;
+    width: calc(100% - 863px + 593px);
+    height: 56px;
+  }
+
+
+  .NewBubbleDiary3Screen > .screenFgContainer > .foreground > .elTextCopy {
+    overflow: hidden;
+    position: absolute;
+    left: 194px;
+    right: 1024px;
+    top: 51px;
+    width: calc(100% - 194px + 1024px);
+    height: 37px;
+  }
+
+.NewBubbleDiary3Screen .elButton {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.NewBubbleDiary3Screen .elButton:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .NewBubbleDiary3Screen > .screenFgContainer > .foreground > .elButton {
+    line-height: 42px;
+    position: absolute;
+    left: 748px;
+    right: 777px;
+    top: 26px;
+    width: calc(100% - 748px + 777px);
+    height: 42px;
+  }
+
+
+  .NewBubbleDiary3Screen > .screenFgContainer > .foreground > .elText {
+    overflow: hidden;
+    position: absolute;
+    left: 51px;
+    right: 969px;
+    top: 13px;
+    width: calc(100% - 51px + 969px);
+    height: 52px;
+  }
+
+.TestScreen {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+  .TestScreen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    height: 899px;
+  }
+
+
+  .TestScreen > .layoutFlow > .elBubbleDiaryBG {
+    position: relative;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    width: calc(100.0% - 0px);
+  }
+  .TestScreen > .layoutFlow > .elBubbleDiaryBG > * { 
+    width: 100%;
+  height: 900px;
+  }
+  
+
+
+  .TestScreen > .layoutFlow > .elPublishBubble {
+    position: relative;
+    margin-top: -123px;
+    width: 233px;
+    margin-left: 1292px;
+  }
+  .TestScreen > .layoutFlow > .elPublishBubble > * { 
+  width: 233px;
+  height: 82px;
+  }
+  
+
+.TestScreen .elHotspot button {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+
+
+  .TestScreen > .layoutFlow > .elHotspot {
+    line-height: 83px;
+    position: relative;
+    margin-top: -83px;
+    width: 227px;
+    margin-left: 1295px;
+  }
+  .TestScreen > .layoutFlow > .elHotspot > * { 
+  width: 227px;
+  height: 83px;
+  }
+  
+
+
+  .TestScreen > .screenFgContainer > .foreground > .elCard_ToolBar {
+    position: absolute;
+    left: -2px;
+    top: 0px;
+    width: 2146px;
+    height: 90px;
+  }
+
+
+  .TestScreen > .screenFgContainer > .foreground > .elIconalerts {
+    position: absolute;
+    left: 1298px;
+    top: 10px;
+    width: 72px;
+    height: 72px;
+  }
+
+.TestScreen .elButton_BBDiary {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.TestScreen .elButton_BBDiary:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .TestScreen > .screenFgContainer > .foreground > .elButton_BBDiary {
+    line-height: 27px;
+    position: absolute;
+    left: 907px;
+    right: 580px;
+    top: 34px;
+    width: calc(100% - 907px + 580px);
+    height: 27px;
+  }
+
+.TestScreen .elButton_profile {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.TestScreen .elButton_profile:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .TestScreen > .screenFgContainer > .foreground > .elButton_profile {
+    line-height: 42px;
+    position: absolute;
+    left: 1104px;
+    right: 387px;
+    top: 26px;
+    width: calc(100% - 1103px + 387px);
+    height: 42px;
+  }
+
+
+  .TestScreen > .screenFgContainer > .foreground > .elSubtitle {
+    overflow: hidden;
+    position: absolute;
+    left: 194px;
+    right: 1024px;
+    top: 51px;
+    width: calc(100% - 194px + 1024px);
+    height: 37px;
+  }
+
+.TestScreen .elButton_HomePage {
+  cursor: pointer;
+  border: 0.0px solid transparent;
+}
+
+.TestScreen .elButton_HomePage:focus {
+  box-shadow: 0 0 6px rgba(0, 187, 193, 0.2500);
+  outline: none;
+}
+
+
+
+  .TestScreen > .screenFgContainer > .foreground > .elButton_HomePage {
+    line-height: 42px;
+    position: absolute;
+    left: 748px;
+    right: 777px;
+    top: 26px;
+    width: calc(100% - 748px + 777px);
+    height: 42px;
+  }
+
+
+  .TestScreen > .screenFgContainer > .foreground > .elTitle_yolo {
+    overflow: hidden;
+    position: absolute;
+    left: 51px;
+    right: 969px;
+    top: 13px;
+    width: calc(100% - 51px + 969px);
+    height: 52px;
+  }
+
