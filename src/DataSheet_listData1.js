@@ -13,11 +13,12 @@ export default class DataSheet_listData1 extends DataSheetBase {
     // eslint-disable-next-line no-unused-vars
     let item;
     
-    item = {};
-    this.items.push(item);
-    item['field'] = "";
-    item['textarea'] = "";
-    item.key = key++;
+    //多餘的泡泡
+    // item = {};
+    // this.items.push(item);
+    // item['field'] = "";
+    // item['textarea'] = "";
+    // item.key = key++;
   }
 
 }
