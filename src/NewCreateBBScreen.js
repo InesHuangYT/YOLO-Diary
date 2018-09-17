@@ -28,11 +28,13 @@ export default class NewCreateBBScreen extends Component {
   constructor(props) {
     super(props);
     
+    
     this.state = {
       //field: '',
       textarea: '',
       albumId: '',
-      diaryId: ''
+      diaryId: '',
+      form : new FormData()
 
     };
   }
@@ -40,7 +42,9 @@ export default class NewCreateBBScreen extends Component {
   componentDidMount() {
     console.log(store.getValue())
     
+    
   }
+  
   
 
   showModal = () => {
@@ -51,10 +55,13 @@ export default class NewCreateBBScreen extends Component {
   
  
   handleOk = (e) => {
+    //確定上傳照片
     console.log(e);
     this.setState({
       visible: false,
     });
+    
+
   }
 
   handleCancel = (e) => {
@@ -82,12 +89,18 @@ export default class NewCreateBBScreen extends Component {
 
  await axios.post('/api/diary/'+ store.getValue().albumId ,diary)
   .then(res => {
+    console.log('form getall',this.form.getAll(1));
+    console.log('form has',this.form.has(1));
     console.log(res);
     this.diaryId = res.data.id;
     console.log(store.getValue())
+    
+    this.props.appActions.goToScreen('newfacerec', { transitionId: 'fadeIn' });
   }).catch(function(error){
     alert("Wrong diary");
   });
+
+
   // store diaryId
   store.setValue({
     diaryId: this.diaryId
@@ -95,8 +108,16 @@ export default class NewCreateBBScreen extends Component {
   store.setValue({
     testId: 'test2'
   })
+
+  // axios.post('/api/photo/'+store.getValue().diaryId, this.form, this.config).then(
+  //   res =>{
+  //     console.log(res)
+  //     console.log(res.data)
+       
+
+  // })
     // Go to screen 'NewFaceRec'
-    this.props.appActions.goToScreen('newfacerec', { transitionId: 'fadeIn' });
+   
   
   }
   
@@ -299,5 +320,8 @@ export default class NewCreateBBScreen extends Component {
     )
   }
   
-
+  appendForm(i, file){
+    this.form.append(i,file)
+  }
 }
+

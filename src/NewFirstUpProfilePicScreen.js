@@ -20,6 +20,7 @@ export default class NewFirstUpProfilePicScreen extends Component {
     config: null
 }
 changePath = (e) => {
+
   const file = e.target.files[0];
   console.log(file.name)
   console.log(file)
@@ -39,7 +40,6 @@ changePath = (e) => {
 
     this.form = new FormData();
     this.form.append('file', file);
-
     this.config = {
       headers: { 'content-type': 'multipart/form-data;boundary=gc0p4Jq0M2Yt08jU534c0p' }
     }
