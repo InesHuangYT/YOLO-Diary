@@ -69,14 +69,15 @@ upload = () => {
     
    
 
-    axios.post('/api/selfie/uploadmany', this.form, this.config).then(res => {
-      console.log(res);
-      console.log(res.data);
-      this.props.appActions.goToScreen('newbubblediary', { transitionId: 'fadeIn' });
-    }).catch(function(error){
-      message.error('必須先上傳一張大頭照');
-    });
+    // axios.post('/api/selfie/uploadmany', this.form, this.config).then(res => {
+    //   console.log(res);
+    //   console.log(res.data);
+     
+    // }).catch(function(error){
+    //   message.error('必須先上傳一張大頭照');
+    // });
     // Go to screen 'NewBubbleDiary'
+    this.props.appActions.goToScreen('newbubblediary', { transitionId: 'fadeIn' });
     
 
   

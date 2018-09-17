@@ -18,6 +18,7 @@ export default class NewReadBBScreen extends Component {
 
   componentDidMount() {
     console.log(store.getValue())
+    console.log('read aid',this.props.dataSheetRow.albumId)
     
   }
 
@@ -26,6 +27,7 @@ export default class NewReadBBScreen extends Component {
     
     this.state = {
       field: this.props.dataSheetRow.field,
+      AlbumId: this.props.dataSheetRow.albumId
     };
   }
 

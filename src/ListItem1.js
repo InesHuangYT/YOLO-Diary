@@ -17,11 +17,13 @@ export default class ListItem1 extends Component {
     
     this.state = {
       field: this.props.field,
+      albumId : this.props.albumId
     };
   }
 
   onClick_elBubble2 = (ev) => {
     console.log(store.getValue())
+    console.log('click alid',this.props.albumId)
     // Go to screen 'NewReadBB'
     this.props.appActions.goToScreen('newreadbb', { ...this.props, transitionId: 'fadeIn' });
   }

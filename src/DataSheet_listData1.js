@@ -9,23 +9,27 @@ export default class DataSheet_listData1 extends DataSheetBase {
   }
 
   makeDefaultItems() {
-    let key = 1;
+    // let key = 1;
+    // let item;
+
+    let key = null;
     let item;
     Axios.get("/api/album/albums").then(res => {
       var elements = res.data.content.length;
-      
-      
       for(var i = 0; i < elements; i++){
         item = {};
-        this.items.push(item);
+        this.items.push(item)
         //相簿名稱
         item['field'] = res.data.content[i].name;
         //日記內容
         item['textarea'] = "";
-        item.key = key++;
+        item.key = res.data.content[i].id;
+        item['albumId'] = item.key
+        console.log('album',res.data.content[i])
+        console.log('key',item.key)
       }
     
-    })
+   })
     
 }
 

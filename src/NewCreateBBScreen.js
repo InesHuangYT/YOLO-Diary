@@ -20,6 +20,9 @@ import { Input,Modal,message } from 'antd';
 import 'antd/dist/antd.css';
 import store from './store';
 
+//FormData資料
+//https://developer.mozilla.org/zh-TW/docs/Web/API/FormData
+
 export default class NewCreateBBScreen extends Component {
 
   // Properties used by this component:

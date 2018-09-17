@@ -1,3 +1,5 @@
+import Axios from 'axios';
+
 export default class DataSheetBase {
   constructor(id, updateCb) {
     this.id = id;
@@ -10,6 +12,7 @@ export default class DataSheetBase {
 
   makeDefaultItems() {
    
+   
   }
 
 
@@ -17,13 +20,16 @@ export default class DataSheetBase {
   //    'options' is an optional value that should be passed to a React Studio provided callback by a plugin implementer.
   //    it can be used to identify async writes by caller code.
 
+
+
   addItem(item, options) {
+    this.items.push(item);
     let key = 1;
     if (this.items.length > 0) {
       key += this.items[this.items.length - 1].key;
     }
     item.key = key;
-    this.items.push(item);
+   
   }
 
   removeItem(item, options) {

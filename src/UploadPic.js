@@ -48,7 +48,7 @@ class UploadPic extends Component {
             this.config = {
                 headers: { 'content-type': 'multipart/form-data;boundary=gc0p4Jq0M2Yt08jU534c0p' }
               }
-              console.log(this.form.getAll(i));
+              console.log(this.form);
              
               
               
@@ -77,26 +77,19 @@ class UploadPic extends Component {
       
         
         return (
-            <div>
-                
-            <div className = "group-upload"> 
-            <div className = 'box-image'>
-                     {preview}
-                      </div>
-              <div className='box-icon'>
-            
-                <i className="icon" >
-                
-                    <input className='row-input' type='file' accept='image/*' onChange={this.changePath} multiple={true}/>
-                    
-                      </i>
-                     
-                      </div>
-                      </div>
-                      
-                   
-                      </div>
-                      
+          
+
+            <div className="group-upload">
+                <div className='box-image'>
+                    {preview}
+                </div>
+                <div className='box-icon'>
+                    <i className="icon" >
+                        <input className='row-input' type='file' accept='image/*' onChange={this.changePath} multiple={true} />
+                    </i>
+                </div>
+            </div>
+
                  
                    
           

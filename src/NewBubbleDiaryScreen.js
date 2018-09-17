@@ -5,6 +5,7 @@ import NavBar from './NavBar';
 import Addbubble from './Addbubble';
 import ListItem1 from './ListItem1';
 import Axios from 'axios';
+import DataSheetBase from './DataSheetBase.js';
 
 
 // UI framework component imports
@@ -25,6 +26,8 @@ export default class NewBubbleDiaryScreen extends Component {
     //   console.log("data total", res.data.content.length)
     //   console.log("data", res.data.content[1].name)
     // })
+   
+    
   }
 
   render() {
@@ -104,7 +107,8 @@ export default class NewBubbleDiaryScreen extends Component {
             <div style={style_list}>
               {items_list.map((row, index) => {
                 let itemClasses = `gridItem cols3_${index % 3}`;
-                let itemComp = (row._componentId) ? listComps_list[row._componentId] : <ListItem1 dataSheetId={'listData1'} dataSheetRow={row} field={row.field} appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} />;
+                let itemComp = (row._componentId) ? listComps_list[row._componentId] : <ListItem1 dataSheetId={'listData1'} dataSheetRow={row} field={row.field} albumId = {row.albumId} appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} />;
+                console.log('idididid',row.albumId)
                 return (
                   <div className={itemClasses} key={row.key}>
                     {itemComp}
