@@ -3,7 +3,7 @@ import axios from 'axios';
 import './App.css';
 import img_elHomeBG from './images/NewEmailSentScreen_elHomeBG_1012260.jpg';
 import img_elUpProfilePic from './images/NewFirstUpProfilePicScreen_elUpProfilePic_850626.png';
-
+import {message} from 'antd';
 // UI framework component imports
 import Container from 'muicss/lib/react/container';
 import './UploadPic.css';
@@ -67,15 +67,21 @@ upload = () => {
 
   onClick_elButton_comfirm = (ev) => {
     
+   
 
     axios.post('/api/selfie/uploadmany', this.form, this.config).then(res => {
       console.log(res);
       console.log(res.data);
-    })
+      this.props.appActions.goToScreen('newbubblediary', { transitionId: 'fadeIn' });
+    }).catch(function(error){
+      message.error('必須先上傳一張大頭照');
+    });
     // Go to screen 'NewBubbleDiary'
-    this.props.appActions.goToScreen('newbubblediary', { transitionId: 'fadeIn' });
+    
 
-
+  
+   
+  
   
   }
   

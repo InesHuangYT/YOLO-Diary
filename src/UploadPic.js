@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import NewCreateBBScreen from './NewCreateBBScreen.js';
+
 //import './UploadPic.css';
 
 
@@ -22,6 +22,7 @@ class UploadPic extends Component {
         let photopv = [];
         let photodata = [];
         this.form = new FormData()
+        
 
         for(var i = 0; i < filenumber; i++){
 
@@ -47,6 +48,8 @@ class UploadPic extends Component {
             this.config = {
                 headers: { 'content-type': 'multipart/form-data;boundary=gc0p4Jq0M2Yt08jU534c0p' }
               }
+              console.log(this.form.getAll(i));
+             
               
               
         }
