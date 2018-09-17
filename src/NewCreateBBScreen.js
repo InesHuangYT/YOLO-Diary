@@ -124,10 +124,6 @@ export default class NewCreateBBScreen extends Component {
    
   
   }
-  
-  
-//  sendData_button_Complete_to_listData1 = () => {
-//    const dataSheet = this.props.appActions.getDataSheet('listData1');
   onClick_elAddPic = (ev) => {
   
   }

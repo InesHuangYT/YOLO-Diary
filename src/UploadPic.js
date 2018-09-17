@@ -14,8 +14,6 @@ class UploadPic extends Component {
     }
     }
     
-
-    
     changePath = (e) => {
         
         var filenumber = e.target.files.length
@@ -28,8 +26,6 @@ class UploadPic extends Component {
 
         const file = e.target.files[i];
         let src,previews,type=file.type;
-        
-      
         
         if (!file) {
             return;
@@ -92,18 +88,8 @@ class UploadPic extends Component {
                       </i>
                      
                       </div>
+                      </div>                
                       </div>
-                      
-                   
-                      </div>
-                      
-                 
-                   
-          
-             
-           
-            
-          
-        )
+     )
     }
 }export default UploadPic;

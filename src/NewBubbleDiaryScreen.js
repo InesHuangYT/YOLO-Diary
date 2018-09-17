@@ -18,7 +18,7 @@ export default class NewBubbleDiaryScreen extends Component {
   // appActions, deviceInfo, fieldtitle, textcontent
 
   componentDidMount() {
-    console.log(store.getValue())
+    // console.log(store.getValue())
     // Axios.get("/api/album/albums").then(res =>{
     //   console.log("response",res);
     //   console.log("response data",res.data);
