@@ -15,6 +15,7 @@ export default class DataSheet_listData1 extends DataSheetBase {
     let key = null;
     let item;
     Axios.get("/api/album/albums").then(res => {
+      //console.log(res)
       var elements = res.data.content.length;
       for(var i = 0; i < elements; i++){
         item = {};
@@ -25,8 +26,8 @@ export default class DataSheet_listData1 extends DataSheetBase {
         item['textarea'] = "";
         item.key = res.data.content[i].id;
         item['albumId'] = item.key
-        console.log('album',res.data.content[i])
-        console.log('key',item.key)
+        // console.log('album',res.data.content[i])
+        // console.log('key',item.key)
       }
     
    })

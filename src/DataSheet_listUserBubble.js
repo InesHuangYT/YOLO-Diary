@@ -1,4 +1,5 @@
 import DataSheetBase from './DataSheetBase.js';
+import Axios from 'axios';
 
 export default class DataSheet_listUserBubble extends DataSheetBase {
 
@@ -13,10 +14,22 @@ export default class DataSheet_listUserBubble extends DataSheetBase {
     // eslint-disable-next-line no-unused-vars
     let item;
     
+    Axios.get("/api/album/albums").then(res => {
+      console.log(res)
+      var elements = res.data.content.length;
+      for(var i = 0; i < elements; i++){
     item = {};
     this.items.push(item);
-    item['UserBubble'] = "";
+    item['albumId'] = res.data.content[i].id;
+    for(var j = 0; j < res.data.content[i].diaries.length; j++){
+    item['diaryId'] = res.data.content[i].diaries[j].id;
     item.key = key++;
+    }
+    
+      }
+    })
+
+
   }
 
 }
