@@ -10,13 +10,13 @@ import Axios from 'axios';
 // UI framework component imports
 import Textarea from 'muicss/lib/react/textarea';
 import Container from 'muicss/lib/react/container';
-import { Modal} from 'antd';
+//import {Modal,message} from 'antd';
 import 'antd/dist/antd.css';
 
 //import './UploadPic.css';
 import axios from 'axios';
 
-import { Input } from 'antd';
+import { Input,Modal,message } from 'antd';
 import 'antd/dist/antd.css';
 import store from './store';
 
@@ -28,19 +28,29 @@ export default class NewCreateBBScreen extends Component {
   constructor(props) {
     super(props);
     
+    
     this.state = {
       //field: '',
       textarea: '',
       albumId: '',
-      diaryId: ''
-
+      diaryId: '',
+      form : null,
+      preview: null,
+      data: null,
+      config: null,
+      
     };
   }
-  
+
+  appendForm(i, file){
+    this.form.append(i,file)
+  }
   componentDidMount() {
     console.log(store.getValue())
     
+    
   }
+  
   
 
   showModal = () => {
@@ -51,10 +61,14 @@ export default class NewCreateBBScreen extends Component {
   
  
   handleOk = (e) => {
+    //確定上傳照片
     console.log(e);
+    message.success('照片已選擇');
     this.setState({
       visible: false,
     });
+    
+
   }
 
   handleCancel = (e) => {
@@ -85,9 +99,13 @@ export default class NewCreateBBScreen extends Component {
     console.log(res);
     this.diaryId = res.data.id;
     console.log(store.getValue())
+    
+    this.props.appActions.goToScreen('newfacerec', { transitionId: 'fadeIn' });
   }).catch(function(error){
     alert("Wrong diary");
   });
+
+
   // store diaryId
   store.setValue({
     diaryId: this.diaryId
@@ -95,8 +113,15 @@ export default class NewCreateBBScreen extends Component {
   store.setValue({
     testId: 'test2'
   })
+   console.log(this.form.getAll('file'));
+  
+  axios.post('/api/photo/'+store.getValue().diaryId, this.form).then(
+    res =>{
+      console.log('upload photo',res)
+      console.log(res.data)
+   })
     // Go to screen 'NewFaceRec'
-    this.props.appActions.goToScreen('newfacerec', { transitionId: 'fadeIn' });
+   
   
   }
   
@@ -126,6 +151,53 @@ export default class NewCreateBBScreen extends Component {
 //   }
   
   }
+  changePath = (e) => {
+        
+    var filenumber = e.target.files.length
+    let photopv = [];
+    let photodata = [];
+    this.form = new FormData();
+    
+
+    for(var i = 0; i < filenumber; i++){
+
+    const file = e.target.files[i];
+    let src,previews,type=file.type;
+    
+  
+    
+    if (!file) {
+        return;
+    }
+  
+    if (/^image\/\S+$/.test(type)) {
+       
+        src = URL.createObjectURL(file)
+        previews = <img src={src} style={{width:'250px',height:'168px'}} alt='' key = {i}/>
+       
+        photopv.push(previews)
+        photodata.push(file)
+        
+        this.form.append('file', file);
+        this.config = {
+            headers: { 'content-type': 'multipart/form-datah' }
+          }  
+    }
+}   
+    this.setState({ data: photodata, preview: photopv})
+    
+    
+}
+
+upload = () => {
+        
+  const data = this.state.data;
+  if (!data) {
+      console.log('未選擇文件');
+      return;
+  }
+}
+
   render() {
     // eslint-disable-next-line no-unused-vars
     let baseStyle = {};
@@ -214,7 +286,7 @@ export default class NewCreateBBScreen extends Component {
     const style_text_outer = {
       pointerEvents: 'none',
      };
-  
+     const { preview } = this.state;
     return (
       <Container fluid={true} className="AppScreen NewCreateBBScreen" style={baseStyle}>
         <div className="background">
@@ -290,7 +362,17 @@ export default class NewCreateBBScreen extends Component {
           width='1050px'
           
         >
-         <UploadPic/>
+    <div className="group-upload">
+                <div className='box-image'>
+                    {preview}
+                </div>
+                <div className='box-icon'>
+                    <i className="icon" >
+                        <input className='row-input' type='file' accept='image/*' onChange={this.changePath} multiple={true} />
+                    </i>
+                </div>
+            </div>
+
         </Modal>
          
           </div>
@@ -299,5 +381,6 @@ export default class NewCreateBBScreen extends Component {
     )
   }
   
-
+  
 }
+

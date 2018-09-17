@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
+
 //import './UploadPic.css';
 
 
 class UploadPic extends Component {
-    state = {
+    constructor(props) {
+    super(props);
+    this.state = {
         preview: null,
-        data: null
+        data: null,
+        config: null,
+        form: null
     }
-
+    }
     
 
     
@@ -16,7 +21,11 @@ class UploadPic extends Component {
         var filenumber = e.target.files.length
         let photopv = [];
         let photodata = [];
+        this.form = new FormData()
+        
+
         for(var i = 0; i < filenumber; i++){
+
         const file = e.target.files[i];
         let src,previews,type=file.type;
         
@@ -25,9 +34,6 @@ class UploadPic extends Component {
         if (!file) {
             return;
         }
-
-       
-         
       
         if (/^image\/\S+$/.test(type)) {
            
@@ -36,11 +42,21 @@ class UploadPic extends Component {
            
             photopv.push(previews)
             photodata.push(file)
+            
+            
+            this.form.append(i,file);
+            this.config = {
+                headers: { 'content-type': 'multipart/form-data;boundary=gc0p4Jq0M2Yt08jU534c0p' }
+              }
+              console.log(this.form.getAll(i));
+             
+              
+              
         }
-       
-    }
-        
+    }   
         this.setState({ data: photodata, preview: photopv})
+        
+        
     }
     
 
@@ -51,19 +67,6 @@ class UploadPic extends Component {
             console.log('未選擇文件');
             return;
         }
-
-        
-        const url = 'http://localhost:3000/api/upload';
-        const form = new FormData();
-
-        form.append('file', data);
-
-        fetch(url, {
-            method: 'POST',
-            body: form
-        }).then(res => {
-            console.log(res)
-        })
     }
 
   
