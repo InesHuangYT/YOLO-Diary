@@ -85,18 +85,29 @@ export default class NewCreateBBScreen extends Component {
     console.log(res);
     this.diaryId = res.data.id;
     console.log(store.getValue())
+    // Go to screen 'NewFaceRec'
+    this.props.appActions.goToScreen('newfacerec', { transitionId: 'fadeIn' });
   }).catch(function(error){
     alert("Wrong diary");
   });
-  // store diaryId
+
+  //store diaryId
   store.setValue({
     diaryId: this.diaryId
   })
+
   store.setValue({
     testId: 'test2'
   })
+  // store . set ({
+  //   diarys : {
+  //      diaryId  : {
+  //      text : '' 
+  //      }, ... store . get ( ' diarys ' )
+  //   }
+  // })
     // Go to screen 'NewFaceRec'
-    this.props.appActions.goToScreen('newfacerec', { transitionId: 'fadeIn' });
+    // this.props.appActions.goToScreen('newfacerec', { transitionId: 'fadeIn' });
   
   }
   
