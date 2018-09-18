@@ -19,7 +19,7 @@ export default class NavBar extends Component {
    
 
   }
-  componentWillMount(){
+  componentDidMount(){
     let _this = this;
     axios.get('/api/user/me').then(res => {
       // console.log(res);

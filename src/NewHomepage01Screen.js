@@ -6,17 +6,25 @@ import img_elHomePageBubble from './images/NewHomepage01Screen_elHomePageBubble_
 // UI framework component imports
 import Button from 'muicss/lib/react/button';
 import Container from 'muicss/lib/react/container';
+import axios from 'axios';
 
 
 export default class NewHomepage01Screen extends Component {
-
+ 
   // Properties used by this component:
   // appActions, deviceInfo
+  
 
   onClick_elButtonNext = (ev) => {
     // Go to screen 'NewFirstUpProfilePic'
+    axios.get("/api/user/mySelfie").then(res =>{
+      console.log(res.data.available);
+    if(res.data.available){
+      this.props.appActions.goToScreen('newbubblediary', { transitionId: 'fadeIn' });
+    }else{
     this.props.appActions.goToScreen('newfirstupprofilepic', { transitionId: 'fadeIn' });
-  
+  }
+  });
   }
   
   
