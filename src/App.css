@@ -449,7 +449,7 @@
 
   .NewFriendListScreen > .layoutFlow > .elComp {
     position: relative;
-    margin-top: -211px;
+    margin-top: -205px;
     width: 339px;
     margin-left: 1259px;
   }
@@ -675,7 +675,7 @@
   
 
 
-  .PMenu .elField_username {
+  /* .PMenu .elField_username {
     position: relative;
     margin-top: -692px;
     width: 226px;
@@ -684,8 +684,19 @@
   .PMenu .elField_username > * { 
   width: 226px;
   height: 34px;
+  } */
+  .PMenu .elCard {
+    border-radius: 270px;
+    position: relative;
+    margin-top: -642px;
+    width: 252px;
+    margin-left: 47.5px;
+    opacity:0.1;
   }
-  
+  .PMenu .elCard > * { 
+  width: 252px;
+  height: 246px;
+  }
 
 .PMenu .elUppic button {
   cursor: pointer;
@@ -702,7 +713,7 @@
   .PMenu .elUppic {
     line-height: 57px;
     position: relative;
-    margin-top: 170px;
+    margin-top: -72px;
     width: 154px;
     margin-left: 117px;
   }
