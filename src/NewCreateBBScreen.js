@@ -99,22 +99,13 @@ export default class NewCreateBBScreen extends Component {
     console.log(res);
     this.diaryId = res.data.id;
     console.log(store.getValue())
-<<<<<<< HEAD
-    // Go to screen 'NewFaceRec'
-=======
-    
->>>>>>> 273a771c0c266d0769954f3854adaf4f7b46d06e
+  
     this.props.appActions.goToScreen('newfacerec', { transitionId: 'fadeIn' });
   }).catch(function(error){
     alert("Wrong diary");
   });
 
-<<<<<<< HEAD
-  //store diaryId
-=======
-
-  // store diaryId
->>>>>>> 273a771c0c266d0769954f3854adaf4f7b46d06e
+ 
   store.setValue({
     diaryId: this.diaryId
   })
@@ -122,27 +113,6 @@ export default class NewCreateBBScreen extends Component {
   store.setValue({
     testId: 'test2'
   })
-<<<<<<< HEAD
-  // store . set ({
-  //   diarys : {
-  //      diaryId  : {
-  //      text : '' 
-  //      }, ... store . get ( ' diarys ' )
-  //   }
-  // })
-    // Go to screen 'NewFaceRec'
-    // this.props.appActions.goToScreen('newfacerec', { transitionId: 'fadeIn' });
-=======
-   console.log(this.form.getAll('file'));
-  
-  axios.post('/api/photo/'+store.getValue().diaryId, this.form).then(
-    res =>{
-      console.log('upload photo',res)
-      console.log(res.data)
-   })
-    // Go to screen 'NewFaceRec'
-   
->>>>>>> 273a771c0c266d0769954f3854adaf4f7b46d06e
   
   }
   onClick_elAddPic = (ev) => {
