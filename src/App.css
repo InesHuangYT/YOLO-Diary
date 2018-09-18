@@ -1817,10 +1817,12 @@ height: 166px;
   
   
     .NewReadBBScreen > .layoutFlow > .elCard {
+      border-radius: 15px;
       position: relative;
       margin-top: -335px;
       width: 250px;
       margin-left: 670px;
+      opacity:0.8;
     }
     .NewReadBBScreen > .layoutFlow > .elCard > * { 
     width: 250px;
@@ -2170,7 +2172,7 @@ height: 166px;
 
   .ListItem1 .elField {
     position: relative;
-    margin-top: -106px;
+    margin-top: -85px;
     width: 186px;
     margin-left: 112px;
   }
@@ -2179,6 +2181,18 @@ height: 166px;
   height: 34px;
   }
   
+  .ListItem1 .elCard {
+    border-radius: 15px;
+    position: relative;
+    margin-top: -170px;
+    width: 164px;
+    margin-left: 124px;
+    opacity: 0.8;
+  }
+  .ListItem1 .elCard > * { 
+  width: 164px;
+  height: 128px;
+  }
 
 /* This component has a fixed-size layout */
   .Addbubble {
