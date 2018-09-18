@@ -113,7 +113,14 @@ export default class NewCreateBBScreen extends Component {
   store.setValue({
     testId: 'test2'
   })
-  
+  console.log(this.form.getAll('file'));	
+  	
+  axios.post('/api/photo/'+store.getValue().diaryId, this.form).then(	
+    res =>{	
+      console.log('upload photo',res)	
+      console.log(res.data)	
+   })
+   
   }
   onClick_elAddPic = (ev) => {
   
