@@ -48,6 +48,11 @@ export default class ListItem1 extends Component {
      };
     const value_field = this.props.field;
     
+    const style_card_outer = {
+      backgroundColor: 'white',
+      boxShadow: '0.0px 2.3px 18px rgba(0, 0, 0, 0.1600)',
+      pointerEvents: 'none',
+   };
     
     return (
       <div className="ListItem1" style={baseStyle}>
@@ -62,6 +67,10 @@ export default class ListItem1 extends Component {
           
           </div>
           
+          <div className='cardBg elCard' style={style_card_outer}>
+            <div />
+          
+          </div>
         </div>
       </div>
     )
