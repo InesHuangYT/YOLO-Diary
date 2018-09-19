@@ -102,35 +102,29 @@ export default class NewCreateBBScreen extends Component {
     console.log(res);
     this.diaryId = res.data.id;
     console.log(store.getValue())
-    
+  
     this.props.appActions.goToScreen('newfacerec', { transitionId: 'fadeIn' });
   }).catch(function(error){
     alert("Wrong diary");
   });
 
-
-  // store diaryId
+ 
   store.setValue({
     diaryId: this.diaryId
   })
+
   store.setValue({
     testId: 'test2'
   })
-   console.log(this.form.getAll('file'));
-  
-  axios.post('/api/photo/'+store.getValue().diaryId, this.form).then(
-    res =>{
-      console.log('upload photo',res)
-      console.log(res.data)
+  console.log(this.form.getAll('file'));	
+  	
+  axios.post('/api/photo/'+store.getValue().diaryId, this.form).then(	
+    res =>{	
+      console.log('upload photo',res)	
+      console.log(res.data)	
    })
-    // Go to screen 'NewFaceRec'
    
-  
   }
-  
-  
-//  sendData_button_Complete_to_listData1 = () => {
-//    const dataSheet = this.props.appActions.getDataSheet('listData1');
   onClick_elAddPic = (ev) => {
   
   }
