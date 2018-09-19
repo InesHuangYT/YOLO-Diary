@@ -82,12 +82,12 @@ export default class PMenu extends Component {
     const style_button_profile_outer = {
         cursor: 'pointer',
      };
-    const style_field_username = {
-        display: 'block',
-        fontSize: 19.4,
-        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif',
-        fontWeight: 'bold',
-     };
+    
+     const style_card_outer = {
+      backgroundColor: 'white',
+      boxShadow: '0.0px 2.3px 18px rgba(0, 0, 0, 0.1600)',
+      pointerEvents: 'none',
+   };
     const style_uppic = {
         display: 'block',
         fontSize: 20.6,
@@ -125,8 +125,8 @@ export default class PMenu extends Component {
           
           </div>
           
-          <div className='elField_username'>
-            <Input style={style_field_username} type="text" hint={this.props.locStrings.comp1_field_276857} onChange={this.textInputChanged_field_username} defaultValue={this.state.field_username}  />
+          <div className='cardBg elCard' style={style_card_outer}>
+            <div />
           
           </div>
           
