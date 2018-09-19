@@ -2589,14 +2589,16 @@ height: 166px;
 
 
   .NewFirstUpProfilePicScreen > .layoutFlow > .elButton_comfirm {
+    border-radius: 8px;
     line-height: 53px;
     position: relative;
     margin-top: -196px;
-    width: 142px;
-    margin-left: 696px;
+    width: 128px;
+    margin-left: 708px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   }
   .NewFirstUpProfilePicScreen > .layoutFlow > .elButton_comfirm > * { 
-  width: 142px;
+  width: 128px;
   height: 53px;
   }
   
@@ -3037,13 +3039,14 @@ height: 166px;
   .NewHomepage01Screen > .layoutFlow > .elButtonNext {
     line-height: 27px;
     position: relative;
-    margin-top: -160px;
+    margin-top: -150px;
     width: 113px;
     margin-left: 1049px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   }
   .NewHomepage01Screen > .layoutFlow > .elButtonNext > * { 
   width: 113px;
-  height: 27px;
+  height: 33px;
   }
   
 
@@ -3227,15 +3230,17 @@ height: 166px;
 
 
   .NewLoginAndRegisterScreen > .layoutFlow > .elButton_Login {
+    border-radius: 8px;
     line-height: 53px;
     position: relative;
     margin-top: 166px;
-    width: 147px;
+    width: 146px;
     margin-left: 691px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   }
   .NewLoginAndRegisterScreen > .layoutFlow > .elButton_Login > * { 
-  width: 147px;
-  height: 53px;
+  width: 146px;
+  height: 52px;
   }
   
 

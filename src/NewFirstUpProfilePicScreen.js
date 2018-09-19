@@ -37,6 +37,8 @@ changePath = (e) => {
     src = URL.createObjectURL(file)
     preview = <img src={src} style={{width:'275px',height:'168px'}} alt='' />
 
+    console.log('selfie src',src)
+
 
     this.form = new FormData();
     this.form.append('file', file);

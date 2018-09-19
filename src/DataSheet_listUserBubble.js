@@ -15,7 +15,7 @@ export default class DataSheet_listUserBubble extends DataSheetBase {
     let item;
     
     Axios.get("/api/album/albums").then(res => {
-      console.log(res)
+      //console.log(res)
       var elements = res.data.content.length;
       for(var i = 0; i < elements; i++){
     item = {};

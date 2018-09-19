@@ -12,7 +12,7 @@ export default class DataSheet_listData1 extends DataSheetBase {
     // let key = 1;
     // let item;
 
-    let key = null;
+    let key = 1;
     let item;
     Axios.get("/api/album/albums").then(res => {
       //console.log(res)
@@ -24,11 +24,14 @@ export default class DataSheet_listData1 extends DataSheetBase {
         item['field'] = res.data.content[i].name;
         //日記內容
         item['textarea'] = "";
-        item.key = res.data.content[i].id;
-        item['albumId'] = item.key
-        // console.log('album',res.data.content[i])
-        // console.log('key',item.key)
+        item['albumId'] = res.data.content[i].id
+        item.key = key++
+       
+        console.log('album',res.data.content[i])
+        console.log('key',item.key)
+     
       }
+      console.log('item', this.items)
     
    })
     
