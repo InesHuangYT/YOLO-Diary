@@ -8,15 +8,7 @@ export default class DataSheet_listUserBubble extends DataSheetBase {
   }
 
   makeDefaultItems() {
-    // eslint-disable-next-line no-unused-vars
-    let key = 1;
-    // eslint-disable-next-line no-unused-vars
-    let item;
     
-    item = {};
-    this.items.push(item);
-    item['UserBubble'] = "";
-    item.key = key++;
   }
 
 }

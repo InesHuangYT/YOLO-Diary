@@ -20,6 +20,10 @@ export default class ListItem1 extends Component {
     };
   }
 
+  componentDidMount() {
+    console.log(this.props)
+  }
+
   onClick_elBubble2 = (ev) => {
     console.log(store.getValue())
     // Go to screen 'NewReadBB'

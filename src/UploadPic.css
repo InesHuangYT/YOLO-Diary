@@ -152,13 +152,11 @@
     border: 2px solid rgb(136, 183, 223);
     border-radius: 4px;
     padding: 6px;
-    width: 100px;
+    width: 250px;
 }
  .box-image img {
   
-    border-radius: 13px; 
-    width: 105%;
-    height: 107%;
+    border-radius: 13px;
     vertical-align: top;
     transition: 0.3s;
   }
