@@ -146,7 +146,9 @@
     opacity: 0;
     cursor: pointer;
   }
-
+.container {
+  overflow: hidden;
+}
   .box-image img {
     display: inline-block;
     border: 2px solid rgb(136, 183, 223);
