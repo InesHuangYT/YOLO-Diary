@@ -20,6 +20,7 @@ export default class DataSheet_listData1 extends DataSheetBase {
         this.items.push(item);
         //相簿名稱
         item['field'] = res.data.content[i].name;
+        item['albumId'] = res.data.content[i].id;
         //日記內容
         item['textarea'] = "";
         item.key = key++;
