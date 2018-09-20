@@ -34,6 +34,7 @@ export default class NewUserDiaryScreen extends Component {
   }
 
   componentWillMount(){
+    console.log('showdiary', this.props)
     let _this = this;
     axios.get('/api/album/'+store.getValue().albumId).then(res => {
       //`/api/album?albumId=${store.getValue().albumId}`

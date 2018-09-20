@@ -10,6 +10,7 @@ import Input from 'muicss/lib/react/input';
 import Button from 'muicss/lib/react/button';
 import Container from 'muicss/lib/react/container';
 import store from './store';
+import DataSheet_listUserBubble from './DataSheet_listUserBubble.js';
 
 export default class NewReadBBScreen extends Component {
 
@@ -17,7 +18,7 @@ export default class NewReadBBScreen extends Component {
   // appActions, deviceInfo, dataSheetRow
 
   componentDidMount() {
-    console.log(store.getValue())
+    
     
   }
 
@@ -26,6 +27,7 @@ export default class NewReadBBScreen extends Component {
     
     this.state = {
       field: this.props.dataSheetRow.field,
+      diaryId: ''
     };
   }
 
@@ -38,6 +40,12 @@ export default class NewReadBBScreen extends Component {
     this.props.appActions.goBack();
   
   }
+
+  get(){
+    
+  }
+
+  
   
   
   render() {
@@ -151,17 +159,23 @@ export default class NewReadBBScreen extends Component {
             <div style={style_list}>
               {items_list.map((row, index) => {
                 let itemClasses = `gridItem cols5_${index % 5}`;
-                let itemComp = (row._componentId) ? listComps_list[row._componentId] : <ListItem2 dataSheetId={'listUserBubble'} dataSheetRow={row} appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} />;
+                let itemComp = (row._componentId) ? listComps_list[row._componentId] : <ListItem2 dataSheetId={'listUserBubble'} dataSheetRow={row} appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} {...this.props}/>;
+               
                 return (
+                  
                   <div className={itemClasses} key={row.key}>
                     {itemComp}
-                  </div>
+                  </div> 
                 )
               })}
             </div>
+           
           
           </div>
-          
+          <div className = "NewReadBBScreen">
+          <DataSheet_listUserBubble {...this.props}/>
+            </div>
+
         </div>
       </Container>
     )
