@@ -1649,13 +1649,23 @@ height: 215px;
 
 
 
-.ListItem2 .elUserPic {
+/* .ListItem2 .elUserPic {
   position: relative;
   margin-top: -193px;
   width: 166px;
   margin-left: 36px;
 }
 .ListItem2 .elUserPic > * { 
+width: 166px;
+height: 166px;
+} */
+.ListItem2 .elPic {
+  position: relative;
+  margin-top: -193px;
+  width: 166px;
+  margin-left: 36px;
+}
+.ListItem2 .elPic > * { 
 width: 166px;
 height: 166px;
 }

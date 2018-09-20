@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import img_elUserBubble from './images/ListItem2_elUserBubble_312326.png';
-import img_elUserPic from './images/ListItem2_elUserPic_268846.png';
-
+// import img_elUserPic from './images/ListItem2_elUserPic_268846.png';
+import img_elPic from './images/Pic.png';
 
 export default class ListItem2 extends Component {
 
@@ -42,11 +42,17 @@ export default class ListItem2 extends Component {
     const style_userBubble_outer = {
         cursor: 'pointer',
      };
-    const style_userPic = {
-        height: 'auto',
+    // const style_userPic = {
+    //     height: 'auto',
+    //  };
+    // const style_userPic_outer = {
+    //     pointerEvents: 'none',
+    //  };
+    const style_Pic = {
+      height: 'auto',
      };
-    const style_userPic_outer = {
-        pointerEvents: 'none',
+    const style_Pic_outer = {
+      pointerEvents: 'none',
      };
     
     return (
@@ -57,8 +63,12 @@ export default class ListItem2 extends Component {
           
           </div>
           
-          <div className='elUserPic' style={style_userPic_outer}>
+          {/* <div className='elUserPic' style={style_userPic_outer}>
             <img style={style_userPic} src={img_elUserPic} alt=""  />
+          
+          </div> */}
+          <div className='elPic' style={style_Pic_outer}>
+            <img style={style_Pic} src={img_elPic} alt=""  />
           
           </div>
           

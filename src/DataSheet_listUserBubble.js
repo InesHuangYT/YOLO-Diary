@@ -72,7 +72,6 @@ export default class DataSheet_listUserBubble extends DataSheetBase {
 
   makeDefaultItems() {
     
-
     let item;
     item = {};
     this.addItem(item);

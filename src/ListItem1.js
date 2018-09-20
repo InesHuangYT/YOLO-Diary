@@ -27,7 +27,6 @@ export default class ListItem1 extends Component {
   }
 
   onClick_elBubble2 = (ev) => {
-    
     // Go to screen 'NewReadBB'
     this.props.appActions.goToScreen('newreadbb', { ...this.props, transitionId: 'fadeIn' });
     console.log('this album ->',this.props)    
