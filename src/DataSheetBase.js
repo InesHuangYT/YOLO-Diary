@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-import Axios from 'axios';
-
-export default class DataSheetBase {
-=======
 import React, { Component } from 'react';
 
 
@@ -10,7 +5,6 @@ export default class DataSheetBase extends Component{
 
 
 
->>>>>>> aabc84ff6ce4e5a22ec2a6a7a6e951b3a7ccf117
   constructor(id, updateCb) {
     super(id,updateCb)
     

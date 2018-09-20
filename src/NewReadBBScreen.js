@@ -11,6 +11,7 @@ import Button from 'muicss/lib/react/button';
 import Container from 'muicss/lib/react/container';
 import store from './store';
 import DataSheet_listUserBubble from './DataSheet_listUserBubble.js';
+import axios from 'axios';
 
 export default class NewReadBBScreen extends Component {
 
@@ -27,11 +28,7 @@ export default class NewReadBBScreen extends Component {
     
     this.state = {
       field: this.props.dataSheetRow.field,
-<<<<<<< HEAD
       AlbumId: this.props.dataSheetRow.albumId
-=======
-      diaryId: ''
->>>>>>> aabc84ff6ce4e5a22ec2a6a7a6e951b3a7ccf117
     };
   }
 
@@ -44,12 +41,6 @@ export default class NewReadBBScreen extends Component {
     this.props.appActions.goBack();
   
   }
-
-  get(){
-    
-  }
-
-  
   
   
   render() {
@@ -163,32 +154,19 @@ export default class NewReadBBScreen extends Component {
             <div style={style_list}>
               {items_list.map((row, index) => {
                 let itemClasses = `gridItem cols5_${index % 5}`;
-<<<<<<< HEAD
                 let itemComp = (row._componentId) ? listComps_list[row._componentId] : <ListItem2 dataSheetId={'listUserBubble'} dataSheetRow={row} appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} AlbumId={row.albumId} DiaryId={row.diaryId}/>;
                 console.log('aid',row.albumId)
                 console.log('did',row.diaryId)
-=======
-                let itemComp = (row._componentId) ? listComps_list[row._componentId] : <ListItem2 dataSheetId={'listUserBubble'} dataSheetRow={row} appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} {...this.props}/>;
-<<<<<<< HEAD
->>>>>>> 6cadb46c78e7bc71f7cebb42d633b123d42bd221
-=======
-               
->>>>>>> aabc84ff6ce4e5a22ec2a6a7a6e951b3a7ccf117
                 return (
-                  
                   <div className={itemClasses} key={row.key}>
                     {itemComp}
-                  </div> 
+                  </div>
                 )
               })}
             </div>
-           
           
           </div>
-          <div className = "NewReadBBScreen">
-          <DataSheet_listUserBubble {...this.props}/>
-            </div>
-
+          
         </div>
       </Container>
     )

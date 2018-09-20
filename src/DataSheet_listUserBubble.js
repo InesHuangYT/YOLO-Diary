@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 import DataSheetBase from './DataSheetBase.js';
-<<<<<<< HEAD
-import Axios from 'axios';
-=======
 import axios from 'axios';
 
 
->>>>>>> aabc84ff6ce4e5a22ec2a6a7a6e951b3a7ccf117
 
 export default class DataSheet_listUserBubble extends DataSheetBase {
 
@@ -73,24 +69,6 @@ export default class DataSheet_listUserBubble extends DataSheetBase {
 
   makeDefaultItems() {
     
-<<<<<<< HEAD
-    Axios.get("/api/album/albums").then(res => {
-      console.log(res)
-      var elements = res.data.content.length;
-      for(var i = 0; i < elements; i++){
-    item = {};
-    this.items.push(item);
-    item['albumId'] = res.data.content[i].id;
-    for(var j = 0; j < res.data.content[i].diaries.length; j++){
-    item['diaryId'] = res.data.content[i].diaries[j].id;
-    item.key = key++;
-    }
-    
-      }
-    })
-
-
-=======
     let item;
     item = {};
     this.addItem(item);
@@ -122,7 +100,6 @@ export default class DataSheet_listUserBubble extends DataSheetBase {
       
     );
     
->>>>>>> aabc84ff6ce4e5a22ec2a6a7a6e951b3a7ccf117
   }
   
 
