@@ -34,24 +34,25 @@ export default class NewUserDiaryScreen extends Component {
   }
 
   componentWillMount(){
-    let _this = this;
-    axios.get('/api/album/'+store.getValue().albumId).then(res => {
-      //`/api/album?albumId=${store.getValue().albumId}`
-      console.log(store.getValue())
-      console.log(res);
-      console.log(res.data.name);
-      //console.log(res.data.field_UserName);
-      _this.setState({field :res.data.name});
-    });
+    console.log('showdiary', this.props)
+    // let _this = this;
+    // axios.get('/api/album/'+store.getValue().albumId).then(res => {
+    //   //`/api/album?albumId=${store.getValue().albumId}`
+    //   console.log(store.getValue())
+    //   console.log(res);
+    //   console.log(res.data.name);
+    //   //console.log(res.data.field_UserName);
+    //   _this.setState({field :res.data.name});
+    // });
 
-    axios.get('/api/diary/diaryId/'+store.getValue().diaryId).then(res => {
-      //`/api/album?albumId=${store.getValue().albumId}`
-      console.log(store.getValue())
-      console.log(res);
-      console.log(res.data.text);
-      //console.log(res.data.field_UserName);
-      _this.setState({textarea :res.data.text});
-    });
+    // axios.get('/api/diary/diaryId/'+store.getValue().diaryId).then(res => {
+    //   //`/api/album?albumId=${store.getValue().albumId}`
+    //   console.log(store.getValue())
+    //   console.log(res);
+    //   console.log(res.data.text);
+    //   //console.log(res.data.field_UserName);
+    //   _this.setState({textarea :res.data.text});
+    // });
   }
 
   textInputChanged_field = (event) => {
