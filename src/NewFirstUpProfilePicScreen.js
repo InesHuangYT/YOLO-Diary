@@ -37,6 +37,8 @@ changePath = (e) => {
     src = URL.createObjectURL(file)
     preview = <img src={src} style={{width:'275px',height:'168px'}} alt='' />
 
+    console.log('selfie src',src)
+
 
     this.form = new FormData();
     this.form.append('file', file);
@@ -72,11 +74,12 @@ upload = () => {
     axios.post('/api/selfie/uploadmany', this.form, this.config).then(res => {
       console.log(res);
       console.log(res.data);
-      this.props.appActions.goToScreen('newbubblediary', { transitionId: 'fadeIn' });
+     
     }).catch(function(error){
       message.error('必須先上傳一張大頭照');
     });
-    // Go to screen 'NewBubbleDiary'
+    //Go to screen 'NewBubbleDiary'
+    this.props.appActions.goToScreen('newbubblediary', { transitionId: 'fadeIn' });
     
 
   

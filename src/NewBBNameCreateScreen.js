@@ -33,7 +33,7 @@ export default class NewBBNameCreateScreen extends Component {
   }
   
   onClick_elButton_Next = async (ev) => {
-    this.sendData_button_Next_to_listData1();
+    
     const album = {
       name : this.state.field,
     } 
@@ -53,6 +53,7 @@ export default class NewBBNameCreateScreen extends Component {
     store.setValue({
       testId: 'test'
     })
+    this.sendData_button_Next_to_listData1();
     // Go to screen 'NewCreateBB'
     this.props.appActions.goToScreen('newcreatebb', { transitionId: 'fadeIn' });
   }
@@ -67,7 +68,9 @@ export default class NewBBNameCreateScreen extends Component {
     };
     row = { ...row, 
       field: this.state.field,
+      albumId: this.state.albumId,
     };
+   
     if (this.props.dataSheetId === dataSheet.id) {
       this.props.appActions.updateInDataSheet('listData1', row);
     } else {
@@ -177,7 +180,7 @@ export default class NewBBNameCreateScreen extends Component {
           <div className='baseFont elButton_Next' style={style_button_Next_outer}>
             <Button style={style_button_Next}  color="accent" onClick={this.onClick_elButton_Next} >
               {this.props.locStrings.newbbnamecreate_button_545796}
-              NEXT
+
             </Button>
           
           </div>

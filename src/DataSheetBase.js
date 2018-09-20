@@ -5,6 +5,7 @@ export default class DataSheetBase extends Component{
 
 
 
+
   constructor(id, updateCb) {
     super(id,updateCb)
     
@@ -22,6 +23,7 @@ export default class DataSheetBase extends Component{
 
   makeDefaultItems() {
    
+   
   }
 
   
@@ -29,13 +31,16 @@ export default class DataSheetBase extends Component{
   //    'options' is an optional value that should be passed to a React Studio provided callback by a plugin implementer.
   //    it can be used to identify async writes by caller code.
 
+
+
   addItem(item, options) {
+    this.items.push(item);
     let key = 1;
     if (this.items.length > 0) {
       key += this.items[this.items.length - 1].key;
     }
     item.key = key;
-    this.items.push(item);
+   
   }
 
   removeItem(item, options) {

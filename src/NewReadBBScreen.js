@@ -18,7 +18,7 @@ export default class NewReadBBScreen extends Component {
   // appActions, deviceInfo, dataSheetRow
 
   componentDidMount() {
-    
+
     
   }
 
@@ -27,7 +27,9 @@ export default class NewReadBBScreen extends Component {
     
     this.state = {
       field: this.props.dataSheetRow.field,
+
       diaryId: ''
+
     };
   }
 
@@ -161,6 +163,7 @@ export default class NewReadBBScreen extends Component {
                 let itemClasses = `gridItem cols5_${index % 5}`;
                 let itemComp = (row._componentId) ? listComps_list[row._componentId] : <ListItem2 dataSheetId={'listUserBubble'} dataSheetRow={row} appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} {...this.props}/>;
                
+
                 return (
                   
                   <div className={itemClasses} key={row.key}>

@@ -20,6 +20,9 @@ import { Input,Modal,message } from 'antd';
 import 'antd/dist/antd.css';
 import store from './store';
 
+//FormData資料
+//https://developer.mozilla.org/zh-TW/docs/Web/API/FormData
+
 export default class NewCreateBBScreen extends Component {
 
   // Properties used by this component:
@@ -167,8 +170,14 @@ export default class NewCreateBBScreen extends Component {
     if (/^image\/\S+$/.test(type)) {
        
         src = URL.createObjectURL(file)
-        previews = <img src={src} alt='' key = {i}/>
-       
+
+        previews = 
+        <div className='preview'>
+        <div className='box-image'>
+        <img src={src} style={{width:'245px'}} alt='' key = {i}/>
+       </div>
+       </div>
+
         photopv.push(previews)
         photodata.push(file)
         
@@ -357,16 +366,18 @@ upload = () => {
           
         >
     <div className="group-upload">
-                <div className='box-image'>
+            
+                
                     {preview}
-                </div>
+                
+              
                 <div className='box-icon'>
                     <i className="icon" >
                         <input className='row-input' type='file' accept='image/*' onChange={this.changePath} multiple={true} />
                     </i>
                 </div>
-            </div>
-
+          </div>
+           
         </Modal>
          
           </div>

@@ -9,6 +9,9 @@ export default class DataSheet_listData1 extends DataSheetBase {
   }
 
   makeDefaultItems() {
+    // let key = 1;
+    // let item;
+
     let key = 1;
     let item;
 
@@ -18,16 +21,15 @@ export default class DataSheet_listData1 extends DataSheetBase {
       for(var i = 0; i < elements; i++){
         
         item = {};
-        this.items.push(item);
-        //相簿名稱
-      
+        this.items.push(item)
         item['field'] = res.data.content[i].name;
         item['albumId'] = res.data.content[i].id;
-        //日記內容
+        
         item.key = key++;
       }
+      console.log('item', this.items)
     
-    })
+   })
     
 }
 

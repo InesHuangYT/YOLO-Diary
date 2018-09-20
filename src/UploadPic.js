@@ -34,7 +34,7 @@ class UploadPic extends Component {
         if (/^image\/\S+$/.test(type)) {
            
             src = URL.createObjectURL(file)
-            previews = <img src={src} style={{width:'250px',height:'168px'}} alt='' key = {i}/>
+            previews = <img src={src} style={{width:'250px'}} alt='' key = {i}/>
            
             photopv.push(previews)
             photodata.push(file)
@@ -44,7 +44,7 @@ class UploadPic extends Component {
             this.config = {
                 headers: { 'content-type': 'multipart/form-data;boundary=gc0p4Jq0M2Yt08jU534c0p' }
               }
-              console.log(this.form.getAll(i));
+              console.log(this.form);
              
               
               
@@ -73,23 +73,26 @@ class UploadPic extends Component {
       
         
         return (
-            <div>
-                
-            <div className = "group-upload"> 
-            <div className = 'box-image'>
-                     {preview}
-                      </div>
-              <div className='box-icon'>
+          
+
+            <div className="group-upload">
+                <div className='box-image'>
+                    {preview}
+                </div>
+                <div className='box-icon'>
+                    <i className="icon" >
+                        <input className='row-input' type='file' accept='image/*' onChange={this.changePath} multiple={true} />
+                    </i>
+                </div>
+            </div>
+
+                 
+                   
+          
+             
+           
             
-                <i className="icon" >
-                
-                    <input className='row-input' type='file' accept='image/*' onChange={this.changePath} multiple={true}/>
-                    
-                      </i>
-                     
-                      </div>
-                      </div>                
-                      </div>
-     )
+          
+        )
     }
 }export default UploadPic;
