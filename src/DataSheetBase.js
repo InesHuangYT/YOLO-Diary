@@ -5,7 +5,6 @@ export default class DataSheetBase extends Component{
 
 
 
-
   constructor(id, updateCb) {
     super(id,updateCb)
     

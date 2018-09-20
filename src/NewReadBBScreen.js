@@ -11,6 +11,7 @@ import Button from 'muicss/lib/react/button';
 import Container from 'muicss/lib/react/container';
 import store from './store';
 import DataSheet_listUserBubble from './DataSheet_listUserBubble.js';
+import axios from 'axios';
 
 export default class NewReadBBScreen extends Component {
 
@@ -18,7 +19,6 @@ export default class NewReadBBScreen extends Component {
   // appActions, deviceInfo, dataSheetRow
 
   componentDidMount() {
-
     
   }
 
@@ -27,8 +27,8 @@ export default class NewReadBBScreen extends Component {
     
     this.state = {
       field: this.props.dataSheetRow.field,
+      AlbumId: this.props.dataSheetRow.albumId
 
-      diaryId: ''
 
     };
   }
@@ -42,12 +42,6 @@ export default class NewReadBBScreen extends Component {
     this.props.appActions.goBack();
   
   }
-
-  get(){
-    
-  }
-
-  
   
   
   render() {
@@ -165,20 +159,17 @@ export default class NewReadBBScreen extends Component {
                
 
                 return (
-                  
                   <div className={itemClasses} key={row.key}>
                     {itemComp}
-                  </div> 
+                  </div>
                 )
               })}
             </div>
-           
           
           </div>
-          <div className = "NewReadBBScreen">
-          <DataSheet_listUserBubble {...this.props}/>
-            </div>
-
+          <div className='NewBubbleDiaryScreen'>
+                  <DataSheet_listUserBubble {...this.props}/>>
+                  </div>
         </div>
       </Container>
     )

@@ -5,7 +5,7 @@ import NavBar from './NavBar';
 import Addbubble from './Addbubble';
 import ListItem1 from './ListItem1';
 import Axios from 'axios';
-import DataSheetBase from './DataSheetBase.js';
+
 
 
 // UI framework component imports
@@ -19,7 +19,9 @@ export default class NewBubbleDiaryScreen extends Component {
   // appActions, deviceInfo, fieldtitle, textcontent
 
   componentDidMount() {
-    console.log(store.getValue())
+
+    
+    // console.log(store.getValue())
     // Axios.get("/api/album/albums").then(res =>{
     //   console.log("response",res);
     //   console.log("response data",res.data);
@@ -107,14 +109,16 @@ export default class NewBubbleDiaryScreen extends Component {
             <div style={style_list} >
               {items_list.map((row, index) => {
                 let itemClasses = `gridItem cols3_${index % 3}`;
-                let itemComp = (row._componentId) ? listComps_list[row._componentId] : <ListItem1 dataSheetId={'listData1'} dataSheetRow={row} field={row.field} albumId={row.albumId} appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} />;
-                console.log('idididid', row.albumId)
+                let itemComp = (row._componentId) ? listComps_list[row._componentId] : <ListItem1 dataSheetId={'listData1'} dataSheetRow={row} field={row.albumName} albumId = {row.albumId} appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} {...this.props}/>;
+                
                 return (
                   <div className={itemClasses} key={row.key}>
                     {itemComp}
                   </div>
+                  
                 )
-              })}
+                })}
+                 
             </div>
 
           </div>

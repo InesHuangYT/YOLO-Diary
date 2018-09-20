@@ -4,7 +4,6 @@ import axios from 'axios';
 
 
 
-
 export default class DataSheet_listUserBubble extends DataSheetBase {
 
   // constructor(id, updateCb) {
@@ -15,32 +14,35 @@ export default class DataSheet_listUserBubble extends DataSheetBase {
   componentDidUpdate(prevProps) {
     // Typical usage (don't forget to compare props):
     
-    if (this.props == prevProps){
-      console.log('props!!',this.props)
-      console.log(prevProps)
-    }else {
+    // if (this.props == prevProps){
+    //   console.log('props!!',this.props)
+    //   console.log(prevProps)
+    // }else {
 
-      axios.get(`/api/diary/${this.props.dataSheetRow.albumId}`).then((res) => {
-        console.log('buble response',res)
-      let item;
-      item = {};
-      this.addItem(item)
-      item['diarvId'] = res.data.content[0].id;
-      this.setState({diarvId:res.data.content[0].id})
-      // item.key = key++;
-       console.log('buble item', this.items)
-       this.sendData_button_Next_to_listData1();
-        
-      })
+      
   
      
-     }
+    //  }
   
       
     }
     componentDidMount() {
-     
-      this.componentDidUpdate(this.props) 
+
+      
+      console.log('check props->', this.props)
+      // axios.get(`/api/diary/${this.props.dataSheetRow.albumId}`).then((res) => {
+      //   console.log('buble response ->',res)
+      
+      // let item;
+      // item = {};
+      // this.addItem(item)
+      // item['diaryId'] = res.data.content[0].id;
+      // this.setState({diarvId:res.data.content[0].id})
+      // // item.key = key++;
+      //  console.log('buble item', this.items)
+      //  this.sendData_button_Next_to_listData1();
+        
+      //  })
      
     }
   
