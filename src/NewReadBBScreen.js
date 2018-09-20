@@ -155,8 +155,6 @@ export default class NewReadBBScreen extends Component {
               {items_list.map((row, index) => {
                 let itemClasses = `gridItem cols5_${index % 5}`;
                 let itemComp = (row._componentId) ? listComps_list[row._componentId] : <ListItem2 dataSheetId={'listUserBubble'} dataSheetRow={row} appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} AlbumId={row.albumId} DiaryId={row.diaryId}/>;
-                console.log('aid',row.albumId)
-                console.log('did',row.diaryId)
                 return (
                   <div className={itemClasses} key={row.key}>
                     {itemComp}
@@ -166,7 +164,9 @@ export default class NewReadBBScreen extends Component {
             </div>
           
           </div>
-          
+          <div className='NewBubbleDiaryScreen'>
+                  <DataSheet_listUserBubble {...this.props}/>>
+                  </div>
         </div>
       </Container>
     )

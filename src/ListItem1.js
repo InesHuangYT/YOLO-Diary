@@ -22,13 +22,15 @@ export default class ListItem1 extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props)
+    
   }
 
   onClick_elBubble2 = (ev) => {
     
     // Go to screen 'NewReadBB'
     this.props.appActions.goToScreen('newreadbb', { ...this.props, transitionId: 'fadeIn' });
+    console.log('this album ->',this.props)    
+  
   }
   
   
@@ -68,7 +70,7 @@ export default class ListItem1 extends Component {
           </div>
           
           <div className='baseFont elField'>
-            <Input style={style_field} type="text" hint={this.props.locStrings.listitem1_field_578331} onChange={this.textInputChanged_field} defaultValue={value_field !== undefined ? value_field : ''}  />
+            <Input style={style_field} type="text" hint={this.props.locStrings.list2_field_578331} onChange={this.textInputChanged_field} defaultValue={value_field !== undefined ? value_field : ''}  />
           
           </div>
           
