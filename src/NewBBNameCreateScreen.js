@@ -174,13 +174,13 @@ export default class NewBBNameCreateScreen extends Component {
           
           <div className='headlineFont elField'>
             <Input style={style_field} type="text" hint={this.props.locStrings.newbbnamecreate_field_397049} onChange={this.textInputChanged_field} defaultValue={this.state.field}  />
-          
+            
           </div>
           
-          <div className='actionFont elButton_Next' style={style_button_Next_outer}>
+          <div className='baseFont elButton_Next' style={style_button_Next_outer}>
             <Button style={style_button_Next}  color="accent" onClick={this.onClick_elButton_Next} >
               {this.props.locStrings.newbbnamecreate_button_545796}
-              
+
             </Button>
           
           </div>

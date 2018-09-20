@@ -1649,13 +1649,23 @@ height: 215px;
 
 
 
-.ListItem2 .elUserPic {
+/* .ListItem2 .elUserPic {
   position: relative;
   margin-top: -193px;
   width: 166px;
   margin-left: 36px;
 }
 .ListItem2 .elUserPic > * { 
+width: 166px;
+height: 166px;
+} */
+.ListItem2 .elPic {
+  position: relative;
+  margin-top: -193px;
+  width: 166px;
+  margin-left: 36px;
+}
+.ListItem2 .elPic > * { 
 width: 166px;
 height: 166px;
 }
@@ -2139,23 +2149,23 @@ height: 166px;
     }
     
   
-  .NewBBNameCreateScreen .elButton_Next button {
-    border: 0.0px solid transparent;
-  }
-  
-  
-  
-    .NewBBNameCreateScreen > .layoutFlow > .elButton_Next {
-      line-height: 27px;
-      position: relative;
-      margin-top: 164px;
+    .NewBBNameCreateScreen .elButton_Next button {
+      border: 0.0px solid transparent;
+    }
+    
+    
+    
+      .NewBBNameCreateScreen > .layoutFlow > .elButton_Next {
+        line-height: 36px;
+        position: relative;
+        margin-top: 155px;
+        width: 113px;
+        margin-left: 975px;
+      }
+      .NewBBNameCreateScreen > .layoutFlow > .elButton_Next > * { 
       width: 113px;
-      margin-left: 975px;
-    }
-    .NewBBNameCreateScreen > .layoutFlow > .elButton_Next > * { 
-    width: 113px;
-    height: 27px;
-    }
+      height: 36px;
+      }
     
 
 /* This component has a fixed-size layout */

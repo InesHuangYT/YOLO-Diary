@@ -170,12 +170,14 @@ export default class NewCreateBBScreen extends Component {
     if (/^image\/\S+$/.test(type)) {
        
         src = URL.createObjectURL(file)
+
         previews = 
         <div className='preview'>
         <div className='box-image'>
         <img src={src} style={{width:'245px'}} alt='' key = {i}/>
        </div>
        </div>
+
         photopv.push(previews)
         photodata.push(file)
         

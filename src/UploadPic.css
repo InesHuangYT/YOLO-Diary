@@ -146,6 +146,7 @@
     opacity: 0;
     cursor: pointer;
   }
+
   .preview {
     display: inline-block;
     overflow: hidden;
@@ -163,6 +164,7 @@
   }
  
   
+
   .box-image img {
     
     display: inline-block;

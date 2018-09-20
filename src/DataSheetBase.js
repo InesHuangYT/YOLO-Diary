@@ -1,13 +1,24 @@
-import Axios from 'axios';
+import React, { Component } from 'react';
 
-export default class DataSheetBase {
+
+export default class DataSheetBase extends Component{
+
+
+
+
   constructor(id, updateCb) {
+    super(id,updateCb)
+    
     this.id = id;
     this.updateCb = updateCb;
     this.items = [];
     this.requestedKeyPath = '';
 
     this.makeDefaultItems();
+    
+    
+  
+    
   }
 
   makeDefaultItems() {
@@ -15,7 +26,7 @@ export default class DataSheetBase {
    
   }
 
-
+  
   // -- these methods will typically be overridden in a subclass by a React Studio web service plugin.
   //    'options' is an optional value that should be passed to a React Studio provided callback by a plugin implementer.
   //    it can be used to identify async writes by caller code.
@@ -146,6 +157,11 @@ export default class DataSheetBase {
       scanIndex = (index === -1) ? query.length : index;
     }
     return expanded;
+  }
+
+  render() {
+    return (<div/>)
+  
   }
 
 }
