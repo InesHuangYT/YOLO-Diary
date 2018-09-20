@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import img_elBubble2 from './images/NewReadBBScreen_elMainBubble_223100.png';
+import 賴桑 from './images/賴桑.jpg';
 
 // UI framework component imports
 import Input from 'muicss/lib/react/input';
@@ -56,9 +57,10 @@ export default class ListItem1 extends Component {
     const value_field = this.props.field;
     
     const style_card_outer = {
-      backgroundColor: 'white',
-      boxShadow: '0.0px 2.3px 18px rgba(0, 0, 0, 0.1600)',
+      //backgroundColor: 'white',
+      //boxShadow: '0.0px 2.3px 18px rgba(0, 0, 0, 0.1600)',
       pointerEvents: 'none',
+      
    };
     
     return (
@@ -73,8 +75,9 @@ export default class ListItem1 extends Component {
             <Input style={style_field} type="text" hint={this.props.locStrings.list2_field_578331} onChange={this.textInputChanged_field} defaultValue={value_field !== undefined ? value_field : ''}  />
           
           </div>
-          
-          <div className='cardBg elCard' style={style_card_outer}>
+         
+          <div className='cardBg elCard' style={style_card_outer}  >
+          <img src={賴桑} alt='' onClick={this.onClick_elBubble2} />
             <div />
           
           </div>

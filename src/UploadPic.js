@@ -34,7 +34,7 @@ class UploadPic extends Component {
         if (/^image\/\S+$/.test(type)) {
            
             src = URL.createObjectURL(file)
-            previews = <img src={src} style={{width:'250px',height:'168px'}} alt='' key = {i}/>
+            previews = <img src={src} style={{width:'250px'}} alt='' key = {i}/>
            
             photopv.push(previews)
             photodata.push(file)

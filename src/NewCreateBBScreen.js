@@ -170,8 +170,12 @@ export default class NewCreateBBScreen extends Component {
     if (/^image\/\S+$/.test(type)) {
        
         src = URL.createObjectURL(file)
-        previews = <img src={src} alt='' key = {i}/>
-       
+        previews = 
+        <div className='preview'>
+        <div className='box-image'>
+        <img src={src} style={{width:'245px'}} alt='' key = {i}/>
+       </div>
+       </div>
         photopv.push(previews)
         photodata.push(file)
         
@@ -360,16 +364,18 @@ upload = () => {
           
         >
     <div className="group-upload">
-                <div className='box-image'>
+            
+                
                     {preview}
-                </div>
+                
+              
                 <div className='box-icon'>
                     <i className="icon" >
                         <input className='row-input' type='file' accept='image/*' onChange={this.changePath} multiple={true} />
                     </i>
                 </div>
-            </div>
-
+          </div>
+           
         </Modal>
          
           </div>

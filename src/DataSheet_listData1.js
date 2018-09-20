@@ -20,10 +20,9 @@ export default class DataSheet_listData1 extends DataSheetBase {
        item = {};
         this.items.push(item)
         //相簿名稱
-        item['field'] = res.data.content[i].name;
-        //日記內容
+        item['albumName'] = res.data.content[i].name;
+        item['albumId'] = res.data.content[i].id;
         item.key = key++;
-        item['albumId'] = res.data.content[i].id
   
       }
       console.log('album datasheet item',this.items)
