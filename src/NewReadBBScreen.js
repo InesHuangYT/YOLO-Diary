@@ -10,6 +10,8 @@ import Input from 'muicss/lib/react/input';
 import Button from 'muicss/lib/react/button';
 import Container from 'muicss/lib/react/container';
 import store from './store';
+import DataSheet_listUserBubble from './DataSheet_listUserBubble.js';
+import axios from 'axios';
 
 export default class NewReadBBScreen extends Component {
 
@@ -17,8 +19,7 @@ export default class NewReadBBScreen extends Component {
   // appActions, deviceInfo, dataSheetRow
 
   componentDidMount() {
-    console.log(store.getValue())
-    console.log('read aid',this.props.dataSheetRow.albumId)
+    
     
   }
 
@@ -153,9 +154,13 @@ export default class NewReadBBScreen extends Component {
             <div style={style_list}>
               {items_list.map((row, index) => {
                 let itemClasses = `gridItem cols5_${index % 5}`;
+<<<<<<< HEAD
                 let itemComp = (row._componentId) ? listComps_list[row._componentId] : <ListItem2 dataSheetId={'listUserBubble'} dataSheetRow={row} appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} AlbumId={row.albumId} DiaryId={row.diaryId}/>;
                 console.log('aid',row.albumId)
                 console.log('did',row.diaryId)
+=======
+                let itemComp = (row._componentId) ? listComps_list[row._componentId] : <ListItem2 dataSheetId={'listUserBubble'} dataSheetRow={row} appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} {...this.props}/>;
+>>>>>>> 6cadb46c78e7bc71f7cebb42d633b123d42bd221
                 return (
                   <div className={itemClasses} key={row.key}>
                     {itemComp}
