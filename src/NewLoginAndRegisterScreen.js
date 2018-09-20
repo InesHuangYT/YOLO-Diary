@@ -92,12 +92,13 @@ export default class NewLoginAndRegisterScreen extends Component {
     // Go to screen 'NewForgetPassword'
 
     //測試session用
-    if(sessionStorage.getItem("accesstoken")){
+    // if(sessionStorage.getItem("accesstoken")){
+    // this.props.appActions.goToScreen('newforgetpassword', { transitionId: 'fadeIn' });
+    // }else{
+    //   console.log("NO ACCESSTOKEN")
+    //   this.props.appActions.goToScreen('newregister', { transitionId: 'fadeIn' });
+    // }
     this.props.appActions.goToScreen('newforgetpassword', { transitionId: 'fadeIn' });
-    }else{
-      console.log("NO ACCESSTOKEN")
-      this.props.appActions.goToScreen('newregister', { transitionId: 'fadeIn' });
-    }
   }
   
   

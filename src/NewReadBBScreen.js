@@ -43,7 +43,6 @@ export default class NewReadBBScreen extends Component {
   
   }
   
-  
   render() {
     // eslint-disable-next-line no-unused-vars
     let baseStyle = {};
