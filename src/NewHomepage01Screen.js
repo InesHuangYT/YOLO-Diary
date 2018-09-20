@@ -20,9 +20,9 @@ export default class NewHomepage01Screen extends Component {
     axios.get("/api/user/mySelfie").then(res =>{
       console.log(res.data.available);
     if(res.data.available){
-      this.props.appActions.goToScreen('newbubblediary', { transitionId: 'fadeIn' });
+      this.props.appActions.goToScreen('newfirstupprofilepic', { transitionId: 'fadeIn' });
     }else{
-    this.props.appActions.goToScreen('newfirstupprofilepic', { transitionId: 'fadeIn' });
+    this.props.appActions.goToScreen('newbubblediary', { transitionId: 'fadeIn' });
   }
   });
   }
