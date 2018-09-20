@@ -180,7 +180,7 @@ export default class NewBBNameCreateScreen extends Component {
           <div className='baseFont elButton_Next' style={style_button_Next_outer}>
             <Button style={style_button_Next}  color="accent" onClick={this.onClick_elButton_Next} >
               {this.props.locStrings.newbbnamecreate_button_545796}
-
+          NEXT
             </Button>
           
           </div>
