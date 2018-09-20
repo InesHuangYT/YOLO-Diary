@@ -2193,6 +2193,7 @@ height: 166px;
   }
   
   .ListItem1 .elCard {
+    background: transparent;
     border-radius: 15px;
     position: relative;
     margin-top: -170px;
@@ -2203,6 +2204,10 @@ height: 166px;
   .ListItem1 .elCard > * { 
   width: 164px;
   height: 128px;
+  }
+  .ListItem1 .elCard img{
+    border-radius:10px;
+    box-shadow:  0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   }
 
 /* This component has a fixed-size layout */

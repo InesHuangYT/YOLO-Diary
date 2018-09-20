@@ -21,13 +21,18 @@ export default class DataSheet_listData1 extends DataSheetBase {
         item = {};
         this.items.push(item)
         //相簿名稱
-        item['field'] = res.data.content[i].name;
+        item['albumName'] = res.data.content[i].name;
         //日記內容
-        item['textarea'] = "";
-        item['albumId'] = res.data.content[i].id
-        item.key = key++
        
+        item['albumId'] = res.data.content[i].id
+        for(var j = 0; j < res.data.content[i].diaries.length ;j++){
+          item['diaryId'] = res.data.content[i].diaries[j].id
+          console.log('diaryid',res.data.content[i].diaries[j].id)
+          item.key = key++
+        }
+        
         console.log('album',res.data.content[i])
+
         console.log('key',item.key)
      
       }

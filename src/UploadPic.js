@@ -34,7 +34,7 @@ class UploadPic extends Component {
         if (/^image\/\S+$/.test(type)) {
            
             src = URL.createObjectURL(file)
-            previews = <img src={src} style={{width:'250px',height:'168px'}} alt='' key = {i}/>
+            previews = <img src={src} style={{width:'250px'}} alt='' key = {i}/>
            
             photopv.push(previews)
             photodata.push(file)
@@ -73,7 +73,6 @@ class UploadPic extends Component {
       
         
         return (
-<<<<<<< HEAD
           
 
             <div className="group-upload">
@@ -95,25 +94,5 @@ class UploadPic extends Component {
             
           
         )
-=======
-            <div>
-                
-            <div className = "group-upload"> 
-            <div className = 'box-image'>
-                     {preview}
-                      </div>
-              <div className='box-icon'>
-            
-                <i className="icon" >
-                
-                    <input className='row-input' type='file' accept='image/*' onChange={this.changePath} multiple={true}/>
-                    
-                      </i>
-                     
-                      </div>
-                      </div>                
-                      </div>
-     )
->>>>>>> b511251fb7f258be8815b145ce8d52100993118f
     }
 }export default UploadPic;
