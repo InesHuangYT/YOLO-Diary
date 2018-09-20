@@ -7,9 +7,24 @@ import img_elUserPic from './images/ListItem2_elUserPic_268846.png';
 export default class ListItem2 extends Component {
 
   // This component doesn't use any properties
+   
+  componentDidMount() {
+    
+   console.log(this.props)
+  
+  }
+
+  constructor(props) {
+    super(props);
+    
+    this.state = {
+      
+    };
+  }
 
   onClick_elUserBubble = (ev) => {
     // Go to screen 'NewUserDiary'
+    console.log(this.props);
     this.props.appActions.goToScreen('newuserdiary', { ...this.props, transitionId: 'fadeIn' });
   
   }

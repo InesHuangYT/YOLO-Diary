@@ -26,8 +26,12 @@ export default class ListItem1 extends Component {
   }
 
   onClick_elBubble2 = (ev) => {
+<<<<<<< HEAD
     console.log(store.getValue())
     console.log('click alid',this.props.albumId)
+=======
+    
+>>>>>>> aabc84ff6ce4e5a22ec2a6a7a6e951b3a7ccf117
     // Go to screen 'NewReadBB'
     this.props.appActions.goToScreen('newreadbb', { ...this.props, transitionId: 'fadeIn' });
   }
