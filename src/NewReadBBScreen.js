@@ -88,7 +88,7 @@ export default class NewReadBBScreen extends Component {
     const style_field = {
         display: 'block',
      };
-    const value_field = this.props.dataSheetRow ? this.props.dataSheetRow.field : '';
+    const value_field = this.props.dataSheetRow ? this.props.dataSheetRow.albumName:'';
     
     const style_button_back = {
         display: 'block',
