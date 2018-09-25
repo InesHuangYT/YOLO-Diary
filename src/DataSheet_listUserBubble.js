@@ -12,8 +12,7 @@ export default class DataSheet_listUserBubble extends DataSheetBase {
 
     this.state = {
       diaryId: '',
-      currentlength: null,
-      currentdiaryId: null
+      
     };
   }
   // constructor(id, updateCb) {

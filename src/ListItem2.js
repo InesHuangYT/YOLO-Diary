@@ -10,7 +10,7 @@ export default class ListItem2 extends Component {
    
   componentDidMount() {
     
-   console.log(this.props)
+   
   
   }
 
