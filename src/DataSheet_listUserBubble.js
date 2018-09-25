@@ -12,8 +12,7 @@ export default class DataSheet_listUserBubble extends DataSheetBase {
 
     this.state = {
       diaryId: '',
-      currentlength: null,
-      currentdiaryId: null
+      
     };
   }
   // constructor(id, updateCb) {
@@ -37,19 +36,11 @@ export default class DataSheet_listUserBubble extends DataSheetBase {
 
    
     console.log('check props->', this.props)
-    console.log('check current diaryId', this.state.currentdiaryId)
-    console.log('check current length', this.state.currentlength)
     let item;
     item = {};
     axios.get(`/api/diary/${this.props.dataSheetRow.albumId}`).then((res) => {
-      var length = res.data.content.length;
-      var did = this.props.dataSheetRow.albumId
       console.log('buble response ->', res)
-      if (length != this.state.currentlength && did != this.state.currentdiaryId) {
-        console.log('ENTER!!!')
-        this.setState({currentdiaryId : did});
-        this.setState({currentlength : length});
-        for (var i = 0; i < length; i++) {
+        for (var i = 0; i < res.data.content.length; i++) {
           this.addItem(item)
           item['diaryId'] = res.data.content[i].id;
           this.setState({ diarvId: res.data.content[i].id })
@@ -58,9 +49,8 @@ export default class DataSheet_listUserBubble extends DataSheetBase {
           this.sendData_button_Next_to_listData1();
 
         }
-      }
-      console.log('check current diaryId after', this.state.currentdiaryId)
-      console.log('check current length after', this.state.currentlength)
+      
+     
     })
        
        

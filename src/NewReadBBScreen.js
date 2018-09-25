@@ -19,7 +19,7 @@ export default class NewReadBBScreen extends Component {
   // appActions, deviceInfo, dataSheetRow
 
   componentDidMount() {
-    
+    console.log('readbb check props', this.props)
   }
 
   constructor(props) {
