@@ -145,12 +145,13 @@ export default class NavBar extends Component {
           <button className='headlineFont elButton_BBDiary' style={style_button_BBDiary}  onClick={this.onClick_elButton_BBDiary} >
             {this.props.locStrings.comp1_button_bbdiary_65744}
           </button>
-          <div className='font-SFUITextRegular  elSubtitle' style={style_subtitle}>
-            <div>{this.props.locStrings.comp1_subtitle_571540}</div>
-          </div>
           <button className='headlineFont elButton_HomePage' style={style_button_HomePage}  onClick={this.onClick_elButton_HomePage} >
             {this.props.locStrings.comp1_button_homepage_232670}
           </button>
+          <div className='font-SFUITextRegular  elSubtitle' style={style_subtitle}>
+            <div>{this.props.locStrings.comp1_subtitle_571540}</div>
+          </div>
+        
           <div className='font-SFUITextBold  elTitle_yolo' style={style_title_yolo}>
             <div>{this.props.locStrings.comp1_title_yolo_1039822}</div>
           </div>

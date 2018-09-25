@@ -10,7 +10,7 @@ export default class DataSheet_listData1 extends DataSheetBase {
 
   makeDefaultItems() {
 
-    let key = 1;
+    
     let item;
     Axios.get("/api/album/albums").then(res => {
       //console.log(res)
@@ -22,7 +22,7 @@ export default class DataSheet_listData1 extends DataSheetBase {
         //相簿名稱
         item['albumName'] = res.data.content[i].name;
         item['albumId'] = res.data.content[i].id;
-        item.key = key++;
+        item.key = res.data.content[i].id;
   
       }
       console.log('album datasheet item',this.items)
