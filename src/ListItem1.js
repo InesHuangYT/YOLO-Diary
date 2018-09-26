@@ -6,7 +6,8 @@ import 賴桑 from './images/賴桑.jpg';
 // UI framework component imports
 import Input from 'muicss/lib/react/input';
 import store from './store';
-import Axios from 'axios';
+import axios from 'axios';
+import setAuthorizationToken from './util/APIUtils';
 
 export default class ListItem1 extends Component {
 
@@ -18,18 +19,41 @@ export default class ListItem1 extends Component {
     
     this.state = {
       albumName: this.props.albumName,
-      albumId : this.props.albumId
-    };
+      albumId : this.props.albumId,
+      src:'',
+      config : {
+        headers:{
+        'Authorization':'Bearer '+ sessionStorage.getItem('accesstoken')
+        }
+      }
+    }
   }
 
   componentDidMount() {
+    
+    console.log('item1 check props ->',this.props)
+    let _this = this;
+    // this.config = {
+    //   headers:{
+    //   'Authorization':'Bearer '+ sessionStorage.getItem('accesstoken')
+    //   }
+      
+    // };
+      axios.get(this.props.dataSheetRow.photoCover, this.state.config).then(res=>{
+      console.log('photo', res)
+      _this.setState({src:res.data.photodata})
+      // _this.setState({src:Buffer.from(res.data, 'binary').toString('base64')})
+      //console.log('buffer=>', _this.state.src)
+    })
+    
+    
     
   }
 
   onClick_elBubble2 = (ev) => {
     // Go to screen 'NewReadBB'
     this.props.appActions.goToScreen('newreadbb', { ...this.props, transitionId: 'fadeIn' });
-    console.log('this album ->',this.props)    
+    
   
   }
   
@@ -37,6 +61,7 @@ export default class ListItem1 extends Component {
   textInputChanged_albumName = (event) => {
     this.setState({albumName: event.target.value});
   }
+
   
   render() {
     // eslint-disable-next-line no-unused-vars
@@ -61,7 +86,7 @@ export default class ListItem1 extends Component {
       pointerEvents: 'none',
       
    };
-    
+   
     return (
       <div className="ListItem1" style={baseStyle}>
         <div className="layoutFlow">
@@ -76,7 +101,8 @@ export default class ListItem1 extends Component {
           </div>
          
           <div className='cardBg elCard' style={style_card_outer}  >
-          <img src={賴桑} alt='' onClick={this.onClick_elBubble2} />
+          <img src={"data:image/jpeg;base64, "+ this.state.src } alt='' onClick={this.onClick_elBubble2} />
+
             <div />
           
           </div>
