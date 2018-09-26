@@ -34,11 +34,7 @@ export default class DataSheet_listData1 extends DataSheetBase {
 
         }
         
-<<<<<<< HEAD
-        item.key = Math.random()*res.data.content[i].id;
-=======
         item.key = Math.random()*(1000);
->>>>>>> d99327a7097255ed396479d399a24b9c1373bb9d
   
       }
       console.log('album datasheet item',this.items)
