@@ -33,25 +33,33 @@ export default class DataSheet_listUserBubble extends DataSheetBase {
 
   }
   componentDidMount() {
-
-   
     console.log('check props->', this.props)
     let item;
-    item = {};
+    
     axios.get(`/api/diary/${this.props.dataSheetRow.albumId}`).then((res) => {
       console.log('buble response ->', res)
         for (var i = 0; i < res.data.content.length; i++) {
+          item = {};
           this.addItem(item)
           item['diaryId'] = res.data.content[i].id;
+<<<<<<< HEAD
           this.setState({ diarvId: res.data.content[i].id })
           item.key = Math.random()*res.data.content[i].id
           console.log('buble item', this.items)
+=======
+          this.setState({diarvId: res.data.content[i].id })
+          item.key = Math.random()*(1000)
+          
+>>>>>>> d99327a7097255ed396479d399a24b9c1373bb9d
           this.sendData_button_Next_to_listData1();
 
         }
       
-     
+        console.log('buble item', this.items)
     })
+
+   
+    
        
        
 
@@ -76,7 +84,7 @@ export default class DataSheet_listUserBubble extends DataSheetBase {
     };
     row = {
       ...row,
-      diarvId: this.state.diaryId,
+      diaryId: this.state.diaryId,
     };
     if (this.props.dataSheetId === dataSheet.id) {
       this.props.appActions.updateInDataSheet('listUserBubble', row);
@@ -87,21 +95,7 @@ export default class DataSheet_listUserBubble extends DataSheetBase {
 
   makeDefaultItems() {
 
-    // let item;
-    // item = {};
-    // this.addItem(item);
-    // item['diarvId'] = 'test';
-
-
-    //  var elements = res.data.content.length;
-    //  let id = []
-    //  for(var i = 0; i < elements; i++){
-    //  id.push(res.data.content[i].id)
-    //  this.setState({diaryId: res.data.content[i].id})
-    // }
-    //  this.setState({diaryId:id})
-    //  console.log(this.state.diaryId)
-
+    
 
 
 
