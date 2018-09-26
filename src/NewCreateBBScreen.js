@@ -49,7 +49,7 @@ export default class NewCreateBBScreen extends Component {
     this.form.append(i,file)
   }
   componentDidMount() {
-    console.log(store.getValue())
+    
     
     
   }
@@ -65,7 +65,7 @@ export default class NewCreateBBScreen extends Component {
  
   handleOk = (e) => {
     //確定上傳照片
-    console.log(e);
+    
     message.success('照片已選擇');
     this.setState({
       visible: false,
@@ -75,7 +75,7 @@ export default class NewCreateBBScreen extends Component {
   }
 
   handleCancel = (e) => {
-    console.log(e);
+    
     this.setState({
       visible: false,
     });
@@ -101,7 +101,7 @@ export default class NewCreateBBScreen extends Component {
   .then(res => {
     console.log(res);
     this.diaryId = res.data.id;
-    console.log(store.getValue())
+    
   
     this.props.appActions.goToScreen('newfacerec', { transitionId: 'fadeIn' });
   }).catch(function(error){
@@ -116,12 +116,12 @@ export default class NewCreateBBScreen extends Component {
   store.setValue({
     testId: 'test2'
   })
-  console.log(this.form.getAll('file'));	
+  
   	
   axios.post('/api/photo/'+store.getValue().diaryId, this.form).then(	
     res =>{	
       console.log('upload photo',res)	
-      console.log(res.data)	
+      
    })
    
   }
