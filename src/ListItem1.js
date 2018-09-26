@@ -53,7 +53,7 @@ export default class ListItem1 extends Component {
     const style_field = {
         display: 'block',
      };
-    const value_field = this.props.albumName;
+     const value_field = this.props.albumName;
     
     const style_card_outer = {
       //backgroundColor: 'white',
@@ -71,7 +71,7 @@ export default class ListItem1 extends Component {
           </div>
           
           <div className='baseFont elField'>
-            <Input style={style_field} type="text" hint={this.props.locStrings.list2_field_578331} onChange={this.textInputChanged_albumName} defaultValue={value_field !== undefined ? value_field : ''}  />
+          <Input style={style_field} type="text" hint={this.props.locStrings.list2_field_578331} onChange={this.textInputChanged_albumName} defaultValue={value_field !== undefined ? value_field : ''}  />
           
           </div>
          
