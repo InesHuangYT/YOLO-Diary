@@ -91,20 +91,28 @@ export default class ListItem1 extends Component {
       <div className="ListItem1" style={baseStyle}>
         <div className="layoutFlow">
           <div className='elBubble2' style={style_bubble2_outer}>
-            <img style={style_bubble2} src={img_elBubble2} alt="" onClick={this.onClick_elBubble2}  />
-          
-          </div>
-          
-          <div className='baseFont elField'>
-            <Input style={style_field} type="text" hint={this.props.locStrings.list2_field_578331} onChange={this.textInputChanged_albumName} defaultValue={value_field !== undefined ? value_field : ''}  />
-          
-          </div>
-         
-          <div className='cardBg elCard' style={style_card_outer}  >
-          <img src={"data:image/jpeg;base64, "+ this.state.src } alt='' onClick={this.onClick_elBubble2} />
+            <img style={style_bubble2} src={img_elBubble2} alt="" onClick={this.onClick_elBubble2} />
 
-            <div />
-          
+          </div>
+
+          <div className='baseFont elField'>
+            <Input style={style_field} type="text" hint={this.props.locStrings.list2_field_578331} onChange={this.textInputChanged_albumName} defaultValue={value_field !== undefined ? value_field : ''} />
+
+          </div>
+          <div className='cardBg elCard'  >
+          <div className="flip-box">
+            <div className="flip-box-inner">
+             
+                
+                <div className="flip-box-front">
+                  <img src={"data:image/jpeg;base64, " + this.state.src} alt='' onClick={this.onClick_elBubble2} style={{width:'165px',height:'135px'}} />
+                </div>
+              
+              <div className="flip-box-back">
+              <h1>爽爽爽爽爽</h1>
+              </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
