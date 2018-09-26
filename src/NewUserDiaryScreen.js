@@ -34,16 +34,20 @@ export default class NewUserDiaryScreen extends Component {
   }
 
   componentWillMount(){
+    //'/api/album/'
     console.log('showdiary', this.props)
-    // let _this = this;
-    // axios.get('/api/album/'+store.getValue().albumId).then(res => {
-    //   //`/api/album?albumId=${store.getValue().albumId}`
-    //   console.log(store.getValue())
-    //   console.log(res);
-    //   console.log(res.data.name);
-    //   //console.log(res.data.field_UserName);
-    //   _this.setState({field :res.data.name});
-    // });
+    let _this = this;
+    for(var i =0; i < this.props.dataSheetRow.diaryId.length; i++){
+      axios.get('/api/diary/diaryId/'+this.props.dataSheetRow.diaryId[i].id).then(res => {
+      
+      console.log('read res->',res);
+      console.log(res.data.text);
+      _this.setState({textarea :res.data.text});
+    })
+  }
+  _this.setState({field :this.props.dataSheetRow.albumName});
+  
+    
 
     // axios.get('/api/diary/diaryId/'+store.getValue().diaryId).then(res => {
     //   //`/api/album?albumId=${store.getValue().albumId}`
