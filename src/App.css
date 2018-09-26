@@ -1837,7 +1837,7 @@ height: 166px;
     
   
   
-    .NewReadBBScreen > .layoutFlow > .elCard {
+    /* .NewReadBBScreen > .layoutFlow > .elCard {
       border-radius: 15px;
       position: relative;
       margin-top: -335px;
@@ -1848,8 +1848,21 @@ height: 166px;
     .NewReadBBScreen > .layoutFlow > .elCard > * { 
     width: 250px;
     height: 198px;
+    } */
+
+    .NewReadBBScreen > .layoutFlow > .el02 {
+      border-radius: 15px;
+      position: relative;
+      margin-top: -335px;
+      width: 250px;
+      margin-left: 670px;
+      opacity:0.8;
+      box-shadow: black 10px;
     }
-    
+    .NewReadBBScreen > .layoutFlow > .el02 > * { 
+    width: 250px;
+    height: 198px;
+    }
   
   
     .NewReadBBScreen > .layoutFlow > .elField {
@@ -2177,19 +2190,18 @@ height: 166px;
     min-height: 389px;
   }
 
-
+  
   .ListItem1 .elBubble2 {
     position: relative;
     margin-top: 35px;
     width: 278px;
     margin-left: 66px;
+   
   }
   .ListItem1 .elBubble2 > * { 
   width: 278px;
   height: 278px;
   }
-  
-
 
   .ListItem1 .elField {
     position: relative;
