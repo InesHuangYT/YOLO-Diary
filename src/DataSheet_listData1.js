@@ -1,5 +1,6 @@
 import DataSheetBase from './DataSheetBase.js';
 import Axios from 'axios';
+import { EDESTADDRREQ } from 'constants';
 
 export default class DataSheet_listData1 extends DataSheetBase {
 
@@ -10,19 +11,30 @@ export default class DataSheet_listData1 extends DataSheetBase {
 
   makeDefaultItems() {
 
-    let key = 1;
+    
     let item;
+    
     Axios.get("/api/album/albums").then(res => {
-      //console.log(res)
+      
+      console.log('albums ->',res)
       
       var elements = res.data.content.length
       for(var i = 0; i < elements ; i++){
-       item = {};
-        this.items.push(item)
+        
+        item = {};
         //相簿名稱
+        this.items.push(item)
         item['albumName'] = res.data.content[i].name;
         item['albumId'] = res.data.content[i].id;
-        item.key = key++;
+        item['diaryId'] = [];
+        for(var j = 0; j < res.data.content[i].diaries.length ; j++){
+        console.log('check did->',res.data.content[i].diaries[j].id)
+        
+        item['diaryId'].push({id: res.data.content[i].diaries[j].id}) 
+
+        }
+        
+        item.key = res.data.content[i].id;
   
       }
       console.log('album datasheet item',this.items)

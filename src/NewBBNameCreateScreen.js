@@ -23,19 +23,19 @@ export default class NewBBNameCreateScreen extends Component {
     super(props);
     
     this.state = {
-      field: '',
+      albumName: '',
       albumId: ''
     };
   }
 
   textInputChanged_field = (event) => {
-    this.setState({field: event.target.value});
+    this.setState({albumName: event.target.value});
   }
   
   onClick_elButton_Next = async (ev) => {
     
     const album = {
-      name : this.state.field,
+      name : this.state.albumName,
     } 
     await axios.post('/api/album',album)
     .then(res => {
@@ -67,7 +67,7 @@ export default class NewBBNameCreateScreen extends Component {
     let row = this.props.dataSheetRow || {
     };
     row = { ...row, 
-      field: this.state.field,
+      albumName: this.state.albumName,
       albumId: this.state.albumId,
     };
    
@@ -173,7 +173,7 @@ export default class NewBBNameCreateScreen extends Component {
           </div>
           
           <div className='headlineFont elField'>
-            <Input style={style_field} type="text" hint={this.props.locStrings.newbbnamecreate_field_397049} onChange={this.textInputChanged_field} defaultValue={this.state.field}  />
+            <Input style={style_field} type="text" hint={this.props.locStrings.newbbnamecreate_field_397049} onChange={this.textInputChanged_field} defaultValue={this.state.albumName}  />
             
           </div>
           

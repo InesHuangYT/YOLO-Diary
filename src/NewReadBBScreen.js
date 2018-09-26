@@ -19,7 +19,7 @@ export default class NewReadBBScreen extends Component {
   // appActions, deviceInfo, dataSheetRow
 
   componentDidMount() {
-    
+    console.log('readbb check props', this.props)
   }
 
   constructor(props) {
@@ -94,7 +94,7 @@ export default class NewReadBBScreen extends Component {
     const style_field = {
         display: 'block',
      };
-    const value_field = this.props.dataSheetRow ? this.props.dataSheetRow.albumName : '';
+     const value_field = this.props.dataSheetRow ? this.props.dataSheetRow.albumName:'';
     
     const style_button_back = {
         display: 'block',

@@ -33,7 +33,7 @@ export default class NewCreateBBScreen extends Component {
     
     
     this.state = {
-      //field: '',
+      albumName: '',
       textarea: '',
       albumId: '',
       diaryId: '',
@@ -133,20 +133,19 @@ export default class NewCreateBBScreen extends Component {
   sendData_button_Complete_to_listData1 = () => {
     const dataSheet = this.props.appActions.getDataSheet('listData1');
   
-//    let row = this.props.dataSheetRow || {
-//    };
-//    row = { ...row, 
-//      textarea: this.state.textarea,
-//      field: this.state.field,
-//      image: this.state.image,
-//     };
-//     if (this.props.dataSheetId === dataSheet.id) {
-//       this.props.appActions.updateInDataSheet('listData1', row);
-//     } else {
-//       this.props.appActions.addToDataSheet('listData1', row);
-//     }
-//   }
+  //  let row = this.props.dataSheetRow || {
+  //  };
+  //  row = { ...row, 
+  //    albumName: this.state.albumName,
+     
+  //   };
+  //   if (this.props.dataSheetId === dataSheet.id) {
+  //     this.props.appActions.updateInDataSheet('listData1', row);
+  //   } else {
+  //     this.props.appActions.addToDataSheet('listData1', row);
+  //   }
   
+
   }
   changePath = (e) => {
         
