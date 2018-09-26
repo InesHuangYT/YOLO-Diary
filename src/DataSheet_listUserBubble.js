@@ -44,7 +44,7 @@ export default class DataSheet_listUserBubble extends DataSheetBase {
           this.addItem(item)
           item['diaryId'] = res.data.content[i].id;
           this.setState({ diarvId: res.data.content[i].id })
-          item.key = res.data.content[i].id
+          item.key = Math.random()*res.data.content[i].id
           console.log('buble item', this.items)
           this.sendData_button_Next_to_listData1();
 
