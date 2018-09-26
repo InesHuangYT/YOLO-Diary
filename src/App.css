@@ -1060,7 +1060,7 @@
   
 
 
-  .NewUserDiaryScreen > .layoutFlow > .elAddPicBB {
+  /* .NewUserDiaryScreen > .layoutFlow > .elAddPicBB {
     position: relative;
     margin-top: -790px;
     width: 154px;
@@ -1069,6 +1069,16 @@
   .NewUserDiaryScreen > .layoutFlow > .elAddPicBB > * { 
     width: 154px;
     height: 154px;
+  } */
+  .NewUserDiaryScreen > .layoutFlow > .el03 {
+    position: relative;
+    margin-top: -860px;
+    width: 154px;
+    margin-left: 70px;
+  }
+  .NewUserDiaryScreen > .layoutFlow > .el03 > * { 
+    width: 300px;
+    height: 250px;
   }
   
 

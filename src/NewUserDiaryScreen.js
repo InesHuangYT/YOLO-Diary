@@ -10,7 +10,7 @@ import Button from 'muicss/lib/react/button';
 import Container from 'muicss/lib/react/container';
 import { Input } from 'antd';
 import 'antd/dist/antd.css';
-
+import img_el03 from './images/03.jpg';
 import axios from 'axios';
 
 import store from './store'
@@ -110,11 +110,17 @@ export default class NewUserDiaryScreen extends Component {
     const style_oriDiaryBB_outer = {
         pointerEvents: 'none',
      };
-    const style_addPicBB = {
-        height: 'auto',
+    // const style_addPicBB = {
+    //     height: 'auto',
+    //  };
+    // const style_addPicBB_outer = {
+    //     pointerEvents: 'none',
+    //  };
+     const style_03 = {
+      height: 'auto',
      };
-    const style_addPicBB_outer = {
-        pointerEvents: 'none',
+    const style_03_outer = {
+      pointerEvents: 'none',
      };
      const style_field = {
       display: 'block',
@@ -168,11 +174,14 @@ export default class NewUserDiaryScreen extends Component {
           
           </div>
           
-          <div className='elAddPicBB' style={style_addPicBB_outer}>
+          {/* <div className='elAddPicBB' style={style_addPicBB_outer}>
             <img style={style_addPicBB} src={img_elAddPicBB} alt=""  />
           
-          </div>
+          </div> */}
+          <div className='el03' style={style_03_outer}>
+            <img style={style_03} src={img_el03} alt=""  />
           
+          </div>
           <div className='baseFont elField'>
             {/* <Input style={style_field} type="text" placeholder={this.props.locStrings.newcreatebb2_field_448413} onChange={this.textInputChanged_field} defaultValue={value_field !== undefined ? value_field : ''}  /> */}
             <Input style={style_field} type="text" placeholder={this.props.locStrings.newcreatebb2_field_448413} onChange={this.textInputChanged_field} value =  {this.state.field} />
