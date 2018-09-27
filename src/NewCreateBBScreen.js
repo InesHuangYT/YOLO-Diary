@@ -362,7 +362,7 @@ upload = () => {
           width='1050px'
           
         >
-    <div className="group-upload">
+             <div className="group-upload">
             
                 
                     {preview}

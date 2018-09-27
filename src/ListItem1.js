@@ -40,6 +40,7 @@ export default class ListItem1 extends Component {
       
     // };
       axios.get(this.props.dataSheetRow.photoCover, this.state.config).then(res=>{
+        console.log(this.props.dataSheetRow.photoCover)
       console.log('photo', res)
       _this.setState({src:res.data.photodata})
       // _this.setState({src:Buffer.from(res.data, 'binary').toString('base64')})
@@ -78,7 +79,7 @@ export default class ListItem1 extends Component {
     const style_field = {
         display: 'block',
      };
-    const value_field = this.props.albumName;
+     const value_field = this.props.albumName;
     
     const style_card_outer = {
       //backgroundColor: 'white',
@@ -95,21 +96,28 @@ export default class ListItem1 extends Component {
 
           </div>
 
-          <div className='baseFont elField'>
+          {/* <div className='baseFont elField'>
             <Input style={style_field} type="text" hint={this.props.locStrings.list2_field_578331} onChange={this.textInputChanged_albumName} defaultValue={value_field !== undefined ? value_field : ''} />
 
-          </div>
+          </div> */}
           <div className='cardBg elCard'  >
           <div className="flip-box">
             <div className="flip-box-inner">
              
                 
                 <div className="flip-box-front">
-                  <img src={"data:image/jpeg;base64, " + this.state.src} alt='' onClick={this.onClick_elBubble2} style={{width:'165px',height:'135px'}} />
+                  <img src={"data:image/jpeg;base64, " + this.state.src} alt='' onClick={this.onClick_elBubble2} style={{width:'190px',height:'150px'}} />
                 </div>
               
               <div className="flip-box-back">
-              <h1>爽爽爽爽爽</h1>
+              
+              {/* <h1>Taipei</h1> */}
+               
+                <div className='baseFont elField'>
+                 <Input  type="text" hint={this.props.locStrings.list2_field_578331} onChange={this.textInputChanged_albumName} defaultValue={value_field !== undefined ? value_field : ''} />
+
+                </div>
+               
               </div>
               </div>
             </div>
