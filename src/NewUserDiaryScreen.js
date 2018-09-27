@@ -179,7 +179,6 @@ export default class NewUserDiaryScreen extends Component {
           </div> */}
           <div className='el03' >
             <img style={style_03} src={img_el03} alt=""  />
-          
           </div>
           <div className='baseFont elField'>
             {/* <Input style={style_field} type="text" placeholder={this.props.locStrings.newcreatebb2_field_448413} onChange={this.textInputChanged_field} defaultValue={value_field !== undefined ? value_field : ''}  /> */}

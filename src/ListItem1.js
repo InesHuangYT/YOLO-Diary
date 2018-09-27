@@ -96,13 +96,8 @@ export default class ListItem1 extends Component {
           </div>
 
           <div className='baseFont elField'>
-<<<<<<< HEAD
-          <Input style={style_field} type="text" hint={this.props.locStrings.list2_field_578331} onChange={this.textInputChanged_albumName} defaultValue={value_field !== undefined ? value_field : ''}  />
-          
-=======
             <Input style={style_field} type="text" hint={this.props.locStrings.list2_field_578331} onChange={this.textInputChanged_albumName} defaultValue={value_field !== undefined ? value_field : ''} />
 
->>>>>>> fb55c6d1119c5e7fa7544b47284577d7882a6b26
           </div>
           <div className='cardBg elCard'  >
           <div className="flip-box">
