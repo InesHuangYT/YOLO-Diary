@@ -12,7 +12,6 @@ import { Input } from 'antd';
 import 'antd/dist/antd.css';
 import img_el03 from './images/03.jpg';
 import axios from 'axios';
-
 import store from './store'
 
 export default class NewUserDiaryScreen extends Component {
@@ -178,7 +177,7 @@ export default class NewUserDiaryScreen extends Component {
             <img style={style_addPicBB} src={img_elAddPicBB} alt=""  />
           
           </div> */}
-          <div className='el03' style={style_03_outer}>
+          <div className='el03' >
             <img style={style_03} src={img_el03} alt=""  />
           
           </div>
