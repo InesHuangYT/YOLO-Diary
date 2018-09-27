@@ -27,6 +27,7 @@ export default class DataSheet_listData1 extends DataSheetBase {
         item['albumName'] = res.data.content[i].name;
         item['albumId'] = res.data.content[i].id;
         item['diaryId'] = [];
+        item['photoCover'] = res.data.content[i].photoCover;
         for(var j = 0; j < res.data.content[i].diaries.length ; j++){
         console.log('check did->',res.data.content[i].diaries[j].id)
         

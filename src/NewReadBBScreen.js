@@ -26,7 +26,7 @@ export default class NewReadBBScreen extends Component {
     super(props);
     
     this.state = {
-      albumName: this.props.dataSheetRow.albumName,
+      field: this.props.dataSheetRow.field,
       AlbumId: this.props.dataSheetRow.albumId
 
 
@@ -85,16 +85,16 @@ export default class NewReadBBScreen extends Component {
     //     boxShadow: '0.0px 1.8px 14px rgba(0, 0, 0, 0.1600)',
     //     pointerEvents: 'none',
     //  };
-     const style_02 = {
+    const style_02 = {
       height: 'auto',
      };
-    const style_02_outer = {
+    const style_02_outer = {        
       pointerEvents: 'none',
      };
     const style_field = {
         display: 'block',
      };
-     const value_field = this.props.dataSheetRow ? this.props.dataSheetRow.albumName:'';
+    const value_field = this.props.dataSheetRow ? this.props.dataSheetRow.albumName:'';
     
     const style_button_back = {
         display: 'block',
@@ -139,16 +139,16 @@ export default class NewReadBBScreen extends Component {
           
           </div>
           
-          {/* <div className='cardBg elCard' style={style_card_outer}>
+           {/* <div className='cardBg elCard' style={style_card_outer}>
             <div />
           
           </div> */}
 
           <div className='el02' style={style_02_outer}>
             <img style={style_02} src={img_el02} alt=""  />
+            
+                    </div>
           
-          </div>
-
           <div className='baseFont elField'>
             <Input style={style_field} type="text" hint={this.props.locStrings.newreadbb_field_120491} onChange={this.textInputChanged_field} defaultValue={value_field !== undefined ? value_field : ''}  />
           
@@ -161,8 +161,9 @@ export default class NewReadBBScreen extends Component {
           
           </div>
           
-          <div className='hasNestedComps elList'  key={Math.random()}>
-            <div style={style_list}  key={Math.random()}>
+          <div className='hasNestedComps elList' key = {Math.random()*100}>
+          
+            <div style={style_list}>
               {items_list.map((row, index) => {
                 let itemClasses = `gridItem cols5_${index % 5}`;
                 let itemComp = (row._componentId) ? listComps_list[row._componentId] : <ListItem2 dataSheetId={'listUserBubble'} dataSheetRow={row} appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} {...this.props}/>;
