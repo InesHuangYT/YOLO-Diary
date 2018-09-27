@@ -2228,19 +2228,19 @@ height: 166px;
 
   .ListItem1 .elField {
     position: relative;
-    margin-top: -85px;
+    margin-top: 55px;
     width: 186px;
-    margin-left: 112px;
+    margin-left: 12px;
   }
   .ListItem1 .elField > * { 
-  width: 186px;
+  width: 168px;
   height: 34px;
   }
   .flip-box {
     background-color: transparent;
     width: 300px;
     height: 200px;
-    border: 1px solid #f1f1f1;
+    border: 0px solid #f1f1f1;
     perspective: 1000px; /* Remove this if you don't want the 3D effect */
   }
   
@@ -2275,29 +2275,29 @@ height: 166px;
   
   /* Style the back side */
   .flip-box-back {
-    background-color:rgb(187, 223, 245);
+    background-color:rgb(255, 255, 200);
     border-radius: 8px;
     color: white;
-    height: 135px;
-    width: 165px;
+    height: 150px;
+    width: 190px;
     transform: rotateY(180deg);
-    opacity: 0.5;
+    opacity: 0.7;
     box-shadow:  0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   }
   .ListItem1 .elCard {
     background: transparent;
     border-radius: 15px;
     position: relative;
-    margin-top: -170px;
+    margin-top: -213px;
     width: 164px;
-    margin-left: 124px;
+    margin-left: 111px;
   
   }
 
 
   .ListItem1 .elCard > * { 
-  width: 164px;
-  height: 128px;
+  width: 190px;
+  height: 150px;
 
   }
   .ListItem1 .elCard img{
@@ -2306,7 +2306,7 @@ height: 166px;
     box-shadow:  0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
     
   }
-  
+
   @keyframes shake {
     0% { transform: translate(1px, 1px) rotate(0deg); }
     10% { transform: translate(-1px, -2px) rotate(-1deg); }
