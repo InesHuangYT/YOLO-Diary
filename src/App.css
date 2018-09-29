@@ -1016,6 +1016,13 @@
     height: 899px;
   }
 
+  .NewUserDiaryScreen > .background > .elBubbleDiaryBG {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1602px;
+    height: 906px;
+  }
 
   .NewUserDiaryScreen > .layoutFlow > .elNavBar2 {
     position: relative;
@@ -1024,7 +1031,7 @@
     margin-left: -2px;
   }
   .NewUserDiaryScreen > .layoutFlow > .elNavBar2 > * { 
-  width: 1607px;
+  width: 1674px;
   height: 90px;
   }
   
@@ -1034,7 +1041,7 @@
 
 
 
-  .NewUserDiaryScreen > .layoutFlow > .elBubbleDiaryBG {
+  /* .NewUserDiaryScreen > .layoutFlow > .elBubbleDiaryBG {
     position: relative;
     margin-top: 16px;
     width: 1602px;
@@ -1043,15 +1050,15 @@
   .NewUserDiaryScreen > .layoutFlow > .elBubbleDiaryBG > * { 
   width: 1602px;
   height: 709px;
-  }
+  } */
   
 
 
   .NewUserDiaryScreen > .layoutFlow > .elOriDiaryBB {
     position: relative;
-    margin-top: -1134px;
+    margin-top: -400px;
     width: 1492px;
-    margin-left: 97px;
+    margin-left: 180px;
   }
   .NewUserDiaryScreen > .layoutFlow > .elOriDiaryBB > * { 
     width: 1492px;
@@ -1070,7 +1077,7 @@
     width: 154px;
     height: 154px;
   } */
-  .NewUserDiaryScreen > .layoutFlow > .el03 {
+  /* .NewUserDiaryScreen > .layoutFlow > .el03 {
     position: relative;
     margin-top: -860px;
     width: 154px;
@@ -1087,14 +1094,14 @@
     width: 300px;
     height: 250px;
   }
-  
+   */
 
 
   .NewUserDiaryScreen > .layoutFlow > .elField {
     position: relative;
-    margin-top: -300px;
+    margin-top: -940px;
     width: 462px;
-    margin-left: 576px;
+    margin-left: 653px;
   }
   .NewUserDiaryScreen > .layoutFlow > .elField > * { 
     background-color: #fcffffaf;
@@ -1110,7 +1117,7 @@
     margin-top: 20px;
     width: 464px;
     height: 300px;
-    margin-left: 575px;
+    margin-left: 652px;
   }
   .NewUserDiaryScreen > .layoutFlow > .elTextarea > * { 
     background-color: #fcffffaf;
@@ -1132,13 +1139,55 @@
     position: relative;
     margin-top: 69px;
     width: 113px;
-    margin-left: 1355px;
+    margin-left: 1260px;
   }
   .NewUserDiaryScreen > .layoutFlow > .elButton_OK > * { 
   width: 113px;
   height: 27px;
   }
-  
+  .NewUserDiaryScreen .elList li {
+    margin-bottom: 4px;
+  }
+
+
+
+  .NewUserDiaryScreen > .layoutFlow > .elList {
+    position: relative;
+    margin-top: -530px;
+    width: 251px;
+    margin-left: 100px;
+  }
+  .NewUserDiaryScreen > .layoutFlow > .elList > * { 
+  width: 251px;
+  height: 712px;
+  }
+
+/* This component has a fixed-size layout */
+.ListPic {
+  min-height: 302px;
+  width: 100%; /* This component was designed using a width of 320px */
+}
+.ListPic > .background > .containerMinHeight {
+  min-height: 302px;
+}
+
+
+.ListPic .el03 {
+  position: relative;
+  margin-top: 0px;
+  width: 320px;
+  margin-left: 0px;
+}
+.ListPic .el03 img{
+  box-shadow:  0 8px 16px 5px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  border-radius: 10px;
+  border:0.7px solid gray;
+}
+.ListPic .el03 > * { 
+width: 320px;
+height: 240px;
+}
+
 
 .NewHomeNotificationScreen {
   max-width: 1600px;

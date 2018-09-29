@@ -4,6 +4,7 @@ import NavBar from './NavBar';
 import img_elBubbleDiaryBG from './images/NewHomeNotificationScreen_elBubbleDiaryBG_199962.jpg';
 import img_elOriDiaryBB from './images/NewCreateBBScreen_elOriDiaryBB_1024639.png';
 import img_elAddPicBB from './images/NewCreateBBScreen_elAddPicBB_474204.png';
+import ListPic from './ListPic';
 
 // UI framework component imports
 import Button from 'muicss/lib/react/button';
@@ -100,9 +101,9 @@ export default class NewUserDiaryScreen extends Component {
         backgroundPosition: '50% 50%',
         backgroundSize: 'cover',
      };
-    const style_bubbleDiaryBG_outer = {
-        pointerEvents: 'none',
-     };
+    // const style_bubbleDiaryBG_outer = {
+    //     pointerEvents: 'none',
+    //  };
     const style_oriDiaryBB = {
         height: 'auto',
      };
@@ -115,12 +116,13 @@ export default class NewUserDiaryScreen extends Component {
     // const style_addPicBB_outer = {
     //     pointerEvents: 'none',
     //  };
-     const style_03 = {
-      height: 'auto',
-     };
-    const style_03_outer = {
-      pointerEvents: 'none',
-     };
+
+    //  const style_03 = {
+    //   height: 'auto',
+    //  };
+    // const style_03_outer = {
+    //   pointerEvents: 'none',
+    //  };
      const style_field = {
       display: 'block',
      // backgroundColor: 'white',
@@ -128,7 +130,7 @@ export default class NewUserDiaryScreen extends Component {
      // boxSizing: 'border-box', // ensures padding won't expand element's outer size
    };
   const value_field = this.props.field;
-  
+  const dataSheet_listDataPic = this.props.dataSheets['listDataPic'];
   const style_textarea = {
       display: 'block',
     //  backgroundColor: 'white',
@@ -136,16 +138,23 @@ export default class NewUserDiaryScreen extends Component {
     //  boxSizing: 'border-box', // ensures padding won't expand element's outer size
    };
   const { TextArea } = Input;
-    const value_textarea = this.props.textarea;
+  const value_textarea = this.props.textarea;
     
-    const style_button_OK = {
+  const style_button_OK = {
         display: 'block',
         textAlign: 'center',
      };
-    const style_button_OK_outer = {
+  const style_button_OK_outer = {
         cursor: 'pointer',
      };
-    
+  const style_list = {
+      height: 'auto',  // This element is in scroll flow
+   };
+  // Source items and any special components used for list/grid element 'list'.
+  let items_list = [];
+  let listComps_list = {};
+  items_list = items_list.concat(this.props.appActions.getDataSheet('listDataPic').items);
+  
     return (
       <Container fluid={true} className="AppScreen NewUserDiaryScreen" style={baseStyle}>
         <div className="background">
@@ -153,7 +162,9 @@ export default class NewUserDiaryScreen extends Component {
             <div style={style_background} />
           
           </div>
-          
+
+          <div className='elBubbleDiaryBG' style={style_bubbleDiaryBG}>
+          </div>
         </div>
         <div className="layoutFlow" style={layoutFlowStyle}>
           <div className='hasNestedComps elNavBar2'>
@@ -163,10 +174,10 @@ export default class NewUserDiaryScreen extends Component {
           
           </div>
           
-          <div className='elBubbleDiaryBG' style={style_bubbleDiaryBG_outer}>
+          {/* <div className='elBubbleDiaryBG' style={style_bubbleDiaryBG_outer}>
             <div style={style_bubbleDiaryBG} />
           
-          </div>
+          </div> */}
           
           <div className='elOriDiaryBB' style={style_oriDiaryBB_outer}>
             <img style={style_oriDiaryBB} src={img_elOriDiaryBB} alt=""  />
@@ -177,9 +188,9 @@ export default class NewUserDiaryScreen extends Component {
             <img style={style_addPicBB} src={img_elAddPicBB} alt=""  />
           
           </div> */}
-          <div className='el03' >
+          {/* <div className='el03' >
             <img style={style_03} src={img_el03} alt=""  />
-          </div>
+          </div> */}
           <div className='baseFont elField'>
             {/* <Input style={style_field} type="text" placeholder={this.props.locStrings.newcreatebb2_field_448413} onChange={this.textInputChanged_field} defaultValue={value_field !== undefined ? value_field : ''}  /> */}
             <Input style={style_field} type="text" placeholder={this.props.locStrings.newcreatebb2_field_448413} onChange={this.textInputChanged_field} value =  {this.state.field} />
@@ -196,6 +207,16 @@ export default class NewUserDiaryScreen extends Component {
             <Button style={style_button_OK}  color="accent" onClick={this.onClick_elButton_OK} >
               {this.props.locStrings.newuserdiary_button_724281}
             </Button>
+          
+          </div>
+
+          <div className='hasNestedComps elList'>
+            <ul style={style_list}>
+              {items_list.map((row, index) => {
+                let itemComp = (row._componentId) ? listComps_list[row._componentId] : <ListPic dataSheetId={'listDataPic'} dataSheetRow={row} appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} />;
+                return (<li key={row.key}>{itemComp}</li>)
+              })}
+            </ul>
           
           </div>
           
