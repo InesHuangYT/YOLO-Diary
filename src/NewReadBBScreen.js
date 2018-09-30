@@ -20,6 +20,21 @@ export default class NewReadBBScreen extends Component {
 
   componentDidMount() {
     console.log('readbb check props', this.props)
+    console.log('item1 check props ->',this.props)
+    let _this = this;
+    // this.config = {
+    //   headers:{
+    //   'Authorization':'Bearer '+ sessionStorage.getItem('accesstoken')
+    //   }
+      
+    // };
+      axios.get(this.props.dataSheetRow.photoCover, this.state.config).then(res=>{
+        console.log(this.props.dataSheetRow.photoCover)
+      console.log('photo', res)
+      _this.setState({src:res.data.photodata})
+      // _this.setState({src:Buffer.from(res.data, 'binary').toString('base64')})
+      //console.log('buffer=>', _this.state.src)
+    })
   }
 
   constructor(props) {
@@ -27,7 +42,14 @@ export default class NewReadBBScreen extends Component {
     
     this.state = {
       field: this.props.dataSheetRow.field,
-      AlbumId: this.props.dataSheetRow.albumId
+      albumId: this.props.dataSheetRow.albumId,
+      albumName: this.props.albumName,
+      src:'',
+      config : {
+        headers:{
+        'Authorization':'Bearer '+ sessionStorage.getItem('accesstoken')
+        }
+      }
 
 
     };
@@ -145,9 +167,10 @@ export default class NewReadBBScreen extends Component {
           </div> */}
 
           <div className='el02' style={style_02_outer}>
-            <img style={style_02} src={img_el02} alt=""  />
+            {/* <img style={style_02} src={img_el02} alt=""  /> */}
+            <img src={"data:image/jpeg;base64, " + this.state.src} alt='' onClick={this.onClick_elBubble2} style={{width:'250px',height:'198px'}} />
             
-                    </div>
+          </div>
           
           <div className='baseFont elField'>
             <Input style={style_field} type="text" hint={this.props.locStrings.newreadbb_field_120491} onChange={this.textInputChanged_field} defaultValue={value_field !== undefined ? value_field : ''}  />

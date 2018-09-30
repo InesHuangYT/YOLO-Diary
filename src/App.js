@@ -43,6 +43,7 @@ import DataSheet_listData1 from './DataSheet_listData1.js';
 import DataSheet_listData2 from './DataSheet_listData2.js';
 import DataSheet_listData3 from './DataSheet_listData3.js';
 import DataSheet_listUserBubble from './DataSheet_listUserBubble.js';
+import DataSheet_listDataPic from './DataSheet_listDataPic.js';
 
 export default class App extends Component {
   constructor(props) {
@@ -54,7 +55,8 @@ export default class App extends Component {
     this.dataSheets['listData2'] = new DataSheet_listData2('listData2', this.dataSheetDidUpdate);
     this.dataSheets['listData3'] = new DataSheet_listData3('listData3', this.dataSheetDidUpdate);
     this.dataSheets['listUserBubble'] = new DataSheet_listUserBubble('listUserBubble', this.dataSheetDidUpdate);
-
+    this.dataSheets['listDataPic'] = new DataSheet_listDataPic('listDataPic', this.dataSheetDidUpdate);
+    
     this.dataSlots = {};
     this.dataSlots['ds_activeLang'] = "en";
 
