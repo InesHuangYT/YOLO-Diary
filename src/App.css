@@ -673,7 +673,7 @@
   height: 93px;
   }
   
-
+  
 
   /* .PMenu .elField_username {
     position: relative;
@@ -689,21 +689,33 @@
     border-radius: 270px;
     position: relative;
     margin-top: -642px;
-    width: 252px;
-    margin-left: 47.5px;
-    opacity:0.1;
+    width: 250px;
+    margin-left: 49px;
+    opacity:0.9;
+  }
+  .PMenu .elCard img{
+    margin-left: -6px;
+    margin-top:-1.5px;
+    box-shadow:  0 15px 25px 0 rgba(0,0,0,0.2), 0 10px 25px 10px rgba(0,0,0,0.19);
   }
   .PMenu .elCard > * { 
-  width: 252px;
+    border-radius: 270px;
+  width: 250px;
   height: 246px;
   }
 
-.PMenu .elUppic button {
+.PMenu .elCard button {
+ 
   cursor: pointer;
   border: 0.0px solid transparent;
+  border-radius: 270px;
+  font-size :0;
+  width: 250px; 
 }
 
+
 .PMenu .elUppic button:focus {
+  
   box-shadow: 0 0 6px rgba(254, 255, 255, 0.2500);
   outline: none;
 }
@@ -711,11 +723,20 @@
 
 
   .PMenu .elUppic {
-    line-height: 57px;
+    background-color: #feffff;
+    line-height: 0px;
     position: relative;
     margin-top: -72px;
-    width: 154px;
-    margin-left: 117px;
+    width: 250px;
+    height:250px;
+    margin-left: 48.5px;
+
+  }
+  .PMenu .elCard img{
+  
+    border-radius:270px;
+    height: 250px;
+    object-fit: cover;
   }
   .PMenu .elUppic > * { 
   width: 154px;

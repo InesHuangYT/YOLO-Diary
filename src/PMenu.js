@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
 import img_elPmenu from './images/PMenu_elPmenu_511455.png';
-
+import 賴桑 from './images/賴桑.jpg';
 // UI framework component imports
 import Input from 'muicss/lib/react/input';
-
-
+import './UploadPic.css';
 export default class PMenu extends Component {
 
   // This component doesn't use any properties
@@ -15,9 +14,50 @@ export default class PMenu extends Component {
     
     this.state = {
       field_username: '',
+      preview: null,
+      data: null,
     };
   }
+  changePath = (e) => {
+        
+    var filenumber = e.target.files.length
+    let photopv = [];
+    let photodata = [];
+    this.form = new FormData()
+    
 
+    for(var i = 0; i < filenumber; i++){
+
+    const file = e.target.files[i];
+    let src,previews,type=file.type;
+    
+    if (!file) {
+        return;
+    }
+  
+    if (/^image\/\S+$/.test(type)) {
+       
+        src = URL.createObjectURL(file)
+        previews = <img src={src} style={{width:'250px'}} alt='' key = {i}/>
+       
+        photopv.push(previews)
+        photodata.push(file)
+        
+        
+        this.form.append(i,file);
+        this.config = {
+            headers: { 'content-type': 'multipart/form-data;boundary=gc0p4Jq0M2Yt08jU534c0p' }
+          }
+          console.log(this.form);
+         
+          
+          
+    }
+}   
+    this.setState({ data: photodata, preview: photopv})
+    
+    
+}
   onClick_elButton_FList = (ev) => {
     // Go to screen 'NewFriendList'
     this.props.appActions.goToScreen('newfriendlist', { transitionId: 'fadeIn' });
@@ -48,7 +88,7 @@ export default class PMenu extends Component {
     let baseStyle = {};
     // eslint-disable-next-line no-unused-vars
     let layoutFlowStyle = {};
-    
+    const { preview } = this.state;
     const style_pmenu = {
         backgroundImage: 'url('+img_elPmenu+')',
         backgroundRepeat: 'no-repeat',
@@ -84,16 +124,16 @@ export default class PMenu extends Component {
      };
     
      const style_card_outer = {
-      backgroundColor: 'white',
+      backgroundColor: 'transparent',
       boxShadow: '0.0px 2.3px 18px rgba(0, 0, 0, 0.1600)',
       pointerEvents: 'none',
    };
     const style_uppic = {
         display: 'block',
-        fontSize: 20.6,
+        fontSize: 0,
         fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif',
         fontWeight: 'bold',
-        color: '#feffff',
+        color: 'transparent',
         textAlign: 'left',
         backgroundColor: 'transparent',
         textTransform: 'uppercase',
@@ -124,18 +164,40 @@ export default class PMenu extends Component {
             <div style={style_button_profile}  onClick={this.onClick_elButton_profile}  />
           
           </div>
+          {/* <div className='group-change-img'>
+          <div className='box-change-icon'>
+       
+                {preview}
+                
+          <i className="change-icon" >
           
-          <div className='cardBg elCard' style={style_card_outer}>
-            <div />
+              <input className='change-img' type='file' accept='image/*' onChange={this.changePath} />
+             
+            </i>
+            
+            </div>
+            </div> */}
+         <input className='input-img' type='file' accept='image/*' style={{width:'250px'}} onChange={this.changePath} />
+          <div className='cardBg elCard' >
+            
+            {/* <img src={賴桑} alt=""/> */}
+            <div>
           
+          <button>
+          {preview}
+          {this.props.locStrings.pmenu_uppic_291006}
+         
+        </button>
+       
           </div>
+         </div>
+       
+       
+         
+         
           
-          <div className='elUppic' style={style_uppic_outer}>
-            <button style={style_uppic}  >
-              {this.props.locStrings.pmenu_uppic_291006}
-            </button>
+           
           
-          </div>
           
         </div>
       </div>

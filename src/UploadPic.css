@@ -93,7 +93,6 @@
     width: 80px;
     height: 80px;
     top:18px;
-    
     transform-origin: 50% 50%;
     transform: scale(1);
     transition: all .2s ease-in-out;
@@ -172,3 +171,55 @@
     padding: 2px;  
   }
   .box-icon {opacity: 0.7;}
+ 
+  .box-change-icon {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 235px;
+    height: 170px;
+    transform-origin: 50% 50%;
+    transform: scale(1);
+    transition: all .2s ease-in-out;
+    
+  }
+  .box-change-icon img {
+    border-radius: 270px;   
+    margin-top: -1200px;
+    margin-left: 113px;
+    object-fit: cover;
+    width: 250px;
+    height: 250px;
+    
+  }
+ 
+  .box-change-icon i.icon {
+    display: block;
+    width: 93%;
+    height: 105%;
+    border: 1px dashed #f7f6f6;
+    background: #678fb8;
+    border-radius: 10px;
+    z-index: 1;
+    opacity: 0;
+    transition: all .4s ease-in-out;
+  }
+
+  input:hover ~ .box-change-icon i.icon {
+    background: #fbf8f8;
+  }
+  
+  input:active ~ .box-change-icon {
+    transform: scale(0.95);
+  }
+  input.change-img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    opacity: 0;
+    cursor: pointer;
+  }
