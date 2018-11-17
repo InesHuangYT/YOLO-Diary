@@ -60,7 +60,7 @@ export default class NewRegisterScreen extends Component {
       .then(res => {
         console.log(res);
         console.log(res.deta);
-        this.props.appActions.goToScreen('newemailsent', { transitionId: 'fadeIn' });
+        this.props.appActions.goToScreen('newloginandregister', { transitionId: 'fadeIn' });
   }).catch(function(error) {
     //if(error.s){
       alert("Wrong account and password");
