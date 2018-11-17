@@ -41,42 +41,42 @@ export default class NewBBNameCreateScreen extends Component {
     .then(res => {
       console.log(res);
       console.log(res.data.id);
-      this.albumId = res.data.id;
-      console.log(this.albumId);
+      this.state.albumId = res.data.id;
+      console.log(this.state.albumId);
     }).catch(function(error){
       alert("Wrong albumName");
     });
     // store albumId
     store.setValue({
-      albumId: this.albumId
+      albumId: this.state.albumId
     })
     store.setValue({
-      testId: 'test'
+      albumName: this.state.albumName
     })
-    this.sendData_button_Next_to_listData1();
+    // this.sendData_button_Next_to_listData1();
     // Go to screen 'NewCreateBB'
-    this.props.appActions.goToScreen('newcreatebb', { transitionId: 'fadeIn' });
+    this.props.appActions.goToScreen('newcreatebb', { ...this.props ,transitionId: 'fadeIn' });
   }
   
 
   
   
-  sendData_button_Next_to_listData1 = () => {
-    const dataSheet = this.props.appActions.getDataSheet('listData1');
+  // sendData_button_Next_to_listData1 = () => {
+  //   const dataSheet = this.props.appActions.getDataSheet('listData1');
   
-    let row = this.props.dataSheetRow || {
-    };
-    row = { ...row, 
-      albumName: this.state.albumName,
-      albumId: this.state.albumId,
-    };
+  //   let row = this.props.dataSheetRow || {
+  //   };
+  //   row = { ...row, 
+  //     albumName: this.state.albumName,
+  //     albumId: this.state.albumId,
+  //   };
    
-    if (this.props.dataSheetId === dataSheet.id) {
-      this.props.appActions.updateInDataSheet('listData1', row);
-    } else {
-      this.props.appActions.addToDataSheet('listData1', row);
-    }
-  }
+  //   if (this.props.dataSheetId === dataSheet.id) {
+  //     this.props.appActions.updateInDataSheet('listData1', row);
+  //   } else {
+  //     this.props.appActions.addToDataSheet('listData1', row);
+  //   }
+  // }
   
   
   render() {
@@ -180,9 +180,9 @@ export default class NewBBNameCreateScreen extends Component {
           <div className='baseFont elButton_Next' style={style_button_Next_outer}>
             <Button style={style_button_Next}  color="accent" onClick={this.onClick_elButton_Next} >
               {this.props.locStrings.newbbnamecreate_button_545796}
-
+         
           NEXT
-
+        
             </Button>
           
           </div>

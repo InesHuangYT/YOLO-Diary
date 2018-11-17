@@ -30,9 +30,7 @@ export default class DataSheet_listData1 extends DataSheetBase {
         item['photoCover'] = res.data[i].photoCover;
         for(var j = 0; j < res.data[i].diaries.length ; j++){
         console.log('check did->',res.data[i].diaries[j].id)
-        
         item['diaryId'].push({id: res.data[i].diaries[j].id}) 
-
         }
         
         item.key = Math.random()*(1000);

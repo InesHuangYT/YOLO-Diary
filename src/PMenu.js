@@ -5,6 +5,8 @@ import 賴桑 from './images/賴桑.jpg';
 // UI framework component imports
 import Input from 'muicss/lib/react/input';
 import './UploadPic.css';
+import 'antd/dist/antd.css';
+import { Modal,message } from 'antd';
 export default class PMenu extends Component {
 
   // This component doesn't use any properties
@@ -16,7 +18,32 @@ export default class PMenu extends Component {
       field_username: '',
       preview: null,
       data: null,
+      visible:false
     };
+  }
+  showModal = () => {
+    this.setState({
+      visible: true,
+    });
+  }
+  
+ 
+  handleOk = (e) => {
+    //確定上傳照片
+    
+    message.success('照片已更換');
+    this.setState({
+      visible: false,
+    });
+    
+
+  }
+
+  handleCancel = (e) => {
+    
+    this.setState({
+      visible: false,
+    });
   }
   changePath = (e) => {
         
@@ -54,10 +81,11 @@ export default class PMenu extends Component {
           
     }
 }   
-    this.setState({ data: photodata, preview: photopv})
+    this.setState({ data: photodata, preview: photopv,visible:true})
     
     
 }
+
   onClick_elButton_FList = (ev) => {
     // Go to screen 'NewFriendList'
     this.props.appActions.goToScreen('newfriendlist', { transitionId: 'fadeIn' });
@@ -178,10 +206,18 @@ export default class PMenu extends Component {
             </div>
             </div> */}
          <input className='input-img' type='file' accept='image/*' style={{width:'250px'}} onChange={this.changePath} />
+         <Modal
+          title=""
+          visible={this.state.visible}
+          onOk={this.handleOk}
+          onCancel={this.handleCancel}
+          width='300px' 
+        >確定更換為此照片嗎?
+        </Modal>
           <div className='cardBg elCard' >
             
             {/* <img src={賴桑} alt=""/> */}
-            <div>
+            
           
           <button>
           {preview}
@@ -189,7 +225,7 @@ export default class PMenu extends Component {
          
         </button>
        
-          </div>
+         
          </div>
        
        
