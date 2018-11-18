@@ -38,11 +38,11 @@ export default class DataSheet_listUserBubble extends DataSheetBase {
     
     axios.get(`/api/diary/${this.props.dataSheetRow.albumId}`).then((res) => {
       console.log('buble response ->', res)
-        for (var i = 0; i < res.data.length; i++) {
+        for (var i = 0; i < res.data.content.length; i++) {
           item = {};
           this.addItem(item)
-          item['diaryId'] = res.data[i].id;
-          this.setState({diarvId: res.data[i].id })
+          item['diaryId'] = res.data.content[i].id;
+          this.setState({diarvId: res.data.content[i].id })
           item.key = Math.random()*(1000)
           
           this.sendData_button_Next_to_listData1();
