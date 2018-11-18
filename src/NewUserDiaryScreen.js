@@ -14,7 +14,7 @@ import 'antd/dist/antd.css';
 import img_el03 from './images/03.jpg';
 import axios from 'axios';
 import store from './store'
-
+import DataSheet_listDataPic from './DataSheet_listDataPic';
 export default class NewUserDiaryScreen extends Component {
 //`/api/album?albumId=${store.getValue().albumId}`
   // Properties used by this component:
@@ -219,7 +219,9 @@ export default class NewUserDiaryScreen extends Component {
             </ul>
           
           </div>
-          
+          <div className='inherit'>
+                  <DataSheet_listDataPic {...this.props}/>>
+                  </div>
         </div>
       </Container>
     )

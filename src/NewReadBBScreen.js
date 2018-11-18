@@ -201,7 +201,8 @@ export default class NewReadBBScreen extends Component {
             </div>
           
           </div>
-          <div className='NewBubbleDiaryScreen'>
+          {/* <div className='NewBubbleDiaryScreen'> */}
+          <div className='inherit'>
                   <DataSheet_listUserBubble {...this.props}/>>
                   </div>
         </div>

@@ -1,4 +1,5 @@
 import DataSheetBase from './DataSheetBase.js';
+import Axios from 'axios';
 
 export default class DataSheet_listDataPic extends DataSheetBase {
 
@@ -8,25 +9,21 @@ export default class DataSheet_listDataPic extends DataSheetBase {
   }
 
   makeDefaultItems() {
-    // eslint-disable-next-line no-unused-vars
-    let key = 1;
-    // eslint-disable-next-line no-unused-vars
     let item;
     
-    item = {};
-    this.items.push(item);
-    item['03'] = "";
-    item.key = key++;
-    
-    item = {};
-    this.items.push(item);
-    item['03'] = "";
-    item.key = key++;
-    
-    item = {};
-    this.items.push(item);
-    item['03'] = "";
-    item.key = key++;
+    Axios.get("/api/photo/downloadDiaryPhoto/{diaryId}").then(res => {
+      
+      console.log('diaries ->',res)
+      
+      var elements = res.data.content.length
+      for(var i = 0; i < elements ; i++){
+        
+      item['photoId'] = res.data.content[i].photoId;
+  
+      }
+      console.log('album datasheet item',this.items)
+    })
+
   }
 
 }
