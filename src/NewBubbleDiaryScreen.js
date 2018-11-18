@@ -122,7 +122,7 @@ export default class NewBubbleDiaryScreen extends Component {
             <div style={style_list} >
               {items_list.map((row, index) => {
                 let itemClasses = `gridItem cols3_${index % 3}`;
-                let itemComp = (row._componentId) ? listComps_list[row._componentId] : <ListItem1 dataSheetId={'listData1'} dataSheetRow={row} albumName={row.albumName} albumId = {row.albumId} appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} {...this.props}/>;
+                let itemComp = (row._componentId) ? listComps_list[row._componentId] : <ListItem1 dataSheetId={'listData1'} dataSheetRow={row}  appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} {...this.props}/>;
                 
                 return (
                   <div className={itemClasses} key={row.key}>
