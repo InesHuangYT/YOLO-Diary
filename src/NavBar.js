@@ -92,17 +92,17 @@ export default class NavBar extends Component {
      };
     const style_button_profile = {
         display: 'block',
-        color: '#00bdc1',
-        textAlign: 'left',
-        backgroundColor: 'transparent',
+       
+        textAlign: 'center',
+       
         textTransform: 'uppercase',
         cursor: 'pointer',
      };
     const style_button_BBDiary = {
         display: 'block',
-        color: '#00bdc1',
-        textAlign: 'left',
-        backgroundColor: 'transparent',
+       
+        textAlign: 'center',
+       
         textTransform: 'uppercase',
         cursor: 'pointer',
      };
@@ -114,9 +114,9 @@ export default class NavBar extends Component {
      };
     const style_button_HomePage = {
         display: 'block',
-        color: '#00bdc1',
-        textAlign: 'left',
-        backgroundColor: 'transparent',
+       
+        textAlign: 'center',
+      
         textTransform: 'uppercase',
         cursor: 'pointer',
      };

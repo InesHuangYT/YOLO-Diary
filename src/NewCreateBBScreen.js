@@ -37,6 +37,7 @@ export default class NewCreateBBScreen extends Component {
       textarea: '',
       albumId: '',
       diaryId: '',
+      cover:'',
       form : null,
       preview: null,
       data: null,
@@ -48,10 +49,13 @@ export default class NewCreateBBScreen extends Component {
   appendForm(i, file){
     this.form.append(i,file)
   }
+
+
   componentDidMount() {
     
-    
-    
+   this.state.albumName = store.getValue().albumName
+   this.state.albumId = store.getValue().albumId
+  
   }
   
   
@@ -92,18 +96,19 @@ export default class NewCreateBBScreen extends Component {
   
   onClick_elButton_Complete = async (ev) => {
 
-    this.sendData_button_Complete_to_listData1(store.getValue());
-    const diary = {
-    text : this.state.textarea
-  }
 
+
+
+
+    const diary = {
+      text : this.state.textarea
+    }
+    console.log('exist?', store.getValue().albumId)
  await axios.post('/api/diary/'+ store.getValue().albumId ,diary)
   .then(res => {
     console.log(res);
-    this.diaryId = res.data.id;
+    this.state.diaryId = res.data.id;
     
-  
-    this.props.appActions.goToScreen('newfacerec', { transitionId: 'fadeIn' });
   }).catch(function(error){
     alert("Wrong diary");
   });
@@ -112,41 +117,49 @@ export default class NewCreateBBScreen extends Component {
   store.setValue({
     diaryId: this.diaryId
   })
-
-  store.setValue({
-    testId: 'test2'
-  })
   
-  	
-  axios.post('/api/photo/'+store.getValue().diaryId, this.form).then(	
+   await axios.post('/api/photo/'+this.state.diaryId, this.form).then(	
     res =>{	
-      console.log('upload photo',res)	
-      
+      console.log('upload photo->',res.data)	
+      this.state.cover = res.data
+      console.log('upload photo again->',this.state.cover)	
    })
+
+
+  this.sendData_button_Complete_to_listData1();
+  console.log('upload photo again???->',this.state.cover)	
+  this.props.appActions.goToScreen('newfacerec', { transitionId: 'fadeIn' });
    
   }
-  onClick_elAddPic = (ev) => {
-  
-  }
-  
-  
+
   sendData_button_Complete_to_listData1 = () => {
     const dataSheet = this.props.appActions.getDataSheet('listData1');
   
-  //  let row = this.props.dataSheetRow || {
-  //  };
-  //  row = { ...row, 
-  //    albumName: this.state.albumName,
+   let row = this.props.dataSheetRow || {
+   };
+   console.log('upload photo again listdata here?->',this.state.cover)	
+   row = { ...row, 
+     albumId: this.state.albumId,
+     albumName: this.state.albumName,
+     diaryId: this.state.diaryId,
+     photoCover: this.state.cover,
+     key: Math.random()*(1000)
      
-  //   };
-  //   if (this.props.dataSheetId === dataSheet.id) {
-  //     this.props.appActions.updateInDataSheet('listData1', row);
-  //   } else {
-  //     this.props.appActions.addToDataSheet('listData1', row);
-  //   }
+     
+    };
+    if (this.props.dataSheetId === dataSheet.id) {
+      this.props.appActions.updateInDataSheet('listData1', row);
+    } else {
+      this.props.appActions.addToDataSheet('listData1', row);
+    }
   
 
   }
+
+  onClick_elAddPic = (ev) => {
+  
+  }
+
   changePath = (e) => {
         
     var filenumber = e.target.files.length
