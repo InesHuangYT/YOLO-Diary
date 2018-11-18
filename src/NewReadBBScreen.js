@@ -41,7 +41,7 @@ export default class NewReadBBScreen extends Component {
     super(props);
     
     this.state = {
-      field: this.props.dataSheetRow.field,
+      // field: this.props.dataSheetRow.field,
       albumId: this.props.dataSheetRow.albumId,
       albumName: this.props.albumName,
       src:'',
