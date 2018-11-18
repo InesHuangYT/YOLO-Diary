@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import img_elPmenu from './images/Pmenu01.png';
+import img_elPmenu from './images/Pmenu02.png';
 
 // UI framework component imports
 import Input from 'muicss/lib/react/input';
