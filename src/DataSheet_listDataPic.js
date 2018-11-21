@@ -5,13 +5,13 @@ import axios from 'axios';
 
 export default class DataSheet_listDataPic extends DataSheetBase {
 
-  // constructor(props){
-  //   super(props)
+  constructor(props){
+    super(props)
   
-  //   this.state = {
-  //     src:''
-  //   }
-  // }
+    this.state = {
+      src:''
+    }
+  }
 
 
   componentDidMount(){
@@ -21,16 +21,16 @@ export default class DataSheet_listDataPic extends DataSheetBase {
     console.log('picture Check!',this.props)
     axios.get(`/api/photo/downloadDiaryPhoto/${this.props.dataSheetRow.diaryId}`).then(res => {
       console.log('load picture->', res)
-      // for(var i = 0; i < res.data.length; i++){
-      //    item = {}
-      //    this.addItem(item)
-      //    item['photo'] = res.data[i].photodata
+      for(var i = 0; i < res.data.length; i++){
+         item = {}
+         this.addItem(item)
+         item['photo'] = res.data[i].photodata
+         this.setState({src: res.data[i].photodata})
+        item.key = Math.random()*(1000)
   
-      //   item.key = Math.random()*(1000)
-  
-        //this.sendData_button_Next_to_listData1();
+        this.sendData_button_Next_to_listData1();
      
-      // }
+      }
      
   
     })
@@ -57,15 +57,15 @@ export default class DataSheet_listDataPic extends DataSheetBase {
 
 
   makeDefaultItems() {
-    // eslint-disable-next-line no-unused-vars
-    let key = 1;
-    // eslint-disable-next-line no-unused-vars
-    let item;
+    // // eslint-disable-next-line no-unused-vars
+    // let key = 1;
+    // // eslint-disable-next-line no-unused-vars
+    // let item;
     
-    item = {};
-    this.items.push(item);
-    item['03'] = "";
-    item.key = key++;
+    // item = {};
+    // this.items.push(item);
+    // item['03'] = "";
+    // item.key = key++;
     
     // item = {};
     // this.items.push(item);

@@ -214,7 +214,7 @@ export default class NewUserDiaryScreen extends Component {
           <div className='hasNestedComps elList'>
             <ul style={style_list}>
               {items_list.map((row, index) => {
-                let itemComp = (row._componentId) ? listComps_list[row._componentId] : <ListPic dataSheetId={'listDataPic'} dataSheetRow={row} appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} {...this.props} />;
+                let itemComp = (row._componentId) ? listComps_list[row._componentId] : <ListPic dataSheetId={'listDataPic'} dataSheetRow={row} appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings}  />;
                 return (<li key={row.key}>{itemComp}</li>)
               })}
             </ul>
