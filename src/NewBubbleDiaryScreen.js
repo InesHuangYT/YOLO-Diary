@@ -21,16 +21,16 @@ export default class NewBubbleDiaryScreen extends Component {
 
   componentDidMount() {
      
-    let items_list2 = [];
-    items_list2 = this.props.appActions.getDataSheet('listUserBubble').items;
-    if(items_list2.length != 0){
-    console.log('listUserBubble check->', items_list2)
-    items_list2.map((row) =>{
-      this.props.appActions.removeFromDataSheet('listUserBubble',row)
-    })
+    // let items_list2 = [];
+    // items_list2 = this.props.appActions.getDataSheet('listUserBubble').items;
+    // if(items_list2.length != 0){
+    // console.log('listUserBubble check->', items_list2)
+    // items_list2.map((row) =>{
+    //   this.props.appActions.removeFromDataSheet('listUserBubble',row)
+    // })
    
-    console.log('listUserBubble check after remove->', this.props.appActions.getDataSheet('listUserBubble').items)
-    }
+    // console.log('listUserBubble check after remove->', this.props.appActions.getDataSheet('listUserBubble').items)
+    // }
     //removeItem(items_list2)
     
     // console.log(store.getValue())

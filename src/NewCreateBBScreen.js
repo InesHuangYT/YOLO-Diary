@@ -106,8 +106,8 @@ export default class NewCreateBBScreen extends Component {
     console.log('exist?', store.getValue().albumId)
  await axios.post('/api/diary/'+ store.getValue().albumId ,diary)
   .then(res => {
-    console.log(res);
-    this.state.diaryId = res.data.id;
+    console.log('Create albumID CHECK->',res);
+    this.setState({diaryId : res.data.id});
     
   }).catch(function(error){
     alert("Wrong diary");
@@ -115,10 +115,12 @@ export default class NewCreateBBScreen extends Component {
 
  
   store.setValue({
-    diaryId: this.diaryId
+    diaryId: this.state.diaryId
   })
+
+  console.log('diaryId have been stored?', store.getValue().diaryId)
   
-   await axios.post('/api/photo/'+this.state.diaryId, this.form).then(	
+   await axios.post(`/api/photo/${store.getValue().diaryId}`, this.form).then(	
     res =>{	
       console.log('upload photo->',res.data)	
       this.state.cover = res.data
