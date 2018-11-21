@@ -5,7 +5,7 @@ import setAuthorizationToken from './util/APIUtils';
 import axios from 'axios';
 // UI framework component imports
 import Input from 'muicss/lib/react/input';
-
+import YOLO from './images/YOLO.png';
 
 export default class NavBar extends Component {
 
@@ -131,10 +131,10 @@ export default class NavBar extends Component {
       <div className="NavBar" style={baseStyle}>
         <div className="compContent">
           <div className='cardBg elCard_ToolBar' style={style_card_ToolBar_outer}>
+          <img src={YOLO} alt=''/>
             <div style={style_card_ToolBar} />
-          
           </div>
-          
+
           <button className='headlineFont elButton' style={style_button}  onClick={this.onClick_elButton} >
             {this.props.locStrings.navbar_button_831261}
           </button>
@@ -148,13 +148,6 @@ export default class NavBar extends Component {
           <button className='headlineFont elButton_HomePage' style={style_button_HomePage}  onClick={this.onClick_elButton_HomePage} >
             {this.props.locStrings.comp1_button_homepage_232670}
           </button>
-          <div className='font-SFUITextRegular  elSubtitle' style={style_subtitle}>
-            <div>{this.props.locStrings.comp1_subtitle_571540}</div>
-          </div>
-        
-          <div className='font-SFUITextBold  elTitle_yolo' style={style_title_yolo}>
-            <div>{this.props.locStrings.comp1_title_yolo_1039822}</div>
-          </div>
         </div>
       </div>
     )

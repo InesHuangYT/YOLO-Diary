@@ -184,7 +184,7 @@ export default class NewReadBBScreen extends Component {
           
           </div>
           
-          <div className='hasNestedComps elList' key = {Math.random()*100}>
+          <div className='hasNestedComps elList'>
           
             <div style={style_list}>
               {items_list.map((row, index) => {

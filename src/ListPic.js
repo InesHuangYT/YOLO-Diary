@@ -5,7 +5,7 @@ import img_el03 from './images/03.jpg';
 import axios from 'axios';
 
 
-export default class ListPic extends Component {
+export default class ListPic extends DataSheetBase {
 
  
 
@@ -17,45 +17,46 @@ constructor(props){
   }
 }
 
-// componentDidMount(){
+componentDidMount(){
 
-//   let _this = this
-//   let item
+  let _this = this
+  let item
 
-//   console.log('picture Check!',this.props.dataSheetRow.diaryId)
-//   axios.get(`/api/photo/downloadDiaryPhoto/${this.props.dataSheetRow.diaryId}`).then(res => {
-//     console.log('load picture->', res)
-//     for(var i = 0; i < res.data.length; i++){
-//        item = {}
-//        this.addItem(item)
-//        item['photo'] = res.data[i].photodata
-//       _this.setState({src: res.data[i].photodata})
+  console.log('picture Check!',this.props.dataSheetRow.diaryId)
+  axios.get(`/api/photo/downloadDiaryPhoto/${this.props.dataSheetRow.diaryId}`).then(res => {
+    console.log('load picture->', res)
+    for(var i = 0; i < res.data.length; i++){
+      console.log('photo ENTER')
+      //  item = {}
+      //  this.addItem(item)
+      //  item['photo'] = res.data[i].photodata
+      // _this.setState({src: res.data[i].photodata})
 
-//       item.key = Math.random()*(1000)
+      // item.key = Math.random()*(1000)
 
-//       this.sendData_button_Next_to_listData1();
+      // this.sendData_button_Next_to_listData1();
    
-//     }
+    }
    
 
-//   })
-// }
+  })
+}
 
-// sendData_button_Next_to_listData1 = () => {
-//   const dataSheet = this.props.appActions.getDataSheet('listDataPic');
+sendData_button_Next_to_listData1 = () => {
+  const dataSheet = this.props.appActions.getDataSheet('listDataPic');
 
-//   let row = this.props.dataSheetRow || {
-//   };
-//   row = {
-//     ...row,
-//     diaryId: this.state.diaryId,
-//   };
-//   if (this.props.dataSheetId === dataSheet.id) {
-//     this.props.appActions.updateInDataSheet('listDataPic', row);
-//   } else {
-//     this.props.appActions.addToDataSheet('listDataPic', row);
-//   }
-// }
+  let row = this.props.dataSheetRow || {
+  };
+  row = {
+    ...row,
+    photo: this.state.src,
+  };
+  if (this.props.dataSheetId === dataSheet.id) {
+    this.props.appActions.updateInDataSheet('listDataPic', row);
+  } else {
+    this.props.appActions.addToDataSheet('listDataPic', row);
+  }
+}
 
 
 
