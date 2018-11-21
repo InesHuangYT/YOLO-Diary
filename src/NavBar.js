@@ -133,8 +133,11 @@ export default class NavBar extends Component {
           <div className='cardBg elCard_ToolBar' style={style_card_ToolBar_outer}>
           <img src={YOLO} alt=''/>
             <div style={style_card_ToolBar} />
+            
           </div>
-
+        
+          
+          
           <button className='headlineFont elButton' style={style_button}  onClick={this.onClick_elButton} >
             {this.props.locStrings.navbar_button_831261}
           </button>
@@ -148,6 +151,7 @@ export default class NavBar extends Component {
           <button className='headlineFont elButton_HomePage' style={style_button_HomePage}  onClick={this.onClick_elButton_HomePage} >
             {this.props.locStrings.comp1_button_homepage_232670}
           </button>
+         
         </div>
       </div>
     )
