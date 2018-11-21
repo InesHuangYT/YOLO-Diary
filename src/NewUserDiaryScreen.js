@@ -37,14 +37,14 @@ export default class NewUserDiaryScreen extends Component {
     //'/api/album/'
     console.log('showdiary', this.props)
     let _this = this;
-    for(var i =0; i < this.props.dataSheetRow.diaryId.length; i++){
-      axios.get('/api/diary/diaryId/'+this.props.dataSheetRow.diaryId[i].id).then(res => {
+    // for(var i =0; i < this.props.dataSheetRow.diaryId.length; i++){
+      axios.get('/api/diary/diaryId/'+this.props.dataSheetRow.diaryId).then(res => {
       
       console.log('read res->',res);
-      console.log(res.data.text);
+      
       _this.setState({textarea :res.data.text});
     })
-  }
+  // }
   _this.setState({field :this.props.dataSheetRow.albumName});
   
     
@@ -213,7 +213,7 @@ export default class NewUserDiaryScreen extends Component {
           <div className='hasNestedComps elList'>
             <ul style={style_list}>
               {items_list.map((row, index) => {
-                let itemComp = (row._componentId) ? listComps_list[row._componentId] : <ListPic dataSheetId={'listDataPic'} dataSheetRow={row} appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} />;
+                let itemComp = (row._componentId) ? listComps_list[row._componentId] : <ListPic dataSheetId={'listDataPic'} dataSheetRow={row} appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} {...this.props} />;
                 return (<li key={row.key}>{itemComp}</li>)
               })}
             </ul>

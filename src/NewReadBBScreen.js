@@ -189,7 +189,7 @@ export default class NewReadBBScreen extends Component {
             <div style={style_list}>
               {items_list.map((row, index) => {
                 let itemClasses = `gridItem cols5_${index % 5}`;
-                let itemComp = (row._componentId) ? listComps_list[row._componentId] : <ListItem2 dataSheetId={'listUserBubble'} dataSheetRow={row} appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} {...this.props}/>;
+                let itemComp = (row._componentId) ? listComps_list[row._componentId] : <ListItem2 dataSheetId={'listUserBubble'} dataSheetRow={row} appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} />;
                
 
                 return (

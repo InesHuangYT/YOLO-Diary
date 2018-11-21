@@ -4,6 +4,7 @@ import axios from 'axios';
 
 
 
+
 export default class DataSheet_listUserBubble extends DataSheetBase {
 
 
@@ -22,7 +23,6 @@ export default class DataSheet_listUserBubble extends DataSheetBase {
 
   componentDidUpdate(prevProps) {
     // Typical usage (don't forget to compare props):
-
     // if (this.props == prevProps){
     //   console.log('props!!',this.props)
     //   console.log(prevProps)
@@ -42,7 +42,8 @@ export default class DataSheet_listUserBubble extends DataSheetBase {
           item = {};
           this.addItem(item)
           item['diaryId'] = res.data.content[i].id;
-          this.setState({diarvId: res.data.content[i].id })
+          this.setState({diaryId: res.data.content[i].id })
+          
           item.key = Math.random()*(1000)
           
           this.sendData_button_Next_to_listData1();
@@ -51,20 +52,10 @@ export default class DataSheet_listUserBubble extends DataSheetBase {
       
         console.log('buble item', this.items)
     })
-
-   
-    
-       
-       
-
-  
-     
-      
+           
     }
 
     componentWillUnmount(){
-          
-        
 
     }
 
@@ -101,7 +92,7 @@ export default class DataSheet_listUserBubble extends DataSheetBase {
 
     return (
       <div>
-        {/* < NewReadBBScreen getAlbumId = {this.getAlbumId.bind(this)}/> */}
+        {/* <ListItem2 diaryId = {this.props.appActions.getDataSheet('listUserBubble')}/> */}
       </div>
 
     );
