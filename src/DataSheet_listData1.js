@@ -16,7 +16,7 @@ export default class DataSheet_listData1 extends DataSheetBase {
     
     Axios.get("/api/album/albums").then(res => {
       
-      console.log('albums ->',res)
+      //console.log('albums ->',res)
       
       var elements = res.data.length
       for(var i = 0; i < elements ; i++){
@@ -36,7 +36,7 @@ export default class DataSheet_listData1 extends DataSheetBase {
         item.key = Math.random()*(1000);
   
       }
-      console.log('album datasheet item',this.items)
+      //console.log('album datasheet item',this.items)
     })
 
       

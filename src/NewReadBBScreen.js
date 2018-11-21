@@ -9,10 +9,9 @@ import ListItem2 from './ListItem2';
 import Input from 'muicss/lib/react/input';
 import Button from 'muicss/lib/react/button';
 import Container from 'muicss/lib/react/container';
-import store from './store';
 import DataSheet_listUserBubble from './DataSheet_listUserBubble.js';
 import axios from 'axios';
-import img_el02 from './images/02.jpg';
+
 export default class NewReadBBScreen extends Component {
 
   // Properties used by this component:
@@ -78,7 +77,7 @@ export default class NewReadBBScreen extends Component {
       layoutFlowStyle.overflow = 'hidden';
     }
     
-    const dataSheet_listUserBubble = this.props.dataSheets['listUserBubble'];
+    
     const style_background = {
         width: '100%',
         height: '100%',
@@ -107,9 +106,7 @@ export default class NewReadBBScreen extends Component {
     //     boxShadow: '0.0px 1.8px 14px rgba(0, 0, 0, 0.1600)',
     //     pointerEvents: 'none',
     //  };
-    const style_02 = {
-      height: 'auto',
-     };
+    
     const style_02_outer = {        
       pointerEvents: 'none',
      };
