@@ -61,7 +61,7 @@ export default class ListItem1 extends Component {
   
   
   textInputChanged_albumName = (event) => {
-    this.setState({albumName: event.target.value});
+    this.setState({albumName: this.state.albumName});
   }
 
   
@@ -80,7 +80,7 @@ export default class ListItem1 extends Component {
     const style_field = {
         display: 'block',
      };
-     const value_field = this.props.albumName;
+     const value_field = this.props.dataSheetRow.albumName;
     
     const style_card_outer = {
       //backgroundColor: 'white',
