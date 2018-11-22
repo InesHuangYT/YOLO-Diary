@@ -44,6 +44,8 @@ import DataSheet_listData2 from './DataSheet_listData2.js';
 import DataSheet_listData3 from './DataSheet_listData3.js';
 import DataSheet_listUserBubble from './DataSheet_listUserBubble.js';
 import DataSheet_listDataPic from './DataSheet_listDataPic.js';
+import DataSheet_faceListData from './DataSheet_faceListData.js';
+import DataSheet_dphotoListData from './DataSheet_dphotoListData.js';
 
 export default class App extends Component {
   constructor(props) {
@@ -56,6 +58,8 @@ export default class App extends Component {
     this.dataSheets['listData3'] = new DataSheet_listData3('listData3', this.dataSheetDidUpdate);
     this.dataSheets['listUserBubble'] = new DataSheet_listUserBubble('listUserBubble', this.dataSheetDidUpdate);
     this.dataSheets['listDataPic'] = new DataSheet_listDataPic('listDataPic', this.dataSheetDidUpdate);
+    this.dataSheets['faceListData'] = new DataSheet_faceListData('faceListData', this.dataSheetDidUpdate);
+    this.dataSheets['dphotoListData'] = new DataSheet_dphotoListData('dphotoListData', this.dataSheetDidUpdate);
     
     this.dataSlots = {};
     this.dataSlots['ds_activeLang'] = "en";

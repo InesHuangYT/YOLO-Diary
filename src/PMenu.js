@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import img_elPmenu from './images/PMenu_elPmenu_511455.png';
-import 賴桑 from './images/賴桑.jpg';
+import img_elPmenu from './images/Pmenu02.png';
+
 // UI framework component imports
 import Input from 'muicss/lib/react/input';
 import './UploadPic.css';

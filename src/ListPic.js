@@ -4,7 +4,6 @@ import DataSheetBase from './DataSheetBase.js';
 import img_el03 from './images/03.jpg';
 import axios from 'axios';
 
-
 export default class ListPic extends DataSheetBase {
 
  
@@ -51,12 +50,33 @@ componentDidMount() {
 //   }
 // }
 
+  componentDidMount() {
+    
+    console.log('listPic check props ->',this.props)
+    let _this = this;
+    // this.config = {
+    //   headers:{
+    //   'Authorization':'Bearer '+ sessionStorage.getItem('accesstoken')
+    //   }
+      
+    // };
+      axios.get(this.props.dataSheetRow.photoId).then(res=>{
+        console.log(this.props.dataSheetRow.photoId)
+      console.log('photoId', res)
+      _this.setState({src:res.data.photodata})
+      // _this.setState({src:Buffer.from(res.data, 'binary').toString('base64')})
+      //console.log('buffer=>', _this.state.src)
+    })
+    
+    
+    
+  }
   render() {
     // eslint-disable-next-line no-unused-vars
     let baseStyle = {};
     // eslint-disable-next-line no-unused-vars
     let layoutFlowStyle = {};
-    
+
     const style_03 = {
         height: 'auto',
      };
