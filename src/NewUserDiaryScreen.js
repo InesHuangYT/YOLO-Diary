@@ -5,6 +5,7 @@ import img_elBubbleDiaryBG from './images/NewHomeNotificationScreen_elBubbleDiar
 import img_elOriDiaryBB from './images/NewCreateBBScreen_elOriDiaryBB_1024639.png';
 import img_elAddPicBB from './images/NewCreateBBScreen_elAddPicBB_474204.png';
 import ListPic from './ListPic';
+import DataSheet_listDataPic from './DataSheet_listDataPic'
 
 // UI framework component imports
 import Button from 'muicss/lib/react/button';
@@ -37,14 +38,14 @@ export default class NewUserDiaryScreen extends Component {
     //'/api/album/'
     console.log('showdiary', this.props)
     let _this = this;
-    for(var i =0; i < this.props.dataSheetRow.diaryId.length; i++){
-      axios.get('/api/diary/diaryId/'+this.props.dataSheetRow.diaryId[i].id).then(res => {
+    // for(var i =0; i < this.props.dataSheetRow.diaryId.length; i++){
+      axios.get('/api/diary/diaryId/'+this.props.dataSheetRow.diaryId).then(res => {
       
       console.log('read res->',res);
-      console.log(res.data.text);
+      
       _this.setState({textarea :res.data.text});
     })
-  }
+  // }
   _this.setState({field :this.props.dataSheetRow.albumName});
   
     
@@ -213,13 +214,17 @@ export default class NewUserDiaryScreen extends Component {
           <div className='hasNestedComps elList'>
             <ul style={style_list}>
               {items_list.map((row, index) => {
-                let itemComp = (row._componentId) ? listComps_list[row._componentId] : <ListPic dataSheetId={'listDataPic'} dataSheetRow={row} appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} />;
+                let itemComp = (row._componentId) ? listComps_list[row._componentId] : <ListPic dataSheetId={'listDataPic'} dataSheetRow={row} appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings}  />;
                 return (<li key={row.key}>{itemComp}</li>)
               })}
             </ul>
           
           </div>
+<<<<<<< HEAD
           <div className='inherit'>
+=======
+          <div className='Picture'>
+>>>>>>> e0d8bf4fbc2feb2ff77292761c4e165f6f18718e
                   <DataSheet_listDataPic {...this.props}/>>
                   </div>
         </div>

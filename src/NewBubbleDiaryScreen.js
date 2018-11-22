@@ -4,7 +4,7 @@ import img_elBubbleDiaryBG from './images/NewFaceRecScreen_elBubbleDiaryBG_53437
 import NavBar from './NavBar';
 import Addbubble from './Addbubble';
 import ListItem1 from './ListItem1';
-import Axios from 'axios';
+// import Axios from 'axios';
 
 
 
@@ -12,7 +12,7 @@ import Axios from 'axios';
 // UI framework component imports
 import Button from 'muicss/lib/react/button';
 import Container from 'muicss/lib/react/container';
-import store from './store';
+// import store from './store';
 
 export default class NewBubbleDiaryScreen extends Component {
 
@@ -21,16 +21,16 @@ export default class NewBubbleDiaryScreen extends Component {
 
   componentDidMount() {
      
-    let items_list2 = [];
-    items_list2 = this.props.appActions.getDataSheet('listUserBubble').items;
-    if(items_list2.length != 0){
-    console.log('listUserBubble check->', items_list2)
-    items_list2.map((row) =>{
-      this.props.appActions.removeFromDataSheet('listUserBubble',row)
-    })
+    // let items_list2 = [];
+    // items_list2 = this.props.appActions.getDataSheet('listUserBubble').items;
+    // if(items_list2.length != 0){
+    // console.log('listUserBubble check->', items_list2)
+    // items_list2.map((row) =>{
+    //   this.props.appActions.removeFromDataSheet('listUserBubble',row)
+    // })
    
-    console.log('listUserBubble check after remove->', this.props.appActions.getDataSheet('listUserBubble').items)
-    }
+    // console.log('listUserBubble check after remove->', this.props.appActions.getDataSheet('listUserBubble').items)
+    // }
     //removeItem(items_list2)
     
     // console.log(store.getValue())
@@ -57,7 +57,7 @@ export default class NewBubbleDiaryScreen extends Component {
       layoutFlowStyle.overflow = 'hidden';
     }
 
-    const dataSheet_listData1 = this.props.dataSheets['listData1'];
+    // const dataSheet_listData1 = this.props.dataSheets['listData1'];
     const style_background = {
       width: '100%',
       height: '100%',
@@ -122,7 +122,7 @@ export default class NewBubbleDiaryScreen extends Component {
             <div style={style_list} >
               {items_list.map((row, index) => {
                 let itemClasses = `gridItem cols3_${index % 3}`;
-                let itemComp = (row._componentId) ? listComps_list[row._componentId] : <ListItem1 dataSheetId={'listData1'} dataSheetRow={row} albumName={row.albumName} albumId = {row.albumId} appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} {...this.props}/>;
+                let itemComp = (row._componentId) ? listComps_list[row._componentId] : <ListItem1 dataSheetId={'listData1'} dataSheetRow={row}  appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} {...this.props}/>;
                 
                 return (
                   <div className={itemClasses} key={row.key}>

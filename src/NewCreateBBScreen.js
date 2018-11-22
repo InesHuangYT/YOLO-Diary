@@ -5,10 +5,10 @@ import img_elBubbleDiaryBG from './images/NewFaceRecScreen_elBubbleDiaryBG_53437
 import img_elOriDiaryBB from './images/NewCreateBBScreen_elOriDiaryBB_1024639.png';
 import img_elAddPicBB from './images/NewCreateBBScreen_elAddPicBB_474204.png';
 import img_elComplete from './images/NewCreateBBScreen_elComplete_945493.png';
-import UploadPic from './UploadPic.js';
-import Axios from 'axios';
+
+
 // UI framework component imports
-import Textarea from 'muicss/lib/react/textarea';
+
 import Container from 'muicss/lib/react/container';
 //import {Modal,message} from 'antd';
 import 'antd/dist/antd.css';
@@ -53,8 +53,8 @@ export default class NewCreateBBScreen extends Component {
 
   componentDidMount() {
     
-   this.state.albumName = store.getValue().albumName
-   this.state.albumId = store.getValue().albumId
+   this.setState({albumName:store.getValue().albumName})
+   this.setState({albumId : store.getValue().albumId})
   
   }
   
@@ -106,8 +106,8 @@ export default class NewCreateBBScreen extends Component {
     console.log('exist?', store.getValue().albumId)
  await axios.post('/api/diary/'+ store.getValue().albumId ,diary)
   .then(res => {
-    console.log(res);
-    this.state.diaryId = res.data.id;
+    console.log('Create albumID CHECK->',res);
+    this.setState({diaryId : res.data.id});
     
   }).catch(function(error){
     alert("Wrong diary");
@@ -115,13 +115,15 @@ export default class NewCreateBBScreen extends Component {
 
  
   store.setValue({
-    diaryId: this.diaryId
+    diaryId: this.state.diaryId
   })
+
+  console.log('diaryId have been stored?', store.getValue().diaryId)
   
-   await axios.post('/api/photo/'+this.state.diaryId, this.form).then(	
+   await axios.post(`/api/photo/${store.getValue().diaryId}`, this.form).then(	
     res =>{	
       console.log('upload photo->',res.data)	
-      this.state.cover = res.data
+      this.setState({cover : res.data})
       console.log('upload photo again->',this.state.cover)	
    })
 
@@ -253,10 +255,10 @@ upload = () => {
     const style_addPicBB_outer = {
         pointerEvents: 'none',
      };
-     const style_field = {
-      display: 'block',
-      //boxSizing: 'border-box'
-   };
+  //    const style_field = {
+  //     display: 'block',
+  //     //boxSizing: 'border-box'
+  //  };
   const style_textarea = {
       display: 'block',
     

@@ -1,25 +1,54 @@
 import React, { Component } from 'react';
 import './App.css';
+import DataSheetBase from './DataSheetBase.js';
 import img_el03 from './images/03.jpg';
 import axios from 'axios';
 
-export default class ListPic extends Component {
+export default class ListPic extends DataSheetBase {
 
-  // This component doesn't use any properties
-  constructor(props) {
-    super(props);
+ 
+
+constructor(props){
+  super(props)
+
+  this.state = {
+    src:''
     
-    this.state = {
-      diaryId : this.props.diaryId,
-      photoId : this.props.photoId,
-      src:'',
-      // config : {
-      //   headers:{
-      //   'Authorization':'Bearer '+ sessionStorage.getItem('accesstoken')
-      //   }
-      // }
-    }
+    
   }
+}
+
+componentDidMount() {
+
+   let _this = this
+  
+
+   console.log('picture Check---------->',this.props)
+       _this.setState({src: this.props.dataSheetRow.photo})
+
+  
+
+
+   
+
+   }
+
+
+// sendData_button_Next_to_listData1 = () => {
+//   const dataSheet = this.props.appActions.getDataSheet('listDataPic');
+
+//   let row = this.props.dataSheetRow || {
+//   };
+//   row = {
+//     ...row,
+//     photo: this.state.src,
+//   };
+//   if (this.props.dataSheetId === dataSheet.id) {
+//     this.props.appActions.updateInDataSheet('listDataPic', row);
+//   } else {
+//     this.props.appActions.addToDataSheet('listDataPic', row);
+//   }
+// }
 
   componentDidMount() {
     
@@ -58,8 +87,14 @@ export default class ListPic extends Component {
     return (
       <div className="ListPic" style={baseStyle}>
         <div className="layoutFlow">
+<<<<<<< HEAD
           {/* <div className='el03' style={style_03_outer}>
             <img style={style_03} src={img_el03} alt=""  />
+=======
+          <div className='el03' style={style_03_outer}>
+          
+            <img style={style_03} src={"data:image/jpeg;base64, " + this.state.src} alt=""  key = {this.props.dataSheetRow.key}/>
+>>>>>>> e0d8bf4fbc2feb2ff77292761c4e165f6f18718e
           
           </div> */}
           

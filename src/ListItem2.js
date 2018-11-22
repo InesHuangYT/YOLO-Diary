@@ -24,7 +24,8 @@ export default class ListItem2 extends Component {
 
   onClick_elUserBubble = (ev) => {
     // Go to screen 'NewUserDiary'
-    console.log('item2',this.props);
+    let check = this.props
+    console.log('item2',check);
     this.props.appActions.goToScreen('newuserdiary', { ...this.props, transitionId: 'fadeIn' });
   
   }

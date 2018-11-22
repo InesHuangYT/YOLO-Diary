@@ -2037,8 +2037,14 @@ height: 240px;
     top: 0px;
     width: 2061px;
     height: 115px;
+    opacity: 0.75;
   }
-
+  .NavBar .elCard_ToolBar img{
+    position: absolute;
+    left: 40px;
+    top: 3px;
+    width: 450px;
+  }
 .NavBar .elButton {
   cursor: pointer;
   border: 0.0px solid transparent;

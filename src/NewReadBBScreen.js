@@ -9,17 +9,16 @@ import ListItem2 from './ListItem2';
 import Input from 'muicss/lib/react/input';
 import Button from 'muicss/lib/react/button';
 import Container from 'muicss/lib/react/container';
-import store from './store';
 import DataSheet_listUserBubble from './DataSheet_listUserBubble.js';
 import axios from 'axios';
-import img_el02 from './images/02.jpg';
+
 export default class NewReadBBScreen extends Component {
 
   // Properties used by this component:
   // appActions, deviceInfo, dataSheetRow
 
   componentDidMount() {
-    console.log('readbb check props', this.props)
+    
     console.log('item1 check props ->',this.props)
     let _this = this;
     // this.config = {
@@ -41,7 +40,7 @@ export default class NewReadBBScreen extends Component {
     super(props);
     
     this.state = {
-      field: this.props.dataSheetRow.field,
+      // field: this.props.dataSheetRow.field,
       albumId: this.props.dataSheetRow.albumId,
       albumName: this.props.albumName,
       src:'',
@@ -78,7 +77,7 @@ export default class NewReadBBScreen extends Component {
       layoutFlowStyle.overflow = 'hidden';
     }
     
-    const dataSheet_listUserBubble = this.props.dataSheets['listUserBubble'];
+    
     const style_background = {
         width: '100%',
         height: '100%',
@@ -107,9 +106,7 @@ export default class NewReadBBScreen extends Component {
     //     boxShadow: '0.0px 1.8px 14px rgba(0, 0, 0, 0.1600)',
     //     pointerEvents: 'none',
     //  };
-    const style_02 = {
-      height: 'auto',
-     };
+    
     const style_02_outer = {        
       pointerEvents: 'none',
      };
@@ -184,12 +181,12 @@ export default class NewReadBBScreen extends Component {
           
           </div>
           
-          <div className='hasNestedComps elList' key = {Math.random()*100}>
+          <div className='hasNestedComps elList'>
           
             <div style={style_list}>
               {items_list.map((row, index) => {
                 let itemClasses = `gridItem cols5_${index % 5}`;
-                let itemComp = (row._componentId) ? listComps_list[row._componentId] : <ListItem2 dataSheetId={'listUserBubble'} dataSheetRow={row} appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} {...this.props}/>;
+                let itemComp = (row._componentId) ? listComps_list[row._componentId] : <ListItem2 dataSheetId={'listUserBubble'} dataSheetRow={row} appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} />;
                
 
                 return (
