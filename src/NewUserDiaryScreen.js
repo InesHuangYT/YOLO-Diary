@@ -5,7 +5,7 @@ import img_elBubbleDiaryBG from './images/NewHomeNotificationScreen_elBubbleDiar
 import img_elOriDiaryBB from './images/NewCreateBBScreen_elOriDiaryBB_1024639.png';
 import img_elAddPicBB from './images/NewCreateBBScreen_elAddPicBB_474204.png';
 import ListPic from './ListPic';
-import DataSheet_listDataPic from './DataSheet_listDataPic'
+
 
 // UI framework component imports
 import Button from 'muicss/lib/react/button';
@@ -15,7 +15,7 @@ import 'antd/dist/antd.css';
 import img_el03 from './images/03.jpg';
 import axios from 'axios';
 import store from './store'
-
+import DataSheet_listDataPic from './DataSheet_listDataPic';
 export default class NewUserDiaryScreen extends Component {
 //`/api/album?albumId=${store.getValue().albumId}`
   // Properties used by this component:
