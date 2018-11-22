@@ -34,39 +34,23 @@ componentDidMount() {
    }
 
 
-// sendData_button_Next_to_listData1 = () => {
-//   const dataSheet = this.props.appActions.getDataSheet('listDataPic');
+sendData_button_Next_to_listData1 = () => {
+  const dataSheet = this.props.appActions.getDataSheet('listDataPic');
 
-//   let row = this.props.dataSheetRow || {
-//   };
-//   row = {
-//     ...row,
-//     photo: this.state.src,
-//   };
-//   if (this.props.dataSheetId === dataSheet.id) {
-//     this.props.appActions.updateInDataSheet('listDataPic', row);
-//   } else {
-//     this.props.appActions.addToDataSheet('listDataPic', row);
-//   }
-// }
+  let row = this.props.dataSheetRow || {
+  };
+  row = {
+    ...row,
+    photo: this.state.src,
+  };
+  if (this.props.dataSheetId === dataSheet.id) {
+    this.props.appActions.updateInDataSheet('listDataPic', row);
+  } else {
+    this.props.appActions.addToDataSheet('listDataPic', row);
+  }
 
-  componentDidMount() {
-    
-    console.log('listPic check props ->',this.props)
-    let _this = this;
-    // this.config = {
-    //   headers:{
-    //   'Authorization':'Bearer '+ sessionStorage.getItem('accesstoken')
-    //   }
-      
-    // };
-      axios.get(this.props.dataSheetRow.photoId).then(res=>{
-        console.log(this.props.dataSheetRow.photoId)
-      console.log('photoId', res)
-      _this.setState({src:res.data.photodata})
-      // _this.setState({src:Buffer.from(res.data, 'binary').toString('base64')})
-      //console.log('buffer=>', _this.state.src)
-    })
+
+  
     
     
     
