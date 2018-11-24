@@ -37,6 +37,25 @@ export default class DataSheet_listDataPic extends DataSheetBase {
     })
   }
 
+  componentWillUnmount(){
+    console.log('comWillUnMount')
+    
+    this.Delete_listData()
+
+  }
+
+  
+  Delete_listData = () => {
+    const length = this.props.appActions.getDataSheet('listDataPic').items.length
+     for(var i=0; i<length; i++){
+     this.props.appActions.removeFromDataSheet('listDataPic', this.props.appActions.getDataSheet('listDataPic').items[i])
+     }
+    console.log('show sheetdata',  this.props.appActions.getDataSheet('listDataPic'))
+
+   
+   }
+
+
  
 
   sendData_button_Next_to_listData1 = () => {

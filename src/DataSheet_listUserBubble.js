@@ -48,7 +48,7 @@ export default class DataSheet_listUserBubble extends DataSheetBase {
     }
 
     componentWillUnmount(){
-      console.log('comWillUnMount')
+      //console.log('comWillUnMount')
       
       this.Delete_listData()
 
@@ -60,7 +60,7 @@ export default class DataSheet_listUserBubble extends DataSheetBase {
     for(var i=0; i<length; i++){
     this.props.appActions.removeFromDataSheet('listUserBubble', this.props.appActions.getDataSheet('listUserBubble').items[i])
     }
-    console.log('show sheetdata',  this.props.appActions.getDataSheet('listUserBubble'))
+   // console.log('show sheetdata',  this.props.appActions.getDataSheet('listUserBubble'))
 
    
    }
