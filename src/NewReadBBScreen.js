@@ -59,10 +59,12 @@ export default class NewReadBBScreen extends Component {
   }
   
   onClick_elButton_back = (ev) => {
-    // Go back in screen navigation history
+   
     this.props.appActions.goBack();
   
   }
+
+ 
   
   render() {
     // eslint-disable-next-line no-unused-vars
@@ -181,7 +183,7 @@ export default class NewReadBBScreen extends Component {
           
           </div>
           
-          <div className='hasNestedComps elList'>
+          <div className='hasNestedComps elList' >
           
             <div style={style_list}>
               {items_list.map((row, index) => {
@@ -198,8 +200,8 @@ export default class NewReadBBScreen extends Component {
             </div>
           
           </div>
-          {/* <div className='NewBubbleDiaryScreen'> */}
-          <div className='inherit'>
+          <div className='NewBubbleDiaryScreen'>
+          {/* <div className='inherit'> */}
                   <DataSheet_listUserBubble {...this.props}/>>
                   </div>
         </div>

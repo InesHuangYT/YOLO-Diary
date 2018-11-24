@@ -43,7 +43,12 @@ export default class DataSheetBase extends Component{
   }
 
   removeItem(item, options) {
-    this.items = this.items.filter(i => i.key !== item.key);
+     this.items = this.items.filter(i => i.key !== item.key);
+
+    //  const com = Object.assign([], this.state.items)
+    //  com.splice(item, 1)
+    //  this.setState({items:com})
+    
   }
 
   replaceItemByRowIndex(idx, newItem, options) {

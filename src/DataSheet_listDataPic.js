@@ -9,24 +9,25 @@ export default class DataSheet_listDataPic extends DataSheetBase {
     super(props)
   
     this.state = {
-      src:''
+      src:'',
+     
     }
   }
 
 
   componentDidMount(){
 
-    let item
+     let item
   
     console.log('picture Check!',this.props)
     axios.get(`/api/photo/downloadDiaryPhoto/${this.props.dataSheetRow.diaryId}`).then(res => {
       console.log('load picture->', res)
       for(var i = 0; i < res.data.length; i++){
-         item = {}
+          item = {}
          this.addItem(item)
          item['photo'] = res.data[i].photodata
          this.setState({src: res.data[i].photodata})
-        item.key = Math.random()*(1000)
+         item.key = Math.random()*(1000)
   
         this.sendData_button_Next_to_listData1();
      
@@ -35,6 +36,8 @@ export default class DataSheet_listDataPic extends DataSheetBase {
   
     })
   }
+
+ 
 
   sendData_button_Next_to_listData1 = () => {
     const dataSheet = this.props.appActions.getDataSheet('listDataPic');
