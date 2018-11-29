@@ -5,6 +5,7 @@ import img_elBubbleDiaryBG from './images/NewFaceRecScreen_elBubbleDiaryBG_53437
 import img_elOriDiaryBB from './images/NewCreateBBScreen_elOriDiaryBB_1024639.png';
 import img_elAddPicBB from './images/NewCreateBBScreen_elAddPicBB_474204.png';
 import img_elComplete from './images/NewCreateBBScreen_elComplete_945493.png';
+import DataSheet_dphotoListData from './DataSheet_dphotoListData.js'
 
 
 // UI framework component imports
@@ -53,6 +54,7 @@ export default class NewCreateBBScreen extends Component {
 
   componentDidMount() {
     
+   
    this.setState({albumName:store.getValue().albumName})
    this.setState({albumId : store.getValue().albumId})
   
@@ -106,7 +108,7 @@ export default class NewCreateBBScreen extends Component {
     console.log('exist?', store.getValue().albumId)
  await axios.post('/api/diary/'+ store.getValue().albumId ,diary)
   .then(res => {
-    console.log('Create albumID CHECK->',res);
+    // console.log('Create albumID CHECK->',res);
     this.setState({diaryId : res.data.id});
     
   }).catch(function(error){
@@ -118,18 +120,21 @@ export default class NewCreateBBScreen extends Component {
     diaryId: this.state.diaryId
   })
 
-  console.log('diaryId have been stored?', store.getValue().diaryId)
+  // console.log('diaryId have been stored?', store.getValue().diaryId)
   
    await axios.post(`/api/photo/${store.getValue().diaryId}`, this.form).then(	
-    res =>{	
+    res =>{
+
       console.log('upload photo->',res.data)	
       this.setState({cover : res.data})
       console.log('upload photo again->',this.state.cover)	
+
    })
 
+  
 
   this.sendData_button_Complete_to_listData1();
-  console.log('upload photo again???->',this.state.cover)	
+  // console.log('upload photo again???->',this.state.cover)	
   this.props.appActions.goToScreen('newfacerec', { transitionId: 'fadeIn' });
    
   }
@@ -139,7 +144,7 @@ export default class NewCreateBBScreen extends Component {
   
    let row = this.props.dataSheetRow || {
    };
-   console.log('upload photo again listdata here?->',this.state.cover)	
+  //  console.log('upload photo again listdata here?->',this.state.cover)	
    row = { ...row, 
      albumId: this.state.albumId,
      albumName: this.state.albumName,
@@ -391,8 +396,10 @@ upload = () => {
           </div>
            
         </Modal>
-         
           </div>
+          <div>
+            <DataSheet_dphotoListData diaryId = {store.getValue().diaryId}/>
+           </div>
         </div>
       </Container>
     )

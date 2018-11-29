@@ -6,7 +6,7 @@ import img_elForgetPasswordBB from './images/NewForgetPasswordScreen_elForgetPas
 // UI framework component imports
 import Input from 'muicss/lib/react/input';
 import Container from 'muicss/lib/react/container';
-
+import YOLO from './images/YOLO.png';
 
 export default class NewForgetPasswordScreen extends Component {
 
@@ -137,14 +137,7 @@ export default class NewForgetPasswordScreen extends Component {
           <div className="foreground">
             <div className='cardBg elCard' style={style_card_outer}>
               <div style={style_card} />
-            
-            </div>
-            
-            <div className='font-arialRoundedMTBold  elTextCopy' style={style_textCopy}>
-              <div>{this.props.locStrings.newforgetpassword_textcopy_651338}</div>
-            </div>
-            <div className='font-arialRoundedMTBold  elText' style={style_text}>
-              <div>{this.props.locStrings.newforgetpassword_text_831062}</div>
+            <img src={YOLO} alt=''/>
             </div>
           </div>
         </div>

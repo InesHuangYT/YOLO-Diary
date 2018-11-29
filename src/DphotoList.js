@@ -5,7 +5,16 @@ import img_elGroupPhoto from './images/DphotoList_elGroupPhoto_205875.jpg';
 
 export default class DphotoList extends Component {
 
-  // This component doesn't use any properties
+ 
+   
+ componentDidMount(){
+   
+ }
+
+
+
+
+
 
   render() {
     // eslint-disable-next-line no-unused-vars

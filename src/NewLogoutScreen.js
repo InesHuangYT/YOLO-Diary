@@ -5,7 +5,7 @@ import img_elLogoutBB from './images/NewLogoutScreen_elLogoutBB_1001938.png';
 
 // UI framework component imports
 import Container from 'muicss/lib/react/container';
-
+import YOLO from './images/YOLO.png';
 
 export default class NewLogoutScreen extends Component {
 
@@ -112,15 +112,9 @@ export default class NewLogoutScreen extends Component {
           <div className="foreground">
             <div className='cardBg elCard' style={style_card_outer}>
               <div style={style_card} />
-            
+            <img src={YOLO} alt=''/>
             </div>
-            
-            <div className='font-arialRoundedMTBold  elTextCopy' style={style_textCopy}>
-              <div>{this.props.locStrings.newlogout_textcopy_289781}</div>
-            </div>
-            <div className='font-arialRoundedMTBold  elText' style={style_text}>
-              <div>{this.props.locStrings.newlogout_text_466357}</div>
-            </div>
+
           </div>
         </div>
       </Container>
