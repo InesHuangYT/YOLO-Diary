@@ -10,6 +10,7 @@ import DphotoList from './DphotoList';
 // UI framework component imports
 import Container from 'muicss/lib/react/container';
 import store from './store';
+import DataSheet_dphotoListData from './DataSheet_dphotoListData.js'
 
 export default class NewFaceRecScreen extends Component {
 
@@ -24,7 +25,7 @@ export default class NewFaceRecScreen extends Component {
   }
 
   componentDidMount() {
-    console.log(store.getValue())
+    console.log('FaceRec props', this.props)
     
   }
   onClick_elButton_PublishBubble = (ev) => {
@@ -188,6 +189,11 @@ items_dphotoLst = items_dphotoLst.concat(this.props.appActions.getDataSheet('dph
             <div style={style_button_PublishBubble}  onClick={this.onClick_elButton_PublishBubble}  />
           
           </div>
+
+         <div>
+          <DataSheet_dphotoListData {...this.props} />
+           </div>
+
         </div>
       </Container>
     )

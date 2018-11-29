@@ -135,7 +135,7 @@ export default class NewCreateBBScreen extends Component {
 
   this.sendData_button_Complete_to_listData1();
   // console.log('upload photo again???->',this.state.cover)	
-  this.props.appActions.goToScreen('newfacerec', { transitionId: 'fadeIn' });
+  this.props.appActions.goToScreen('newfacerec', { diaryId : store.getValue().diaryId , transitionId: 'fadeIn' });
    
   }
 
