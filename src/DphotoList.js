@@ -5,12 +5,12 @@ import img_elGroupPhoto from './images/DphotoList_elGroupPhoto_205875.jpg';
 
 export default class DphotoList extends Component {
 
- 
-   
- componentDidMount(){
-   
- }
 
+  
+
+
+   
+ 
 
 
 
@@ -33,7 +33,7 @@ export default class DphotoList extends Component {
       <div className="DphotoList" style={baseStyle}>
         <div className="layoutFlow">
           <div className='elGroupPhoto' style={style_groupPhoto_outer}>
-            <img style={style_groupPhoto} src={img_elGroupPhoto} alt=""  />
+            <img style={style_groupPhoto} src={"data:image/jpeg;base64, "+ this.props.dataSheetRow.photoData} key={this.props.dataSheetRow.key} alt=""  />
           
           </div>
           
