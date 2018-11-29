@@ -5,7 +5,7 @@ import img_elBubbleDiaryBG from './images/NewHomeNotificationScreen_elBubbleDiar
 import img_elOriDiaryBB from './images/NewCreateBBScreen_elOriDiaryBB_1024639.png';
 import img_elAddPicBB from './images/NewCreateBBScreen_elAddPicBB_474204.png';
 import ListPic from './ListPic';
-import DataSheet_listDataPic from './DataSheet_listDataPic'
+
 
 // UI framework component imports
 import Button from 'muicss/lib/react/button';
@@ -220,11 +220,7 @@ export default class NewUserDiaryScreen extends Component {
             </ul>
           
           </div>
-<<<<<<< HEAD
-          <div className='inherit'>
-=======
           <div className='Picture'>
->>>>>>> e0d8bf4fbc2feb2ff77292761c4e165f6f18718e
                   <DataSheet_listDataPic {...this.props}/>>
                   </div>
         </div>

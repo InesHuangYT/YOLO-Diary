@@ -700,14 +700,14 @@
     box-shadow:  0 15px 25px 0 rgba(0,0,0,0.2), 0 10px 25px 10px rgba(0,0,0,0.19);
   }
   .PMenu .elCard > * { 
-    
-    border-radius: 270px;
+ 
+  border-radius: 270px;
   width: 250px;
   height: 246px;
   }
 
 .PMenu .elCard button {
- 
+
   cursor: pointer;
   border: 0.0px solid transparent;
   border-radius: 270px;
@@ -741,6 +741,7 @@
     object-fit: cover;
   }
   .PMenu .elUppic > * { 
+  border-color: blue;
   width: 154px;
   height: 57px;
   }
@@ -2223,13 +2224,13 @@ height: 240px;
 
 .ListItem2 .elUserBubble {
   position: relative;
-  margin-top: 16px;
+  margin-top: 40px;
   width: 215px;
   margin-left: 13px;
 }
 .ListItem2 .elUserBubble > * { 
-width: 215px;
-height: 215px;
+width: 200px;
+height: 200px;
 }
 
 
@@ -2246,13 +2247,13 @@ height: 166px;
 } */
 .ListItem2 .elPic {
   position: relative;
-  margin-top: -193px;
+  margin-top: -180px;
   width: 166px;
   margin-left: 36px;
 }
 .ListItem2 .elPic > * { 
-width: 166px;
-height: 166px;
+width: 160px;
+height: 160px;
 }
 
 

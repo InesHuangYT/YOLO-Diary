@@ -87,14 +87,9 @@ componentDidMount() {
     return (
       <div className="ListPic" style={baseStyle}>
         <div className="layoutFlow">
-<<<<<<< HEAD
-          {/* <div className='el03' style={style_03_outer}>
-            <img style={style_03} src={img_el03} alt=""  />
-=======
           <div className='el03' style={style_03_outer}>
           
             <img style={style_03} src={"data:image/jpeg;base64, " + this.state.src} alt=""  key = {this.props.dataSheetRow.key}/>
->>>>>>> e0d8bf4fbc2feb2ff77292761c4e165f6f18718e
           
           </div> */}
           
