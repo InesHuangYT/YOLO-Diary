@@ -34,6 +34,7 @@ componentDidMount() {
    }
 
 
+<<<<<<< HEAD
 // sendData_button_Next_to_listData1 = () => {
 //   const dataSheet = this.props.appActions.getDataSheet('listDataPic');
 
@@ -67,6 +68,25 @@ componentDidMount() {
       // _this.setState({src:Buffer.from(res.data, 'binary').toString('base64')})
       //console.log('buffer=>', _this.state.src)
     })
+=======
+sendData_button_Next_to_listData1 = () => {
+  const dataSheet = this.props.appActions.getDataSheet('listDataPic');
+
+  let row = this.props.dataSheetRow || {
+  };
+  row = {
+    ...row,
+    photo: this.state.src,
+  };
+  if (this.props.dataSheetId === dataSheet.id) {
+    this.props.appActions.updateInDataSheet('listDataPic', row);
+  } else {
+    this.props.appActions.addToDataSheet('listDataPic', row);
+  }
+
+
+  
+>>>>>>> bd4dd49bc6abbd437bbd019ce4864798d1cf7ebe
     
     
     
@@ -91,7 +111,7 @@ componentDidMount() {
           
             <img style={style_03} src={"data:image/jpeg;base64, " + this.state.src} alt=""  key = {this.props.dataSheetRow.key}/>
           
-          </div> */}
+          </div>
           
         </div>
       </div>
