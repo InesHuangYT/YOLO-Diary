@@ -19,15 +19,15 @@ export default class DataSheet_listDataPic extends DataSheetBase {
 
   componentDidMount(){
 
-     let item
+    //  let item
   
     console.log('picture Check!',this.props)
     axios.get(`/api/photo/downloadDiaryPhoto/${this.props.dataSheetRow.diaryId}`).then(res => {
       console.log('load picture->', res)
       for(var i = 0; i < res.data.length; i++){
-          item = {}
-         this.addItem(item)
-         item['photo'] = res.data[i].photodata
+        //   item = {}
+        //  this.addItem(item)
+        //  item['photo'] = res.data[i].photodata
          this.setState({key: res.data[i].id})
          this.setState({src: res.data[i].photodata})
          

@@ -10,31 +10,30 @@ export default class DataSheet_dphotoListData extends DataSheetBase {
 
     this.state = {
       photoData:'',
+      key:'',
      
     }
   }
 
-  componentDidMount(){
+  componentDidMount = async()=>{
 
-  //   let item; 
+  
+   await axios.get(`/api/photo//downloadDiaryPhoto/${this.props.diaryId}`).then(res =>{
+    console.log('getAllphoto', res)
 
-  //   axios.get(`/api/photo//downloadDiaryPhoto/${this.props.diaryId}`).then(res =>{
-  //   console.log('getAllphoto', res)
-  //   for(var i; i<res.data.lengrh; i++){
-  //     item = {}
-  //     this.addItem(item)
-  //     item['photoData'] = res.data[i].photodata
-  //     item.key = Math.random()*(1000)
-  //     this.setState({photoData:res.data[i].photodata})
+     for(var i = 0; i < res.data.length; i++){
 
-  //     this.sendData_button_Next_to_listData1();
-  //   }
+      this.setState({photoData:res.data[i].photodata})
+      this.setState({key:res.data[i].id})
+      this.sendData_button_Next_to_listData1();
+      
+    }
 
-  // }).catch(function(error){
-  //   console.log('res fail')
-  // })
+  }).catch(function(error){
+    console.log('res fail')
+  })
 
-  // console.log('get photoListData',  this.props.appActions.getDataSheet('dphotoListData'))
+  console.log('get photoListData',  this.props.appActions.getDataSheet('dphotoListData'))
 
 
  
@@ -50,8 +49,8 @@ export default class DataSheet_dphotoListData extends DataSheetBase {
     let row = this.props.dataSheetRow || {
     };
     row = {
-      ...row,
       photoData: this.state.photoData,
+      key: this.state.key,
     };
     if (this.props.dataSheetId === dataSheet.id) {
       this.props.appActions.updateInDataSheet('dphotoListData', row);
