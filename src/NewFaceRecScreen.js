@@ -25,7 +25,7 @@ export default class NewFaceRecScreen extends Component {
   }
 
   componentDidMount() {
-    console.log('FaceRec props', this.props)
+  
     
   }
   onClick_elButton_PublishBubble = (ev) => {

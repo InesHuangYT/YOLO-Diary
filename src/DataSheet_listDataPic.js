@@ -10,6 +10,8 @@ export default class DataSheet_listDataPic extends DataSheetBase {
   
     this.state = {
       src:'',
+      key:''
+      
      
     }
   }
@@ -26,13 +28,14 @@ export default class DataSheet_listDataPic extends DataSheetBase {
           item = {}
          this.addItem(item)
          item['photo'] = res.data[i].photodata
+         this.setState({key: res.data[i].id})
          this.setState({src: res.data[i].photodata})
-         item.key = Math.random()*(1000)
+         
   
-        this.sendData_button_Next_to_listData1();
+         this.sendData_button_Next_to_listData1();
      
       }
-     
+      console.log('Picsheetdata',  this.props.appActions.getDataSheet('listDataPic'))
   
     })
   }
@@ -63,8 +66,10 @@ export default class DataSheet_listDataPic extends DataSheetBase {
   
     let row = this.props.dataSheetRow || {
     };
+    
     row = {
-      ...row,
+      // ...row,
+      key: this.state.key,
       photo: this.state.src,
     };
     if (this.props.dataSheetId === dataSheet.id) {
