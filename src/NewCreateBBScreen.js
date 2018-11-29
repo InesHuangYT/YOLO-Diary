@@ -397,9 +397,7 @@ upload = () => {
            
         </Modal>
           </div>
-          <div>
-            <DataSheet_dphotoListData diaryId = {store.getValue().diaryId}/>
-           </div>
+         
         </div>
       </Container>
     )

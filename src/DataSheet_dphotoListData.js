@@ -1,4 +1,5 @@
 import DataSheetBase from './DataSheetBase.js';
+import axios from 'axios';
 
 export default class DataSheet_dphotoListData extends DataSheetBase {
 
@@ -10,8 +11,11 @@ export default class DataSheet_dphotoListData extends DataSheetBase {
   }
 
   componentDidMount(){
-
-  console.log('show upload photo data--->', this.props)
+  
+  axios.get(`/api/photo//downloadDiaryPhoto/${this.props.diaryId}`).then(res =>{
+    console.log('getAllphoto', res)
+  })
+  console.log('show upload photo data--->', this.props.diaryId)
   
 
 
