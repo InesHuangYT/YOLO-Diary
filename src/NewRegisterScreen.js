@@ -7,7 +7,7 @@ import img_elNewRegister from './images/NewRegisterScreen_elNewRegister_896517.p
 // UI framework component imports
 import Input from 'muicss/lib/react/input';
 import Container from 'muicss/lib/react/container';
-
+import YOLO from './images/YOLO.png';
 
 export default class NewRegisterScreen extends Component {
 
@@ -221,14 +221,7 @@ export default class NewRegisterScreen extends Component {
           <div className="foreground">
             <div className='cardBg elCard' style={style_card_outer}>
               <div style={style_card} />
-            
-            </div>
-            
-            <div className='font-arialRoundedMTBold  elTextCopy' style={style_textCopy}>
-              <div>{this.props.locStrings.newregister_textcopy_300179}</div>
-            </div>
-            <div className='font-arialRoundedMTBold  elText' style={style_text}>
-              <div>{this.props.locStrings.newregister_text_990658}</div>
+            <img src={YOLO} alt=''/>
             </div>
           </div>
         </div>

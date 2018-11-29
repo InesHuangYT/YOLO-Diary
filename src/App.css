@@ -1806,30 +1806,18 @@ height: 240px;
     left: -2px;
     top: 0px;
     width: 1605px;
-    height: 90px;
+    height: 115px;
+    opacity: 0.7;
   }
 
 
-  .NewLogoutScreen > .screenFgContainer > .foreground > .elTextCopy {
-    overflow: hidden;
+  .NewLogoutScreen > .screenFgContainer > .foreground > .elCard img {
     position: absolute;
-    left: 194px;
-    right: 1024px;
-    top: 51px;
-    width: calc(100% - 194px + 1024px);
-    height: 37px;
+    left: 40px;
+    top: 3px;
+    width: 450px;
   }
 
-
-  .NewLogoutScreen > .screenFgContainer > .foreground > .elText {
-    overflow: hidden;
-    position: absolute;
-    left: 51px;
-    right: 969px;
-    top: 13px;
-    width: calc(100% - 51px + 969px);
-    height: 52px;
-  }
 
 .NewCreateBBScreen {
   max-width: 1600px;
@@ -3344,29 +3332,16 @@ height: 166px;
     left: -2px;
     top: 0px;
     width: 1605px;
-    height: 90px;
+    height: 115px;
+    opacity: 0.7;
   }
 
 
-  .NewFirstUpProfilePicScreen > .screenFgContainer > .foreground > .elTextCopy {
-    overflow: hidden;
+  .NewFirstUpProfilePicScreen > .screenFgContainer > .foreground > .elCard img {
     position: absolute;
-    left: 194px;
-    right: 1024px;
-    top: 51px;
-    width: calc(100% - 194px + 1024px);
-    height: 37px;
-  }
-
-
-  .NewFirstUpProfilePicScreen > .screenFgContainer > .foreground > .elText {
-    overflow: hidden;
-    position: absolute;
-    left: 51px;
-    right: 969px;
-    top: 13px;
-    width: calc(100% - 51px + 969px);
-    height: 52px;
+    left: 40px;
+    top: 3px;
+    width: 450px;
   }
 
 .NewForgetPasswordScreen {
@@ -3467,29 +3442,16 @@ height: 166px;
     left: -2px;
     top: 0px;
     width: 1605px;
-    height: 90px;
+    height: 115px;
+    opacity: 0.7;
   }
 
 
-  .NewForgetPasswordScreen > .screenFgContainer > .foreground > .elTextCopy {
-    overflow: hidden;
+  .NewForgetPasswordScreen > .screenFgContainer > .foreground > .elCard img {
     position: absolute;
-    left: 194px;
-    right: 1024px;
-    top: 51px;
-    width: calc(100% - 194px + 1024px);
-    height: 37px;
-  }
-
-
-  .NewForgetPasswordScreen > .screenFgContainer > .foreground > .elText {
-    overflow: hidden;
-    position: absolute;
-    left: 51px;
-    right: 969px;
-    top: 13px;
-    width: calc(100% - 51px + 969px);
-    height: 52px;
+    left: 40px;
+    top: 3px;
+    width: 450px;
   }
 
 .NewRegisterScreen {
@@ -3677,30 +3639,18 @@ height: 166px;
     left: -2px;
     top: 0px;
     width: 1605px;
-    height: 90px;
+    height: 115px;
+    opacity: 0.7;
   }
 
 
-  .NewRegisterScreen > .screenFgContainer > .foreground > .elTextCopy {
-    overflow: hidden;
+  .NewRegisterScreen > .screenFgContainer > .foreground > .elCard img {
     position: absolute;
-    left: 194px;
-    right: 1024px;
-    top: 51px;
-    width: calc(100% - 194px + 1024px);
-    height: 37px;
+    left: 40px;
+    top: 3px;
+    width: 450px;
   }
-
-
-  .NewRegisterScreen > .screenFgContainer > .foreground > .elText {
-    overflow: hidden;
-    position: absolute;
-    left: 51px;
-    right: 969px;
-    top: 13px;
-    width: calc(100% - 51px + 969px);
-    height: 52px;
-  }
+   
 
 .NewHomepage01Screen {
   max-width: 1600px;
@@ -3773,29 +3723,15 @@ height: 166px;
     left: -2px;
     top: 0px;
     width: 1605px;
-    height: 90px;
+    height: 115px;
+    opacity: 0.7;
   }
 
-
-  .NewHomepage01Screen > .screenFgContainer > .foreground > .elTextCopy {
-    overflow: hidden;
+  .NewHomepage01Screen > .screenFgContainer > .foreground > .elCard img {
     position: absolute;
-    left: 194px;
-    right: 1024px;
-    top: 51px;
-    width: calc(100% - 194px + 1024px);
-    height: 37px;
-  }
-
-
-  .NewHomepage01Screen > .screenFgContainer > .foreground > .elText {
-    overflow: hidden;
-    position: absolute;
-    left: 51px;
-    right: 969px;
-    top: 13px;
-    width: calc(100% - 51px + 969px);
-    height: 52px;
+    left: 40px;
+    top: 3px;
+    width: 450px;
   }
 
 .NewLoginAndRegisterScreen {
@@ -4007,29 +3943,14 @@ height: 166px;
     left: -2px;
     top: 0px;
     width: 1605px;
-    height: 90px;
+    height: 115px;
+    opacity: 0.7;
   }
-
-
-  .NewLoginAndRegisterScreen > .screenFgContainer > .foreground > .elTextCopy {
-    overflow: hidden;
+  .NewLoginAndRegisterScreen > .screenFgContainer > .foreground > .elCard img{
     position: absolute;
-    left: 194px;
-    right: 1024px;
-    top: 51px;
-    width: calc(100% - 194px + 1024px);
-    height: 37px;
-  }
-
-
-  .NewLoginAndRegisterScreen > .screenFgContainer > .foreground > .elText {
-    overflow: hidden;
-    position: absolute;
-    left: 51px;
-    right: 969px;
-    top: 13px;
-    width: calc(100% - 51px + 969px);
-    height: 52px;
+    left: 40px;
+    top: 3px;
+    width: 450px;
   }
 
 .Start3Screen {

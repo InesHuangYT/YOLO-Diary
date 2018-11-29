@@ -13,7 +13,7 @@ import { ACCESS_TOKEN } from './constants';
 import jwt from 'jsonwebtoken';
 import { Form, Button, Icon, notification } from 'antd';
 import validateInput from './server/validations/login';
-
+import YOLO from './images/YOLO.png';
 
 
 export default class NewLoginAndRegisterScreen extends Component {
@@ -275,15 +275,13 @@ export default class NewLoginAndRegisterScreen extends Component {
           <div className="foreground">
             <div className='cardBg elCard' style={style_card_outer}>
               <div style={style_card} />
-            
+             
+              <img src={YOLO} alt=''/>
+             
             </div>
-            
-            <div className='font-arialRoundedMTBold  elTextCopy' style={style_textCopy}>
-              <div>{this.props.locStrings.newloginandregister_textcopy_154351}</div>
-            </div>
-            <div className='font-arialRoundedMTBold  elText' style={style_text}>
-              <div>{this.props.locStrings.newloginandregister_text_174474}</div>
-            </div>
+           
+       
+         
           </div>
         </div>
       </Container>

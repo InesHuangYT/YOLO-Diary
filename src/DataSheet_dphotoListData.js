@@ -1,32 +1,77 @@
 import DataSheetBase from './DataSheetBase.js';
+import axios from 'axios';
+import React, { Component } from 'react';
+
 
 export default class DataSheet_dphotoListData extends DataSheetBase {
 
-  constructor(id, updateCb) {
-    super(id, updateCb);
-    this.requestedKeyPath = "";  // this value can be specified in the React Studio data sheet UI
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      photoData:'',
+      key:'',
+     
+    }
   }
 
+  componentDidMount = async()=>{
+
+  
+   await axios.get(`/api/photo//downloadDiaryPhoto/${this.props.diaryId}`).then(res =>{
+    console.log('getAllphoto', res)
+
+     for(var i = 0; i < res.data.length; i++){
+
+      this.setState({photoData:res.data[i].photodata})
+      this.setState({key:res.data[i].id})
+      this.sendData_button_Next_to_listData1();
+      
+    }
+
+  }).catch(function(error){
+    console.log('res fail')
+  })
+
+  console.log('get photoListData',  this.props.appActions.getDataSheet('dphotoListData'))
+
+
+ 
+
+  }
+
+
+
+  
+  sendData_button_Next_to_listData1 = () => {
+    const dataSheet = this.props.appActions.getDataSheet('dphotoListData');
+
+    let row = this.props.dataSheetRow || {
+    };
+    row = {
+      photoData: this.state.photoData,
+      key: this.state.key,
+    };
+    if (this.props.dataSheetId === dataSheet.id) {
+      this.props.appActions.updateInDataSheet('dphotoListData', row);
+    } else {
+      this.props.appActions.addToDataSheet('dphotoListData', row);
+    }
+  }
+  
+
   makeDefaultItems() {
-    // eslint-disable-next-line no-unused-vars
-    let key = 1;
-    // eslint-disable-next-line no-unused-vars
-    let item;
-    
-    item = {};
-    this.items.push(item);
-    item['第一幕 合照'] = "";
-    item.key = key++;
-    
-    item = {};
-    this.items.push(item);
-    item['第一幕 合照'] = "";
-    item.key = key++;
-    
-    item = {};
-    this.items.push(item);
-    item['第一幕 合照'] = "";
-    item.key = key++;
+  }
+
+  render() {
+
+    return (
+      <div>
+        {/* <ListItem2 diaryId = {this.props.appActions.getDataSheet('listUserBubble')}/> */}
+      </div>
+
+    );
+
   }
 
 }

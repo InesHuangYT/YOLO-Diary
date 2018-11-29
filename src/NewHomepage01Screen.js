@@ -7,7 +7,7 @@ import img_elHomePageBubble from './images/NewHomepage01Screen_elHomePageBubble_
 import Button from 'muicss/lib/react/button';
 import Container from 'muicss/lib/react/container';
 import axios from 'axios';
-
+import YOLO from './images/YOLO.png';
 
 export default class NewHomepage01Screen extends Component {
  
@@ -122,15 +122,10 @@ export default class NewHomepage01Screen extends Component {
           <div className="foreground">
             <div className='cardBg elCard' style={style_card_outer}>
               <div style={style_card} />
-            
+             <img src={YOLO} alt=''/>
             </div>
             
-            <div className='font-arialRoundedMTBold  elTextCopy' style={style_textCopy}>
-              <div>{this.props.locStrings.newhomepage01_textcopy_424822}</div>
-            </div>
-            <div className='font-arialRoundedMTBold  elText' style={style_text}>
-              <div>{this.props.locStrings.newhomepage01_text_247477}</div>
-            </div>
+           
           </div>
         </div>
       </Container>

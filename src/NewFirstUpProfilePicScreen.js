@@ -7,7 +7,7 @@ import {message} from 'antd';
 // UI framework component imports
 import Container from 'muicss/lib/react/container';
 import './UploadPic.css';
-
+import YOLO from './images/YOLO.png';
 
 export default class NewFirstUpProfilePicScreen extends Component {
 
@@ -225,15 +225,7 @@ upload = () => {
 
             <div className='cardBg elCard' style={style_card_outer}>
            
-      
-            </div>
-           
-                
-            <div className='font-arialRoundedMTBold  elTextCopy' style={style_textCopy}>
-              <div>{this.props.locStrings.newfirstupprofilepic_textcopy_859284}</div>
-            </div>
-            <div className='font-arialRoundedMTBold  elText' style={style_text}>
-              <div>{this.props.locStrings.newfirstupprofilepic_text_296138}</div>
+              <img src={YOLO} alt=''/>
             </div>
           </div>
         </div>
