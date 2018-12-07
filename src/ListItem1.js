@@ -40,7 +40,7 @@ export default class ListItem1 extends Component {
       
     // };
       axios.get(this.props.dataSheetRow.photoCover, this.state.config).then(res=>{
-        console.log(this.props.dataSheetRow.photoCover)
+      
       console.log('photo', res)
       _this.setState({src:res.data.photodata})
       // _this.setState({src:Buffer.from(res.data, 'binary').toString('base64')})
@@ -103,11 +103,11 @@ export default class ListItem1 extends Component {
           </div> */}
           <div className='cardBg elCard'  >
           <div className="flip-box">
-            <div className="flip-box-inner">
+            <div className="flip-box-inner" onClick={this.onClick_elBubble2}>
              
                 
                 <div className="flip-box-front">
-                  <img src={"data:image/jpeg;base64, " + this.state.src} alt='' onClick={this.onClick_elBubble2} style={{width:'190px',height:'150px'}} />
+                  <img src={"data:image/jpeg;base64, " + this.state.src} alt=''  style={{width:'190px',height:'150px'}} />
                 </div>
               
               <div className="flip-box-back">

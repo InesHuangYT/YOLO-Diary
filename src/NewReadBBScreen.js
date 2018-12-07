@@ -27,6 +27,7 @@ export default class NewReadBBScreen extends Component {
     //   }
       
     // };
+    console.log('photoHERE')
       axios.get(this.props.dataSheetRow.photoCover, this.state.config).then(res=>{
         console.log(this.props.dataSheetRow.photoCover)
       console.log('photo', res)

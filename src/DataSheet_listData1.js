@@ -14,9 +14,9 @@ export default class DataSheet_listData1 extends DataSheetBase {
     
     let item;
     
-    Axios.get("/api/album/albums").then(res => {
+    Axios.get("/api/album/allAlbums").then(res => {
       
-      //console.log('albums ->',res)
+      console.log('albums ->',res)
       
       var elements = res.data.length
       for(var i = 0; i < elements ; i++){
