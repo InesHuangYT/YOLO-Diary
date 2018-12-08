@@ -17,6 +17,7 @@ export default class NavBar extends Component {
     super(props);
     this.state = {
        field_UserName: '',
+       src:'',
      };
    
 
@@ -24,12 +25,16 @@ export default class NavBar extends Component {
   componentDidMount(){
     let _this = this;
     axios.get('/api/user/me').then(res => {
-      // console.log(res);
+       console.log(res);
       // console.log(res.data);
       console.log(res.data.username);
       //console.log(res.data.field_UserName);
       _this.setState({field_UserName :res.data.username});
     });
+    axios.get('/api/selfie/downloadMySelfie').then(res => {
+      console.log('selfie res', res)
+      _this.setState({src: res.data.photodata})
+    })
   }
 
   onClick_elButton = (ev) => {
@@ -147,12 +152,8 @@ export default class NavBar extends Component {
           <button className='headlineFont elButton' style={style_button}  onClick={this.onClick_elButton} >
             {this.props.locStrings.navbar_button_831261}
           </button>
-<<<<<<< HEAD
-          <label className='headlineFont elField_UserName' style={style_field_UserName} > {this.state.field_UserName} </label>
-=======
-          <img className='elRoundimage' style={style_roundimage} src={img_elRoundimage} alt=""  />
+          <img className='elRoundimage' style={style_roundimage} src={"data:image/jpeg;base64, " + this.state.src} alt=""  />
           {/* <Input className='headlineFont elField_UserName' style={style_field_UserName} type='text' hint={this.props.locStrings.navbar_field_username_63158} onChange={this.textInputChanged_field_UserName} value = {this.state.field_UserName}  /> */}
->>>>>>> 55bcca1c97366a14d0f2453ed75c4c8f27cc1247
           <button className='headlineFont elButton_profile' style={style_button_profile}  onClick={this.onClick_elButton_profile} >
             {this.props.locStrings.comp1_button_profile_537669}
           </button>

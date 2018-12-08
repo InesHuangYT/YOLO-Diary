@@ -2077,6 +2077,7 @@ height: 255px;
   }
 
   .NavBar .elRoundimage {
+    border-radius: 270px;
     position: absolute;
     left: 1190px;
     top: 15px;
