@@ -701,7 +701,7 @@
   }
   .PMenu .elCard > * { 
     
-    border-radius: 270px;
+  border-radius: 270px;
   width: 250px;
   height: 246px;
   }
@@ -1294,7 +1294,7 @@ height: 255px;
 
   .NewFaceRecScreen > .layoutFlow > .elPublishBubble {
     position: relative;
-    margin-top: 213px;
+    margin-top: 90px;
     width: 146px;
     margin-left: 1397px;
   }
@@ -1312,6 +1312,7 @@ height: 255px;
 
 
   .NewFaceRecScreen > .layoutFlow > .elButton_PublishBubble {
+    border-color: #c10091;
     line-height: 50px;
     position: relative;
     margin-top: -58px;
@@ -1371,7 +1372,13 @@ height: 255px;
     width: 100%;
     height: 100%;
   }
-
+  .NewProfileTestScreen > .background > .elPBG {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1602px;
+    height: 916px;
+  }
 
   .NewProfileTestScreen > .layoutFlow > .elNavBar2 {
     position: relative;
@@ -1390,7 +1397,7 @@ height: 255px;
 
 
 
-  .NewProfileTestScreen > .layoutFlow > .elPBG {
+  /* .NewProfileTestScreen > .layoutFlow > .elPBG {
     position: relative;
     margin-top: 18px;
     width: 1607px;
@@ -1399,13 +1406,13 @@ height: 255px;
   .NewProfileTestScreen > .layoutFlow > .elPBG > * { 
   width: 1607px;
   height: 716px;
-  }
+  } */
   
 
 
   .NewProfileTestScreen > .layoutFlow > .elProfileInfroBB {
     position: relative;
-    margin-top: -750px;
+    margin-top: -30px;
     width: 1166px;
     margin-left: 31px;
   }
@@ -1842,6 +1849,13 @@ height: 255px;
     height: 899px;
   }
 
+  .NewCreateBBScreen > .background > .elBubbleDiaryBG {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1602px;
+    height: 916px;
+  }
 
   .NewCreateBBScreen > .layoutFlow > .elNavBar2 {
     position: relative;
@@ -1860,7 +1874,7 @@ height: 255px;
 
 
 
-  .NewCreateBBScreen > .layoutFlow > .elBubbleDiaryBG {
+  /* .NewCreateBBScreen > .layoutFlow > .elBubbleDiaryBG {
     position: relative;
     margin-top: 12px;
     width: 1602px;
@@ -1869,13 +1883,13 @@ height: 255px;
   .NewCreateBBScreen > .layoutFlow > .elBubbleDiaryBG > * { 
   width: 1602px;
   height: 709px;
-  }
+  } */
   
 
 
   .NewCreateBBScreen > .layoutFlow > .elOriDiaryBB {
     position: relative;
-    margin-top: -1134px;
+    margin-top: -380px;
     width: 1492px;
     margin-left: 97px;
   }
@@ -2062,8 +2076,15 @@ height: 255px;
     font-weight: bolder;
   }
 
+  .NavBar .elRoundimage {
+    position: absolute;
+    left: 1190px;
+    top: 15px;
+    width: 80px;
+    height: 80px;
+  }
 
-.NavBar .elField_UserName input {
+/* .NavBar .elField_UserName input {
   color: #5288d0;
 }
 
@@ -2085,7 +2106,7 @@ height: 255px;
     top: 42px;
     width: 153px;
     height: 48px;
-  }
+  } */
 
 .NavBar .elButton_profile {
   cursor: pointer;
@@ -2373,7 +2394,13 @@ border-radius: 270px;
       width: 100%;
       height: 899px;
     }
-  
+    .NewReadBBScreen > .background > .elBubbleDiaryBG {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 1602px;
+      height: 916px;
+    }
   
     .NewReadBBScreen > .layoutFlow > .elNavBar2 {
       position: relative;
@@ -2392,7 +2419,7 @@ border-radius: 270px;
   
   
   
-    .NewReadBBScreen > .layoutFlow > .elBubbleDiaryBG {
+    /* .NewReadBBScreen > .layoutFlow > .elBubbleDiaryBG {
       position: relative;
       margin-top: 16px;
       width: 1602px;
@@ -2401,13 +2428,13 @@ border-radius: 270px;
     .NewReadBBScreen > .layoutFlow > .elBubbleDiaryBG > * { 
     width: 1602px;
     height: 709px;
-    }
+    } */
     
   
   
     .NewReadBBScreen > .layoutFlow > .elMainBubble {
       position: relative;
-      margin-top: -482px;
+      margin-top: 250px;
       width: 421px;
       margin-left: 581px;
     }
@@ -2675,7 +2702,13 @@ border-radius: 270px;
       width: 100%;
       height: 899px;
     }
-  
+    .NewBBNameCreateScreen > .background > .elBubbleDiaryBG {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      width: 1602px;
+      height: 916px;
+    }
   
     .NewBBNameCreateScreen > .layoutFlow > .elNavBar2 {
       position: relative;
@@ -2694,7 +2727,7 @@ border-radius: 270px;
   
   
   
-    .NewBBNameCreateScreen > .layoutFlow > .elBubbleDiaryBG {
+    /* .NewBBNameCreateScreen > .layoutFlow > .elBubbleDiaryBG {
       position: relative;
       margin-top: 16px;
       width: 1602px;
@@ -2703,13 +2736,13 @@ border-radius: 270px;
     .NewBBNameCreateScreen > .layoutFlow > .elBubbleDiaryBG > * { 
     width: 1602px;
     height: 709px;
-    }
+    } */
     
   
   
     .NewBBNameCreateScreen > .layoutFlow > .elBubble2 {
       position: relative;
-      margin-top: -494px;
+      margin-top: 250px;
       width: 354px;
       margin-left: 325px;
     }
