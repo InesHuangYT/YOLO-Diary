@@ -245,9 +245,9 @@ upload = () => {
         backgroundPosition: '50% 50%',
         backgroundSize: 'cover',
      };
-    const style_bubbleDiaryBG_outer = {
-        pointerEvents: 'none',
-     };
+    // const style_bubbleDiaryBG_outer = {
+    //     pointerEvents: 'none',
+    //  };
     const style_oriDiaryBB = {
         height: 'auto',
      };
@@ -314,7 +314,7 @@ upload = () => {
             <div style={style_background} />
           
           </div>
-          
+          <div className='elBubbleDiaryBG' style={style_bubbleDiaryBG} />
         </div>
         <div className="layoutFlow" style={layoutFlowStyle}>
           <div className='hasNestedComps elNavBar2'>
@@ -324,10 +324,10 @@ upload = () => {
           
           </div>
           
-          <div className='elBubbleDiaryBG' style={style_bubbleDiaryBG_outer}>
+          {/* <div className='elBubbleDiaryBG' style={style_bubbleDiaryBG_outer}>
             <div style={style_bubbleDiaryBG} />
           
-          </div>
+          </div> */}
           
           <div className='elOriDiaryBB' style={style_oriDiaryBB_outer}>
             <img style={style_oriDiaryBB} src={img_elOriDiaryBB} alt=""  />
