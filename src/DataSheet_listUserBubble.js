@@ -12,9 +12,6 @@ export default class DataSheet_listUserBubble extends DataSheetBase {
     super(props);
 
     this.state = {
-      diaryId: '',
-      item: {},
-      
     };
   }
 
@@ -22,35 +19,31 @@ export default class DataSheet_listUserBubble extends DataSheetBase {
 
  componentDidMount() {
     console.log('comDidMount')
-    // console.log('check props->', this.props)
-    // let item;
-    
-    axios.get(`/api/diary/${this.props.dataSheetRow.albumId}`).then((res) => {
-      console.log('buble response ->', res)
-      if(this.props.dataSheetRow.albumId)
-        for (var i = 0; i < res.data.content.length; i++) {
-          // item = {};
-          // this.addItem(item)
-          this.state.item['diaryId'] = res.data.content[i].id;
-          this.setState({diaryId: res.data.content[i].id })
-          
-          this.state.item.key = Math.random()*(1000)
-          
-          this.sendData_button_Next_to_listData1();
+   
+     let item;
+     axios.get(`/api/album/allUsers/${this.props.dataSheetRow.albumId}`).then((res) => {
+     
+       console.log('get user', res)
+      for(var i = 0; i < res.data.length; i++){
+        item = {}
+        item['userPhotoData'] = res.data[i].selfieData
+        item['diaryId'] = res.data[i].diaryId 
+        item.key = res.data[i].diaryId
+        
+        this.sendData_button_Next_to_listData1(item.diaryId, item.userPhotoData, item.key)
+      }
 
-        }
-
-       
-       
-       
-    })
-           
-    }
-
-    componentWillUnmount(){
-      // console.log('comWillUnMount')
       
+    })
+    console.log('check datasheet DIDM', this.props.appActions.getDataSheet('listUserBubble'))
+
+  }
+    componentWillUnmount(){
+
+      
+      console.log('comWillUnMount')
       this.Delete_listData()
+      console.log('check datasheet delete', this.props.appActions.getDataSheet('listUserBubble'))
 
     }
 
@@ -58,7 +51,8 @@ export default class DataSheet_listUserBubble extends DataSheetBase {
    Delete_listData = () => {
     const length = this.props.appActions.getDataSheet('listUserBubble').items.length
     for(var i=0; i<length; i++){
-    this.props.appActions.removeFromDataSheet('listUserBubble', this.props.appActions.getDataSheet('listUserBubble').items[i])
+    console.log('print i:', i)
+    this.props.appActions.removeFromDataSheet('listUserBubble', this.props.appActions.getDataSheet('listUserBubble').items[0])
     }
     // console.log('show sheetdata',  this.props.appActions.getDataSheet('listUserBubble'))
 
@@ -68,15 +62,18 @@ export default class DataSheet_listUserBubble extends DataSheetBase {
 
 
 
-  sendData_button_Next_to_listData1 = () => {
+  sendData_button_Next_to_listData1 = (diaryId, userPhotoData, key) => {
     const dataSheet = this.props.appActions.getDataSheet('listUserBubble');
 
     let row = this.props.dataSheetRow || {
     };
     row = {
-      ...row,
-      diaryId: this.state.diaryId,
+      
+      diaryId: diaryId,
+      userPhotoData: userPhotoData,
+      key: key
     };
+    console.log(this.props.dataSheetId)
     if (this.props.dataSheetId === dataSheet.id) {
       this.props.appActions.updateInDataSheet('listData1', row);
     } else {

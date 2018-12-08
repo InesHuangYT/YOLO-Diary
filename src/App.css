@@ -1656,22 +1656,28 @@ height: 255px;
   min-height: 302px;
 }
 
-
-.ListPic .el03 {
+.ListPic .pic1 {
   position: relative;
   margin-top: 0px;
-  width: 320px;
+  height: 200px;
   margin-left: 0px;
 }
-.ListPic .el03 img{
+.ListPic .pic1 > * { 
+  width: 300px;
+  height: 190px;
+  }
+.ListPic .pic1 img{
   box-shadow:  0 8px 16px 5px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   border-radius: 10px;
   border:0.7px solid gray;
+  transition: 0.3s;
+  width: 300px;
+  height:100%;
 }
-.ListPic .el03 > * { 
-width: 320px;
-height: 240px;
+.ListPic .pic1 img:hover {
+  opacity: 0.7;
 }
+
 
 
 .NewHomeNotificationScreen {
@@ -2258,10 +2264,12 @@ height: 166px;
   margin-top: -193px;
   width: 166px;
   margin-left: 36px;
+
 }
 .ListItem2 .elPic > * { 
 width: 166px;
 height: 166px;
+border-radius: 270px;
 }
 
 

@@ -147,8 +147,12 @@ export default class NavBar extends Component {
           <button className='headlineFont elButton' style={style_button}  onClick={this.onClick_elButton} >
             {this.props.locStrings.navbar_button_831261}
           </button>
+<<<<<<< HEAD
+          <label className='headlineFont elField_UserName' style={style_field_UserName} > {this.state.field_UserName} </label>
+=======
           <img className='elRoundimage' style={style_roundimage} src={img_elRoundimage} alt=""  />
           {/* <Input className='headlineFont elField_UserName' style={style_field_UserName} type='text' hint={this.props.locStrings.navbar_field_username_63158} onChange={this.textInputChanged_field_UserName} value = {this.state.field_UserName}  /> */}
+>>>>>>> 55bcca1c97366a14d0f2453ed75c4c8f27cc1247
           <button className='headlineFont elButton_profile' style={style_button_profile}  onClick={this.onClick_elButton_profile} >
             {this.props.locStrings.comp1_button_profile_537669}
           </button>

@@ -205,7 +205,7 @@ export default class PMenu extends Component {
             
             </div>
             </div> */}
-         <input className='input-img' type='file' accept='image/*' style={{width:'250px'}} onChange={this.changePath} />
+         
          <Modal
           title=""
           visible={this.state.visible}
@@ -215,7 +215,7 @@ export default class PMenu extends Component {
         >確定更換為此照片嗎?
         </Modal>
           <div className='cardBg elCard' >
-            
+          <input className='input-img' type='file' accept='image/*' style={{width:'250px'}} onChange={this.changePath} />
             {/* <img src={賴桑} alt=""/> */}
             
           
