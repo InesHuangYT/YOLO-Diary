@@ -8,19 +8,24 @@ export default class ListItem2 extends Component {
 
   // This component doesn't use any properties
    
-  componentDidMount() {
-    
-   console.log('item2 picture--->', this.props)
-  
-  }
-
+ 
   constructor(props) {
     super(props);
     
     this.state = {
+      src:''
       
     };
   }
+
+
+  componentDidMount() {
+    
+    console.log('item2 picture--->', this.props)
+    this.setState({src: this.props.dataSheetRow.userPhotoData})
+   
+   }
+ 
 
   onClick_elUserBubble = (ev) => {
     // Go to screen 'NewUserDiary'
@@ -69,7 +74,7 @@ export default class ListItem2 extends Component {
           
           </div> */}
           <div className='elPic' style={style_Pic_outer}>
-            <img style={style_Pic} src={img_elPic} alt=""  />
+            <img src={"data:image/jpeg;base64, " + this.state.src} key={this.props.dataSheetRow.key} alt=""  />
           
           </div>
           

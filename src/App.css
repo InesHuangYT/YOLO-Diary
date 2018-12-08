@@ -2243,10 +2243,12 @@ height: 166px;
   margin-top: -193px;
   width: 166px;
   margin-left: 36px;
+
 }
 .ListItem2 .elPic > * { 
 width: 166px;
 height: 166px;
+border-radius: 270px;
 }
 
 
