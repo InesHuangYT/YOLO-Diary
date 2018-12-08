@@ -106,9 +106,9 @@ export default class NewBBNameCreateScreen extends Component {
         backgroundPosition: '50% 50%',
         backgroundSize: 'cover',
      };
-    const style_bubbleDiaryBG_outer = {
-        pointerEvents: 'none',
-     };
+    // const style_bubbleDiaryBG_outer = {
+    //     pointerEvents: 'none',
+    //  };
     const style_bubble2 = {
         height: 'auto',
      };
@@ -146,7 +146,7 @@ export default class NewBBNameCreateScreen extends Component {
             <div style={style_background} />
           
           </div>
-          
+          <div className='elBubbleDiaryBG' style={style_bubbleDiaryBG} />
         </div>
         
         <div className="layoutFlow" style={layoutFlowStyle}>
@@ -157,10 +157,10 @@ export default class NewBBNameCreateScreen extends Component {
           
           </div>
           
-          <div className='elBubbleDiaryBG' style={style_bubbleDiaryBG_outer}>
+          {/* <div className='elBubbleDiaryBG' style={style_bubbleDiaryBG_outer}>
             <div style={style_bubbleDiaryBG} />
           
-          </div>
+          </div> */}
           
           <div className='elBubble2' style={style_bubble2_outer}>
             <img style={style_bubble2} src={img_elBubble2} alt=""  />

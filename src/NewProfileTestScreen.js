@@ -71,9 +71,9 @@ export default class NewProfileTestScreen extends Component {
         backgroundPosition: '50% 50%',
         backgroundSize: 'cover',
      };
-    const style_PBG_outer = {
-        pointerEvents: 'none',
-     };
+    // const style_PBG_outer = {
+    //     pointerEvents: 'none',
+    //  };
     const style_profileInfroBB = {
         backgroundImage: 'url('+img_elProfileInfroBB+')',
         backgroundRepeat: 'no-repeat',
@@ -110,9 +110,9 @@ export default class NewProfileTestScreen extends Component {
         <div className="background">
           <div className='appBg containerMinHeight elBackground' style={style_background_outer}>
             <div style={style_background} />
-          
+           
           </div>
-          
+           <div className='elPBG' style={style_PBG} />
         </div>
         <div className="layoutFlow" style={layoutFlowStyle}>
           <div className='hasNestedComps elNavBar2'>
@@ -122,10 +122,10 @@ export default class NewProfileTestScreen extends Component {
           
           </div>
           
-          <div className='elPBG' style={style_PBG_outer}>
+          {/* <div className='elPBG' style={style_PBG_outer}>
             <div style={style_PBG} />
           
-          </div>
+          </div> */}
           
           <div className='elProfileInfroBB' style={style_profileInfroBB_outer}>
             <div style={style_profileInfroBB} />
