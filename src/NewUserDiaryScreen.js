@@ -35,18 +35,18 @@ export default class NewUserDiaryScreen extends Component {
   }
 
   componentWillMount(){
-    //'/api/album/'
+    
     console.log('showdiary', this.props)
     let _this = this;
-    // for(var i =0; i < this.props.dataSheetRow.diaryId.length; i++){
+    
       axios.get('/api/diary/diaryId/'+this.props.dataSheetRow.diaryId).then(res => {
       
       console.log('read res->',res);
       
       _this.setState({textarea :res.data.text});
     })
-  // }
-  _this.setState({field :this.props.dataSheetRow.albumName});
+ 
+      _this.setState({field :this.props.dataSheetRow.albumName});
   
     
 

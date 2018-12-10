@@ -126,8 +126,8 @@ export default class NewCreateBBScreen extends Component {
     res =>{
 
       console.log('upload photo->',res.data)	
-      this.setState({cover : res.data})
-      console.log('upload photo again->',this.state.cover)	
+      this.setState({cover : res.data.photoCoverUri})
+      console.log('photo cover->',this.state.cover)	
 
    })
 
