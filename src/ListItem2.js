@@ -3,6 +3,7 @@ import './App.css';
 import img_elUserBubble from './images/ListItem2_elUserBubble_312326.png';
 // import img_elUserPic from './images/ListItem2_elUserPic_268846.png';
 import img_elPic from './images/Pic.png';
+import Axios from 'axios';
 
 export default class ListItem2 extends Component {
 
@@ -31,8 +32,28 @@ export default class ListItem2 extends Component {
     // Go to screen 'NewUserDiary'
     let check = this.props
     console.log('item2',check);
-    this.props.appActions.goToScreen('newuserdiary', { ...this.props, transitionId: 'fadeIn' });
-  
+    Axios.get('/api/user/me').then(res => {
+      console.log('check current user', res)
+      if(res.data.username.match(this.props.dataSheetRow.author)){
+        if(this.props.dataSheetRow.diaryId){
+          this.props.appActions.goToScreen('newuserdiary', { ...this.props, transitionId: 'fadeIn' });
+        }else{
+          this.props.appActions.goToScreen('newcreatebb',  { ...this.props, transitionId: 'fadeIn' });
+        }
+       
+    }else if(!res.data.username.match(this.props.dataSheetRow.author)){
+      if(this.props.dataSheetRow.diaryId){
+        this.props.appActions.goToScreen('newuserdiary', { ...this.props, transitionId: 'fadeIn' });
+      }else{
+        
+      }
+        
+    }
+    })
+   
+    
+
+    
   }
   
   

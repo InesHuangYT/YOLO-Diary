@@ -28,9 +28,10 @@ export default class DataSheet_listUserBubble extends DataSheetBase {
         item = {}
         item['userPhotoData'] = res.data[i].selfieData
         item['diaryId'] = res.data[i].diaryId 
-        item.key = res.data[i].diaryId
+        item['author'] = res.data[i].username
+        item.key = Math.random()*(1000)
         
-        this.sendData_button_Next_to_listData1(item.diaryId, item.userPhotoData, item.key)
+        this.sendData_button_Next_to_listData1(item.diaryId, item.userPhotoData, item.author, item.key)
       }
 
       
@@ -62,16 +63,18 @@ export default class DataSheet_listUserBubble extends DataSheetBase {
 
 
 
-  sendData_button_Next_to_listData1 = (diaryId, userPhotoData, key) => {
+  sendData_button_Next_to_listData1 = (diaryId, userPhotoData, author,  key) => {
     const dataSheet = this.props.appActions.getDataSheet('listUserBubble');
 
     let row = this.props.dataSheetRow || {
     };
     row = {
-      
+      ...row,
       diaryId: diaryId,
       userPhotoData: userPhotoData,
+      author: author,
       key: key
+
     };
     console.log(this.props.dataSheetId)
     if (this.props.dataSheetId === dataSheet.id) {
