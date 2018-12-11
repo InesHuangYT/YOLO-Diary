@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import img_elHomeBG from './images/NewLoginAndRegisterScreen_elHomeBG_219221.jpg';
-import img_elLRBubble from './images/NewLoginAndRegisterScreen_elLRBubble_244075.png';
+import img_elLRBubble from './images/newlogin.png';
 
 // UI framework component imports
 import Input from 'muicss/lib/react/input';

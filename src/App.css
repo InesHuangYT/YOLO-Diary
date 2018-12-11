@@ -2239,7 +2239,7 @@ height: 255px;
 
 .ListItem2 .elUserBubble {
   position: relative;
-  margin-top: 16px;
+  margin-top: 0px;
   width: 215px;
   margin-left: 13px;
 }
@@ -2262,9 +2262,9 @@ height: 166px;
 } */
 .ListItem2 .elPic {
   position: relative;
-  margin-top: -193px;
+  margin-top: -189px;
   width: 166px;
-  margin-left: 36px;
+  margin-left: 38px;
 
 }
 .ListItem2 .elPic > * { 
@@ -2435,7 +2435,7 @@ border-radius: 270px;
   
     .NewReadBBScreen > .layoutFlow > .elMainBubble {
       position: relative;
-      margin-top: 250px;
+      margin-top: 290px;
       width: 421px;
       margin-left: 581px;
     }
@@ -2676,7 +2676,7 @@ border-radius: 270px;
   
     .NewReadBBScreen > .layoutFlow > .elList {
       position: relative;
-      margin-top: -622px;
+      margin-top: -655px;
       width: 1442px;
       margin-left: 72px;
     }
