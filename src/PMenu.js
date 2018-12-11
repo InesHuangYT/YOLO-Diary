@@ -72,7 +72,11 @@ export default class PMenu extends Component {
     }
   
     if (/^image\/\S+$/.test(type)) {
-       
+      if (document.getElementById("01")) {
+        var obj = document.getElementById("01");
+        var impParent = obj.parentNode;
+        impParent.removeChild(obj);
+      }
         src = URL.createObjectURL(file)
         previews = <img src={src} style={{width:'250px'}} alt='' key = {i}/>
        
@@ -224,19 +228,21 @@ export default class PMenu extends Component {
         >確定更換為此照片嗎?
         </Modal>
           <div className='cardBg elCard' >
-          <img src={"data:image/jpeg;base64, " + this.state.src} alt=""  />
+          <img id='01' src={"data:image/jpeg;base64, " + this.state.src} alt=""  />
 
           <input className='input-img' type='file' accept='image/*' style={{width:'250px'}} onChange={this.changePath} />
 
             {/* <img src={賴桑} alt=""/> */}
             
           
+            <div>
+            {preview}
           <button>
-          {preview}
+          
           {this.props.locStrings.pmenu_uppic_291006}
          
         </button>
-       
+        </div>
          
          </div>
        
