@@ -121,13 +121,48 @@ export default class NewCreateBBScreen extends Component {
   })
 
   // console.log('diaryId have been stored?', store.getValue().diaryId)
-  
+  let Faceitem;
+  let NoFaceitem;
    await axios.post(`/api/photo/${store.getValue().diaryId}`, this.form).then(	
     res =>{
 
-      console.log('upload photo->',res.data)	
+      console.log('upload photo->',res)	
       this.setState({cover : res.data.photoCoverUri})
       console.log('photo cover->',this.state.cover)	
+
+
+      if(res.data.sfr.length > 0){
+        for(var i = 0 ; i < res.data.sfr.length; i++){
+        Faceitem = {};
+        Faceitem['faceData'] = res.data.sfr[i].faceData
+        Faceitem['userTaged'] = res.data.sfr[i].userTaged
+        Faceitem.key = res.data.sfr[i].userTaged
+        console.log('|||FaceitemKey|||->',Faceitem.userTaged)
+        console.log('|||FaceitemKey|||->', Faceitem.key)
+        this.HaveFace_sendData_to_FaceList(Faceitem.faceData, Faceitem.userTaged, Faceitem.key)
+        }
+        
+      }
+
+      if(res.data.nffr.length > 0){
+        for(var j = 0 ; j < res.data.nffr.length; j++){
+          NoFaceitem = {};
+          NoFaceitem['notFoundFaceData'] = res.data.nffr[j].notFoundFaceData
+          NoFaceitem.key = Math.random()*(1000)
+          this.NoFace_sendData_to_FaceList(NoFaceitem.notFoundFaceData, NoFaceitem.key)
+
+        }
+
+      }
+
+      
+
+
+       console.log("||Check FaceListData||->", this.props.appActions.getDataSheet('faceListData'))
+
+
+
+
 
    })
 
@@ -138,6 +173,44 @@ export default class NewCreateBBScreen extends Component {
   this.props.appActions.goToScreen('newfacerec', { diaryId : store.getValue().diaryId , transitionId: 'fadeIn' });
    
   }
+
+
+  HaveFace_sendData_to_FaceList(face, user, key){
+    const dataSheet = this.props.appActions.getDataSheet('faceListData');
+
+    let row = this.props.dataSheetRow || {
+    };
+
+    row = {
+      faceData: face,
+      userTaged: user,
+      key: key,
+
+    }
+    this.props.appActions.addToDataSheet('faceListData', row);
+
+  }
+
+  NoFace_sendData_to_FaceList(notFoundFace, key){
+    const dataSheet = this.props.appActions.getDataSheet('faceListData');
+
+    let row = this.props.dataSheetRow || {
+    };
+    
+    row = {
+      
+      notFoundFaceData: notFoundFace,
+      key: key,
+
+    }
+    this.props.appActions.addToDataSheet('faceListData', row);
+
+  }
+  
+
+
+
+
 
   sendData_button_Complete_to_listData1 = () => {
     const dataSheet = this.props.appActions.getDataSheet('listData1');
