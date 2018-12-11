@@ -76,7 +76,7 @@ export default class NewHomeNotificationScreen extends Component {
           
           </div>
           
-          <div className='elN' style={style_n_outer}>
+          {/* <div className='elN' style={style_n_outer}>
             <img style={style_n} src={img_elN} alt=""  />
           
           </div>
@@ -89,7 +89,7 @@ export default class NewHomeNotificationScreen extends Component {
               })}
             </ul>
           
-          </div>
+          </div> */}
           
         </div>
       </Container>
