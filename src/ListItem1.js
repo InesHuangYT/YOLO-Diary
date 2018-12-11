@@ -20,6 +20,7 @@ export default class ListItem1 extends Component {
     this.state = {
       albumName: this.props.albumName,
       albumId : this.props.albumId,
+      albumCreatedAt: this.props.albumCreatedAt,
       src:'',
       config : {
         headers:{
@@ -42,10 +43,15 @@ export default class ListItem1 extends Component {
       axios.get(this.props.dataSheetRow.photoCover, this.state.config).then(res=>{
       
       console.log('photo', res)
+      console.log('prop',this.props.dataSheetRow.photoCover)
       _this.setState({src:res.data.photodata})
+     
+
+
       // _this.setState({src:Buffer.from(res.data, 'binary').toString('base64')})
       //console.log('buffer=>', _this.state.src)
     })
+
     
     
     
@@ -61,7 +67,7 @@ export default class ListItem1 extends Component {
   
   
   textInputChanged_albumName = (event) => {
-    this.setState({albumName: this.state.albumName});
+    this.setState({albumId: this.state.albumId});
   }
 
   

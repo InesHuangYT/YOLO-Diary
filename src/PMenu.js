@@ -7,6 +7,8 @@ import Input from 'muicss/lib/react/input';
 import './UploadPic.css';
 import 'antd/dist/antd.css';
 import { Modal,message } from 'antd';
+import axios from 'axios';
+
 export default class PMenu extends Component {
 
   // This component doesn't use any properties
@@ -18,7 +20,8 @@ export default class PMenu extends Component {
       field_username: '',
       preview: null,
       data: null,
-      visible:false
+      visible:false,
+      src:''
     };
   }
   showModal = () => {
@@ -26,7 +29,13 @@ export default class PMenu extends Component {
       visible: true,
     });
   }
-  
+  componentDidMount(){
+    let _this = this;
+    axios.get('/api/selfie/downloadMySelfie').then(res => {
+      console.log('selfie res', res)
+      _this.setState({src: res.data.photodata})
+    })
+  }
  
   handleOk = (e) => {
     //確定上傳照片
@@ -63,7 +72,11 @@ export default class PMenu extends Component {
     }
   
     if (/^image\/\S+$/.test(type)) {
-       
+      if (document.getElementById("01")) {
+        var obj = document.getElementById("01");
+        var impParent = obj.parentNode;
+        impParent.removeChild(obj);
+      }
         src = URL.createObjectURL(file)
         previews = <img src={src} style={{width:'250px'}} alt='' key = {i}/>
        
@@ -215,16 +228,21 @@ export default class PMenu extends Component {
         >確定更換為此照片嗎?
         </Modal>
           <div className='cardBg elCard' >
+          <img id='01' src={"data:image/jpeg;base64, " + this.state.src} alt=""  />
+
           <input className='input-img' type='file' accept='image/*' style={{width:'250px'}} onChange={this.changePath} />
+
             {/* <img src={賴桑} alt=""/> */}
             
           
+            <div>
+            {preview}
           <button>
-          {preview}
+          
           {this.props.locStrings.pmenu_uppic_291006}
          
         </button>
-       
+        </div>
          
          </div>
        
