@@ -206,7 +206,8 @@ export default class NewUserDiaryScreen extends Component {
           
           <div className='actionFont elButton_OK' style={style_button_OK_outer}>
             <Button style={style_button_OK}  color="accent" onClick={this.onClick_elButton_OK} >
-              {this.props.locStrings.newuserdiary_button_724281}
+              
+              上一頁
             </Button>
           
           </div>
