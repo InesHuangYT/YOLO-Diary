@@ -23,6 +23,7 @@ export default class NewProfileTestScreen extends Component {
     this.state = {
       field_email: '',
       field_username: '',
+      src:''
     };
     
   }
@@ -34,6 +35,7 @@ export default class NewProfileTestScreen extends Component {
       _this.setState({field_email:res.data.email});
       _this.setState({field_username:res.data.username});
     });
+   
   }
 
   textInputChanged_field_email = (event) => {
