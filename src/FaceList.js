@@ -7,6 +7,26 @@ export default class FaceList extends Component {
 
   // This component doesn't use any properties
 
+  constructor(props) {
+    super(props);
+    
+    this.state = {
+      src:''
+    };
+  }
+
+
+
+  componentDidMount() {
+    console.log('|||Get FaceList|||',  this.props.appActions.getDataSheet('faceListData'))
+    // var haveFaceKey = "HaveFace"
+    // var noFaceKey = "NoFace"
+
+    
+    
+  }
+ 
+
   render() {
     // eslint-disable-next-line no-unused-vars
     let baseStyle = {};
