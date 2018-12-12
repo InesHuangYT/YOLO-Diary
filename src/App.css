@@ -819,7 +819,8 @@
 }
 
 
-.FaceList .elRoundimage {
+.FaceList .elRoundimage img {
+  border-radius: 270px;
   position: relative;
   margin-top: 1px;
   width: 108px;
@@ -833,23 +834,26 @@ height: 108px;
 
 /* This component has a fixed-size layout */
 .DphotoList {
-  min-height: 328px;
-  width: 100%; /* This component was designed using a width of 384px */
+  min-height: 250px;
+  width: 300px; /* This component was designed using a width of 384px */
 }
 .DphotoList > .background > .containerMinHeight {
   min-height: 328px;
 }
 
 
-.DphotoList .elGroupPhoto {
+.DphotoList .elGroupPhoto img  {
   position: relative;
   margin-top: -1px;
-  width: 339px;
+ width:100%;
   margin-left: 22px;
+  border-radius: 10px;
+  box-shadow:  0 8px 16px 1px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+ 
 }
 .DphotoList .elGroupPhoto > * { 
-width: 339px;
-height: 255px;
+
+height: 215px;
 }
 
 .NewFaceRecScreen {

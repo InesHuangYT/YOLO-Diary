@@ -26,8 +26,30 @@ export default class NewFaceRecScreen extends Component {
 
   componentDidMount() {
   
-    
+    console.log('|FaceRecScreen|', this.props.dataSheets['faceListData'])
   }
+
+  componentWillUnmount(){
+
+      
+    console.log('comWillUnMount')
+    this.Delete_faceListData()
+    console.log('check datasheet delete', this.props.appActions.getDataSheet('faceListData'))
+
+  }
+
+
+  Delete_faceListData = () => {
+    const length = this.props.appActions.getDataSheet('faceListData').items.length
+    for(var i=0; i<length; i++){
+    this.props.appActions.removeFromDataSheet('faceListData', this.props.appActions.getDataSheet('faceListData').items[0])
+    }
+    // console.log('show sheetdata',  this.props.appActions.getDataSheet('faceListData'))
+
+   
+   }
+
+
   onClick_elButton_PublishBubble = (ev) => {
     //this.sendData_button_PublishBubble_to_listData1(store.getValue());
     console.log(store.getValue())

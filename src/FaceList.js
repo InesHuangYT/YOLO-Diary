@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import img_elRoundimage from './images/ListItem2_elUserPic_268846.png';
-
+import  NewFaceRecScreen from './NewFaceRecScreen.js'
 
 export default class FaceList extends Component {
 
@@ -11,7 +11,8 @@ export default class FaceList extends Component {
     super(props);
     
     this.state = {
-      src:''
+      src:'',
+      message:'I have Face',
     };
   }
 
@@ -47,11 +48,14 @@ export default class FaceList extends Component {
       <div className="FaceList" style={baseStyle}>
         <div className="layoutFlow">
           <div className='elRoundimage' style={style_roundimage_outer}>
-            <img style={style_roundimage} src={"data:image/jpeg;base64, " + this.state.src} alt=""  />
-          
+          {/*(要做的事情) hover至人臉圖上顯示使用者名稱 https://bootstrap.hexschool.com/docs/4.1/components/tooltips/ */}
+            <img   style={style_roundimage} src={"data:image/jpeg;base64, " + this.state.src} alt=""  />
           </div>
           
         </div>
+
+         
+
       </div>
     )
   }
