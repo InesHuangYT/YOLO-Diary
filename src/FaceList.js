@@ -18,7 +18,10 @@ export default class FaceList extends Component {
 
 
   componentDidMount() {
-    console.log('|||Get FaceList|||',  this.props.appActions.getDataSheet('faceListData'))
+   
+    console.log('|||FaceList ID Now|||',  this.props)
+    this.setState({src: this.props.dataSheetRow.faceData})
+    // console.log('|||Get FaceList|||', )
     // var haveFaceKey = "HaveFace"
     // var noFaceKey = "NoFace"
 
@@ -44,7 +47,7 @@ export default class FaceList extends Component {
       <div className="FaceList" style={baseStyle}>
         <div className="layoutFlow">
           <div className='elRoundimage' style={style_roundimage_outer}>
-            <img style={style_roundimage} src={img_elRoundimage} alt=""  />
+            <img style={style_roundimage} src={"data:image/jpeg;base64, " + this.state.src} alt=""  />
           
           </div>
           

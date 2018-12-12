@@ -149,7 +149,7 @@ export default class NewCreateBBScreen extends Component {
         for(var j = 0 ; j < res.data.nffr.length; j++){
           NoFaceitem = {};
           NoFaceitem['diaryId'] = store.getValue().diaryId
-          NoFaceitem['notFoundFaceData'] = res.data.nffr[j].notFoundFaceData
+          NoFaceitem['faceData'] = res.data.nffr[j].notFoundFaceData
           NoFaceitem.key = "NoFace"+Math.random()*(1000)
           this.NoFace_sendData_to_FaceList( NoFaceitem.diaryId, NoFaceitem.notFoundFaceData, NoFaceitem.key)
 
