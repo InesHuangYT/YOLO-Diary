@@ -1630,6 +1630,25 @@ height: 255px;
   width: 113px;
   height: 27px;
   }
+
+  .NewUserDiaryScreen .elButton_edit button {
+    border: 0.0px solid transparent;
+  }
+  
+  
+  
+    .NewUserDiaryScreen > .layoutFlow > .elButton_edit {
+      line-height: 27px;
+      position: relative;
+      margin-top: 31px;
+      width: 113px;
+      margin-left: 1260px;
+    }
+    .NewUserDiaryScreen > .layoutFlow > .elButton_edit > * { 
+    width: 113px;
+    height: 27px;
+    }
+
   .NewUserDiaryScreen .elList li {
     margin-bottom: 4px;
   }
@@ -1638,7 +1657,7 @@ height: 255px;
 
   .NewUserDiaryScreen > .layoutFlow > .elList {
     position: relative;
-    margin-top: -530px;
+    margin-top: -560px;
     width: 251px;
     margin-left: 100px;
   }
@@ -1646,6 +1665,8 @@ height: 255px;
   width: 251px;
   height: 712px;
   }
+
+  
 
 /* This component has a fixed-size layout */
 .ListPic {
