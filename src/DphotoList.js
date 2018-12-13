@@ -35,7 +35,7 @@ export default class DphotoList extends Component {
         <div className="layoutFlow">
           <div className='elGroupPhoto' style={style_groupPhoto_outer}>
             <img  src={"data:image/jpeg;base64, "+ this.props.dataSheetRow.photoData} key={this.props.dataSheetRow.key} alt=""  />
-          
+           
           </div>
           
         </div>

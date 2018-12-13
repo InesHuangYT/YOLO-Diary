@@ -50,6 +50,7 @@ export default class FaceList extends Component {
           <div className='elRoundimage' style={style_roundimage_outer}>
           {/*(要做的事情) hover至人臉圖上顯示使用者名稱 https://bootstrap.hexschool.com/docs/4.1/components/tooltips/ */}
             <img   style={style_roundimage} src={"data:image/jpeg;base64, " + this.state.src} alt=""  />
+            
           </div>
           
         </div>
