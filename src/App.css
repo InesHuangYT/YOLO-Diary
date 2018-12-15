@@ -811,6 +811,7 @@
 
 /* This component has a fixed-size layout */
 .FaceList {
+  
   height: 111px;
   width: 120px; /* This component was designed using a width of 111px */
 }
@@ -821,15 +822,15 @@
   position: relative;
   border: 2px solid transparent;
   width: 111px;
-  height: 140px;
+  height: 180px;
   
 }
 
 .FaceList .elRoundimage img {
   border-radius: 270px;
   position: relative;
-  margin-top: 0px;
-  width: 108px;
+  margin-top: -70px;
+  width: 111px;
   margin-left: 0px;
   border:3px solid skyblue ;
   padding:2px;
@@ -849,11 +850,14 @@
   z-index: 1;
  opacity: 0;
  transition: 0.6s;
+ 
 }
 .FaceList:hover .tooltiptext {
   opacity: 0.7;
-  visibility: visible;
+  visibility: visible ;
+  
 }
+
 .FaceList .elRoundimage > * { 
 width: 108px;
 height: 108px;
