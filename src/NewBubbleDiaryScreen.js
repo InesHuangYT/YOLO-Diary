@@ -5,17 +5,65 @@ import NavBar from './NavBar';
 import Addbubble from './Addbubble';
 import ListItem1 from './ListItem1';
 // import Axios from 'axios';
-
-
-
-
+import {
+  Icon, Button, Input, AutoComplete,
+} from 'antd';
 // UI framework component imports
-import Button from 'muicss/lib/react/button';
+// import Button from 'muicss/lib/react/button';
 import Container from 'muicss/lib/react/container';
 // import store from './store';
 
+const Option = AutoComplete.Option;
+
+function onSelect(value) {
+  console.log('onSelect', value);
+}
+
+function getRandomInt(max, min = 0) {
+  return Math.floor(Math.random() * (max - min + 1)) + min; // eslint-disable-line no-mixed-operators
+}
+
+function searchResult(query) {
+  return (new Array(getRandomInt(5))).join('.').split('.')
+    .map((item, idx) => ({
+      query,
+      category: `${query}${idx}`,
+      count: getRandomInt(200, 100),
+    }));
+}
+
+function renderOption(item) {
+  return (
+    <Option key={item.category} text={item.category}>
+      {item.query} 在
+      <a
+        href={`https://s.taobao.com/search?q=${item.query}`}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {item.category}
+      </a>
+      區塊中
+      <span className="global-search-item-count">约 {item.count} 個结果</span>
+    </Option>
+  );
+}
+
+
+
+
+
 export default class NewBubbleDiaryScreen extends Component {
 
+  state = {
+    dataSource: [],
+  }
+
+  handleSearch = (value) => {
+    this.setState({
+      dataSource: value ? searchResult(value) : [],
+    });
+  }
   // Properties used by this component:
   // appActions, deviceInfo, fieldtitle, textcontent
 
@@ -99,7 +147,8 @@ export default class NewBubbleDiaryScreen extends Component {
     const style_button_update_outer = {
       pointerEvents: 'none',
     };
-
+  
+    const { dataSource } = this.state;
     return (
       <Container fluid={true} className="AppScreen NewBubbleDiaryScreen" style={baseStyle}>
         <div className="background">
@@ -137,7 +186,7 @@ export default class NewBubbleDiaryScreen extends Component {
           </div>
 
           <div className='actionFont elButton_delete' style={style_button_delete_outer}>
-            <Button style={style_button_delete} color="accent" >
+            <Button  >
               {this.props.locStrings.newbubblediary_button_93732}
             </Button>
 
@@ -149,11 +198,32 @@ export default class NewBubbleDiaryScreen extends Component {
             </Button>
 
           </div>
+          <div className="global-search-wrapper" style={{ width: 300 }}>
+        <AutoComplete
+          className="global-search"
+          size="large"
+          style={{ width: '100%' }}
+          dataSource={dataSource.map(renderOption)}
+          onSelect={onSelect}
+          onSearch={this.handleSearch}
+          placeholder="input here"
+          optionLabelProp="text"
+        >
+          <Input
+            suffix={(
+              <Button className="search-btn" size="large" type="primary">
+                <Icon type="search" />
+              </Button>
+            )}
+          />
+        </AutoComplete>
+      </div>
+          
 
         </div>
       </Container>
     )
   }
-
+  
 
 }
