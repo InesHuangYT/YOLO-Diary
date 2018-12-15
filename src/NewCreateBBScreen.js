@@ -134,12 +134,13 @@ export default class NewCreateBBScreen extends Component {
       if(res.data.sfr.length > 0){
         for(var i = 0 ; i < res.data.sfr.length; i++){
         Faceitem = {};
+        Faceitem['diaryId'] = store.getValue().diaryId
         Faceitem['faceData'] = res.data.sfr[i].faceData
         Faceitem['userTaged'] = res.data.sfr[i].userTaged
-        Faceitem.key = res.data.sfr[i].userTaged
-        console.log('|||FaceitemKey|||->',Faceitem.userTaged)
-        console.log('|||FaceitemKey|||->', Faceitem.key)
-        this.HaveFace_sendData_to_FaceList(Faceitem.faceData, Faceitem.userTaged, Faceitem.key)
+        Faceitem.key = "HaveFace"+res.data.sfr[i].userTaged
+        // console.log('|||FaceitemKey|||->',Faceitem.userTaged)
+        // console.log('|||FaceitemKey|||->', Faceitem.key)
+        this.HaveFace_sendData_to_FaceList(Faceitem.diaryId, Faceitem.faceData, Faceitem.userTaged, Faceitem.key)
         }
         
       }
@@ -147,15 +148,16 @@ export default class NewCreateBBScreen extends Component {
       if(res.data.nffr.length > 0){
         for(var j = 0 ; j < res.data.nffr.length; j++){
           NoFaceitem = {};
-          NoFaceitem['notFoundFaceData'] = res.data.nffr[j].notFoundFaceData
-          NoFaceitem.key = Math.random()*(1000)
-          this.NoFace_sendData_to_FaceList(NoFaceitem.notFoundFaceData, NoFaceitem.key)
+          NoFaceitem['diaryId'] = store.getValue().diaryId
+          NoFaceitem['faceData'] = res.data.nffr[j].notFoundFaceData
+          NoFaceitem.key = "NoFace"+Math.random()*(1000)
+          this.NoFace_sendData_to_FaceList( NoFaceitem.diaryId, NoFaceitem.faceData, NoFaceitem.key)
 
         }
 
       }
 
-      
+ 
 
 
        console.log("||Check FaceListData||->", this.props.appActions.getDataSheet('faceListData'))
@@ -175,13 +177,14 @@ export default class NewCreateBBScreen extends Component {
   }
 
 
-  HaveFace_sendData_to_FaceList(face, user, key){
+  HaveFace_sendData_to_FaceList(diaryId ,face, user, key){
     const dataSheet = this.props.appActions.getDataSheet('faceListData');
 
     let row = this.props.dataSheetRow || {
     };
 
     row = {
+      diaryId: diaryId,
       faceData: face,
       userTaged: user,
       key: key,
@@ -191,7 +194,7 @@ export default class NewCreateBBScreen extends Component {
 
   }
 
-  NoFace_sendData_to_FaceList(notFoundFace, key){
+  NoFace_sendData_to_FaceList(diaryId, notFoundFace, key){
     const dataSheet = this.props.appActions.getDataSheet('faceListData');
 
     let row = this.props.dataSheetRow || {
@@ -199,7 +202,8 @@ export default class NewCreateBBScreen extends Component {
     
     row = {
       
-      notFoundFaceData: notFoundFace,
+      diaryId: diaryId,
+      faceData: notFoundFace,
       key: key,
 
     }

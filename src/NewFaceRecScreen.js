@@ -11,6 +11,7 @@ import DphotoList from './DphotoList';
 import Container from 'muicss/lib/react/container';
 import store from './store';
 import DataSheet_dphotoListData from './DataSheet_dphotoListData.js'
+import axios from 'axios';
 
 export default class NewFaceRecScreen extends Component {
 
@@ -26,19 +27,34 @@ export default class NewFaceRecScreen extends Component {
 
   componentDidMount() {
   
-    
+    console.log('|FaceRecScreen|', this.props.dataSheets['faceListData'])
   }
-  onClick_elButton_PublishBubble = (ev) => {
-    //this.sendData_button_PublishBubble_to_listData1(store.getValue());
-    console.log(store.getValue())
 
-    // store diaryId
-  // store.setValue({
-  //   diaryId: this.diaryId
-  // })
-  store.setValue({
-    testId: 'test3'
-  })
+  componentWillUnmount(){
+     
+    // axios.post('/api/engineTag/sendTagEmail', ).then(res =>{
+
+    // })
+
+
+      
+    console.log('comWillUnMount')
+    this.Delete_faceListData()
+    console.log('check datasheet delete', this.props.appActions.getDataSheet('faceListData'))
+
+  }
+
+
+  Delete_faceListData = () => {
+    const length = this.props.appActions.getDataSheet('faceListData').items.length
+    for(var i=0; i<length; i++){
+    this.props.appActions.removeFromDataSheet('faceListData', this.props.appActions.getDataSheet('faceListData').items[0])
+    }
+   }
+
+
+  onClick_elButton_PublishBubble = (ev) => {
+   
     // Go to screen 'NewBubbleDiary'
     this.props.appActions.goToScreen('newbubblediary', { transitionId: 'fadeIn' });
   

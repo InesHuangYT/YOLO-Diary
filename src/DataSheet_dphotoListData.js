@@ -40,6 +40,25 @@ export default class DataSheet_dphotoListData extends DataSheetBase {
 
   }
 
+  componentWillUnmount(){
+
+      
+    console.log('comWillUnMount')
+    this.Delete_dphotoListData()
+    console.log('check datasheet delete', this.props.appActions.getDataSheet('dphotoListData'))
+
+  }
+
+
+  Delete_dphotoListData = () => {
+    const length = this.props.appActions.getDataSheet('dphotoListData').items.length
+    for(var i=0; i<length; i++){
+    this.props.appActions.removeFromDataSheet('dphotoListData', this.props.appActions.getDataSheet('dphotoListData').items[0])
+    }
+    // console.log('show sheetdata',  this.props.appActions.getDataSheet('dphotoListData'))
+
+   
+   }
 
 
   

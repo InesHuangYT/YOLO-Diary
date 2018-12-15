@@ -7,8 +7,9 @@ import ListNotification from './ListNotification';
 
 // UI framework component imports
 import Container from 'muicss/lib/react/container';
-
-
+import test1 from './images/02.jpg';
+import test2 from './images/03.jpg';
+import test3 from './images/04.JPG';
 export default class NewHomeNotificationScreen extends Component {
 
   // Properties used by this component:
@@ -90,7 +91,17 @@ export default class NewHomeNotificationScreen extends Component {
             </ul>
           
           </div> */}
-          
+          <div>
+           <div className='homepagepic-left'>
+          <img src={test3} alt=''/>
+          </div>
+           <div className='homepagepic-right'>
+          <img src={test2} alt=''/>
+          </div>
+          <div className='homepagepic'>
+          <img src={test1} alt=''/>
+          </div>
+         </div>
         </div>
       </Container>
     )
