@@ -3259,14 +3259,16 @@ height: 240px;
   
   /* Style the back side */
   .flip-box-back {
+    position: absolute;
     background-color:rgb(255, 255, 200);
     border-radius: 8px;
-    color: white;
+    color: black;
     height: 150px;
     width: 190px;
     transform: rotateY(180deg);
     opacity: 0.7;
     box-shadow:  0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    text-align: center;
   }
   .ListItem1 .elCard {
     background: transparent;
