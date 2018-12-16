@@ -4,7 +4,7 @@ import img_elRoundimage from './images/ListItem2_elUserPic_268846.png';
 import NewFaceRecScreen from './NewFaceRecScreen.js'
 import Input from 'muicss/lib/react/input';
 import { Button } from 'antd';
-import { Modal, message,notification } from 'antd';
+import { Modal, message, notification } from 'antd';
 import 'antd/dist/antd.css';
 import img_deleteIcon from './images/deleteIcon.png'
 import axios from 'axios';
@@ -21,15 +21,16 @@ export default class FaceList extends Component {
       src: '',
       user: '',
       hidden: true,
-      value:'',
+      value: '',
       emailNotFound_visible: false,
-      usernameNotFound_visible: false
+      usernameNotFound_visible: false,
+      catchEmail: '',
 
     };
 
   }
 
-  
+
 
   componentDidMount() {
 
@@ -62,7 +63,8 @@ export default class FaceList extends Component {
     if (e.keyCode == 13) {
 
       console.log('value', e.target.value);
-      this.setState({value : e.target.value}) 
+      this.setState({ value: e.target.value })
+
       var value = e.target.value
       if (value.indexOf("@") >= 0) {
         axios.get(`/api/user/checkEmailAvailability?email=${value}`).then(res => {
@@ -74,7 +76,7 @@ export default class FaceList extends Component {
               data: this.props.dataSheetRow.faceData
             }
             axios.post(`/api/selfie/trainFacePhoto?username=${res.data.username}`, data).then(res => {
-              console.log('<TRAIN>')
+              console.log('<TRAIN by Email>')
             })
             message.success('已將此照片標記為' + res.data.username)
           } else {
@@ -96,13 +98,19 @@ export default class FaceList extends Component {
         //用使用者名稱尋找資料庫有無此使用者
         axios.get(`/api/user/checkUsernameAvailability?username=${value}`).then(res => {
           console.log('Check username', res)
-          if(res.data.available == true){
+          if (res.data.available == true) {
 
+            const data = {
+              data: this.props.dataSheetRow.faceData
+            }
+            axios.post(`/api/selfie/trainFacePhoto?username=${value}`, data).then(res => {
+              console.log('<TRAIN by Username>')
+            })
 
             message.success('已將此照片標記為' + value)
 
 
-          }else{
+          } else {
             this.show_usernameNotFound_Modal()
           }
         })
@@ -123,11 +131,14 @@ export default class FaceList extends Component {
   }
 
   emailNotFound_handleOk = (e) => {
-
-
+    //寄送邀請
+    axios.post(`/api/engineTag/sendEmail?email=${this.state.value}`).then(res => {
+      console.log('send invitation res->', res)
+    })
     this.setState({
       emailNotFound_visible: false,
     });
+    message.success('寄送邀請成功')
   }
 
   emailNotFound_handleCancel = (e) => {
@@ -145,11 +156,21 @@ export default class FaceList extends Component {
   }
 
   usernameNotFound_handleOk = (e) => {
+    //寄送邀請
+    if (this.state.catchEmail.indexOf("@") >= 0) {
 
+      axios.post(`/api/engineTag/sendEmail?email=${this.state.catchEmail}`).then(res => {
+        console.log('send invitation res->', res)
+      })
 
-    this.setState({
-      usernameNotFound_visible: false,
-    });
+      this.setState({
+        usernameNotFound_visible: false,
+      });
+      message.success('寄送邀請成功')
+    } else {
+      message.error('信箱輸入錯誤')
+    }
+
   }
 
   usernameNotFound_handleCancel = (e) => {
@@ -157,6 +178,12 @@ export default class FaceList extends Component {
     this.setState({
       usernameNotFound_visible: false,
     });
+  }
+
+  enterEmail = (e) => {
+
+    this.setState({ catchEmail: e.target.value })
+
   }
 
 
@@ -216,55 +243,55 @@ export default class FaceList extends Component {
                 此用戶尚未註冊，是否發送邀請到此email?
          </div>
               <div className="w3-row w3-section">
-                <div className="w3-col" style={{width:'50px'}}><i className="w3-xxlarge fa fa-envelope-o"></i></div>
+                <div className="w3-col" style={{ width: '50px' }}><i className="w3-xxlarge fa fa-envelope-o"></i></div>
                 <div className="w3-rest">
-                  <input className="w3-input w3-border" name="email" type="text" placeholder="Enter Email" defaultValue={this.state.value}/>
+                  <input className="w3-input w3-border" name="email" type="text" placeholder="Enter Email" defaultValue={this.state.value} />
                 </div>
-                </div>
-               
-            </Modal>
-
-              <Modal title="找不到此用戶" visible={this.state.usernameNotFound_visible} onOk={this.usernameNotFound_handleOk} onCancel={this.usernameNotFound_handleCancel} width='350px'>
-              <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-              <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-                <div style={textStyle} >
-                  此用戶尚未註冊<br />
-                  在下方輸入好友的email即可邀請對方來使用YOLO日記!
-         </div>
-         <div className="w3-row w3-section">
-                <div className="w3-col" style={{width:'50px'}}><i className="w3-xxlarge fa fa-envelope-o"></i></div>
-                <div className="w3-rest">
-                  <input className="w3-input w3-border" name="email" type="text" placeholder="Enter Email" />
-                </div>
-                </div>
-
-              </Modal>
-
-              <img style={style_roundimage} src={"data:image/jpeg;base64, " + this.state.src} alt="" onClick={this.img_Onclick.bind(this)} />
-              <span className="tooltiptext">{this.state.user}</span>
-
-              <div className='img_deleteIcon' style={style_img_deleteIcon}>
-                <img style={style_img_deleteIcon} src={img_deleteIcon} />
               </div>
 
+            </Modal>
+
+            <Modal title="找不到此用戶" visible={this.state.usernameNotFound_visible} onOk={this.usernameNotFound_handleOk} onCancel={this.usernameNotFound_handleCancel} width='350px'>
+              <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+              <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+              <div style={textStyle} >
+                此用戶尚未註冊<br />
+                在下方輸入好友的email即可邀請對方來使用YOLO日記!
+         </div>
+              <div className="w3-row w3-section">
+                <div className="w3-col" style={{ width: '50px' }}><i className="w3-xxlarge fa fa-envelope-o"></i></div>
+                <div className="w3-rest">
+                  <input className="w3-input w3-border" name="email" type="text" placeholder="Enter Email" onChange={this.enterEmail} />
+                </div>
+              </div>
+
+            </Modal>
+
+            <img style={style_roundimage} src={"data:image/jpeg;base64, " + this.state.src} alt="" onClick={this.img_Onclick.bind(this)} />
+            <span className="tooltiptext">{this.state.user}</span>
+
+            <div className='img_deleteIcon' style={style_img_deleteIcon}>
+              <img style={style_img_deleteIcon} src={img_deleteIcon} />
+            </div>
+
           </div>
 
 
 
 
 
-          </div>
+        </div>
 
 
 
 
 
-        </div >
-        )
-      }
-    
-    
-    }
+      </div >
+    )
+  }
+
+
+}
 // const ShowTextField = () =>{
 //   <Input type="text"/>
 // }
