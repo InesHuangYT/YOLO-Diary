@@ -94,6 +94,9 @@ export default class ListItem1 extends Component {
       pointerEvents: 'none',
       
    };
+   const style_time = {
+    display: 'block',
+ };
    
     return (
       <div className="ListItem1" style={baseStyle}>
@@ -126,6 +129,10 @@ export default class ListItem1 extends Component {
 
                 </div>
                
+                <div className='baseFont time'>
+                 <Input  type="text"  />
+                </div>
+
               </div>
               </div>
             </div>

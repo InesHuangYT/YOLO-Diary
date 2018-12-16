@@ -3208,6 +3208,18 @@ height: 240px;
   width: 168px;
   height: 34px;
   }
+
+  .ListItem1 .time {
+    position: relative;
+    margin-top: 25px;
+    width: 186px;
+    margin-left: 12px;
+  }
+  .ListItem1 .time > * { 
+  width: 168px;
+  height: 34px;
+  }
+
   .flip-box {
     background-color: transparent;
     width: 300px;
