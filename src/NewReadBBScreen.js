@@ -163,7 +163,7 @@ export default class NewReadBBScreen extends Component {
           </div> */}
           
           <div className='elMainBubble' style={style_mainBubble_outer}>
-            <img style={style_mainBubble} src={img_elMainBubble} alt="" onClick={this.onClick_el02.bind(this)} />
+            <img style={style_mainBubble} src={img_elMainBubble} alt="" onClick={this.onClick_el02} />
           
           </div>
           

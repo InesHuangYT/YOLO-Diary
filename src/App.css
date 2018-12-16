@@ -3344,8 +3344,8 @@ border-radius: 270px;
 
   .NewBubbleDiaryScreen > .layoutFlow > .global-search-wrapper {
     padding-right: 50px;
-    margin-left: 1200px;
-    margin-top: 40px;
+    margin-left: 80px;
+    margin-top: 50px;
     border: 0.0px solid transparent;
   }
   
@@ -3387,14 +3387,14 @@ border-radius: 270px;
   .NewBubbleDiaryScreen > .layoutFlow > .elButton_week {
     line-height: 27px;
     position: relative;
-    margin-top: 20px;
+    margin-top: -33px;
     width: 113px;
-    margin-left: 1170px;
+    margin-left: 420px;
   }
   .NewBubbleDiaryScreen > .layoutFlow > .elButton_week > * { 
   width: 113px;
   height: 27px;
-  background-color: rgb(18, 167, 212);
+  background-color: rgb(69, 154, 252);
   color: #f1f1f1;
   }
 
@@ -3406,12 +3406,12 @@ border-radius: 270px;
     position: relative;
     margin-top: -27px;
     width: 113px;
-    margin-left: 1290px;
+    margin-left: 540px;
   }
   .NewBubbleDiaryScreen > .layoutFlow > .elButton_month > * { 
   width: 113px;
   height: 27px;
-  background-color: rgb(18, 167, 212);
+  background-color: rgb(69, 154, 252);
   color: #fcffff;
   }
 
@@ -3423,12 +3423,12 @@ border-radius: 270px;
     position: relative;
     margin-top: -27px;
     width: 113px;
-    margin-left: 1410px;
+    margin-left: 660px;
   }
   .NewBubbleDiaryScreen > .layoutFlow > .elButton_year > * { 
   width: 113px;
   height: 27px;
-  background-color: rgb(18, 167, 212);
+  background-color: rgb(69, 154, 252);
   color: #fcffff;
   }
 
@@ -3589,7 +3589,7 @@ border-radius: 270px;
 
   .NewBubbleDiaryScreen > .layoutFlow > .elList {
     position: relative;
-    margin-top: -10px;
+    margin-top: 10px;
     width: 1415px;
     margin-left: 30px;
   }
