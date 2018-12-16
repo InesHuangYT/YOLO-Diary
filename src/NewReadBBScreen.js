@@ -162,7 +162,7 @@ export default class NewReadBBScreen extends Component {
           
           </div> */}
           
-          <div className='elMainBubble' style={style_mainBubble_outer}>
+          <div className='elMainBubble' >
             <img style={style_mainBubble} src={img_elMainBubble} alt="" onClick={this.onClick_el02} />
           
           </div>
@@ -172,7 +172,7 @@ export default class NewReadBBScreen extends Component {
           
           </div> */}
 
-          <div className='el02' style={style_02_outer}>
+          <div className='el02' >
             {/* <img style={style_02} src={img_el02} alt=""  /> */}
             <img src={"data:image/jpeg;base64, " + this.state.src} alt='' onClick={this.onClick_el02} style={{width:'250px',height:'198px'}} />
             

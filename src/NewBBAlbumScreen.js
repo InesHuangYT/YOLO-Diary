@@ -5,6 +5,7 @@ import NavBar from './NavBar';
 import ListBBAlbum from './ListBBAlbum';
 
 // UI framework component imports
+import Button from 'muicss/lib/react/button';
 import Container from 'muicss/lib/react/container';
 
 
@@ -13,6 +14,13 @@ export default class NewBBAlbumScreen extends Component {
   // Properties used by this component:
   // appActions, deviceInfo, fieldtitle, textcontent
 
+  onClick_elButton = (ev) => {
+    // Go back in screen navigation history
+    this.props.appActions.goBack();
+  
+  }
+  
+  
   render() {
     // eslint-disable-next-line no-unused-vars
     let baseStyle = {};
@@ -50,6 +58,14 @@ export default class NewBBAlbumScreen extends Component {
     let listComps_listPhotos = {};
     items_listPhotos = items_listPhotos.concat(this.props.appActions.getDataSheet('listDataBBAlbum').items);
     
+    const style_button = {
+        display: 'block',
+        color: 'white',
+        textAlign: 'center',
+     };
+    const style_button_outer = {
+        cursor: 'pointer',
+     };
     
     return (
       <Container fluid={true} className="AppScreen NewBBAlbumScreen" style={baseStyle}>
@@ -81,6 +97,14 @@ export default class NewBBAlbumScreen extends Component {
                 )
               })}
             </div>
+          
+          </div>
+          
+          <div className='actionFont elButton' style={style_button_outer}>
+            <Button style={style_button}  color="accent" onClick={this.onClick_elButton} >
+              {this.props.locStrings.newbbalbum_button_513790}
+              上一頁
+            </Button>
           
           </div>
           
