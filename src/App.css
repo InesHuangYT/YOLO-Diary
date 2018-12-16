@@ -831,7 +831,7 @@
   position: relative;
   margin-top: -70px;
   width: 111px;
-  margin-left: 0px;
+  margin-left: 5px;
   border:3px solid skyblue ;
   padding:2px;
 }
@@ -847,6 +847,7 @@
   font-family: Microsoft JhengHei;
   /* Position the tooltip */
   position: absolute;
+  margin-left: 10px;
   z-index: 1;
  opacity: 0;
  transition: 0.6s;
@@ -858,10 +859,39 @@
   
 }
 
+.FaceList .tagfield {
+ 
+  margin-left: 10px;
+
+}
+
 .FaceList .elRoundimage > * { 
 width: 108px;
 height: 108px;
 }
+
+.FaceList .img_deleteIcon {
+  margin-left: -15px;
+  margin-top: -75px;
+  opacity: 0;
+  transition: 0.75s;
+ 
+}
+.FaceList:hover .img_deleteIcon {
+  opacity: 1;
+}
+
+.FaceList .img_deleteIcon img {
+  width: 50px;
+  height: 50px;
+  border-color: transparent;
+
+}
+
+
+
+
+
 
 
 
@@ -1710,7 +1740,7 @@ height: 215px;
   width: 300px;
   height:100%;
 }
-.ListPic .pic1 img:hover {
+.ListPic .pic1 img {
   opacity: 0.7;
 }
 
