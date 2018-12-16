@@ -3384,7 +3384,7 @@ height: 240px;
 
   .NewBubbleDiaryScreen > .layoutFlow > .global-search-wrapper {
     padding-right: 50px;
-    margin-left: 80px;
+    margin-left: 1180px;
     margin-top: 50px;
     border: 0.0px solid transparent;
   }
@@ -3429,7 +3429,7 @@ height: 240px;
     position: relative;
     margin-top: -33px;
     width: 113px;
-    margin-left: 420px;
+    margin-left: 780px;
   }
   .NewBubbleDiaryScreen > .layoutFlow > .elButton_week > * { 
   width: 113px;
@@ -3446,7 +3446,7 @@ height: 240px;
     position: relative;
     margin-top: -27px;
     width: 113px;
-    margin-left: 540px;
+    margin-left: 900px;
   }
   .NewBubbleDiaryScreen > .layoutFlow > .elButton_month > * { 
   width: 113px;
@@ -3463,7 +3463,7 @@ height: 240px;
     position: relative;
     margin-top: -27px;
     width: 113px;
-    margin-left: 660px;
+    margin-left: 1020px;
   }
   .NewBubbleDiaryScreen > .layoutFlow > .elButton_year > * { 
   width: 113px;
@@ -3630,11 +3630,11 @@ height: 240px;
   .NewBubbleDiaryScreen > .layoutFlow > .elList {
     position: relative;
     margin-top: 10px;
-    width: 1415px;
+    width: 1420px;
     margin-left: 30px;
   }
   .NewBubbleDiaryScreen > .layoutFlow > .elList > * { 
-  width: 1400px;
+  width: 1420px;
   height: 303px;
   }
   
