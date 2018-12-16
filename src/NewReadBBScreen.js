@@ -214,6 +214,5 @@ export default class NewReadBBScreen extends Component {
       </Container>
     )
   }
-  
 
 }
