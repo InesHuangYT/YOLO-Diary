@@ -16,7 +16,7 @@ import Container from 'muicss/lib/react/container';
 
 
 
-const Option = AutoComplete.Option;
+    const Option = AutoComplete.Option;
 
 function onSelect(value) {
   console.log('onSelect', value);
