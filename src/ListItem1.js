@@ -45,9 +45,6 @@ export default class ListItem1 extends Component {
       console.log('photo', res)
       console.log('prop',this.props.dataSheetRow.photoCover)
       _this.setState({src:res.data.photodata})
-     
-
-
       // _this.setState({src:Buffer.from(res.data, 'binary').toString('base64')})
       //console.log('buffer=>', _this.state.src)
     })
@@ -70,6 +67,10 @@ export default class ListItem1 extends Component {
     this.setState({albumId: this.state.albumId});
   }
 
+  textInputChanged_albumCreatedAt = (event) => {
+    this.setState({albumCreatedAt: this.state.albumCreatedAt});
+  }
+
   
   render() {
     // eslint-disable-next-line no-unused-vars
@@ -87,6 +88,7 @@ export default class ListItem1 extends Component {
         display: 'block',
      };
      const value_field = this.props.dataSheetRow.albumName;
+     const value_time = this.props.dataSheetRow.albumCreatedAt;
     
     const style_card_outer = {
       //backgroundColor: 'white',
@@ -130,7 +132,7 @@ export default class ListItem1 extends Component {
                 </div>
                
                 <div className='baseFont time'>
-                 <Input  type="text"  />
+                 <label  type="text" onChange={this.textInputChanged_albumCreatedAt} value="">{value_time}</label>
                 </div>
 
               </div>
