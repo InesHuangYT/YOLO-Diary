@@ -4,6 +4,7 @@ import img_elBubbleDiaryBG from './images/NewFaceRecScreen_elBubbleDiaryBG_53437
 import NavBar from './NavBar';
 import Addbubble from './Addbubble';
 import ListItem1 from './ListItem1';
+import DataSheet_listData1 from './DataSheet_listData1.js'
 // import Axios from 'axios';
 
 
@@ -20,7 +21,7 @@ export default class NewBubbleDiaryScreen extends Component {
   // appActions, deviceInfo, fieldtitle, textcontent
 
   componentDidMount() {
-     
+
     // let items_list2 = [];
     // items_list2 = this.props.appActions.getDataSheet('listUserBubble').items;
     // if(items_list2.length != 0){
@@ -28,11 +29,11 @@ export default class NewBubbleDiaryScreen extends Component {
     // items_list2.map((row) =>{
     //   this.props.appActions.removeFromDataSheet('listUserBubble',row)
     // })
-   
+
     // console.log('listUserBubble check after remove->', this.props.appActions.getDataSheet('listUserBubble').items)
     // }
     //removeItem(items_list2)
-    
+
     // console.log(store.getValue())
     // Axios.get("/api/album/albums").then(res =>{
     //   console.log("response",res);
@@ -79,7 +80,7 @@ export default class NewBubbleDiaryScreen extends Component {
     // Source items and any special components used for list/grid element 'list'.
     let items_list = [];
     let listComps_list = {};
-    
+
     listComps_list['_head'] = <Addbubble appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} />;  // Head item for this list
     items_list.push({ key: '_head', _componentId: '_head' });  // A data item to indicate the head item
 
@@ -122,16 +123,16 @@ export default class NewBubbleDiaryScreen extends Component {
             <div style={style_list} >
               {items_list.map((row, index) => {
                 let itemClasses = `gridItem cols3_${index % 3}`;
-                let itemComp = (row._componentId) ? listComps_list[row._componentId] : <ListItem1 dataSheetId={'listData1'} dataSheetRow={row}  appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} {...this.props}/>;
-                
+                let itemComp = (row._componentId) ? listComps_list[row._componentId] : <ListItem1 dataSheetId={'listData1'} dataSheetRow={row} appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} {...this.props} />;
+
                 return (
                   <div className={itemClasses} key={row.key}>
                     {itemComp}
                   </div>
-                  
+
                 )
-                })}
-                 
+              })}
+
             </div>
 
           </div>
@@ -149,6 +150,10 @@ export default class NewBubbleDiaryScreen extends Component {
             </Button>
 
           </div>
+
+          <div>
+            <DataSheet_listData1 />>
+                  </div>
 
         </div>
       </Container>

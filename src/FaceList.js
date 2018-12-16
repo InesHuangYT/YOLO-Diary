@@ -69,6 +69,13 @@ export default class FaceList extends Component {
           console.log('get: ', res)
           if (res.data.available == true) {
             //找到此用戶的email，直接標記
+            //後端訓練
+            const data = {
+              data: this.props.dataSheetRow.faceData
+            }
+            axios.post(`/api/selfie/trainFacePhoto?username=${res.data.username}`, data).then(res => {
+              console.log('<TRAIN>')
+            })
             message.success('已將此照片標記為' + res.data.username)
           } else {
             //此使用者尚未註冊，是否發送邀請?
@@ -90,6 +97,10 @@ export default class FaceList extends Component {
         axios.get(`/api/user/checkUsernameAvailability?username=${value}`).then(res => {
           console.log('Check username', res)
           if(res.data.available == true){
+
+
+            message.success('已將此照片標記為' + value)
+
 
           }else{
             this.show_usernameNotFound_Modal()
@@ -207,7 +218,7 @@ export default class FaceList extends Component {
               <div className="w3-row w3-section">
                 <div className="w3-col" style={{width:'50px'}}><i className="w3-xxlarge fa fa-envelope-o"></i></div>
                 <div className="w3-rest">
-                  <input className="w3-input w3-border" name="email" type="text" placeholder={this.state.value} defaultValue={this.state.value}/>
+                  <input className="w3-input w3-border" name="email" type="text" placeholder="Enter Email" defaultValue={this.state.value}/>
                 </div>
                 </div>
                
