@@ -14,8 +14,27 @@ export default class NewLogoutScreen extends Component {
 
   onClick_elButton_ReLogin = (ev) => {
     // Go to screen 'NewLoginAndRegister'
+
+    this.Delete_ListData('listData1')
+    this.Delete_ListData('listData2')
+    this.Delete_ListData('listData3')
+    this.Delete_ListData('listUserBubble')
+    this.Delete_ListData('listDataPic')
+    this.Delete_ListData('faceListData')
+    this.Delete_ListData('dphotoListData')
+
     this.props.appActions.goToScreen('newloginandregister', { transitionId: 'fadeIn' });
+   
   
+  }
+  
+
+  Delete_ListData(listName){
+    
+    const length = this.props.appActions.getDataSheet(listName).items.length
+    for(var i=0; i<length; i++){
+      this.props.appActions.removeFromDataSheet(listName, this.props.appActions.getDataSheet(listName).items[0])
+    }
   }
   
   
