@@ -148,6 +148,16 @@ export default class NewUserDiaryScreen extends Component {
   const style_button_OK_outer = {
         cursor: 'pointer',
      };
+
+     const style_button_edit = {
+      display: 'block',
+      color: 'white',
+      textAlign: 'center',
+   };
+  const style_button_edit_outer = {
+      pointerEvents: 'none',
+   };
+
   const style_list = {
       height: 'auto',  // This element is in scroll flow
    };
@@ -211,6 +221,14 @@ export default class NewUserDiaryScreen extends Component {
           
           </div>
 
+           <div className='actionFont elButton_edit' style={style_button_edit_outer}>
+            <Button style={style_button_edit}  color="accent" >
+              {this.props.locStrings.newuserdiary_button_31614}
+              編輯
+            </Button>
+          
+          </div>
+
           <div className='hasNestedComps elList'>
             <ul style={style_list} key={Math.random()}>
               {items_list.map((row, index) => {
@@ -225,6 +243,7 @@ export default class NewUserDiaryScreen extends Component {
           <div className='Picture'>
                   <DataSheet_listDataPic {...this.props}/>>
                   </div>
+                  
         </div>
       </Container>
     )

@@ -713,6 +713,7 @@
   border-radius: 270px;
   font-size :0;
   width: 250px; 
+  opacity:0.1;
 }
 
 
@@ -1696,6 +1697,25 @@ height: 215px;
   width: 113px;
   height: 27px;
   }
+
+  .NewUserDiaryScreen .elButton_edit button {
+    border: 0.0px solid transparent;
+  }
+  
+  
+  
+    .NewUserDiaryScreen > .layoutFlow > .elButton_edit {
+      line-height: 27px;
+      position: relative;
+      margin-top: 31px;
+      width: 113px;
+      margin-left: 1260px;
+    }
+    .NewUserDiaryScreen > .layoutFlow > .elButton_edit > * { 
+    width: 113px;
+    height: 27px;
+    }
+
   .NewUserDiaryScreen .elList li {
     margin-bottom: 4px;
   }
@@ -1704,7 +1724,7 @@ height: 215px;
 
   .NewUserDiaryScreen > .layoutFlow > .elList {
     position: relative;
-    margin-top: -530px;
+    margin-top: -560px;
     width: 251px;
     margin-left: 100px;
   }
@@ -1712,6 +1732,8 @@ height: 215px;
   width: 251px;
   height: 712px;
   }
+
+  
 
 /* This component has a fixed-size layout */
 .ListPic {
@@ -2405,6 +2427,251 @@ height: 166px;
 border-radius: 270px;
 }
 
+/* This component has a fixed-size layout */
+.ListBBAlbum {
+  min-height: 292px;
+  width: 100%; /* This component was designed using a width of 464px */
+}
+.ListBBAlbum > .background > .containerMinHeight {
+  min-height: 292px;
+}
+
+
+.ListBBAlbum .elImage {
+  position: relative;
+  margin-top: 16px;
+  width: 425px;
+  margin-left: 18px;
+}
+.ListBBAlbum .elImage > * { 
+width: 425px;
+height: 240px;
+}
+
+.NewBBAlbumScreen {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+  .NewBBAlbumScreen > .background > .elBackground {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    width: 100.0%;
+    height: 899px;
+  }
+
+
+  .NewBBAlbumScreen > .background > .elBubbleDiaryBG {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 1602px;
+    height: 906px;
+  }
+
+
+  .NewBBAlbumScreen > .layoutFlow > .elNavBar2 {
+    position: relative;
+    margin-top: 0px;
+    width: 1605px;
+    margin-left: -2px;
+  }
+  .NewBBAlbumScreen > .layoutFlow > .elNavBar2 > * { 
+  width: 1605px;
+  height: 90px;
+  }
+  
+  .NewBBAlbumScreen > .layoutFlow > .elNavBar2 > .background > .containerMinHeight {
+    min-height: 90px;
+  }
+
+
+  .NewBBAlbumScreen .elListPhotos:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .NewBBAlbumScreen .elListPhotos .gridItem {
+    float: left;
+    position: relative;
+  }
+
+@media (min-width: 1024px) {
+  .NewBBAlbumScreen .elListPhotos .gridItem {
+    width: calc(100% / 4 - 9.0px*(3/4));
+    overflow: hidden;
+  }
+
+  .NewBBAlbumScreen .elListPhotos .cols4_0 {
+    margin-right: 9.0px;
+    margin-bottom: 9.0px;
+    clear: left;
+  }
+  .NewBBAlbumScreen .elListPhotos .cols4_1 {
+    margin-right: 9.0px;
+    margin-bottom: 9.0px;
+  }
+  .NewBBAlbumScreen .elListPhotos .cols4_2 {
+    margin-right: 9.0px;
+    margin-bottom: 9.0px;
+  }
+  .NewBBAlbumScreen .elListPhotos .cols4_3 {
+    margin-bottom: 9.0px;
+  }
+  .NewBBAlbumScreen .elListPhotos .cols4_3:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+}
+
+@media (max-width: 1023px) {
+  .NewBBAlbumScreen .elListPhotos .gridItem {
+    width: calc(100% / 4 - 9.0px*(3/4));
+    overflow: hidden;
+  }
+
+  .NewBBAlbumScreen .elListPhotos .cols4_0 {
+    margin-right: 9.0px;
+    margin-bottom: 9.0px;
+    clear: left;
+  }
+  .NewBBAlbumScreen .elListPhotos .cols4_1 {
+    margin-right: 9.0px;
+    margin-bottom: 9.0px;
+  }
+  .NewBBAlbumScreen .elListPhotos .cols4_2 {
+    margin-right: 9.0px;
+    margin-bottom: 9.0px;
+  }
+  .NewBBAlbumScreen .elListPhotos .cols4_3 {
+    margin-bottom: 9.0px;
+  }
+  .NewBBAlbumScreen .elListPhotos .cols4_3:after { }
+  .NewBBAlbumScreen .elListPhotos .cols4_3:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+}
+
+@media (max-width: 767px) {
+  .NewBBAlbumScreen .elListPhotos .gridItem {
+    width: calc(100% / 4 - 9.1px*(3/4));
+    overflow: hidden;
+  }
+
+  .NewBBAlbumScreen .elListPhotos .cols4_0 { margin-right: 0; margin-bottom: 0; }
+  .NewBBAlbumScreen .elListPhotos .cols4_1 { margin-right: 0; margin-bottom: 0; }
+  .NewBBAlbumScreen .elListPhotos .cols4_2 { margin-right: 0; margin-bottom: 0; }
+  .NewBBAlbumScreen .elListPhotos .cols4_3 { margin-right: 0; margin-bottom: 0; }
+  .NewBBAlbumScreen .elListPhotos .cols4_0 {
+    margin-right: 9.1px;
+    margin-bottom: 9.1px;
+    clear: left;
+  }
+  .NewBBAlbumScreen .elListPhotos .cols4_1 {
+    margin-right: 9.1px;
+    margin-bottom: 9.1px;
+  }
+  .NewBBAlbumScreen .elListPhotos .cols4_2 {
+    margin-right: 9.1px;
+    margin-bottom: 9.1px;
+  }
+  .NewBBAlbumScreen .elListPhotos .cols4_3 {
+    margin-bottom: 9.1px;
+  }
+  .NewBBAlbumScreen .elListPhotos .cols4_3:after { }
+  .NewBBAlbumScreen .elListPhotos .cols4_3:after { }
+  .NewBBAlbumScreen .elListPhotos .cols4_3:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+}
+
+@media (max-width: 567px) {
+  .NewBBAlbumScreen .elListPhotos .gridItem {
+    width: calc(100% / 4 - 9.1px*(3/4));
+    overflow: hidden;
+  }
+
+  .NewBBAlbumScreen .elListPhotos .cols4_0 { margin-right: 0; margin-bottom: 0; }
+  .NewBBAlbumScreen .elListPhotos .cols4_1 { margin-right: 0; margin-bottom: 0; }
+  .NewBBAlbumScreen .elListPhotos .cols4_2 { margin-right: 0; margin-bottom: 0; }
+  .NewBBAlbumScreen .elListPhotos .cols4_3 { margin-right: 0; margin-bottom: 0; }
+  .NewBBAlbumScreen .elListPhotos .cols4_0 { margin-right: 0; margin-bottom: 0; }
+  .NewBBAlbumScreen .elListPhotos .cols4_1 { margin-right: 0; margin-bottom: 0; }
+  .NewBBAlbumScreen .elListPhotos .cols4_2 { margin-right: 0; margin-bottom: 0; }
+  .NewBBAlbumScreen .elListPhotos .cols4_3 { margin-right: 0; margin-bottom: 0; }
+  .NewBBAlbumScreen .elListPhotos .cols4_0 {
+    margin-right: 9.1px;
+    margin-bottom: 9.1px;
+    clear: left;
+  }
+  .NewBBAlbumScreen .elListPhotos .cols4_1 {
+    margin-right: 9.1px;
+    margin-bottom: 9.1px;
+  }
+  .NewBBAlbumScreen .elListPhotos .cols4_2 {
+    margin-right: 9.1px;
+    margin-bottom: 9.1px;
+  }
+  .NewBBAlbumScreen .elListPhotos .cols4_3 {
+    margin-bottom: 9.1px;
+  }
+  .NewBBAlbumScreen .elListPhotos .cols4_3:after { }
+  .NewBBAlbumScreen .elListPhotos .cols4_3:after { }
+  .NewBBAlbumScreen .elListPhotos .cols4_3:after { }
+  .NewBBAlbumScreen .elListPhotos .cols4_3:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+}
+
+
+
+  .NewBBAlbumScreen > .layoutFlow > .elListPhotos {
+    position: relative;
+    margin-top: 76px;
+    width: 1418px;
+    margin-left: 81px;
+  }
+  .NewBBAlbumScreen > .layoutFlow > .elListPhotos > * { 
+  width: 1418px;
+  height: 460px;
+  }
+  
+
+.NewBBAlbumScreen .elButton button {
+  border: 0.0px solid transparent;
+}
+
+
+
+  .NewBBAlbumScreen > .layoutFlow > .elButton {
+    line-height: 27px;
+    position: relative;
+    margin-top: 65px;
+    width: 113px;
+    margin-left: 98px;
+  }
+  .NewBBAlbumScreen > .layoutFlow > .elButton > * { 
+  width: 113px;
+  height: 27px;
+  }
+  
 
 .NewTutorCreateBBScreen {
   max-width: 1600px;
@@ -2971,6 +3238,18 @@ border-radius: 270px;
   width: 168px;
   height: 34px;
   }
+
+  .ListItem1 .time {
+    position: relative;
+    margin-top: 25px;
+    width: 186px;
+    margin-left: 12px;
+  }
+  .ListItem1 .time > * { 
+  width: 168px;
+  height: 34px;
+  }
+
   .flip-box {
     background-color: transparent;
     width: 300px;
@@ -3010,14 +3289,16 @@ border-radius: 270px;
   
   /* Style the back side */
   .flip-box-back {
+    position: absolute;
     background-color:rgb(255, 255, 200);
     border-radius: 8px;
-    color: white;
+    color: black;
     height: 150px;
     width: 190px;
     transform: rotateY(180deg);
     opacity: 0.7;
     box-shadow:  0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    text-align: center;
   }
   .ListItem1 .elCard {
     background: transparent;
@@ -3143,6 +3424,101 @@ border-radius: 270px;
   }
 
 
+  /* @import 'antd/dist/antd.css'; */
+
+  .NewBubbleDiaryScreen > .layoutFlow > .global-search-wrapper {
+    padding-right: 50px;
+    margin-left: 1180px;
+    margin-top: 50px;
+    border: 0.0px solid transparent;
+  }
+  
+  .global-search {
+    width: 100%;
+    border: 0.0px solid transparent;
+  }
+  
+  .global-search.ant-select-auto-complete .ant-select-selection--single {
+    margin-right: -46px;
+    border: 0.0px solid transparent;
+  }
+  
+  .global-search.ant-select-auto-complete .ant-input-affix-wrapper .ant-input:not(:last-child) {
+    padding-right: 62px;
+    border: 0.0px solid transparent;
+  }
+  
+  .global-search.ant-select-auto-complete .ant-input-affix-wrapper .ant-input-suffix {
+    right: 0;
+   
+  }
+  
+  .NewBubbleDiaryScreen .global-search.ant-select-auto-complete .ant-input-affix-wrapper .ant-input-suffix button {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border: 0.0px solid transparent;
+  }
+  
+  .global-search-item-count {
+    position: absolute;
+    right: 16px;
+    border: 0.0px solid transparent;
+  }
+
+  .NewBubbleDiaryScreen .elButton_week button {
+    border: 0.0px solid transparent;
+  }
+  .NewBubbleDiaryScreen > .layoutFlow > .elButton_week {
+    line-height: 27px;
+    position: relative;
+    margin-top: -33px;
+    width: 113px;
+    margin-left: 780px;
+  }
+  .NewBubbleDiaryScreen > .layoutFlow > .elButton_week > * { 
+  width: 113px;
+  height: 27px;
+  background-color: rgb(69, 154, 252);
+  color: #f1f1f1;
+  }
+
+.NewBubbleDiaryScreen .elButton_month button {
+    border: 0.0px solid transparent;
+  }
+  .NewBubbleDiaryScreen > .layoutFlow > .elButton_month {
+    line-height: 27px;
+    position: relative;
+    margin-top: -27px;
+    width: 113px;
+    margin-left: 900px;
+  }
+  .NewBubbleDiaryScreen > .layoutFlow > .elButton_month > * { 
+  width: 113px;
+  height: 27px;
+  background-color: rgb(69, 154, 252);
+  color: #fcffff;
+  }
+
+  .NewBubbleDiaryScreen .elButton_year button {
+    border: 0.0px solid transparent;
+  }
+  .NewBubbleDiaryScreen > .layoutFlow > .elButton_year {
+    line-height: 27px;
+    position: relative;
+    margin-top: -27px;
+    width: 113px;
+    margin-left: 1020px;
+  }
+  .NewBubbleDiaryScreen > .layoutFlow > .elButton_year > * { 
+  width: 113px;
+  height: 27px;
+  background-color: rgb(69, 154, 252);
+  color: #fcffff;
+  }
+
+
+
+
   .NewBubbleDiaryScreen .elList:after {
     content: "";
     display: table;
@@ -3156,23 +3532,27 @@ border-radius: 270px;
 
 @media (min-width: 1024px) {
   .NewBubbleDiaryScreen .elList .gridItem {
-    width: calc(100% / 3 - 9.0px*(2/3));
+    width: calc(100% / 4 - 9.0px*(3/4));
     overflow: hidden;
   }
 
-  .NewBubbleDiaryScreen .elList .cols3_0 {
+  .NewBubbleDiaryScreen .elList .cols4_0 {
     margin-right: 9.0px;
     margin-bottom: 9.0px;
     clear: left;
   }
-  .NewBubbleDiaryScreen .elList .cols3_1 {
+  .NewBubbleDiaryScreen .elList .cols4_1 {
     margin-right: 9.0px;
     margin-bottom: 9.0px;
   }
-  .NewBubbleDiaryScreen .elList .cols3_2 {
+  .NewBubbleDiaryScreen .elList .cols4_2 {
+    margin-right: 9.0px;
     margin-bottom: 9.0px;
   }
-  .NewBubbleDiaryScreen .elList .cols3_2:after {
+  .NewBubbleDiaryScreen .elList .cols4_3 {
+    margin-bottom: 9.0px;
+  }
+  .NewBubbleDiaryScreen .elList .cols4_3:after {
     content: "";
     display: table;
     clear: both;
@@ -3182,24 +3562,28 @@ border-radius: 270px;
 
 @media (max-width: 1023px) {
   .NewBubbleDiaryScreen .elList .gridItem {
-    width: calc(100% / 3 - 9.0px*(2/3));
+    width: calc(100% / 4 - 9.0px*(3/4));
     overflow: hidden;
   }
 
-  .NewBubbleDiaryScreen .elList .cols3_0 {
+  .NewBubbleDiaryScreen .elList .cols4_0 {
     margin-right: 9.0px;
     margin-bottom: 9.0px;
     clear: left;
   }
-  .NewBubbleDiaryScreen .elList .cols3_1 {
+  .NewBubbleDiaryScreen .elList .cols4_1 {
     margin-right: 9.0px;
     margin-bottom: 9.0px;
   }
-  .NewBubbleDiaryScreen .elList .cols3_2 {
+  .NewBubbleDiaryScreen .elList .cols4_2 {
+    margin-right: 9.0px;
     margin-bottom: 9.0px;
   }
-   
-  .NewBubbleDiaryScreen .elList .cols3_2:after {
+  .NewBubbleDiaryScreen .elList .cols4_3 {
+    margin-bottom: 9.0px;
+  }
+  .NewBubbleDiaryScreen .elList .cols4_3:after { }
+  .NewBubbleDiaryScreen .elList .cols4_3:after {
     content: "";
     display: table;
     clear: both;
@@ -3209,60 +3593,75 @@ border-radius: 270px;
 
 @media (max-width: 767px) {
   .NewBubbleDiaryScreen .elList .gridItem {
-    width: calc(100% / 3 - 9.1px*(2/3));
+    width: calc(100% / 4 - 9.1px*(3/4));
     overflow: hidden;
   }
 
-  .NewBubbleDiaryScreen .elList .cols3_0 { margin-right: 0; margin-bottom: 0; }
-  .NewBubbleDiaryScreen .elList .cols3_1 { margin-right: 0; margin-bottom: 0; }
-  .NewBubbleDiaryScreen .elList .cols3_2 { margin-right: 0; margin-bottom: 0; }
-  .NewBubbleDiaryScreen .elList .cols3_0 {
+  .NewBubbleDiaryScreen .elList .cols4_0 { margin-right: 0; margin-bottom: 0; }
+  .NewBubbleDiaryScreen .elList .cols4_1 { margin-right: 0; margin-bottom: 0; }
+  .NewBubbleDiaryScreen .elList .cols4_2 { margin-right: 0; margin-bottom: 0; }
+  .NewBubbleDiaryScreen .elList .cols4_3 { margin-right: 0; margin-bottom: 0; }
+  .NewBubbleDiaryScreen .elList .cols4_0 {
     margin-right: 9.1px;
     margin-bottom: 9.1px;
     clear: left;
   }
-  .NewBubbleDiaryScreen .elList .cols3_1 {
+  .NewBubbleDiaryScreen .elList .cols4_1 {
     margin-right: 9.1px;
     margin-bottom: 9.1px;
   }
-  .NewBubbleDiaryScreen .elList .cols3_2 {
+  .NewBubbleDiaryScreen .elList .cols4_2 {
+    margin-right: 9.1px;
     margin-bottom: 9.1px;
   }
-  
-  .NewBubbleDiaryScreen .elList .cols3_2:after {
+  .NewBubbleDiaryScreen .elList .cols4_3 {
+    margin-bottom: 9.1px;
+  }
+  .NewBubbleDiaryScreen .elList .cols4_3:after { }
+  .NewBubbleDiaryScreen .elList .cols4_3:after { }
+  .NewBubbleDiaryScreen .elList .cols4_3:after {
     content: "";
     display: table;
     clear: both;
   }
 
+
 }
 
 @media (max-width: 567px) {
   .NewBubbleDiaryScreen .elList .gridItem {
-    width: calc(100% / 3 - 9.1px*(2/3));
+    width: calc(100% / 4 - 9.1px*(3/4));
     overflow: hidden;
   }
 
-  .NewBubbleDiaryScreen .elList .cols3_0 { margin-right: 0; margin-bottom: 0; }
-  .NewBubbleDiaryScreen .elList .cols3_1 { margin-right: 0; margin-bottom: 0; }
-  .NewBubbleDiaryScreen .elList .cols3_2 { margin-right: 0; margin-bottom: 0; }
-  .NewBubbleDiaryScreen .elList .cols3_0 { margin-right: 0; margin-bottom: 0; }
-  .NewBubbleDiaryScreen .elList .cols3_1 { margin-right: 0; margin-bottom: 0; }
-  .NewBubbleDiaryScreen .elList .cols3_2 { margin-right: 0; margin-bottom: 0; }
-  .NewBubbleDiaryScreen .elList .cols3_0 {
+  .NewBubbleDiaryScreen .elList .cols4_0 { margin-right: 0; margin-bottom: 0; }
+  .NewBubbleDiaryScreen .elList .cols4_1 { margin-right: 0; margin-bottom: 0; }
+  .NewBubbleDiaryScreen .elList .cols4_2 { margin-right: 0; margin-bottom: 0; }
+  .NewBubbleDiaryScreen .elList .cols4_3 { margin-right: 0; margin-bottom: 0; }
+  .NewBubbleDiaryScreen .elList .cols4_0 { margin-right: 0; margin-bottom: 0; }
+  .NewBubbleDiaryScreen .elList .cols4_1 { margin-right: 0; margin-bottom: 0; }
+  .NewBubbleDiaryScreen .elList .cols4_2 { margin-right: 0; margin-bottom: 0; }
+  .NewBubbleDiaryScreen .elList .cols4_3 { margin-right: 0; margin-bottom: 0; }
+  .NewBubbleDiaryScreen .elList .cols4_0 {
     margin-right: 9.1px;
     margin-bottom: 9.1px;
     clear: left;
   }
-  .NewBubbleDiaryScreen .elList .cols3_1 {
+  .NewBubbleDiaryScreen .elList .cols4_1 {
     margin-right: 9.1px;
     margin-bottom: 9.1px;
   }
-  .NewBubbleDiaryScreen .elList .cols3_2 {
+  .NewBubbleDiaryScreen .elList .cols4_2 {
+    margin-right: 9.1px;
     margin-bottom: 9.1px;
   }
-  
-  .NewBubbleDiaryScreen .elList .cols3_2:after {
+  .NewBubbleDiaryScreen .elList .cols4_3 {
+    margin-bottom: 9.1px;
+  }
+  .NewBubbleDiaryScreen .elList .cols4_3:after { }
+  .NewBubbleDiaryScreen .elList .cols4_3:after { }
+  .NewBubbleDiaryScreen .elList .cols4_3:after { }
+  .NewBubbleDiaryScreen .elList .cols4_3:after {
     content: "";
     display: table;
     clear: both;
@@ -3274,12 +3673,12 @@ border-radius: 270px;
 
   .NewBubbleDiaryScreen > .layoutFlow > .elList {
     position: relative;
-    margin-top: 70px;
-    width: 1415px;
-    margin-left: 95px;
+    margin-top: 10px;
+    width: 1420px;
+    margin-left: 30px;
   }
   .NewBubbleDiaryScreen > .layoutFlow > .elList > * { 
-  width: 1415px;
+  width: 1420px;
   height: 303px;
   }
   
@@ -3296,10 +3695,13 @@ border-radius: 270px;
     margin-top: 25px;
     width: 113px;
     margin-left: 1419px;
+    
   }
   .NewBubbleDiaryScreen > .layoutFlow > .elButton_delete > * { 
   width: 113px;
   height: 27px;
+  background-color: rgb(16, 201, 201);
+  color: #fcffff;
   }
   
 
@@ -3319,6 +3721,8 @@ border-radius: 270px;
   .NewBubbleDiaryScreen > .layoutFlow > .elButton_update > * { 
   width: 113px;
   height: 27px;
+  background-color: rgb(16, 201, 201);
+  color: #fcffff;
   }
   
 
