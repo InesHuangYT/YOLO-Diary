@@ -23,6 +23,8 @@ export default class NavBar extends Component {
 
   }
   componentDidMount(){
+
+    // console.log('NavBar props->', this.props)
     let _this = this;
     axios.get('/api/user/me').then(res => {
        console.log(res);
@@ -36,6 +38,8 @@ export default class NavBar extends Component {
       _this.setState({src: res.data.photodata})
     })
   }
+
+  
 
   onClick_elButton = (ev) => {
     // Go to screen 'NewLogout'

@@ -67,11 +67,11 @@ upload = () => {
   // Properties used by this component:
   // appActions, deviceInfo
 
-  onClick_elButton_comfirm = (ev) => {
+  onClick_elButton_comfirm = async(ev) => {
     
    
 
-    axios.post('/api/selfie/uploadmany', this.form, this.config).then(res => {
+    await axios.post('/api/selfie/uploadmany', this.form, this.config).then(res => {
       console.log(res);
       console.log(res.data);
      
