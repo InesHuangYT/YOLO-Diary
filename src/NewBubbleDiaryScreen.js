@@ -114,7 +114,7 @@ export default class NewBubbleDiaryScreen extends Component {
       }
     })
 
-    console.log('check datasheet ', this.props.appActions.getDataSheet('listData1'))
+    // console.log('check datasheet ', this.props.appActions.getDataSheet('listData1'))
     // this.Delete_listData()
     // console.log('check datasheet after>', this.props.appActions.getDataSheet('listData1'))
 
@@ -133,7 +133,7 @@ export default class NewBubbleDiaryScreen extends Component {
    Delete_listData = () => {
     const length = this.props.appActions.getDataSheet('listData1').items.length
     for(var i=0; i<length; i++){
-    console.log('print i:', i)
+    // console.log('print i:', i)
     this.props.appActions.removeFromDataSheet('listData1', this.props.appActions.getDataSheet('listData1').items[0])
     }
     // console.log('show sheetdata',  this.props.appActions.getDataSheet('listUserBubble'))
