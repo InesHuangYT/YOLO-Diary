@@ -69,6 +69,7 @@ export default class FaceList extends Component {
       if (value.indexOf("@") >= 0) {
         axios.get(`/api/user/checkEmailAvailability?email=${value}`).then(res => {
           console.log('get: ', res)
+          
           if (res.data.available == true) {
             //找到此用戶的email，直接標記
             //後端訓練
