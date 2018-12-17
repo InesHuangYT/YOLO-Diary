@@ -894,7 +894,6 @@ height: 108px;
 
 
 
-
 /* This component has a fixed-size layout */
 .DphotoList {
   min-height: 250px;
@@ -1389,6 +1388,33 @@ height: 215px;
   width: 143px;
   height: 50px;
   }
+  
+.NewFaceRecScreen .notification {
+  position: absolute;
+  border:3px unset grey;
+  border-radius: 8px;
+  background-color: white;
+  width: 380px;
+  height: 100px;
+  margin-left: 1150px;
+  margin-top:27px;
+  padding-top: 15px;
+  padding-left: 10px;
+  box-shadow:  0 8px 16px 5px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  line-height: 20px;
+  font-family: Microsoft JhengHei;
+  font-weight: bolder;
+  font-size: 17px;
+  animation-name:notificate;
+  animation-duration: 4.5s;
+  opacity: 0;
+}
+@keyframes notificate{
+0%   { top: 70px;opacity: 0;}
+20%  { top:95px;opacity: 1;}
+90%  {top: 95px; opacity: 1;}
+100% { top: 70px;opacity: 0;}
+}
   
   /* .NewFaceRecScreen > .layoutFlow > .elPublishBubble {
     position: relative;

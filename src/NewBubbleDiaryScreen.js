@@ -4,7 +4,7 @@ import img_elBubbleDiaryBG from './images/NewFaceRecScreen_elBubbleDiaryBG_53437
 import NavBar from './NavBar';
 import Addbubble from './Addbubble';
 import ListItem1 from './ListItem1';
-import DataSheet_listData1 from './DataSheet_listData1.js'
+
 // import Axios from 'axios';
 
 
@@ -151,9 +151,7 @@ export default class NewBubbleDiaryScreen extends Component {
 
           </div>
 
-          <div>
-            <DataSheet_listData1 />>
-                  </div>
+         
 
         </div>
       </Container>

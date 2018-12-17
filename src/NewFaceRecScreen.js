@@ -155,6 +155,7 @@ items_dphotoLst = items_dphotoLst.concat(this.props.appActions.getDataSheet('dph
           <div className='elBubbleDiaryBG' style={style_bubbleDiaryBG}>
           </div>
         </div>
+        
         <div className="layoutFlow" style={layoutFlowStyle}>
           <div className='hasNestedComps elNavBar2'>
             <div>
@@ -162,7 +163,10 @@ items_dphotoLst = items_dphotoLst.concat(this.props.appActions.getDataSheet('dph
             </div>
           
           </div>
-          
+          <div className='notification' >
+     <p>將游標移動到人臉圖上面可以看到辨識出的名稱</p>
+     點擊即可修改~
+</div>
           { elFaceRecTip }
           <div className='hasNestedComps elFaceList'>
             <div style={style_faceList}>
@@ -193,7 +197,7 @@ items_dphotoLst = items_dphotoLst.concat(this.props.appActions.getDataSheet('dph
             </div>
           
           </div>
-
+          
           
           
           <div className='elPublishBubble' style={style_publishBubble_outer}>
@@ -205,7 +209,7 @@ items_dphotoLst = items_dphotoLst.concat(this.props.appActions.getDataSheet('dph
             <div style={style_button_PublishBubble}  onClick={this.onClick_elButton_PublishBubble}  />
           
           </div>
-
+       
          <div>
           <DataSheet_dphotoListData {...this.props} />
            </div>
