@@ -21,9 +21,9 @@ export default class DataSheet_listDataPic extends DataSheetBase {
 
     //  let item
   
-    console.log('picture Check!',this.props)
+    // console.log('picture Check!',this.props)
     axios.get(`/api/photo/downloadDiaryPhoto/${this.props.dataSheetRow.diaryId}`).then(res => {
-      console.log('load picture->', res)
+      // console.log('load picture->', res)
       for(var i = 0; i < res.data.length; i++){
         //   item = {}
         //  this.addItem(item)
@@ -35,7 +35,7 @@ export default class DataSheet_listDataPic extends DataSheetBase {
          this.sendData_button_Next_to_listData1();
      
       }
-      console.log('Picsheetdata',  this.props.appActions.getDataSheet('listDataPic'))
+      // console.log('Picsheetdata',  this.props.appActions.getDataSheet('listDataPic'))
   
     })
   }

@@ -36,7 +36,7 @@ export default class DataSheet_listUserBubble extends DataSheetBase {
 
       
     })
-    console.log('check datasheet DIDM', this.props.appActions.getDataSheet('listUserBubble'))
+    // console.log('check datasheet DIDM', this.props.appActions.getDataSheet('listUserBubble'))
 
   }
     componentWillUnmount(){
@@ -44,7 +44,7 @@ export default class DataSheet_listUserBubble extends DataSheetBase {
       
       console.log('comWillUnMount')
       this.Delete_listData()
-      console.log('check datasheet delete', this.props.appActions.getDataSheet('listUserBubble'))
+      // console.log('check datasheet delete', this.props.appActions.getDataSheet('listUserBubble'))
 
     }
 
@@ -52,7 +52,7 @@ export default class DataSheet_listUserBubble extends DataSheetBase {
    Delete_listData = () => {
     const length = this.props.appActions.getDataSheet('listUserBubble').items.length
     for(var i=0; i<length; i++){
-    console.log('print i:', i)
+    // console.log('print i:', i)
     this.props.appActions.removeFromDataSheet('listUserBubble', this.props.appActions.getDataSheet('listUserBubble').items[0])
     }
     // console.log('show sheetdata',  this.props.appActions.getDataSheet('listUserBubble'))
@@ -76,7 +76,7 @@ export default class DataSheet_listUserBubble extends DataSheetBase {
       key: key
 
     };
-    console.log(this.props.dataSheetId)
+    // console.log(this.props.dataSheetId)
     if (this.props.dataSheetId === dataSheet.id) {
       this.props.appActions.updateInDataSheet('listData1', row);
     } else {

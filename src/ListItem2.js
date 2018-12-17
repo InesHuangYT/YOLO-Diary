@@ -147,7 +147,7 @@ export default class ListItem2 extends Component {
          </div>
         </Modal>
 
-         <Modal title="" visible={this.state.Remind_visible} onOk={this.Remind_handleOk} onCancel={this.handleCancel} width='300px' > 
+         <Modal title="" visible={this.state.Remind_visible} onOk={this.Remind_handleOk} onCancel={this.Remind_handleCancel} width='300px' > 
          <div style={textStyle} >
          {this.state.author}還沒有日記可以閱讀<br/>
          快提醒他去分享日記吧!

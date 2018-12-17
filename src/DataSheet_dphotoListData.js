@@ -19,7 +19,7 @@ export default class DataSheet_dphotoListData extends DataSheetBase {
 
   
    await axios.get(`/api/photo/downloadDiaryPhoto/${this.props.diaryId}`).then(res =>{
-    console.log('getAllphoto', res)
+    // console.log('getAllphoto', res)
 
      for(var i = 0; i < res.data.length; i++){
 
@@ -33,7 +33,7 @@ export default class DataSheet_dphotoListData extends DataSheetBase {
     console.log('res fail')
   })
 
-  console.log('get photoListData',  this.props.appActions.getDataSheet('dphotoListData'))
+  // console.log('get photoListData',  this.props.appActions.getDataSheet('dphotoListData'))
 
 
  
@@ -45,7 +45,7 @@ export default class DataSheet_dphotoListData extends DataSheetBase {
       
     console.log('comWillUnMount')
     this.Delete_dphotoListData()
-    console.log('check datasheet delete', this.props.appActions.getDataSheet('dphotoListData'))
+    // console.log('check datasheet delete', this.props.appActions.getDataSheet('dphotoListData'))
 
   }
 
