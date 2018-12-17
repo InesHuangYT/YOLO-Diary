@@ -1,42 +1,100 @@
+import React, { Component } from 'react';
 import DataSheetBase from './DataSheetBase.js';
+import axios from 'axios';
 
 export default class DataSheet_listDataBBAlbum extends DataSheetBase {
 
-  constructor(id, updateCb) {
-    super(id, updateCb);
-    this.requestedKeyPath = "";  // this value can be specified in the React Studio data sheet UI
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      
+    };
   }
 
-  makeDefaultItems() {
-    // eslint-disable-next-line no-unused-vars
-    let key = 1;
-    // eslint-disable-next-line no-unused-vars
-    let item;
+
+  componentDidMount() {
+    console.log('Album comDidMount>', this.props)
+   
+     let item;
+     axios.get(`/api/photo/downloadAlbumPhoto/${this.props.dataSheetRow.albumId}`).then((res) => {
+     
+       console.log('get all photo>', res)
+      for(var i = 0; i < res.data.length; i++){
+        item = {}
+        item['PhotoData'] = res.data[i].photodata
     
-    item = {};
-    this.items.push(item);
-    item['image'] = "";
-    item.key = key++;
-    
-    item = {};
-    this.items.push(item);
-    item['image'] = "";
-    item.key = key++;
-    
-    item = {};
-    this.items.push(item);
-    item['image'] = "";
-    item.key = key++;
-    
-    item = {};
-    this.items.push(item);
-    item['image'] = "";
-    item.key = key++;
-    
-    item = {};
-    this.items.push(item);
-    item['image'] = "";
-    item.key = key++;
+        item.key = res.data[i].id
+        
+        this.sendData_to_listDataBBAlbum(item.PhotoData, item.key)
+      }
+
+      
+     })
+    // console.log('check datasheet DIDM', this.props.appActions.getDataSheet('listUserBubble'))
+
   }
+    componentWillUnmount(){
+
+      
+      console.log('comWillUnMount')
+      this.Delete_listDataBBAlbum()
+      console.log('check datasheet delete', this.props.appActions.getDataSheet('listDataBBAlbum'))
+
+    }
+
+
+   Delete_listDataBBAlbum = () => {
+    const length = this.props.appActions.getDataSheet('listDataBBAlbum').items.length
+    for(var i=0; i<length; i++){
+    // console.log('print i:', i)
+    this.props.appActions.removeFromDataSheet('listDataBBAlbum', this.props.appActions.getDataSheet('listDataBBAlbum').items[0])
+    }
+    // console.log('show sheetdata',  this.props.appActions.getDataSheet('listUserBubble'))
+
+   
+   }
+
+
+
+
+  sendData_to_listDataBBAlbum = (PhotoData, key) => {
+    const dataSheet = this.props.appActions.getDataSheet('listDataBBAlbum');
+
+    let row = this.props.dataSheetRow || {
+    };
+    row = {
+      
+      PhotoData: PhotoData, 
+      key: key
+
+    };
+    // console.log(this.props.dataSheetId)
+    if (this.props.dataSheetId === dataSheet.id) {
+      this.props.appActions.updateInDataSheet('listDataBBAlbum', row);
+    } else {
+      this.props.appActions.addToDataSheet('listDataBBAlbum', row);
+    }
+  }
+
+
+
+  makeDefaultItems() {
+  
+  
+  }
+
+  render() {
+
+    return (
+      <div>
+        {/* <ListItem2 diaryId = {this.props.appActions.getDataSheet('listUserBubble')}/> */}
+      </div>
+
+    );
+
+  }
+
+
 
 }

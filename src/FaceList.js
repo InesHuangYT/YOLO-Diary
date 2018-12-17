@@ -69,6 +69,7 @@ export default class FaceList extends Component {
       if (value.indexOf("@") >= 0) {
         axios.get(`/api/user/checkEmailAvailability?email=${value}`).then(res => {
           console.log('get: ', res)
+          
           if (res.data.available == true) {
             //找到此用戶的email，直接標記
             //後端訓練
@@ -258,6 +259,7 @@ export default class FaceList extends Component {
     // eslint-disable-next-line no-unused-vars
     let layoutFlowStyle = {};
 
+    
 
     const textStyle = {
       textAlign: 'center',
@@ -310,7 +312,7 @@ export default class FaceList extends Component {
               <div className="w3-row w3-section">
                 <div className="w3-col" style={{ width: '50px' }}><i className="w3-xxlarge fa fa-envelope-o"></i></div>
                 <div className="w3-rest">
-                  <input className="w3-input w3-border" name="email" type="text" placeholder="Enter Email" onChange={this.enterEmail} />
+                  <input className="w3-input w3-border"  name="email" type="text" placeholder="Enter Email" onChange={this.enterEmail} />
                 </div>
               </div>
 

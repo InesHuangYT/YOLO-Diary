@@ -4,14 +4,9 @@ import img_elBubbleDiaryBG from './images/NewFaceRecScreen_elBubbleDiaryBG_53437
 import NavBar from './NavBar';
 import Addbubble from './Addbubble';
 import ListItem1 from './ListItem1';
-
-// import Axios from 'axios';
-
-
-
+import DataSheet_listData1 from './DataSheet_listData1.js'
+// import Axios from 'axios'
 import { Select } from 'antd';
-
-// import Axios from 'axios';
 import {
   Icon, Button, Input, AutoComplete,
 } from 'antd';
@@ -19,10 +14,11 @@ import {
 // import Button from 'muicss/lib/react/button';
 import Container from 'muicss/lib/react/container';
 // import store from './store';
+import axios from 'axios';
 
 
 
-    const Option = AutoComplete.Option;
+const Option = AutoComplete.Option;
 
 function onSelect(value) {
   console.log('onSelect', value);
@@ -61,8 +57,14 @@ function renderOption(item) {
 
 export default class NewBubbleDiaryScreen extends Component {
 
-  state = {
-    dataSource: [],
+
+  constructor(props) {
+    super(props);
+
+
+    this.state = {
+      dataSource: [],
+    }
   }
 
   handleSearch = (value) => {
@@ -75,28 +77,98 @@ export default class NewBubbleDiaryScreen extends Component {
 
   componentDidMount() {
 
-    // let items_list2 = [];
-    // items_list2 = this.props.appActions.getDataSheet('listUserBubble').items;
-    // if(items_list2.length != 0){
-    // console.log('listUserBubble check->', items_list2)
-    // items_list2.map((row) =>{
-    //   this.props.appActions.removeFromDataSheet('listUserBubble',row)
-    // })
 
-    // console.log('listUserBubble check after remove->', this.props.appActions.getDataSheet('listUserBubble').items)
-    // }
-    //removeItem(items_list2)
 
-    // console.log(store.getValue())
-    // Axios.get("/api/album/albums").then(res =>{
-    //   console.log("response",res);
-    //   console.log("response data",res.data);
-    //   console.log("data total", res.data.content.length)
-    //   console.log("data", res.data.content[1].name)
-    // })
+    console.log('Home page props', this.props)
+    
+    console.log('listdata1 Mount', this.props)
+    
+    let item;
+    
+    axios.get("/api/album/allAlbums").then(res => {
+      
+      //console.log('albums ->',res)
+      
+      var elements = res.data.length
+      for(var i = 0; i < elements ; i++){
+        
+        item = {};
+        //相簿名稱
+       
+        item['albumName'] = res.data[i].name;
+        item['albumId'] = res.data[i].id;
+        // item['diaryId'] = [];
+        item['photoCover'] = res.data[i].photoCover;
 
+        item['albumCreatedAt'] = res.data[i].createdAt;
+
+        // for(var j = 0; j < res.data[i].diaries.length ; j++){
+        // console.log('check did->',res.data[i].diaries[j].id)
+        // item['diaryId'].push({id: res.data[i].diaries[j].id}) 
+        // }
+        
+        item.key = Math.random()*(1000);
+
+        this.sendData_to_listData1(item.albumName, item.albumId, item.photoCover, item.albumCreatedAt, item.key)
+  
+      }
+    })
+
+    // console.log('check datasheet ', this.props.appActions.getDataSheet('listData1'))
+    // this.Delete_listData()
+    // console.log('check datasheet after>', this.props.appActions.getDataSheet('listData1'))
 
   }
+
+    componentWillUnmount(){
+
+      
+      console.log('comWillUnMount')
+      this.Delete_listData()
+      console.log('check datasheet delete', this.props.appActions.getDataSheet('listData1'))
+
+    }
+
+
+   Delete_listData = () => {
+    const length = this.props.appActions.getDataSheet('listData1').items.length
+    for(var i=0; i<length; i++){
+    // console.log('print i:', i)
+    this.props.appActions.removeFromDataSheet('listData1', this.props.appActions.getDataSheet('listData1').items[0])
+    }
+    // console.log('show sheetdata',  this.props.appActions.getDataSheet('listUserBubble'))
+
+   
+   }
+
+
+
+
+  sendData_to_listData1 = (albumName, albumId, photoCover, albumCreatedAt, key) => {
+    const dataSheet = this.props.appActions.getDataSheet('listData1');
+
+    let row = this.props.dataSheetRow || {
+    };
+    row = {
+      
+      albumName: albumName,
+      albumId:albumId,
+      photoCover: photoCover,
+      albumCreatedAt: albumCreatedAt,
+      key:key
+
+    };
+    // console.log(this.props.dataSheetId)
+    if (this.props.dataSheetId === dataSheet.id) {
+      this.props.appActions.updateInDataSheet('listData1', row);
+    } else {
+      this.props.appActions.addToDataSheet('listData1', row);
+    }
+  }
+        
+  
+
+  
 
   render() {
 
@@ -111,7 +183,7 @@ export default class NewBubbleDiaryScreen extends Component {
       layoutFlowStyle.height = '100vh';
       layoutFlowStyle.overflow = 'hidden';
     }
-    
+
     // const dataSheet_listData1 = this.props.dataSheets['listData1'];
     const style_background = {
       width: '100%',
@@ -194,27 +266,27 @@ export default class NewBubbleDiaryScreen extends Component {
 
           </div>
 
-<div className="global-search-wrapper" style={{ width: 300 }}>
-        <AutoComplete
-          className="global-search"
-          size="large"
-          style={{ width: '100%' }}
-          dataSource={dataSource.map(renderOption)}
-          onSelect={onSelect}
-          onSearch={this.handleSearch}
-          placeholder="input here"
-          optionLabelProp="text"
-        >
-          <Input
-            suffix={(
-              <Button className="search-btn" size="large" type="primary">
-                <Icon type="search" />
-              </Button>
-            )}
-          />
-        </AutoComplete>
-      </div>
-          
+          <div className="global-search-wrapper" style={{ width: 300 }}>
+            <AutoComplete
+              className="global-search"
+              size="large"
+              style={{ width: '100%' }}
+              dataSource={dataSource.map(renderOption)}
+              onSelect={onSelect}
+              onSearch={this.handleSearch}
+              placeholder="input here"
+              optionLabelProp="text"
+            >
+              <Input
+                suffix={(
+                  <Button className="search-btn" size="large" type="primary">
+                    <Icon type="search" />
+                  </Button>
+                )}
+              />
+            </AutoComplete>
+          </div>
+
           <div className='actionFont elButton_week' style={style_button_week_outer}>
             <Button style={style_button_week} color="accent" >
               一星期內
@@ -239,8 +311,8 @@ export default class NewBubbleDiaryScreen extends Component {
               {items_list.map((row, index) => {
 
                 let itemClasses = `gridItem cols4_${index % 4}`;
-                let itemComp = (row._componentId) ? listComps_list[row._componentId] : <ListItem1 dataSheetId={'listData1'} dataSheetRow={row}  appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} {...this.props}/>;
-                
+                let itemComp = (row._componentId) ? listComps_list[row._componentId] : <ListItem1 dataSheetId={'listData1'} dataSheetRow={row} appActions={this.props.appActions} deviceInfo={this.props.deviceInfo} locStrings={this.props.locStrings} {...this.props} />;
+
 
                 return (
                   <div className={itemClasses} key={row.key}>
@@ -270,10 +342,11 @@ export default class NewBubbleDiaryScreen extends Component {
 
           
 
+
         </div>
       </Container>
     )
   }
-  
+
 
 }

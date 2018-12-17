@@ -54,11 +54,21 @@ export default class NewCreateBBScreen extends Component {
 
   componentDidMount() {
     
+    
+   if(this.props.dataSheetRow){
+    console.log('write diary>',this.props)
+   }else{
+    this.setState({albumName:store.getValue().albumName})
+    this.setState({albumId : store.getValue().albumId})
+   }
+    
+
    
-   this.setState({albumName:store.getValue().albumName})
-   this.setState({albumId : store.getValue().albumId})
+    
+   }
+   
   
-  }
+  
   
   
 
@@ -105,24 +115,41 @@ export default class NewCreateBBScreen extends Component {
     const diary = {
       text : this.state.textarea
     }
-    console.log('exist?', store.getValue().albumId)
- await axios.post('/api/diary/'+ store.getValue().albumId ,diary)
-  .then(res => {
-    // console.log('Create albumID CHECK->',res);
-    this.setState({diaryId : res.data.id});
-    
-  }).catch(function(error){
-    alert("Wrong diary");
-  });
 
- 
-  store.setValue({
-    diaryId: this.state.diaryId
-  })
+    if(this.props.dataSheetRow){
+
+      await axios.post(`/api/diary/${this.props.dataSheetRow.albumId}`, diary).then(res =>{
+        this.setState({diaryId: res.data.id})
+
+      }).catch(function(error){
+        alert("Wrong diary");
+      });
+
+    }else{
+
+      console.log('exist?', store.getValue().albumId)
+      await axios.post(`/api/diary/${store.getValue().albumId}` ,diary)
+       .then(res => {
+         // console.log('Create albumID CHECK->',res);
+         this.setState({diaryId : res.data.id});
+         
+       }).catch(function(error){
+         alert("Wrong diary");
+       });
+     
+
+    }
+  
+    store.setValue({
+      diaryId: this.state.diaryId
+    })
+
 
   // console.log('diaryId have been stored?', store.getValue().diaryId)
   let Faceitem;
   let NoFaceitem;
+
+  
    await axios.post(`/api/photo/${store.getValue().diaryId}`, this.form).then(	
     res =>{
 
@@ -170,7 +197,7 @@ export default class NewCreateBBScreen extends Component {
 
   
 
-  this.sendData_button_Complete_to_listData1();
+  // this.sendData_button_Complete_to_listData1();
   // console.log('upload photo again???->',this.state.cover)	
   this.props.appActions.goToScreen('newfacerec', { diaryId : store.getValue().diaryId , transitionId: 'fadeIn' });
    
@@ -384,6 +411,12 @@ upload = () => {
     const style_text_outer = {
       pointerEvents: 'none',
      };
+     const placeholderStyle ={
+      fontSize: 16.8,
+      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", sans-serif',
+      color: 'black',
+      textAlign: 'left',
+     }
      const { preview } = this.state;
     return (
       <Container fluid={true} className="AppScreen NewCreateBBScreen" style={baseStyle}>
@@ -424,7 +457,7 @@ upload = () => {
           
           <div className='baseFont elTextarea'>
       
-            <TextArea  placeholder={this.props.locStrings.newcreatebb_textarea_581227} onChange={this.textAreaChanged_textarea} defaultValue={this.state.textarea } />
+            <TextArea  style={placeholderStyle} placeholder={"寫下想說的話..."} onChange={this.textAreaChanged_textarea} defaultValue={this.state.textarea } />
           
           </div>
           

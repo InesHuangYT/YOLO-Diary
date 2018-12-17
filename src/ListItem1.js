@@ -32,7 +32,7 @@ export default class ListItem1 extends Component {
 
   componentDidMount() {
     
-    console.log('item1 check props ->',this.props)
+    // console.log('item1 check props ->',this.props)
     let _this = this;
     // this.config = {
     //   headers:{
@@ -42,8 +42,9 @@ export default class ListItem1 extends Component {
     // };
       axios.get(this.props.dataSheetRow.photoCover, this.state.config).then(res=>{
       
-      console.log('photo', res)
-      console.log('prop',this.props.dataSheetRow.photoCover)
+      // console.log('photo', res)
+      // console.log('prop',this.props.dataSheetRow.photoCover)
+
       _this.setState({src:res.data.photodata})
       // _this.setState({src:Buffer.from(res.data, 'binary').toString('base64')})
       //console.log('buffer=>', _this.state.src)
@@ -54,9 +55,31 @@ export default class ListItem1 extends Component {
     
   }
 
+  
+  componentWillUnmount(){
+
+    
+    // console.log('comWillUnMount')
+    // this.Delete_listData()
+    // console.log('check datasheet delete', this.props.appActions.getDataSheet('listData1'))
+
+  }
+
+
+ Delete_listData = () => {
+  // const length = this.props.appActions.getDataSheet('listData1').items.length
+  // for(var i=0; i<length; i++){
+  // console.log('print i:', i)
+  this.props.appActions.removeFromDataSheet('listData1', this.props.dataSheetRow)
+  // }
+  // console.log('show sheetdata',  this.props.appActions.getDataSheet('listUserBubble'))
+
+ 
+ }
+
   onClick_elBubble2 = (ev) => {
     // Go to screen 'NewReadBB'
-    console.log('click item1', this.props)
+    // console.log('click item1', this.props)
     this.props.appActions.goToScreen('newreadbb', { ...this.props, transitionId: 'fadeIn' });
     
   
@@ -124,16 +147,16 @@ export default class ListItem1 extends Component {
               <div className="flip-box-back">
               
               {/* <h1>Taipei</h1> */}
-               
-                <div className='baseFont elField'>
+              <div className='baseFont-time'>
+                 <label  type="text" onChange={this.textInputChanged_albumCreatedAt} value="">{value_time}</label>
+                </div>
+                <div className='baseFont-elField'>
                  {/* <Input  type="text" hint={this.props.locStrings.list2_field_578331} onChange={this.textInputChanged_albumName} defaultValue={value_field !== undefined ? value_field : ''} /> */}
                 <label type="text" hint={this.props.locStrings.list2_field_578331} onChange={this.textInputChanged_albumName} value="">{value_field}</label>
 
                 </div>
                
-                <div className='baseFont time'>
-                 <label  type="text" onChange={this.textInputChanged_albumCreatedAt} value="">{value_time}</label>
-                </div>
+               
 
               </div>
               </div>

@@ -12,9 +12,8 @@ export default class NewLogoutScreen extends Component {
   // Properties used by this component:
   // appActions, deviceInfo
 
-  onClick_elButton_ReLogin = (ev) => {
-    // Go to screen 'NewLoginAndRegister'
 
+componentDidMount(){
     this.Delete_ListData('listData1')
     this.Delete_ListData('listData2')
     this.Delete_ListData('listData3')
@@ -22,6 +21,12 @@ export default class NewLogoutScreen extends Component {
     this.Delete_ListData('listDataPic')
     this.Delete_ListData('faceListData')
     this.Delete_ListData('dphotoListData')
+}
+
+  onClick_elButton_ReLogin = (ev) => {
+    // Go to screen 'NewLoginAndRegister'
+
+    
 
     this.props.appActions.goToScreen('newloginandregister', { transitionId: 'fadeIn' });
    

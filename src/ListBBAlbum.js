@@ -6,6 +6,25 @@ import img_elImage from './images/ListBBAlbum_elImage_653766.jpg';
 export default class ListBBAlbum extends Component {
 
   // This component doesn't use any properties
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      src:''
+    };
+  }
+
+
+
+ componentDidMount() {
+
+  this.setState({src: this.props.dataSheetRow.PhotoData})
+
+ }
+
+
+
+
 
   render() {
     // eslint-disable-next-line no-unused-vars
@@ -24,7 +43,7 @@ export default class ListBBAlbum extends Component {
       <div className="ListBBAlbum" style={baseStyle}>
         <div className="layoutFlow">
           <div className='elImage' style={style_image_outer}>
-            <img style={style_image} src={img_elImage} alt=""  />
+            <img style={style_image} src={"data:image/jpeg;base64, " + this.state.src} alt=""  />
           
           </div>
           

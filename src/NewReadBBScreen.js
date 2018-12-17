@@ -68,7 +68,7 @@ export default class NewReadBBScreen extends Component {
 
   onClick_el02 = (ev) => {
     // Go to screen 'NewBBAlbum'
-    this.props.appActions.goToScreen('newbbalbum', { transitionId: 'fadeIn' });
+    this.props.appActions.goToScreen('newbbalbum', { ...this.props, transitionId: 'fadeIn' });
   
   }
  
