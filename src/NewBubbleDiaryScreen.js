@@ -268,11 +268,7 @@ export default class NewBubbleDiaryScreen extends Component {
 
           </div>
 
-<<<<<<< HEAD
-         
-=======
           
->>>>>>> 38921990d6e3f9057d0b46f280a7f6678c6074d7
 
         </div>
       </Container>

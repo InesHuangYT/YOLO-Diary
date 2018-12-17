@@ -226,6 +226,10 @@ export default class FaceList extends Component {
         message.error('刪除標記失敗')
       })
 
+    }else{
+      this.props.appActions.removeFromDataSheet('faceListData', this.props.dataSheetRow)
+      message.success('刪除人臉圖成功')
+
     }
 
 
