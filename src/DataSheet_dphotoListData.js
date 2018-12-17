@@ -18,7 +18,7 @@ export default class DataSheet_dphotoListData extends DataSheetBase {
   componentDidMount = async()=>{
 
   
-   await axios.get(`/api/photo//downloadDiaryPhoto/${this.props.diaryId}`).then(res =>{
+   await axios.get(`/api/photo/downloadDiaryPhoto/${this.props.diaryId}`).then(res =>{
     console.log('getAllphoto', res)
 
      for(var i = 0; i < res.data.length; i++){

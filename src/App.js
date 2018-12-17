@@ -10,6 +10,7 @@ import NewLogoutScreen from './NewLogoutScreen.js';
 import NewCreateBBScreen from './NewCreateBBScreen.js';
 import NewUserDiaryScreen from './NewUserDiaryScreen.js';
 import NewTutorCreateBBScreen from './NewTutorCreateBBScreen.js';
+import NewBBAlbumScreen from './NewBBAlbumScreen.js';
 import NewReadBBScreen from './NewReadBBScreen.js';
 import NewBBNameCreateScreen from './NewBBNameCreateScreen.js';
 import NewBubbleDiaryScreen from './NewBubbleDiaryScreen.js';
@@ -46,6 +47,7 @@ import DataSheet_listUserBubble from './DataSheet_listUserBubble.js';
 import DataSheet_listDataPic from './DataSheet_listDataPic.js';
 import DataSheet_faceListData from './DataSheet_faceListData.js';
 import DataSheet_dphotoListData from './DataSheet_dphotoListData.js';
+import DataSheet_listDataBBAlbum from './DataSheet_listDataBBAlbum.js';
 
 export default class App extends Component {
   constructor(props) {
@@ -60,7 +62,8 @@ export default class App extends Component {
     this.dataSheets['listDataPic'] = new DataSheet_listDataPic('listDataPic', this.dataSheetDidUpdate);
     this.dataSheets['faceListData'] = new DataSheet_faceListData('faceListData', this.dataSheetDidUpdate);
     this.dataSheets['dphotoListData'] = new DataSheet_dphotoListData('dphotoListData', this.dataSheetDidUpdate);
-    
+    this.dataSheets['listDataBBAlbum'] = new DataSheet_listDataBBAlbum('listDataBBAlbum', this.dataSheetDidUpdate);
+
     this.dataSlots = {};
     this.dataSlots['ds_activeLang'] = "en";
 
@@ -240,6 +243,8 @@ export default class App extends Component {
           return (<NewUserDiaryScreen {...screenProps} />)
         case 'newtutorcreatebb':
           return (<NewTutorCreateBBScreen {...screenProps} />)
+        case 'newbbalbum':
+          return (<NewBBAlbumScreen {...screenProps} />)
         case 'newreadbb':
           return (<NewReadBBScreen {...screenProps} />)
         case 'newbbnamecreate':

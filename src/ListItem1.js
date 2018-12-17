@@ -20,6 +20,7 @@ export default class ListItem1 extends Component {
     this.state = {
       albumName: this.props.albumName,
       albumId : this.props.albumId,
+      albumCreatedAt: this.props.albumCreatedAt,
       src:'',
       config : {
         headers:{
@@ -42,10 +43,12 @@ export default class ListItem1 extends Component {
       axios.get(this.props.dataSheetRow.photoCover, this.state.config).then(res=>{
       
       console.log('photo', res)
+      console.log('prop',this.props.dataSheetRow.photoCover)
       _this.setState({src:res.data.photodata})
       // _this.setState({src:Buffer.from(res.data, 'binary').toString('base64')})
       //console.log('buffer=>', _this.state.src)
     })
+
     
     
     
@@ -61,7 +64,11 @@ export default class ListItem1 extends Component {
   
   
   textInputChanged_albumName = (event) => {
-    this.setState({albumName: this.state.albumName});
+    this.setState({albumId: this.state.albumId});
+  }
+
+  textInputChanged_albumCreatedAt = (event) => {
+    this.setState({albumCreatedAt: this.state.albumCreatedAt});
   }
 
   
@@ -81,6 +88,7 @@ export default class ListItem1 extends Component {
         display: 'block',
      };
      const value_field = this.props.dataSheetRow.albumName;
+     const value_time = this.props.dataSheetRow.albumCreatedAt;
     
     const style_card_outer = {
       //backgroundColor: 'white',
@@ -88,6 +96,9 @@ export default class ListItem1 extends Component {
       pointerEvents: 'none',
       
    };
+   const style_time = {
+    display: 'block',
+ };
    
     return (
       <div className="ListItem1" style={baseStyle}>
@@ -115,10 +126,15 @@ export default class ListItem1 extends Component {
               {/* <h1>Taipei</h1> */}
                
                 <div className='baseFont elField'>
-                 <Input  type="text" hint={this.props.locStrings.list2_field_578331} onChange={this.textInputChanged_albumName} defaultValue={value_field !== undefined ? value_field : ''} />
+                 {/* <Input  type="text" hint={this.props.locStrings.list2_field_578331} onChange={this.textInputChanged_albumName} defaultValue={value_field !== undefined ? value_field : ''} /> */}
+                <label type="text" hint={this.props.locStrings.list2_field_578331} onChange={this.textInputChanged_albumName} value="">{value_field}</label>
 
                 </div>
                
+                <div className='baseFont time'>
+                 <label  type="text" onChange={this.textInputChanged_albumCreatedAt} value="">{value_time}</label>
+                </div>
+
               </div>
               </div>
             </div>
