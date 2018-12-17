@@ -134,13 +134,22 @@ export default class FaceList extends Component {
     //寄送邀請
     axios.post(`/api/engineTag/sendEmail?email=${this.state.value}`).then(res => {
       console.log('send invitation res->', res)
-    })
-    this.setState({
-      emailNotFound_visible: false,
-    });
-    message.success('寄送邀請成功')
-  }
 
+      this.setState({
+        emailNotFound_visible: false,
+      });
+
+      message.success('寄送邀請成功')
+
+
+
+
+    }).catch(function (error) {
+      message.error('寄送邀請失敗')
+      console.log(error)
+    })
+
+  }
   emailNotFound_handleCancel = (e) => {
 
     this.setState({
@@ -161,12 +170,19 @@ export default class FaceList extends Component {
 
       axios.post(`/api/engineTag/sendEmail?email=${this.state.catchEmail}`).then(res => {
         console.log('send invitation res->', res)
+
+        this.setState({
+          usernameNotFound_visible: false,
+        });
+        message.success('寄送邀請成功')
+
+
+      }).catch(function (error) {
+        message.error('寄送邀請失敗')
+        console.log(error)
       })
 
-      this.setState({
-        usernameNotFound_visible: false,
-      });
-      message.success('寄送邀請成功')
+
     } else {
       message.error('信箱輸入錯誤')
     }
@@ -183,6 +199,39 @@ export default class FaceList extends Component {
   enterEmail = (e) => {
 
     this.setState({ catchEmail: e.target.value })
+
+  }
+
+  deleteTag = (e) => {
+
+    //後端資料庫標記刪除
+    if (this.props.dataSheetRow.userTaged) {
+
+      //axios.delete的用法
+      //https://github.com/axios/axios/issues/736
+      axios.delete(`/api/engineTag/DeleteTagFace`, {
+        data: {
+          diaryId: this.props.dataSheetRow.diaryId, albumId: this.props.dataSheetRow.albumId,
+          username: this.props.dataSheetRow.userTaged
+        }
+      }).then(res => {
+        console.log('Delete', res)
+        message.success('刪除標記成功')
+        this.props.appActions.removeFromDataSheet('faceListData', this.props.dataSheetRow)
+        console.log('<Check FaceData after Delete>', this.props.appActions.getDataSheet('faceListData'))
+
+
+      }).catch(function (error) {
+        console.log(error)
+        message.error('刪除標記失敗')
+      })
+
+    }else{
+      this.props.appActions.removeFromDataSheet('faceListData', this.props.dataSheetRow)
+      message.success('刪除人臉圖成功')
+
+    }
+
 
   }
 
@@ -271,7 +320,7 @@ export default class FaceList extends Component {
             <span className="tooltiptext">{this.state.user}</span>
 
             <div className='img_deleteIcon' style={style_img_deleteIcon}>
-              <img style={style_img_deleteIcon} src={img_deleteIcon} />
+              <img style={style_img_deleteIcon} src={img_deleteIcon} onClick={this.deleteTag} />
             </div>
 
           </div>

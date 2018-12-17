@@ -184,6 +184,7 @@ export default class NewCreateBBScreen extends Component {
     };
 
     row = {
+      albumId: this.state.albumId,
       diaryId: diaryId,
       faceData: face,
       userTaged: user,
