@@ -66,7 +66,7 @@ export default class ListItem2 extends Component {
   
     GoToCreate_handleOk = (e) => {
      
-      this.props.appActions.goToScreen('newbbnamecreate',  { ...this.props, transitionId: 'fadeIn' });
+      this.props.appActions.goToScreen('newcreatebb',  { ...this.props, transitionId: 'fadeIn' });
       this.setState({
         GoToCreate_visible: false,
       });

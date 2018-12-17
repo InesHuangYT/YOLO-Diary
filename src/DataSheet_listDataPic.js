@@ -51,7 +51,7 @@ export default class DataSheet_listDataPic extends DataSheetBase {
   Delete_listData = () => {
     const length = this.props.appActions.getDataSheet('listDataPic').items.length
      for(var i=0; i<length; i++){
-     this.props.appActions.removeFromDataSheet('listDataPic', this.props.appActions.getDataSheet('listDataPic').items[i])
+     this.props.appActions.removeFromDataSheet('listDataPic', this.props.appActions.getDataSheet('listDataPic').items[0])
      }
     console.log('show sheetdata',  this.props.appActions.getDataSheet('listDataPic'))
 

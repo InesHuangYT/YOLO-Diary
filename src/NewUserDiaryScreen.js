@@ -30,6 +30,7 @@ export default class NewUserDiaryScreen extends Component {
     this.state = {
       field: '',
       textarea: '',
+      changeToedit: false
  
     };
   }
@@ -72,6 +73,11 @@ export default class NewUserDiaryScreen extends Component {
     // Go back in screen navigation history
     this.props.appActions.goBack();
   
+  }
+
+  editDiary =(e) =>{
+    this.setState({changeToedit: !this.state.changeToedit})
+
   }
   
   
@@ -161,6 +167,23 @@ export default class NewUserDiaryScreen extends Component {
   const style_list = {
       height: 'auto',  // This element is in scroll flow
    };
+
+
+//變換修改模式
+   var shown = {
+    display: this.state.changeToedit ? "block" : "none"
+  };
+
+  var hidden = {
+    display: this.state.changeToedit ? "none" : "block"
+  }
+
+const fontstyle ={
+  color: 'black',
+  fontSize: 20
+  
+}
+
   // Source items and any special components used for list/grid element 'list'.
   let items_list = [];
   let listComps_list = {};
@@ -198,19 +221,19 @@ export default class NewUserDiaryScreen extends Component {
           {/* <div className='elAddPicBB' style={style_addPicBB_outer}>
             <img style={style_addPicBB} src={img_elAddPicBB} alt=""  />
           
-          </div> */}
-          {/* <div className='el03' >
+          </div>
+          <div className='el03' >
             <img style={style_03} src={img_el03} alt=""  />
           </div> */}
-          <div className='baseFont elField'>
-            {/* <Input style={style_field} type="text" placeholder={this.props.locStrings.newcreatebb2_field_448413} onChange={this.textInputChanged_field} defaultValue={value_field !== undefined ? value_field : ''}  /> */}
-            <Input style={style_field} type="text" placeholder={this.props.locStrings.newcreatebb2_field_448413} onChange={this.textInputChanged_field} value =  {this.state.field} />
+          {/* <div className='baseFont elField'>
+             <Input style={style_field} type="text" placeholder={this.props.locStrings.newcreatebb2_field_448413} onChange={this.textInputChanged_field} defaultValue={value_field !== undefined ? value_field : ''}  /> 
+             <Input style={style_field} type="text" placeholder={this.props.locStrings.newcreatebb2_field_448413} onChange={this.textInputChanged_field} value =  {this.state.field} /> }
 
           
-          </div>
+          </div> */}
           
           <div className='baseFont elTextarea'>
-            <TextArea  placeholder={this.props.locStrings.newcreatebb2_textarea_331665} onChange={this.textAreaChanged_textarea} value =  {this.state.textarea}  />
+            <TextArea style={fontstyle} placeholder={this.props.locStrings.newcreatebb2_textarea_331665} onChange={this.textAreaChanged_textarea} value = {this.state.textarea}  />
           
           </div>
           
@@ -222,8 +245,8 @@ export default class NewUserDiaryScreen extends Component {
           </div>
 
            <div className='actionFont elButton_edit' style={style_button_edit_outer}>
-            <Button style={style_button_edit}  color="accent" >
-              {this.props.locStrings.newuserdiary_button_31614}
+            <Button style={style_button_edit}  color="accent" onClick={this.editDiary}>
+              {this.props.locStrings.newuserdiary_button_31614 }
               編輯
             </Button>
           

@@ -895,6 +895,7 @@ height: 108px;
 
 
 
+
 /* This component has a fixed-size layout */
 .DphotoList {
   min-height: 250px;
@@ -1634,7 +1635,7 @@ height: 215px;
 
   .NewUserDiaryScreen > .layoutFlow > .elOriDiaryBB {
     position: relative;
-    margin-top: -400px;
+    margin-top: -350px;
     width: 1492px;
     margin-left: 180px;
   }
@@ -1692,16 +1693,17 @@ height: 215px;
 
   .NewUserDiaryScreen > .layoutFlow > .elTextarea {
     position: relative;
-    margin-top: 20px;
-    width: 464px;
-    height: 300px;
+    margin-top: -950px;
+    width: 460px;
+    height: 360px;
     margin-left: 652px;
   }
   .NewUserDiaryScreen > .layoutFlow > .elTextarea > * { 
-    background-color: #fcffffaf;
+    background-color: transparent;
     border-radius: 10px;
-    width: 464px;
-    height: 400px;
+    border-color: transparent;
+    width: 500px;
+    height: 500px;
     opacity: 0.85;
   }
   
@@ -2096,7 +2098,7 @@ height: 215px;
 
 
   .NewCreateBBScreen > .layoutFlow > .elTextarea {
-   
+    
     position: relative;
     margin-top: -290px;
     width: 464px;
@@ -2106,7 +2108,8 @@ height: 215px;
   }
   .NewCreateBBScreen > .layoutFlow > .elTextarea > * { 
 
-  background-color: #fcffffaf;
+  background-color:transparent;
+  border-color: transparent;
   border-radius: 10px;
   width: 464px;
   height: 450px;
@@ -7916,14 +7919,17 @@ height: 240px;
 
 
   .CreateBBScreen > .layoutFlow > .elTextarea {
+    
     position: relative;
     margin-top: -217px;
     width: 329px;
     margin-left: 718px;
+
   }
   .CreateBBScreen > .layoutFlow > .elTextarea > * { 
-  width: 329px;
-  height: 353px;
+    
+    width: 329px;
+    height: 353px;
   }
   
 
