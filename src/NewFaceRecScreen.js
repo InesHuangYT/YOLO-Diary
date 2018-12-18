@@ -32,12 +32,6 @@ export default class NewFaceRecScreen extends Component {
   }
 
   componentWillUnmount(){
-     
-    // axios.post('/api/engineTag/sendTagEmail', ).then(res =>{
-
-    // })
-
-
       
     console.log('comWillUnMount')
     this.Delete_faceListData()
@@ -56,20 +50,33 @@ export default class NewFaceRecScreen extends Component {
 
   onClick_elButton_PublishBubble = (ev) => {
    //發送標記邀請
-   let sendTo={}
+   var sendTo=[]
    var length = this.props.appActions.getDataSheet('faceListData').items.length
-   for(var i; i < length; i++){
-    sendTo.push( this.props.appActions.getDataSheet('faceListData').items[i].userTaged)
+
+   console.log('user List>>>',this.props.appActions.getDataSheet('faceListData').items)
+   console.log('user name>>>',this.props.appActions.getDataSheet('faceListData').items[0].userTaged)
+   for(var i=0; i < length; i++){
+    
+    sendTo.push(this.props.appActions.getDataSheet('faceListData').items[i].userTaged)
+   
    }
+  
+   console.log('SEND TO', sendTo.length)
    console.log('SEND TO', sendTo)
 
-   axios.post(`/api/engineTag/sendTagEmail`, sendTo).then(res =>{
+   console.log('JSON',JSON.stringify(sendTo))
+
+   var data = {
+     theArray: sendTo
+   }
+   axios.post(`/api/engineTag/sendTagEmail`, data).then(res =>{
      console.log('發送標記邀請成功', res)
    }).catch(function(error){
      console.log('發送標記失敗', error)
    })
   
 
+  
 
     // Go to screen 'NewBubbleDiary'
     this.props.appActions.goToScreen('newbubblediary', { transitionId: 'fadeIn' });
