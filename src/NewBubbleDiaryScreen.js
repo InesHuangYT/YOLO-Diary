@@ -15,6 +15,7 @@ import {
 import Container from 'muicss/lib/react/container';
 // import store from './store';
 import axios from 'axios';
+import { error } from 'util';
 
 
 
@@ -64,6 +65,7 @@ export default class NewBubbleDiaryScreen extends Component {
 
     this.state = {
       dataSource: [],
+      keyword: ''
     }
   }
 
@@ -80,21 +82,21 @@ export default class NewBubbleDiaryScreen extends Component {
 
 
     console.log('Home page props', this.props)
-    
+
     console.log('listdata1 Mount', this.props)
-    
+
     let item;
-    
-    axios.get("/api/album/allAlbums").then(res => {
-      
+
+    axios.get(`/api/album/allAlbums`).then(res => {
+
       //console.log('albums ->',res)
-      
+
       var elements = res.data.length
-      for(var i = 0; i < elements ; i++){
-        
+      for (var i = 0; i < elements; i++) {
+
         item = {};
         //相簿名稱
-       
+
         item['albumName'] = res.data[i].name;
         item['albumId'] = res.data[i].id;
         // item['diaryId'] = [];
@@ -106,11 +108,11 @@ export default class NewBubbleDiaryScreen extends Component {
         // console.log('check did->',res.data[i].diaries[j].id)
         // item['diaryId'].push({id: res.data[i].diaries[j].id}) 
         // }
-        
-        item.key = Math.random()*(1000);
+
+        item.key = Math.random() * (1000);
 
         this.sendData_to_listData1(item.albumName, item.albumId, item.photoCover, item.albumCreatedAt, item.key)
-  
+
       }
     })
 
@@ -120,26 +122,26 @@ export default class NewBubbleDiaryScreen extends Component {
 
   }
 
-    componentWillUnmount(){
-
-      
-      console.log('comWillUnMount')
-      this.Delete_listData()
-      console.log('check datasheet delete', this.props.appActions.getDataSheet('listData1'))
-
-    }
+  componentWillUnmount() {
 
 
-   Delete_listData = () => {
+    console.log('comWillUnMount')
+    this.Delete_listData()
+    console.log('check datasheet delete', this.props.appActions.getDataSheet('listData1'))
+
+  }
+
+
+  Delete_listData = () => {
     const length = this.props.appActions.getDataSheet('listData1').items.length
-    for(var i=0; i<length; i++){
-    // console.log('print i:', i)
-    this.props.appActions.removeFromDataSheet('listData1', this.props.appActions.getDataSheet('listData1').items[0])
+    for (var i = 0; i < length; i++) {
+      // console.log('print i:', i)
+      this.props.appActions.removeFromDataSheet('listData1', this.props.appActions.getDataSheet('listData1').items[0])
     }
     // console.log('show sheetdata',  this.props.appActions.getDataSheet('listUserBubble'))
 
-   
-   }
+
+  }
 
 
 
@@ -150,12 +152,12 @@ export default class NewBubbleDiaryScreen extends Component {
     let row = this.props.dataSheetRow || {
     };
     row = {
-      
+
       albumName: albumName,
-      albumId:albumId,
+      albumId: albumId,
       photoCover: photoCover,
       albumCreatedAt: albumCreatedAt,
-      key:key
+      key: key
 
     };
     // console.log(this.props.dataSheetId)
@@ -165,10 +167,88 @@ export default class NewBubbleDiaryScreen extends Component {
       this.props.appActions.addToDataSheet('listData1', row);
     }
   }
-        
-  
 
-  
+
+
+  Click_WeekAgo = (e) => {
+    //this.Delete_listData()
+
+    let item;
+    axios.get(`/api/album/findAlbumByWeek`).then(res => {
+
+      var elements = res.data.length
+      for (var i = 0; i < elements; i++) {
+
+        item = {};
+        //相簿名稱
+
+        item['albumName'] = res.data[i].name;
+        item['albumId'] = res.data[i].id;
+        // item['diaryId'] = [];
+        item['photoCover'] = res.data[i].photoCover;
+
+        item['albumCreatedAt'] = res.data[i].createdAt;
+
+        // for(var j = 0; j < res.data[i].diaries.length ; j++){
+        // console.log('check did->',res.data[i].diaries[j].id)
+        // item['diaryId'].push({id: res.data[i].diaries[j].id}) 
+        // }
+
+        item.key = Math.random() * (1000);
+
+        this.sendData_to_listData1(item.albumName, item.albumId, item.photoCover, item.albumCreatedAt, item.key)
+
+      }
+
+
+      console.log('一星期內>>>', this.props.appActions.getDataSheet('listData1'))
+
+
+    }).catch(function (error) {
+      console.log(error)
+    })
+
+
+  }
+
+  Click_MonthAgo = (e) => {
+
+    axios.get(`/api/album/findAlbumByMonth`).then(res => {
+
+
+    }).catch(function (error) {
+      console.log(error)
+    })
+
+
+  }
+
+  click_YearAgo = (e) => {
+
+    axios.get(`/api/album/findAlbumByYear`).then(res => {
+
+
+    }).catch(function (error) {
+      console.log(error)
+    })
+
+
+  }
+
+  SearchKeyWord = (e) => {
+
+    this.setState({ keyword: e.target.value })
+
+  }
+
+  Search = (e) => {
+    axios.get(`/api/album/findAlbum?albumName=${this.state.keyword}`).then(res => {
+
+
+    })
+  }
+
+
 
   render() {
 
@@ -271,7 +351,7 @@ export default class NewBubbleDiaryScreen extends Component {
               className="global-search"
               size="large"
               style={{ width: '100%' }}
-              dataSource={dataSource.map(renderOption)}
+              // dataSource={dataSource.map(renderOption)}
               onSelect={onSelect}
               onSearch={this.handleSearch}
               placeholder="input here"
@@ -279,28 +359,28 @@ export default class NewBubbleDiaryScreen extends Component {
             >
               <Input
                 suffix={(
-                  <Button className="search-btn" size="large" type="primary">
+                  <Button className="search-btn" size="large" type="primary" onClick={this.Search}>
                     <Icon type="search" />
                   </Button>
                 )}
-              />
+                onChange={this.SearchKeyWord} />
             </AutoComplete>
           </div>
 
           <div className='actionFont elButton_week' style={style_button_week_outer}>
-            <Button style={style_button_week} color="accent" >
+            <Button style={style_button_week} color="accent" onClick={this.Click_WeekAgo}>
               一星期內
             </Button>
           </div>
 
           <div className='actionFont elButton_month' style={style_button_month_outer}>
-            <Button style={style_button_month} color="accent" >
+            <Button style={style_button_month} color="accent" onClick={this.Click_MonthAgo}>
               一個月內
             </Button>
 
           </div>
           <div className='actionFont elButton_year' style={style_button_year_outer}>
-            <Button style={style_button_year} color="accent" >
+            <Button style={style_button_year} color="accent" onClick={this.click_YearAgo}>
               一年內
             </Button>
 
@@ -340,7 +420,7 @@ export default class NewBubbleDiaryScreen extends Component {
 
           </div>
 
-          
+
 
 
         </div>
