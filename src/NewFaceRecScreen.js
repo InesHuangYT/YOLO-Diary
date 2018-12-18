@@ -22,12 +22,13 @@ export default class NewFaceRecScreen extends Component {
     
     this.state = {
       elFaceRecTip_visible: true,
+      
     };
   }
 
   componentDidMount() {
   
-    console.log('|FaceRecScreen|', this.props.dataSheets['faceListData'])
+    console.log('|FaceRecScreen|',  this.props.appActions.getDataSheet('faceListData'))
   }
 
   componentWillUnmount(){
@@ -54,7 +55,22 @@ export default class NewFaceRecScreen extends Component {
 
 
   onClick_elButton_PublishBubble = (ev) => {
-   
+   //發送標記邀請
+   let sendTo={}
+   var length = this.props.appActions.getDataSheet('faceListData').items.length
+   for(var i; i < length; i++){
+    sendTo.push( this.props.appActions.getDataSheet('faceListData').items[i].userTaged)
+   }
+   console.log('SEND TO', sendTo)
+
+   axios.post(`/api/engineTag/sendTagEmail`, sendTo).then(res =>{
+     console.log('發送標記邀請成功', res)
+   }).catch(function(error){
+     console.log('發送標記失敗', error)
+   })
+  
+
+
     // Go to screen 'NewBubbleDiary'
     this.props.appActions.goToScreen('newbubblediary', { transitionId: 'fadeIn' });
   
