@@ -172,6 +172,7 @@ export default class NewBubbleDiaryScreen extends Component {
 
   Click_WeekAgo = (e) => {
     //this.Delete_listData()
+    console.log('Click Click')
 
     let item;
     axios.get(`/api/album/findAlbumByWeek`).then(res => {
@@ -242,10 +243,13 @@ export default class NewBubbleDiaryScreen extends Component {
   }
 
   Search = (e) => {
-    axios.get(`/api/album/findAlbum?albumName=${this.state.keyword}`).then(res => {
+    // if(this.state.keyword){
+      axios.get(`/api/album/findAlbum?albumName=${this.state.keyword}`).then(res => {
 
 
-    })
+      })
+    // }
+   
   }
 
 
@@ -297,35 +301,35 @@ export default class NewBubbleDiaryScreen extends Component {
       textAlign: 'center',
     };
     const style_button_delete_outer = {
-      pointerEvents: 'none',
+      cursor: 'pointer',
     };
     const style_button_update = {
       display: 'block',
       textAlign: 'center',
     };
     const style_button_update_outer = {
-      pointerEvents: 'none',
+      cursor: 'pointer',
     };
     const style_button_week = {
       display: 'block',
       textAlign: 'center',
     };
     const style_button_week_outer = {
-      pointerEvents: 'none',
+      cursor: 'pointer',
     };
     const style_button_month = {
       display: 'block',
       textAlign: 'center',
     };
     const style_button_month_outer = {
-      pointerEvents: 'none',
+      cursor: 'pointer',
     };
     const style_button_year = {
       display: 'block',
       textAlign: 'center',
     };
     const style_button_year_outer = {
-      pointerEvents: 'none',
+      cursor: 'pointer',
     };
     const { dataSource } = this.state;
     return (
@@ -368,19 +372,19 @@ export default class NewBubbleDiaryScreen extends Component {
           </div>
 
           <div className='actionFont elButton_week' style={style_button_week_outer}>
-            <Button style={style_button_week} color="accent" onClick={this.Click_WeekAgo}>
-              一星期內
+            <Button type="primary" style={style_button_week} color="accent"  onClick={this.Click_WeekAgo}>
+             {"一星期內"}
             </Button>
           </div>
 
           <div className='actionFont elButton_month' style={style_button_month_outer}>
-            <Button style={style_button_month} color="accent" onClick={this.Click_MonthAgo}>
+            <Button className='monthButton' type="button" color="accent" onClick={this.Click_MonthAgo}>
               一個月內
             </Button>
 
           </div>
           <div className='actionFont elButton_year' style={style_button_year_outer}>
-            <Button style={style_button_year} color="accent" onClick={this.click_YearAgo}>
+            <Button className='yearButton' type="button" color="accent" onClick={this.click_YearAgo}>
               一年內
             </Button>
 

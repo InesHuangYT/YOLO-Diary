@@ -93,13 +93,17 @@ export default class NewHomeNotificationScreen extends Component {
           </div> */}
           <div>
            <div className='homepagepic-left'>
+          
           <img src={test3} alt=''/>
+         
           </div>
            <div className='homepagepic-right'>
           <img src={test2} alt=''/>
+      
           </div>
           <div className='homepagepic'>
           <img src={test1} alt=''/>
+        
           </div>
          </div>
         </div>
