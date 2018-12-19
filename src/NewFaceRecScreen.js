@@ -56,10 +56,11 @@ export default class NewFaceRecScreen extends Component {
    console.log('user List>>>',this.props.appActions.getDataSheet('faceListData').items)
    console.log('user name>>>',this.props.appActions.getDataSheet('faceListData').items[0].userTaged)
    for(var i=0; i < length; i++){
-    
+    if(this.props.appActions.getDataSheet('faceListData').items[i].userTaged){
     sendTo.push(this.props.appActions.getDataSheet('faceListData').items[i].userTaged)
    
    }
+  }
   
    console.log('SEND TO', sendTo.length)
    console.log('SEND TO', sendTo)

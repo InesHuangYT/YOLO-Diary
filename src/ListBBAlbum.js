@@ -43,7 +43,7 @@ export default class ListBBAlbum extends Component {
       <div className="ListBBAlbum" style={baseStyle}>
         <div className="layoutFlow">
           <div className='elImage' style={style_image_outer}>
-            <img style={style_image} src={"data:image/jpeg;base64, " + this.state.src} alt=""  />
+            <img  src={"data:image/jpeg;base64, " + this.state.src} alt=""  />
           
           </div>
           

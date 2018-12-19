@@ -1839,58 +1839,62 @@ height: 215px;
     position:absolute;
     border:1.5px solid grey;
     border-radius: 6px;
-    width: 560px;
-    margin-left:487px;
-    margin-top:120px;
+    width: 620px;
+    margin-left:450px;
+    margin-top:110px;
     box-shadow:  0 15px 25px 0 rgba(0,0,0,0.2), 0 10px 25px 10px rgba(0,0,0,0.19);
+    opacity: 0;
     animation-name:shift1;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
+    animation-duration: 6s;
+   
     
   }
 
   @keyframes shift1 {
-  0%   { left:0px; top:100px; width: 560px;opacity: 1;}
-  50%  { left:-232px; top:270px;width: 250px;opacity: 0.75;}
-  100% {  left:0px; top:100px; width: 560px;opacity: 1;}
+  0%   { opacity: 0;}
+  20%  { opacity: 1;}
+  80%  { opacity: 1;}
+  100% { opacity: 0;}
   }
   .NewHomeNotificationScreen .homepagepic-right img {
     position:absolute;
     border:1.5px solid grey;
     border-radius: 6px;
-    width: 250px;
-    margin-left:1025px;
-    margin-top:300px;
-    opacity: 0.75;
+    width: 620px;
+    margin-left:450px;
+    margin-top:110px;
+    opacity: 0;
     box-shadow:  0 15px 25px 0 rgba(0,0,0,0.2), 0 10px 25px 10px rgba(0,0,0,0.19);
-    animation-name: shift2; 
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
+    animation-name: shift2;
+    animation-duration: 6s;
+    animation-delay: 6s;
   }
   @keyframes shift2 {
-    0%   { left:0px; top:100px; width: 250px;opacity: 0.75;}
-    50%  { left:-538px; top:-90px;width: 560px;opacity: 1;}
-    100% {  left:0px; top:100px; width: 250px;opacity: 0.75;}
-  }
+    0%   { opacity: 0;}
+    20%  { opacity: 1;}
+    80%  { opacity: 1;}
+    100% { opacity: 0;}
+    }
   .NewHomeNotificationScreen .homepagepic-left img {
     position:absolute;
     border:1.5px solid grey;
     border-radius: 6px;
-    width: 250px;
-    margin-left:255px;
-    margin-top:300px;
-    opacity: 0.75;
+    width: 620px;
+    margin-left:450px;
+    margin-top:110px;
+    opacity: 0;
     box-shadow:  0 15px 25px 0 rgba(0,0,0,0.2), 0 10px 25px 10px rgba(0,0,0,0.19);
-    animation-name: shift3; 
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
+    animation-name: shift3;
+    animation-duration: 6s;
+    animation-delay: 12s;
   }
  
   @keyframes shift3 {
-    0%   { opacity: 0.75;}
-    50%  { opacity: 0;}
-    100% { opacity: 0.75;}
-  }
+    0%   { opacity: 0;}
+    20%  { opacity: 1;}
+    80%  { opacity: 1;}
+    100% { opacity: 0;}
+    }
   .NewHomeNotificationScreen > .layoutFlow > .elN {
     position: relative;
     margin-top: 24px;
@@ -2475,6 +2479,11 @@ border-radius: 270px;
 .ListBBAlbum .elImage > * { 
 width: 425px;
 height: 240px;
+}
+.ListBBAlbum .elImage img{
+  width: 325px;
+  border-radius: 10px;
+  box-shadow:  0 8px 16px 3px rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 .NewBBAlbumScreen {
@@ -3230,23 +3239,28 @@ height: 240px;
      
 /* This component has a fixed-size layout */
   .ListItem1 {
-    min-height: 389px;
-    width: 100%; /* This component was designed using a width of 416px */
+    
+    margin-left:50px;
+    margin-top:35px;
+    
+    min-height: 285px;
+    width:285px; /* This component was designed using a width of 416px */
   }
   .ListItem1 > .background > .containerMinHeight {
     min-height: 389px;
   }
-  .ListItem1 .elBubble2 img:hover{ 
-  
+  .ListItem1 .elBubble2 img:hover{
+    border-radius:100%; 
+    border:5px dashed rgb(177, 177, 177);
     animation: shake 0.5s;
     animation-iteration-count: infinite;
   }
   
   .ListItem1 .elBubble2 {
     position: relative;
-    margin-top: 35px;
-    width: 278px;
-    margin-left: 66px;
+    margin-top: -3px;
+    width: 270px;
+    margin-left: -2px;
    
  
   }
@@ -3285,7 +3299,6 @@ height: 240px;
     height: 200px;
     border: 0px solid #f1f1f1;
     perspective: 1000px; /* Remove this if you don't want the 3D effect */
-    
   }
   
   /* This container is needed to position the front and back side */
@@ -3355,7 +3368,7 @@ height: 240px;
     position: relative;
     margin-top: -213px;
     width: 164px;
-    margin-left: 111px;
+    margin-left: 43px;
    
   }
 
@@ -3481,14 +3494,29 @@ height: 240px;
     margin-top: 50px;
     border: 0.0px solid transparent;
   }
+  .NewBubbleDiaryScreen > .layoutFlow > .global-search-wrapper> .inputstyle{
+    width:100px;
+    height:40px;
+    padding-top:100px;
+    padding-right: 12px;
+  }
+  .NewBubbleDiaryScreen > .layoutFlow > .global-search-wrapper> .btn {
+    position: absolute;
+    padding-top:20px;
+    margin-left: -12px;
+    margin-top:20px;
+  }
   
   .global-search {
+   
     width: 100%;
     border: 0.0px solid transparent;
+   
   }
   
   .global-search.ant-select-auto-complete .ant-select-selection--single {
     margin-right: -46px;
+   
     border: 0.0px solid transparent;
   }
   
@@ -3502,7 +3530,7 @@ height: 240px;
    
   }
   
-  .NewBubbleDiaryScreen .global-search.ant-select-auto-complete .ant-input-affix-wrapper .ant-input-suffix button {
+  .NewBubbleDiaryScreen .global-search.ant-select-auto-complete .ant-input-affix-wrapper .ant-input-suffix button *{
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
     border: 0.0px solid transparent;
@@ -3513,6 +3541,29 @@ height: 240px;
     right: 16px;
     border: 0.0px solid transparent;
   }
+
+ 
+
+  .NewBubbleDiaryScreen .elButton_all button {
+    border: 0.0px solid transparent;
+   
+  }
+  .NewBubbleDiaryScreen > .layoutFlow > .elButton_all {
+    line-height: 27px;
+    position: relative;
+    margin-top: 20px;
+    width: 113px;
+    margin-left: 660px;
+    margin-bottom: 5px;
+  }
+  .NewBubbleDiaryScreen > .layoutFlow > .elButton_all > * { 
+  width: 113px;
+  height: 27px;
+  background-color: rgb(69, 154, 252);
+  color: #f1f1f1;
+  }
+
+
 
   .NewBubbleDiaryScreen .elButton_week button {
     border: 0.0px solid transparent;
