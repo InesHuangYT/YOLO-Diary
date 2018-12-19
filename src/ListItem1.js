@@ -127,7 +127,7 @@ export default class ListItem1 extends Component {
       <div className="ListItem1" style={baseStyle}>
         <div className="layoutFlow">
           <div className='elBubble2' style={style_bubble2_outer}>
-            <img style={style_bubble2} src={img_elBubble2} alt="" onClick={this.onClick_elBubble2} />
+            <img  src={img_elBubble2} alt="" onClick={this.onClick_elBubble2} />
 
           </div>
 

@@ -65,7 +65,8 @@ export default class NewBubbleDiaryScreen extends Component {
 
     this.state = {
       dataSource: [],
-      keyword: ''
+      keyword: '',
+
     }
   }
 
@@ -114,6 +115,8 @@ export default class NewBubbleDiaryScreen extends Component {
         this.sendData_to_listData1(item.albumName, item.albumId, item.photoCover, item.albumCreatedAt, item.key)
 
       }
+      this.setState({ albumItem: this.props.appActions.getDataSheet('listData1').items })
+      console.log('state albumitem>>>', this.state.albumItem)
     })
 
     // console.log('check datasheet ', this.props.appActions.getDataSheet('listData1'))
@@ -160,22 +163,24 @@ export default class NewBubbleDiaryScreen extends Component {
       key: key
 
     };
-    // console.log(this.props.dataSheetId)
+    console.log('props dataId>>>', this.props.dataSheetId)
     if (this.props.dataSheetId === dataSheet.id) {
+      console.log('<<<<UPDATE>>>>')
       this.props.appActions.updateInDataSheet('listData1', row);
     } else {
+
       this.props.appActions.addToDataSheet('listData1', row);
     }
   }
 
 
 
-  Click_WeekAgo = (e) => {
-    //this.Delete_listData()
-    console.log('Click Click')
+  handleTimeClick(clickWhat, WhichUri) {
+    console.log('Click' + clickWhat)
+    this.Delete_listData()
 
     let item;
-    axios.get(`/api/album/findAlbumByWeek`).then(res => {
+    axios.get(`/api/album/${WhichUri}`).then(res => {
 
       var elements = res.data.length
       for (var i = 0; i < elements; i++) {
@@ -185,16 +190,8 @@ export default class NewBubbleDiaryScreen extends Component {
 
         item['albumName'] = res.data[i].name;
         item['albumId'] = res.data[i].id;
-        // item['diaryId'] = [];
         item['photoCover'] = res.data[i].photoCover;
-
         item['albumCreatedAt'] = res.data[i].createdAt;
-
-        // for(var j = 0; j < res.data[i].diaries.length ; j++){
-        // console.log('check did->',res.data[i].diaries[j].id)
-        // item['diaryId'].push({id: res.data[i].diaries[j].id}) 
-        // }
-
         item.key = Math.random() * (1000);
 
         this.sendData_to_listData1(item.albumName, item.albumId, item.photoCover, item.albumCreatedAt, item.key)
@@ -202,57 +199,64 @@ export default class NewBubbleDiaryScreen extends Component {
       }
 
 
-      console.log('一星期內>>>', this.props.appActions.getDataSheet('listData1'))
+      console.log(clickWhat + '>>>', this.props.appActions.getDataSheet('listData1'))
 
 
     }).catch(function (error) {
       console.log(error)
     })
-
-
   }
 
-  Click_MonthAgo = (e) => {
-
-    axios.get(`/api/album/findAlbumByMonth`).then(res => {
-
-
-    }).catch(function (error) {
-      console.log(error)
-    })
-
-
-  }
-
-  click_YearAgo = (e) => {
-
-    axios.get(`/api/album/findAlbumByYear`).then(res => {
-
-
-    }).catch(function (error) {
-      console.log(error)
-    })
-
-
-  }
 
   SearchKeyWord = (e) => {
 
     this.setState({ keyword: e.target.value })
+    console.log('key word', e.target.value)
+    console.log('key word>', this.state.keyword)
 
   }
 
   Search = (e) => {
-    // if(this.state.keyword){
+    console.log('Click Search', this.state.keyword)
+    this.Delete_listData()
+
+    let item;
+
+    if (this.state.keyword) {
       axios.get(`/api/album/findAlbum?albumName=${this.state.keyword}`).then(res => {
 
+        var elements = res.data.length
+        for (var i = 0; i < elements; i++) {
 
+          item = {};
+          //相簿名稱
+
+          item['albumName'] = res.data[i].name;
+          item['albumId'] = res.data[i].id;
+          item['photoCover'] = res.data[i].photoCover;
+          item['albumCreatedAt'] = res.data[i].createdAt;
+          item.key = Math.random() * (1000);
+
+          this.sendData_to_listData1(item.albumName, item.albumId, item.photoCover, item.albumCreatedAt, item.key)
+
+        }
+
+
+        console.log('Search>>>', this.props.appActions.getDataSheet('listData1'))
+
+
+
+
+      }).catch(function (error) {
+        console.log(error)
       })
-    // }
-   
+    }
+
   }
 
-
+  onSelect(value) {
+    console.log('onSelect', value);
+  }
 
   render() {
 
@@ -332,6 +336,19 @@ export default class NewBubbleDiaryScreen extends Component {
       cursor: 'pointer',
     };
     const { dataSource } = this.state;
+
+    const inputStyle = {
+      height: '40px',
+      width: '250px',
+      left:'300px',
+      top:'55px'
+    }
+    const buttonStyle ={
+      top:'55px',
+      left:'300px'
+    }
+
+    
     return (
       <Container fluid={true} className="AppScreen NewBubbleDiaryScreen" style={baseStyle}>
         <div className="background">
@@ -350,41 +367,34 @@ export default class NewBubbleDiaryScreen extends Component {
 
           </div>
 
-          <div className="global-search-wrapper" style={{ width: 300 }}>
-            <AutoComplete
-              className="global-search"
-              size="large"
-              style={{ width: '100%' }}
-              // dataSource={dataSource.map(renderOption)}
-              onSelect={onSelect}
-              onSearch={this.handleSearch}
-              placeholder="input here"
-              optionLabelProp="text"
-            >
-              <Input
-                suffix={(
-                  <Button className="search-btn" size="large" type="primary" onClick={this.Search}>
-                    <Icon type="search" />
-                  </Button>
-                )}
-                onChange={this.SearchKeyWord} />
-            </AutoComplete>
+          <div >
+            <Input className='inputstyle' style={inputStyle}/>
+            <Button className="btn" size="large" type="primary" style={buttonStyle} >
+                  <Icon type="search" />
+                </Button>
+          </div>
+
+          <div className='actionFont elButton_all' style={style_button_week_outer}>
+            <Button style={style_button_week} color="accent" onClick={this.handleTimeClick.bind(this, 'All', 'allAlbums')}>
+              {"全部"}
+            </Button>
           </div>
 
           <div className='actionFont elButton_week' style={style_button_week_outer}>
-            <Button type="primary" style={style_button_week} color="accent"  onClick={this.Click_WeekAgo}>
-             {"一星期內"}
+            <Button style={style_button_week} color="accent" onClick={this.handleTimeClick.bind(this, 'Week', 'findAlbumByWeek')}>
+              {"一星期內"}
             </Button>
           </div>
 
           <div className='actionFont elButton_month' style={style_button_month_outer}>
-            <Button className='monthButton' type="button" color="accent" onClick={this.Click_MonthAgo}>
+            <Button style={style_button_month} type="button" color="accent" onClick={this.handleTimeClick.bind(this, 'Month', 'findAlbumByMonth')}>
               一個月內
             </Button>
 
           </div>
+
           <div className='actionFont elButton_year' style={style_button_year_outer}>
-            <Button className='yearButton' type="button" color="accent" onClick={this.click_YearAgo}>
+            <Button style={style_button_year} type="button" color="accent" onClick={this.handleTimeClick.bind(this, 'Year', 'findAlbumByYear')}>
               一年內
             </Button>
 
