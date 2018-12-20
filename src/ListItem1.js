@@ -19,13 +19,14 @@ export default class ListItem1 extends Component {
 
     this.state = {
       show: false,
-      albumName: this.props.dataSheetRow.albumName,
-      albumId: this.props.dataSheetRow.albumId,
-      albumCreatedAt: this.props.dataSheetRow.albumCreatedAt,
-      src: '',
-      config: {
-        headers: {
-          'Authorization': 'Bearer ' + sessionStorage.getItem('accesstoken')
+      albumName: this.props.albumName,
+      albumId : this.props.albumId,
+      albumCreatedAt: this.props.albumCreatedAt,
+      message : this.props.message,
+      src:'',
+      config : {
+        headers:{
+        'Authorization':'Bearer '+ sessionStorage.getItem('accesstoken')
         }
       }
     }
@@ -128,11 +129,12 @@ export default class ListItem1 extends Component {
       cursor: 'pointer',
     };
     const style_field = {
-      display: 'block',
-    };
-    const value_field = this.props.dataSheetRow.albumName;
-    const value_time = this.props.dataSheetRow.albumCreatedAt;
-
+        display: 'block',
+     };
+     const value_field = this.props.dataSheetRow.albumName;
+     const value_time = this.props.dataSheetRow.albumCreatedAt;
+     const value_message = this.props.dataSheetRow.message;
+    
     const style_card_outer = {
       //backgroundColor: 'white',
       //boxShadow: '0.0px 2.3px 18px rgba(0, 0, 0, 0.1600)',
@@ -195,6 +197,10 @@ export default class ListItem1 extends Component {
 
                   </div>
 
+                </div>
+                <div className='baseFont-elremind'>
+                 {/* <Input  type="text" hint={this.props.locStrings.list2_field_578331} onChange={this.textInputChanged_albumName} defaultValue={value_field !== undefined ? value_field : ''} /> */}
+                <label type="text" hint={this.props.locStrings.list2_field_578331} onChange={this.textInputChanged_albumName} value="">{value_message}</label>
 
                 </div>
                
