@@ -1396,9 +1396,9 @@ height: 215px;
   border:3px unset grey;
   border-radius: 8px;
   background-color: white;
-  width: 380px;
+  width: 420px;
   height: 100px;
-  margin-left: 1150px;
+  margin-left: 1100px;
   margin-top:27px;
   padding-top: 15px;
   padding-left: 10px;
@@ -1408,7 +1408,7 @@ height: 215px;
   font-weight: bolder;
   font-size: 17px;
   animation-name:notificate;
-  animation-duration: 4.5s;
+  animation-duration: 7s;
   opacity: 0;
 }
 @keyframes notificate{
@@ -1844,17 +1844,17 @@ height: 215px;
     margin-top:110px;
     box-shadow:  0 15px 25px 0 rgba(0,0,0,0.2), 0 10px 25px 10px rgba(0,0,0,0.19);
     opacity: 0;
-    animation-name:shift1;
-    animation-duration: 6s;
-   
+    animation-name: shift1;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
     
   }
 
   @keyframes shift1 {
   0%   { opacity: 0;}
+  5%  { opacity: 1;}
   20%  { opacity: 1;}
-  80%  { opacity: 1;}
-  100% { opacity: 0;}
+  25% { opacity: 0;}
   }
   .NewHomeNotificationScreen .homepagepic-right img {
     position:absolute;
@@ -1866,14 +1866,15 @@ height: 215px;
     opacity: 0;
     box-shadow:  0 15px 25px 0 rgba(0,0,0,0.2), 0 10px 25px 10px rgba(0,0,0,0.19);
     animation-name: shift2;
-    animation-duration: 6s;
-    animation-delay: 6s;
+    animation-duration: 20s;
+    animation-delay: 5s;
+    animation-iteration-count: infinite;
   }
   @keyframes shift2 {
     0%   { opacity: 0;}
+    5%  { opacity: 1;}
     20%  { opacity: 1;}
-    80%  { opacity: 1;}
-    100% { opacity: 0;}
+    25% { opacity: 0;}
     }
   .NewHomeNotificationScreen .homepagepic-left img {
     position:absolute;
@@ -1885,16 +1886,37 @@ height: 215px;
     opacity: 0;
     box-shadow:  0 15px 25px 0 rgba(0,0,0,0.2), 0 10px 25px 10px rgba(0,0,0,0.19);
     animation-name: shift3;
-    animation-duration: 6s;
-    animation-delay: 12s;
+    animation-duration: 20s;
+    animation-delay: 10s;
+    animation-iteration-count: infinite;
   }
  
   @keyframes shift3 {
     0%   { opacity: 0;}
+    5%  { opacity: 1;}
     20%  { opacity: 1;}
-    80%  { opacity: 1;}
-    100% { opacity: 0;}
+    25% { opacity: 0;}
     }
+    .NewHomeNotificationScreen .homepagepic-center img{
+      position:absolute;
+      border:1.5px solid grey;
+      border-radius: 6px;
+      width: 620px;
+      margin-left:450px;
+      margin-top:110px;
+      opacity: 0;
+      box-shadow:  0 15px 25px 0 rgba(0,0,0,0.2), 0 10px 25px 10px rgba(0,0,0,0.19);
+      animation-name: shift4;
+      animation-duration: 20s;
+      animation-delay: 15s;
+      animation-iteration-count:infinite;
+    }
+    @keyframes shift4 {
+      0%   { opacity: 0;}
+      5%  { opacity: 1;}
+      20%  { opacity: 1;}
+      25% { opacity: 0;}
+      }
   .NewHomeNotificationScreen > .layoutFlow > .elN {
     position: relative;
     margin-top: 24px;
