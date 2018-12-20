@@ -21,6 +21,7 @@ export default class ListItem1 extends Component {
       albumName: this.props.albumName,
       albumId : this.props.albumId,
       albumCreatedAt: this.props.albumCreatedAt,
+      message : this.props.message,
       src:'',
       config : {
         headers:{
@@ -112,6 +113,7 @@ export default class ListItem1 extends Component {
      };
      const value_field = this.props.dataSheetRow.albumName;
      const value_time = this.props.dataSheetRow.albumCreatedAt;
+     const value_message = this.props.dataSheetRow.message;
     
     const style_card_outer = {
       //backgroundColor: 'white',
@@ -157,7 +159,7 @@ export default class ListItem1 extends Component {
                 </div>
                 <div className='baseFont-elremind'>
                  {/* <Input  type="text" hint={this.props.locStrings.list2_field_578331} onChange={this.textInputChanged_albumName} defaultValue={value_field !== undefined ? value_field : ''} /> */}
-                <label type="text" hint={this.props.locStrings.list2_field_578331} onChange={this.textInputChanged_albumName} value="">{value_field}</label>
+                <label type="text" hint={this.props.locStrings.list2_field_578331} onChange={this.textInputChanged_albumName} value="">{value_message}</label>
 
                 </div>
                
