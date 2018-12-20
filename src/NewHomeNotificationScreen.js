@@ -9,7 +9,8 @@ import ListNotification from './ListNotification';
 import Container from 'muicss/lib/react/container';
 import test1 from './images/02.jpg';
 import test2 from './images/03.jpg';
-import test3 from './images/04.JPG';
+import test3 from './images/04.jpg';
+import test4 from './images/05.jpg';
 export default class NewHomeNotificationScreen extends Component {
 
   // Properties used by this component:
@@ -103,7 +104,9 @@ export default class NewHomeNotificationScreen extends Component {
           </div>
           <div className='homepagepic'>
           <img src={test1} alt=''/>
-        
+          </div>
+          <div className='homepagepic-center'>
+          <img src={test4} alt=''/>
           </div>
          </div>
         </div>

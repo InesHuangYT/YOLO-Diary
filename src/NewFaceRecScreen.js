@@ -188,8 +188,8 @@ items_dphotoLst = items_dphotoLst.concat(this.props.appActions.getDataSheet('dph
           
           </div>
           <div className='notification' >
-     <p>將游標移動到人臉圖上面可以看到辨識出的名稱</p>
-     點擊即可修改~
+     <p>點擊人臉圖即可輸入使用者的名稱或信箱標記對方哦~</p>
+     如果是還沒註冊的朋友，就快輸入信箱寄出邀請函吧！
 </div>
           { elFaceRecTip }
           <div className='hasNestedComps elFaceList'>
