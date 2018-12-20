@@ -55,6 +55,13 @@ export default class NewReadBBScreen extends Component {
 
     };
   }
+  deleteTag = (e) => {
+    axios.delete(`/api/album/deleteAlbumUser/${this.props.dataSheetRow.albumId}`).then(res =>{
+      console.log('Delete !! finish !!')
+      this.props.appActions.goBack();
+
+    })
+  }
 
   textInputChanged_field = (event) => {
     this.setState({field: event.target.value});
@@ -218,7 +225,7 @@ export default class NewReadBBScreen extends Component {
                   <DataSheet_listUserBubble {...this.props}/>>
                   </div>
           <div className='actionFont elButton_delete' style={style_button_delete_outer}>
-            <Button style={style_button_delete} color="accent" >
+            <Button style={style_button_delete} color="accent" onClick={this.deleteTag}>
               {this.props.locStrings.newbubblediary_button_93732}
             </Button>
 
