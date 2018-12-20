@@ -300,20 +300,20 @@ export default class NewBubbleDiaryScreen extends Component {
 
     items_list = items_list.concat(this.props.appActions.getDataSheet('listData1').items);
 
-    const style_button_delete = {
-      display: 'block',
-      textAlign: 'center',
-    };
-    const style_button_delete_outer = {
-      cursor: 'pointer',
-    };
-    const style_button_update = {
-      display: 'block',
-      textAlign: 'center',
-    };
-    const style_button_update_outer = {
-      cursor: 'pointer',
-    };
+    // const style_button_delete = {
+    //   display: 'block',
+    //   textAlign: 'center',
+    // };
+    // const style_button_delete_outer = {
+    //   cursor: 'pointer',
+    // };
+    // const style_button_update = {
+    //   display: 'block',
+    //   textAlign: 'center',
+    // };
+    // const style_button_update_outer = {
+    //   cursor: 'pointer',
+    // };
     const style_button_week = {
       display: 'block',
       textAlign: 'center',
@@ -420,19 +420,14 @@ export default class NewBubbleDiaryScreen extends Component {
 
           </div>
 
-          <div className='actionFont elButton_delete' style={style_button_delete_outer}>
+          {/* <div className='actionFont elButton_delete' style={style_button_delete_outer}>
             <Button style={style_button_delete} color="accent" >
               {this.props.locStrings.newbubblediary_button_93732}
             </Button>
 
-          </div>
+          </div> */}
 
-          <div className='actionFont elButton_update' style={style_button_update_outer}>
-            <Button style={style_button_update} color="accent" >
-              {this.props.locStrings.newbubblediary_button_547911}
-            </Button>
 
-          </div>
 
 
 
