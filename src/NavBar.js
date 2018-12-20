@@ -165,7 +165,7 @@ export default class NavBar extends Component {
             {this.props.locStrings.comp1_button_bbdiary_65744}
           </button>
           <button className='headlineFont elButton_HomePage' style={style_button_HomePage}  onClick={this.onClick_elButton_HomePage} >
-            {this.props.locStrings.comp1_button_homepage_232670}
+            回憶時刻
           </button>
          
         </div>

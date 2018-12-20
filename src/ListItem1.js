@@ -155,7 +155,11 @@ export default class ListItem1 extends Component {
                 <label type="text" hint={this.props.locStrings.list2_field_578331} onChange={this.textInputChanged_albumName} value="">{value_field}</label>
 
                 </div>
-               
+                <div className='baseFont-elremind'>
+                 {/* <Input  type="text" hint={this.props.locStrings.list2_field_578331} onChange={this.textInputChanged_albumName} defaultValue={value_field !== undefined ? value_field : ''} /> */}
+                <label type="text" hint={this.props.locStrings.list2_field_578331} onChange={this.textInputChanged_albumName} value="">{value_field}</label>
+
+                </div>
                
 
               </div>

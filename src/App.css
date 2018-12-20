@@ -2964,7 +2964,27 @@ height: 240px;
     width: 113px;
     height: 27px;
     }
+   
+    .NewReadBBScreen .elButton_delete button {
+      border: 0.0px solid transparent;
+    }
     
+    
+    
+      .NewReadBBScreen > .layoutFlow > .elButton_delete {
+        line-height: 27px;
+        position: relative;
+        margin-top: 400px;
+        width: 113px;
+        margin-left: 101px;
+        
+      }
+      .NewReadBBScreen > .layoutFlow > .elButton_delete > * { 
+      width: 113px;
+      height: 27px;
+      background-color: rgb(16, 201, 201);
+      color: #fcffff;
+      }
   
     .NewReadBBScreen .elList:after {
       content: "";
@@ -3370,6 +3390,14 @@ height: 240px;
     font-style: initial;
     padding-left: 2px;
     line-height: 10px;
+  }
+  .flip-box-back .baseFont-elremind{
+    text-align: center;
+    
+    padding-top: 20px;
+    font-size: 20px;
+    font-weight:bold;
+    line-height: 25px;
   }
   .flip-box-back .baseFont-elField{
   text-align: center;
@@ -3805,7 +3833,7 @@ height: 240px;
   }
   
 
-.NewBubbleDiaryScreen .elButton_delete button {
+/* .NewBubbleDiaryScreen .elButton_delete button {
   border: 0.0px solid transparent;
 }
 
@@ -3824,7 +3852,7 @@ height: 240px;
   height: 27px;
   background-color: rgb(16, 201, 201);
   color: #fcffff;
-  }
+  } */
   
 
 .NewBubbleDiaryScreen .elButton_update button {

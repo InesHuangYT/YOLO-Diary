@@ -86,6 +86,13 @@ export default class NewReadBBScreen extends Component {
       layoutFlowStyle.overflow = 'hidden';
     }
     
+    const style_button_delete = {
+      display: 'block',
+      textAlign: 'center',
+    };
+    const style_button_delete_outer = {
+      cursor: 'pointer',
+    };
     
     const style_background = {
         width: '100%',
@@ -210,6 +217,12 @@ export default class NewReadBBScreen extends Component {
           <div>
                   <DataSheet_listUserBubble {...this.props}/>>
                   </div>
+          <div className='actionFont elButton_delete' style={style_button_delete_outer}>
+            <Button style={style_button_delete} color="accent" >
+              {this.props.locStrings.newbubblediary_button_93732}
+            </Button>
+
+          </div>
         </div>
       </Container>
     )
