@@ -114,6 +114,9 @@ export default class ListItem1 extends Component {
   textInputChanged_albumCreatedAt = (event) => {
     this.setState({ albumCreatedAt: this.state.albumCreatedAt });
   }
+  textInputChanged_albumMessage = (event) => {
+    this.setState({ message: this.state.message });
+  }
 
 
   render() {
@@ -181,7 +184,11 @@ export default class ListItem1 extends Component {
                 </div>
                 
                 <div className="flip-box-back">
+                <div className='baseFont-elremind'>
+                 {/* <Input  type="text" hint={this.props.locStrings.list2_field_578331} onChange={this.textInputChanged_albumName} defaultValue={value_field !== undefined ? value_field : ''} /> */}
+                <label type="text" hint={this.props.locStrings.list2_field_578331} onChange={this.textInputChanged_albumName} value="">{value_message}</label>
 
+                </div>
                   {/* <h1>Taipei</h1> */}
                   <div className='baseFont-time'>
                     <label type="text" onChange={this.textInputChanged_albumCreatedAt} value="">{value_time}</label>
@@ -191,18 +198,10 @@ export default class ListItem1 extends Component {
                     <label type="text" hint={this.props.locStrings.list2_field_578331} onChange={this.textInputChanged_albumName} value="">{value_field}</label>
 
                   </div>
-                  <div className='baseFont-elremind'>
-                    {/* <Input  type="text" hint={this.props.locStrings.list2_field_578331} onChange={this.textInputChanged_albumName} defaultValue={value_field !== undefined ? value_field : ''} /> */}
-                    <label type="text" hint={this.props.locStrings.list2_field_578331} onChange={this.textInputChanged_albumName} value="">{value_field}</label>
-
-                  </div>
+                
 
                 </div>
-                <div className='baseFont-elremind'>
-                 {/* <Input  type="text" hint={this.props.locStrings.list2_field_578331} onChange={this.textInputChanged_albumName} defaultValue={value_field !== undefined ? value_field : ''} /> */}
-                <label type="text" hint={this.props.locStrings.list2_field_578331} onChange={this.textInputChanged_albumName} value="">{value_message}</label>
-
-                </div>
+               
                
               </div>
              

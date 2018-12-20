@@ -3601,16 +3601,19 @@ height: 240px;
   .NewBubbleDiaryScreen > .layoutFlow > .elButton_all {
     line-height: 27px;
     position: relative;
-    margin-top: 20px;
+    margin-top: 35px;
     width: 113px;
-    margin-left: 660px;
+    margin-left: 100px;
     margin-bottom: 5px;
   }
   .NewBubbleDiaryScreen > .layoutFlow > .elButton_all > * { 
   width: 113px;
   height: 27px;
-  background-color: rgb(69, 154, 252);
+  background-color: #4cbff5;
   color: #f1f1f1;
+  font-family: Microsoft JhengHei;
+  font-weight: bold;
+  box-shadow: 0 2px 10px 2px rgba(0,0,0,0.2), 0 6px 15px 0 rgba(0,0,0,0.19);
   }
 
 
@@ -3623,13 +3626,16 @@ height: 240px;
     position: relative;
     margin-top: -33px;
     width: 113px;
-    margin-left: 780px;
+    margin-left: 220px;
   }
   .NewBubbleDiaryScreen > .layoutFlow > .elButton_week > * { 
   width: 113px;
   height: 27px;
-  background-color: rgb(69, 154, 252);
+  background-color: #4cbff5;
   color: #f1f1f1;
+  font-family: Microsoft JhengHei;
+  font-weight: bold;
+  box-shadow: 0 2px 10px 0 rgba(0,0,0,0.2), 0 6px 15px 0 rgba(0,0,0,0.19);
   }
 
 .NewBubbleDiaryScreen .elButton_month button {
@@ -3640,13 +3646,16 @@ height: 240px;
     position: relative;
     margin-top: -27px;
     width: 113px;
-    margin-left: 900px;
+    margin-left: 340px;
   }
   .NewBubbleDiaryScreen > .layoutFlow > .elButton_month > * { 
   width: 113px;
   height: 27px;
-  background-color: rgb(69, 154, 252);
-  color: #fcffff;
+  background-color: #4cbff5;
+  color: #ffffff;
+  font-family: Microsoft JhengHei;
+  font-weight: bold;
+  box-shadow: 0 2px 10px 0 rgba(0,0,0,0.2), 0 6px 15px 0 rgba(0,0,0,0.19);
   }
 
   .NewBubbleDiaryScreen .elButton_year button {
@@ -3657,13 +3666,16 @@ height: 240px;
     position: relative;
     margin-top: -27px;
     width: 113px;
-    margin-left: 1020px;
+    margin-left: 460px;
   }
   .NewBubbleDiaryScreen > .layoutFlow > .elButton_year > * { 
   width: 113px;
   height: 27px;
-  background-color: rgb(69, 154, 252);
+  background-color: #4cbff5;
   color: #fcffff;
+  font-family: Microsoft JhengHei;
+  font-weight: bold;
+  box-shadow: 0 2px 10px 0 rgba(0,0,0,0.2), 0 6px 15px 0 rgba(0,0,0,0.19);
   }
 
 
