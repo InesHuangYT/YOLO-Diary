@@ -102,8 +102,9 @@ export default class NewBubbleDiaryScreen extends Component {
         item['albumId'] = res.data[i].id;
         // item['diaryId'] = [];
         item['photoCover'] = res.data[i].photoCover;
-
         item['albumCreatedAt'] = res.data[i].createdAt;
+        item['message'] = res.data[i].message;
+
 
         // for(var j = 0; j < res.data[i].diaries.length ; j++){
         // console.log('check did->',res.data[i].diaries[j].id)
@@ -112,7 +113,7 @@ export default class NewBubbleDiaryScreen extends Component {
 
         item.key = Math.random() * (1000);
 
-        this.sendData_to_listData1(item.albumName, item.albumId, item.photoCover, item.albumCreatedAt, item.key)
+        this.sendData_to_listData1(item.albumName, item.albumId, item.photoCover, item.albumCreatedAt,item.message, item.key)
 
       }
       this.setState({ albumItem: this.props.appActions.getDataSheet('listData1').items })
@@ -149,7 +150,7 @@ export default class NewBubbleDiaryScreen extends Component {
 
 
 
-  sendData_to_listData1 = (albumName, albumId, photoCover, albumCreatedAt, key) => {
+  sendData_to_listData1 = (albumName, albumId, photoCover, albumCreatedAt,message, key) => {
     const dataSheet = this.props.appActions.getDataSheet('listData1');
 
     let row = this.props.dataSheetRow || {
@@ -160,6 +161,7 @@ export default class NewBubbleDiaryScreen extends Component {
       albumId: albumId,
       photoCover: photoCover,
       albumCreatedAt: albumCreatedAt,
+      message: message,
       key: key
 
     };
@@ -192,9 +194,11 @@ export default class NewBubbleDiaryScreen extends Component {
         item['albumId'] = res.data[i].id;
         item['photoCover'] = res.data[i].photoCover;
         item['albumCreatedAt'] = res.data[i].createdAt;
+        item['message'] = res.data[i].message;
+
         item.key = Math.random() * (1000);
 
-        this.sendData_to_listData1(item.albumName, item.albumId, item.photoCover, item.albumCreatedAt, item.key)
+        this.sendData_to_listData1(item.albumName, item.albumId, item.photoCover, item.albumCreatedAt,item.message, item.key)
 
       }
 
@@ -235,9 +239,11 @@ export default class NewBubbleDiaryScreen extends Component {
           item['albumId'] = res.data[i].id;
           item['photoCover'] = res.data[i].photoCover;
           item['albumCreatedAt'] = res.data[i].createdAt;
+          item['message'] = res.data[i].message;
+
           item.key = Math.random() * (1000);
 
-          this.sendData_to_listData1(item.albumName, item.albumId, item.photoCover, item.albumCreatedAt, item.key)
+          this.sendData_to_listData1(item.albumName, item.albumId, item.photoCover, item.albumCreatedAt,item.message, item.key)
 
         }
 
